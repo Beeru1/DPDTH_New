@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding="UTF-8"?>
+<!ELEMENT datasource
+   (#PCDATA|path)*
+>
+<!--
+   <annotation>
+      <appinfo source='com.ibm.DDbEv2.Models.AbstractXModel.POSSIBLE'>
+         <restriction base='string'/>
+      </appinfo>
+   </annotation>
+-->
+
+<!ATTLIST datasource
+name CDATA #IMPLIED
+>
+<!ELEMENT datasources
+   (datasource)
+>
+<!ELEMENT path
+   (#PCDATA)
+>
+<!ELEMENT query
+   (#PCDATA)
+>
+<!ELEMENT storedqueries
+   (datasources,storedquery+)
+>
+<!ELEMENT storedquery
+   (query)
+>
+<!--
+   <annotation>
+      <appinfo source='com.ibm.DDbEv2.Models.AbstractXModel.POSSIBLE'>
+         <restriction base='string'/>
+      </appinfo>
+   </annotation>
+-->
+
+<!ATTLIST storedquery
+datasource CDATA #IMPLIED
+>
+<!--
+   <annotation>
+      <appinfo source='com.ibm.DDbEv2.Models.AbstractXModel.POSSIBLE'>
+         <restriction base='string'/>
+      </appinfo>
+   </annotation>
+-->
+
+<!ATTLIST storedquery
+name CDATA #IMPLIED
+>

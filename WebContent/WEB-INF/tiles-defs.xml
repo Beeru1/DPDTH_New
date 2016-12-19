@@ -1,0 +1,856 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN"
+								"http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<tiles-definitions>
+	<definition name=".mainLayout"
+		path="/jsp/tiles_layout/main-layout.jsp">
+		<put name="title" value="" />
+		<put name="header" value="/jsp/common/dpheader.jsp" />
+		<put name="leftmenu" value="/jsp/tiles_layout/leftMenu.jsp" />
+		<put name="body" value="/jsp/tiles_layout/body.html" />
+		<put name="footer" value="/jsp/common/footer.jsp" />
+	</definition>
+	
+		
+	<definition name=".recoLayout"
+		path="/jsp/tiles_layout/reco-layout.jsp">
+		<put name="title" value="" />
+		<put name="header" value="/jsp/common/dpheader.jsp" />
+		<put name="body" value="/jsp/tiles_layout/body.html" />
+		<put name="footer" value="/jsp/common/footer.jsp" />
+	</definition>	
+	<definition name=".popupLayout"
+		path="/jsp/tiles_layout/popup-layout.jsp">
+		<put name="title" value="" />
+		<put name="body" value="/jsp/tiles_layout/body.html" />
+	</definition>
+	<definition name="purchaseOrder.page" extends=".mainLayout">
+		<put name="title" value="Create Purchase Order" />
+		<put name="body" value="/jsp/transaction/dpPurchaseOrder.jsp" />
+	</definition>
+	<definition name="printBulkAcceptance.page" extends=".popupLayout">
+		<put name="title" value="Print" />
+		<put name="body" value="/jsp/reverse/printBulkAcceptance.jsp" />
+	</definition>
+
+<definition name="printReverseCollection.page" extends=".popupLayout">
+		<put name="title" value="Print" />
+		<put name="body" value="/jsp/reverse/printReverseCollection.jsp" />
+	</definition>
+	<definition name="vpurchaseOrder.page" extends=".mainLayout">
+		<put name="title" value="Create Purchase Order" />
+		<put name="body"
+			value="/jsp/transaction/dpViewPurchaseOrder.jsp" />
+	</definition>
+	<!-- arvind add at 5th OCT -->
+	<definition name="diststockDeclaration.page"
+		extends=".mainLayout">
+		<put name="title" value="Stock Declaration" />
+		<put name="body" value="/jsp/stock/stockDecl.jsp" />
+	</definition>
+	<definition name="stockAcceptTransfer.page" extends=".mainLayout">
+		<put name="title" value="Stock Accept Transfer" />
+		<put name="body" value="/jsp/stock/stockAcceptTransfer.jsp" />
+	</definition>
+	<definition name="StockTransferAccept.ViewSerials.page"
+		extends=".popupLayout">
+		<put name="title" value="View Serial and Products" />
+		<put name="body"
+			value="/jsp/hbo/viewStockTransferAccpSerProd.jsp" />
+	</definition>
+	<!-- end of code by arvind-->
+	<!-- Riju -->
+		<definition name="closeInactivePartners.page" extends=".mainLayout">
+		<put name="title" value="Upload Excel" />
+		<put name="body" value="/jsp/account/CloseInactivePartners.jsp" />
+	</definition>
+	<!-- Riju -->
+
+    <!-- Riju -->
+		<definition name="checkRetailerBalance.page" extends=".mainLayout">
+		<put name="title" value="Check Retailer Balance" />
+		<put name="body" value="/jsp/account/CheckRetailerBalance.jsp" />
+	</definition>
+	<!-- Riju -->
+
+
+
+
+	<!-- Added By Naveen -->
+	<definition name="dcdetails.PrintDC.page" extends=".popupLayout">
+		<put name="title" value="Print DC Details" />
+		<put name="body" value="/jsp/reverse/printDC.jsp" />
+	</definition>
+	<!-- End of naveen code -->
+	<!-- Added By RajivJha -->
+	<definition name="freshDCDetails.PrintDC.page"
+		extends=".popupLayout">
+		<put name="title" value="Print DC Details" />
+		<put name="body" value="/jsp/reverse/freshPrintDC.jsp" />
+	</definition>
+	<!-- End of RajivJha code -->
+	<definition name="assignProdStock.page" extends=".mainLayout">
+		<put name="title" value="Assign Handsets" />
+		<put name="body" value="/jsp/hbo/AssignProdStock.jsp" />
+	</definition>
+	<definition name="createRequisition.page" extends=".mainLayout">
+		<put name="title" value="Create Requisition" />
+		<put name="body" value="/jsp/hbo/CreateRequisition.jsp" />
+	</definition>
+	<definition name="messageViewRequisition.page"
+		extends=".mainLayout">
+		<put name="title" value="View Requisition" />
+		<put name="body" value="/jsp/hbo/ViewRequisition.jsp" />
+	</definition>
+	<definition name="viewAssignedStock.page" extends=".mainLayout">
+		<put name="title" value="View Assigned Stock" />
+		<put name="body" value="/jsp/hbo/ViewAssignedStock.jsp" />
+	</definition>
+	<definition name="messageViewStockBatchDetails.page"
+		extends=".popupLayout">
+		<put name="title" value="View Batch Details" />
+		<put name="body" value="/jsp/hbo/ViewStockBatchDetails.jsp" />
+	</definition>
+	<definition name="assignSimStock.page" extends=".mainLayout">
+		<put name="title" value="Assign Sim Stock" />
+		<put name="body" value="/jsp/hbo/AssignSimStock.jsp" />
+	</definition>
+	<definition name="viewAssignedSimStock.page"
+		extends=".mainLayout">
+		<put name="title" value="View Assign Sim Stock" />
+		<put name="body" value="/jsp/hbo/ViewAssignedSimStock.jsp" />
+	</definition>
+	<definition name="verifySimStock.page" extends=".mainLayout">
+		<put name="title" value="View Sim Stock" />
+		<put name="body" value="/jsp/hbo/VerifySimSTock.jsp" />
+	</definition>
+	<definition name="viewBatchDetails.page" extends=".popupLayout">
+		<put name="title" value="View Batch Details" />
+		<put name="body" value="/jsp/hbo/ViewBatchDetails.jsp" />
+	</definition>
+	<definition name="messageAcceptRejectStock.page"
+		extends=".mainLayout">
+		<put name="title" value="Accept Reject Stock" />
+		<put name="body" value="/jsp/hbo/AcceptRejectStock.jsp" />
+	</definition>
+	<definition name="ProjectionStock.page" extends=".mainLayout">
+		<put name="title" value="Projection" />
+		<put name="body" value="/jsp/hbo/Projection.jsp" />
+	</definition>
+	<definition name="BulkProjectionUpload.page"
+		extends=".mainLayout">
+		<put name="title" value="Bulk Projection" />
+		<put name="body" value="/jsp/hbo/ProjectionBulkUpload.jsp" />
+	</definition>
+	<definition name="markDamageDirect.page" extends=".mainLayout">
+		<put name="title" value="Mark As Damaged" />
+		<put name="body" value="/jsp/hbo/MarkDamageDirect.jsp" />
+	</definition>
+	<definition name="assignAdStock.page" extends=".mainLayout">
+		<put name="title" value="Assign Distributor Stock" />
+		<put name="body" value="/jsp/hbo/assignDistributorStock.jsp" />
+	</definition>
+	<definition name="assignToFSE.page" extends=".mainLayout">
+		<put name="title" value="Assign To FSE" />
+		<put name="body" value="/jsp/hbo/assignToFSE.jsp" />
+	</definition>
+	<definition name="returnStock.page" extends=".mainLayout">
+		<put name="title" value="STOCK RETURN" />
+		<put name="body" value="/jsp/hbo/returnStock.jsp" />
+	</definition>
+    <definition name="reports.down" extends=".mainLayout">
+		<put name="title" value="STOCK RETURN" />
+		<put name="body" value="/jsp/misReport/reportsDownPage.jsp" />
+	</definition>
+	
+	<definition name="circleActivationSummaryReport.page" extends=".mainLayout">
+		<put name="title" value="Circle Activation Summary Report" />
+		<put name="body" value="/jsp/misReport/CircleActivationSummary.jsp" />
+	</definition>
+	
+	
+	<!-- rajiv jha add for return to fse start -->
+	<definition name="returnStockToFSE.page" extends=".mainLayout">
+		<put name="title" value="STOCK RETURN" />
+		<put name="body" value="/jsp/hbo/returnStockToFSE.jsp" />
+	</definition>
+	<!-- rajiv jha add for return to fse end -->
+
+	<!-- rajiv jha add for fresh return to warehouse start -->
+	<definition name="returnStockToWH.page" extends=".mainLayout">
+		<put name="title" value="FRESH STOCK RETURN" />
+		<put name="body"
+			value="/jsp/hbo/returnFreshStockToWarehouse.jsp" />
+	</definition>
+	<!-- rajiv jha add for fresh return to warehouse end -->
+	
+	<definition name="swapDOAStockToWH.page" extends=".mainLayout">
+		<put name="title" value="FRESH STOCK RETURN" />
+		<put name="body"
+			value="/jsp/hbo/swapDOAStockToWarehouse.jsp" />
+	</definition>
+
+	<definition name="FileUpload.page" extends=".mainLayout">
+		<put name="title" value="File Upload" />
+		<put name="body" value="/jsp/hbo/FileUpload.jsp" />
+	</definition>
+	<definition name="uploadFileReport.page" extends=".mainLayout">
+		<put name="title" value="File Upload Report" />
+		<put name="body" value="/jsp/hbo/UploadFileReport.jsp" />
+	</definition>
+
+	<definition name="createBundleStock.page" extends=".mainLayout">
+		<put name="title" value="Bundle Stock" />
+		<put name="body" value="/jsp/hbo/BundleStock.jsp" />
+	</definition>
+	<definition name="viewBundledStock.page" extends=".mainLayout">
+		<put name="title" value="View Bundle Stock" />
+		<put name="body" value="/jsp/hbo/ViewBundledStock.jsp" />
+	</definition>
+	<definition name="viewBundleDetails.page" extends=".popupLayout">
+		<put name="title" value="View Bundle Stock Details" />
+		<put name="body" value="/jsp/hbo/ViewBundledStockDetails.jsp" />
+	</definition>
+	<definition name="viewMarkDamaged.page" extends=".popupLayout">
+		<put name="title" value="View Damaged Product" />
+		<put name="body" value="/jsp/hbo/ViewMarkDamaged.jsp" />
+	</definition>
+	<definition name="distStockSumm.page" extends=".mainLayout">
+		<put name="title" value="DistributorStockSummary" />
+		<put name="body" value="/jsp/hbo/viewDistStockSummary.jsp" />
+	</definition>
+	<definition name="prodStockSumm.page" extends=".mainLayout">
+		<put name="title" value="DistributorStockSummary" />
+		<put name="body" value="/jsp/hbo/viewProdStockSummary.jsp" />
+	</definition>
+	<definition name="messageViewAssignedStock.page"
+		extends=".mainLayout">
+		<put name="title" value="View Assigned Stock" />
+		<put name="body" value="/jsp/hbo/ViewAssignedStock.jsp" />
+	</definition>
+	<definition name="messageBulkRecordSummary.page"
+		extends=".popupLayout">
+		<put name="title" value="Bulk Record Summary" />
+		<put name="body" value="/jsp/query/BulkRecordSummary.jsp" />
+	</definition>
+	<definition name="SecFileUpload.page" extends=".mainLayout">
+		<put name="title" value="File Upload" />
+		<put name="body" value="/jsp/transaction/dpSecFileUpload.jsp" />
+	</definition>
+	<definition name="uploadDistStock.page" extends=".mainLayout">
+		<put name="title" value="Distributor Bulk Upload" />
+		<put name="body" value="/jsp/hbo/UploadDistStock.jsp" />
+	</definition>
+	<definition name="uploadDamageFile.page" extends=".mainLayout">
+		<put name="title" value="Mark As Damage File Upload" />
+		<put name="body" value="/jsp/hbo/MarkDamageFileUpload.jsp" />
+	</definition>
+	<definition name="viewLocationData.page" extends=".mainLayout">
+		<put name="title" value="View Edit Location" />
+		<put name="body" value="/jsp/account/ViewEditLocationData.jsp" />
+	</definition>
+	<definition name="editLocationData.page" extends=".mainLayout">
+		<put name="title" value="Edit Location Data" />
+		<put name="body" value="/jsp/account/EditLocationData.jsp" />
+	</definition>
+	<definition name="success.page" extends=".mainLayout">
+		<put name="title" value="Success Page" />
+		<put name="body" value="/jsp/account/success.jsp" />
+	</definition>
+	<definition name="bulkMovement.page" extends=".mainLayout">
+		<put name="title" value="Success Page" />
+		<put name="body" value="/jsp/account/BusinessUserMovement1.jsp" />
+	</definition>
+	<definition name="dpReportDump.page" extends=".mainLayout">
+		<put name="title" value="DP Reports" />
+		<put name="body" value="/jsp/report/dpReportDump.jsp" />
+	</definition>
+	<definition name="dpReports.page" extends=".mainLayout">
+		<put name="title" value="DP Reports" />
+		<put name="body" value="/jsp/report/dpReports.jsp" />
+	</definition>
+	<definition name="exportAssignStock.page" extends=".mainLayout">
+		<put name="title" value="DP Reports" />
+		<put name="body" value="/jsp/hbo/exportAssignStock.jsp" />
+	</definition>
+
+	<definition name="dpReportStock.page" extends=".mainLayout">
+		<put name="title" value="DP Reports" />
+		<put name="body" value="/jsp/report/dpReportStock.jsp" />
+	</definition>
+	<definition name="BusinessUserMovement.page"
+		extends=".mainLayout">
+		<put name="title" value="Business User Movement" />
+		<put name="body" value="/jsp/account/BusinessUserMovement.jsp" />
+	</definition>
+	<definition name="viewSerialNoList.page" extends=".popupLayout">
+		<put name="title" value="Serial Nos" />
+		<put name="body" value="/jsp/hbo/viewSerialNoList.jsp" />
+	</definition>
+	<!-- Added by Naveen for adding validation of 70 in return to wharehouse scree -->
+	<definition name="viewSerialNoListWH.page" extends=".popupLayout">
+		<put name="title" value="Serial Nos" />
+		<put name="body" value="/jsp/hbo/viewSerialNoListWH.jsp" />
+	</definition>
+
+
+	<!-- Begin Added by Mohammad Aslam -->
+	<definition name="stockDeclaration.page" extends=".mainLayout">
+		<put name="title" value="Stock Declaration" />
+		<put name="body" value="/jsp/transaction/StockDeclaration.jsp" />
+	</definition>
+	<definition name="stockTransfer.page" extends=".mainLayout">
+		<put name="title" value="Stock Transfer" />
+		<put name="body" value="/jsp/transaction/StockTransfer.jsp" />
+	</definition>
+	<definition name="viewStockSerialNoList.page"
+		extends=".popupLayout">
+		<put name="title" value="Serial Nos" />
+		<put name="body"
+			value="/jsp/transaction/viewStockSerialNoList.jsp" />
+	</definition>
+	<!-- End Added by Mohammad Aslam -->
+
+	<definition name="DeliveryChallanAccept.page"
+		extends=".mainLayout">
+		<put name="title" value="Delivery Challan Acceptance" />
+		<put name="body"
+			value="/jsp/transaction/deliveryChallanAccept.jsp" />
+	</definition> 
+
+	<definition name="DeliveryChallanAccept.ViewSerials.page"
+		extends=".popupLayout">
+		<put name="title" value="View Serial and Products" />
+		<put name="body" value="/jsp/hbo/viewSerialsAndProducts.jsp" />
+	</definition>
+	
+	<definition name="POStatusView.ViewSerials.page"
+		extends=".popupLayout">
+		<put name="title" value="View Serial and Products" />
+		<put name="body" value="/jsp/hbo/ViewSerialProdStatus.jsp" />
+	</definition>
+
+	<definition name="ErrorPO.page"
+		extends=".mainLayout">
+		<put name="title" value="View Error PO" />
+		<put name="body"
+			value="/jsp/transaction/errorPO.jsp" />
+	</definition>
+	
+	<definition name="ErrorPO.ViewErrorPoDetails.page"
+		extends=".popupLayout">
+		<put name="title" value="View Error PO Details" />
+		<put name="body" value="/jsp/transaction/ViewErrorPoDetails.jsp" />
+	</definition>
+			
+	<definition name="StbFlushOut.page"
+		extends=".mainLayout">
+		<put name="title" value="STB Flush Out" />
+		<put name="body"
+			value="/jsp/transaction/stbFlushOut.jsp" />
+	</definition>
+	
+			
+	<definition name="dpMissingStockApproval.page"
+		extends=".mainLayout">
+		<put name="title" value="Missing Stock Approval" />
+		<put name="body"
+			value="/jsp/transaction/dpMissingStockApproval.jsp" />
+	</definition>
+
+	<definition name="dpMissingStockPODetails.page"
+		extends=".mainLayout">
+		<put name="title" value="Missing Stock PO Details" />
+		<put name="body"
+			value="/jsp/transaction/dpMissingStockPODetails.jsp" />
+	</definition>
+
+
+	<definition name="dpDistributorStockTransfer.page"
+		extends=".mainLayout">
+		<put name="title" value="Distributor Stock Transfer" />
+		<put name="body"
+			value="/jsp/transaction/dpDistributorStockTransfer.jsp" />
+	</definition>
+
+	<definition name="OpeningStock.Depletion.page"
+		extends=".mainLayout">
+		<put name="title" value="OpeningStock.Depletion" />
+		<put name="body" value="/jsp/hbo/DPOpenStockDepletion.jsp" />
+	</definition>
+
+	<definition name="ReverseCollection.init.page"
+		extends=".mainLayout">
+		<put name="title" value="Reverse Collection" />
+		<put name="body" value="/jsp/reverse/DPReverseCollection.jsp" />
+	</definition>
+	<!--	Added by Shilpa Khanna -->
+	<definition name="dcCreation.page" extends=".mainLayout">
+		<put name="title" value="DC Creation" />
+		<put name="body" value="/jsp/reverse/DpDcCreation.jsp" />
+	</definition>
+	<!--	Added by Shilpa Khanna Ends -->
+
+	<!--	Added by Shilpa Khanna -->
+	<definition name="dcDamageStatus.page" extends=".mainLayout">
+		<put name="title" value="DC Damage Status" />
+		<put name="body" value="/jsp/reverse/DpDcDamageStatus.jsp" />
+	</definition>
+
+	<definition name="dcChangeStatus.page" extends=".mainLayout">
+		<put name="title" value="DC Change Status" />
+		<put name="body" value="/jsp/reverse/DpDcChangeStatus.jsp" />
+	</definition>
+	<!--	Added by Shilpa Khanna Ends -->
+
+	<!--	Added by DIGVIJAY SINGH THAKUR -->
+	<definition name="dcFreshStatus.page" extends=".mainLayout">
+		<put name="title" value="DC Fresh Status" />
+		<put name="body" value="/jsp/reverse/DpDcFreshStatus.jsp" />
+	</definition>
+	<!--	Added by DIGVIJAY SINGH THAKUR -->
+
+	<!--	Added by naveen -->
+	<definition name="interSSDTransfer.page" extends=".mainLayout">
+		<put name="title" value="DC Change Status" />
+		<put name="body" value="/jsp/reverse/interssdTransfer.jsp" />
+	</definition>
+	<definition name="interSSDTransfer.details.page"
+		extends=".popupLayout">
+		<put name="title" value="Inter SSD Transfer Details" />
+		<put name="body"
+			value="/jsp/reverse/interssdTransferdetails.jsp" />
+	</definition>
+	<!--	Added by Shilpa Khanna for Hierarchy Transfer-->
+	<definition name="HierarchyTransfer.page" extends=".mainLayout">
+		<put name="title" value="Hierarchy Transfer" />
+		<put name="body" value="/jsp/reverse/HierarchyTransfer.jsp" />
+	</definition>
+	<!--	Added by Shilpa Khanna Ends -->
+
+
+
+
+	<!--	Added by Naveen Ends -->
+
+
+
+
+
+	<!--	Added by Nazim -->
+
+	<definition name="ViewHierarchyAccept.page" extends=".mainLayout">
+		<put name="title" value="Hierarchy Transfer Accept" />
+		<put name="body" value="/jsp/reverse/HierarchyAccept.jsp" />
+	</definition>
+
+	<definition name="DPHierarchyAcceptView.page"
+		extends=".popupLayout">
+		<put name="title" value="View Hierarchy Transfer Accept" />
+		<put name="body" value="/jsp/reverse/DPHierarchyAcceptView.jsp" />
+	</definition>
+
+	<!--	Added by Shilpa Khanna for Repair STB-->
+	<definition name="repairStb.page" extends=".mainLayout">
+		<put name="title" value="Repair STB" />
+		<put name="body" value="/jsp/reverse/RepairSTB.jsp" />
+	</definition>
+	<!--	Added by Shilpa Khanna Ends -->
+
+	<!--	Added by Shilpa Khanna for sack Distributor-->
+	<definition name="sackDistributor.page" extends=".mainLayout">
+		<put name="title" value="Sack Distributor" />
+		<put name="body" value="/jsp/reverse/SackDistributor.jsp" />
+	</definition>
+	<!--	Added by Shilpa Khanna Ends -->
+
+	<!--	Added by Naveen for bulk upload-->
+	<definition name="c2sbulkupload.page" extends=".mainLayout">
+		<put name="title" value="C2S Bu Distributor" />
+		<put name="body" value="/jsp/reverse/c2sbulkupload.jsp" />
+	</definition>	
+	
+	<!--	Added by Arti for bulk upload-->
+	<definition name="whdistmapp.page" extends=".mainLayout">
+		<put name="title" value="Distributor Warehouse Mapping Bulk" />
+		<put name="body" value="/jsp/warehouse/whdistmapp.jsp" />
+	</definition>	
+	
+<!--	Added by Naveen for bulk upload ends-->
+			<definition name="dcsrNoChangeStatus.page" extends=".popupLayout">
+		<put name="title" value="STB Status" />
+		<put name="body" value="/jsp/reverse/DpDcsrnoChangeStatus.jsp" />
+	</definition>
+
+	<definition name="dcsrNoFreshStatus.page" extends=".popupLayout">
+		<put name="title" value="STB Status" />
+		<put name="body" value="/jsp/reverse/DpDcsrnoFreshStatus.jsp" />
+	</definition>
+
+	<!--  Added by Shilpa for Non Serialized Stock Bulk Upload -->
+	<definition name="nsBulkupload.page" extends=".mainLayout">
+		<put name="title" value="Non Serialized Bulk Upload" />
+		<put name="body" value="/jsp/reco/NSBulkUpload.jsp" />
+	</definition>
+	<!-- Added by Shilpa Ends here -->
+
+	<!--  Added by Shilpa for Inter SSD Transfer by DTH Admin-->
+	<definition name="interSsdTranfrAdmin.page" extends=".mainLayout">
+		<put name="title" value="Inter SSD Transfer" />
+		<put name="body" value="/jsp/reverse/InterSsdTransferAdmin.jsp" />
+	</definition>
+
+	<definition name="viewStbList.page" extends=".popupLayout">
+		<put name="title" value="Serial Nos" />
+		<put name="body"
+			value="/jsp/reverse/InterSsdTransferStbList.jsp" />
+	</definition>
+	<!-- Added by Shilpa Ends here -->
+
+	<!--	Added by DIGVIJAY SINGH THAKUR -->
+	<definition name="recoSummary.page" extends=".mainLayout">
+		<put name="title" value="Reco Summary Report" />
+		<put name="body" value="/jsp/report/recoSummary.jsp" />
+	</definition>
+	<!--	Added by DIGVIJAY SINGH THAKUR -->
+
+	<!--  Added by Shilpa for Dist Reco Detail-->
+	<definition name="DistReco.page" extends=".recoLayout">
+		<put name="title" value="Distributor Reco Details" />
+		<put name="body" value="/jsp/reco/DistRecoTab.jsp" />
+	</definition>
+	<!-- Added by Shilpa Ends here -->
+
+	<definition name="recoPeriodConfiguration.page"
+		extends=".mainLayout">
+		<put name="title" value="Reco Period Configuration" />
+		<put name="body" value="/jsp/reco/recoPeriodConfiguration.jsp" />
+	</definition>
+
+	<definition name="printRecoDetail.page" extends=".popupLayout">
+		<put name="title" value="Print Reco Details" />
+		<put name="body" value="/jsp/reco/printReco.jsp" />
+	</definition>
+	
+	<definition name="RecoDetailPrint.page" extends=".popupLayout">
+		<put name="title" value="Print Reco Details" />
+		<put name="body" value="/jsp/reco/printRecoDetails.jsp" />
+	</definition>
+	
+	<definition name="recoDetailReport.page" extends=".mainLayout">
+		<put name="title" value="Reco Detial Report" />
+		<put name="body" value="/jsp/misReport/recoDetailReport.jsp" />
+	</definition>
+
+	<definition name="serializedStockReport.page"
+		extends=".mainLayout">
+		<put name="title" value="Serialized Stock Report" />
+		<put name="body"
+			value="/jsp/misReport/serializedStockReport.jsp" />
+	</definition>
+
+	<definition name="activationDetailReport.page"
+		extends=".mainLayout">
+		<put name="title" value="Activation Detail Report" />
+		<put name="body"
+			value="/jsp/misReport/activationDetailReport.jsp" />
+	</definition>
+
+	<definition name="poDetailReport.page" extends=".mainLayout">
+		<put name="title" value="PO Detail Report" />
+		<put name="body" value="/jsp/misReport/PODetailReport.jsp" />
+	</definition>
+	<definition name="CollectionDetailsReport.page"
+		extends=".mainLayout">
+		<put name="title" value="Collection Detail Report" />
+		<put name="body"
+			value="/jsp/reverse/CollectionDetailsReport.jsp" />
+	</definition>
+
+
+	<definition name="NonSerializedConsumptionReport.page"
+		extends=".mainLayout">
+		<put name="title" value="NonSerializedConsumption Report" />
+		<put name="body"
+			value="/jsp/misReport/NonSerializedConsumption.jsp" />
+	</definition>
+
+	<definition name="InterSSDStockTransfer.page"
+		extends=".mainLayout">
+		<put name="title" value="Inter SSD Stock Transfer Report" />
+		<put name="body" value="/jsp/report/InterSSDStockTransfer.jsp" />
+	</definition>
+	<definition name="recoSummaryReport.page" extends=".mainLayout">
+		<put name="title" value="Stock Reco Summary Report" />
+		<put name="body" value="/jsp/misReport/StockRecoSummReport.jsp" />
+	</definition>
+	
+		<definition name="closeDistributorReco.page" extends=".mainLayout">
+		<put name="title" value="Close Reco For Distributor" />
+		<put name="body" value="/jsp/report/CloseDistributorReco.jsp" />
+	</definition>
+	
+	<definition name="STBWiseSerializedStockReport.page"
+		extends=".mainLayout">
+		<put name="title" value="STBWise Serialized Stock Report" />
+		<put name="body"
+			value="/jsp/misReport/STBWiseSerializedStockReport.jsp" />
+	</definition>
+
+	<definition name="GenericReports.page" extends=".mainLayout">
+		<put name="title" value="Generic Report" />
+		<put name="body" value="/jsp/report/GenericReports.jsp" />
+	</definition>
+
+	<definition name="transferPendingSTB.page" extends=".mainLayout">
+		<put name="title" value="Transfer Pending STBs" />
+		<put name="body" value="/jsp/reverse/TransferPendingSTB.jsp" />
+	</definition>
+	<definition name="nonSerializedActivation.page"
+		extends=".mainLayout">
+		<put name="title" value="Non Serialized Activation" />
+		<put name="body"
+			value="/jsp/transaction/NonSerializedActivation.jsp" />
+	</definition>
+	
+	<definition name="negetiveEligibility.page"
+		extends=".mainLayout">
+		<put name="title" value="Negetive Eigilbility Report" />
+		<put name="body"
+			value="/jsp/report/NegetiveEligibilityReport.jsp" />
+	</definition>
+
+	
+		<!--  Added by Shah for Churn Generation -->
+	    <definition name="ReverseChurnCollection.init.page" extends=".mainLayout">
+			<put name="title" value="Reverse Churn Collection" />
+			<put name="body" value="/jsp/reverse/DPReverseChurnCollection.jsp" />
+		</definition>
+			
+		<definition name="ChurnDCGeneration.init.page" extends=".mainLayout">
+			<put name="title" value="Churn DC Generation" />
+			<put name="body" value="/jsp/reverse/ChurnDCGeneration.jsp" />
+		</definition>
+		<definition name="dpReverseChurnExcel" path="/jsp/reco/dpReverseChurnExcel.jsp">
+		</definition>
+   <!--  END -->
+   
+   			<!--  Added by SHAH for View DC_CHURN Status tab -->
+			<definition name="dcsrNoChurnStatus.page" extends=".popupLayout">
+				<put name="title" value="STB Status" />
+				<put name="body" value="/jsp/reverse/DpDcsrnoChurnStatus.jsp" />
+			</definition>
+			<definition name="DpDcsrnoChurnStatus" path="/jsp/reverse/DpDcsrnoChurnStatus.jsp">
+			</definition>
+		
+			<definition name="dcChurnStatus.page" extends=".mainLayout">
+				<put name="title" value="DC Churn Status" />
+				<put name="body" value="/jsp/reverse/DpDcChurnStatus.jsp" />
+			</definition>
+			<!--  Ended by SHAH for View DC_CHURN Status tab -->
+   
+   <definition name="accountDetailReport.page" extends=".mainLayout">
+		<put name="title" value="Account Detail Report" />
+		<put name="body" value="/jsp/misReport/accountDetailReport.jsp" />
+	</definition>
+	
+	 <definition name="accountManagementActivityReport.page" extends=".mainLayout">
+		<put name="title" value="Account Management Activity Report" />
+		<put name="body" value="/jsp/misReport/accountManagementActivityReport.jsp" />
+	</definition>
+
+<!--  Added by ARTI for Stock Level Bulk Upload -->
+	<definition name="stlBulkupload.page" extends=".mainLayout">
+		<put name="title" value="DP Stock Level" />
+		<put name="body" value="/jsp/configuration/DPStockLevel.jsp" />
+	</definition>	
+	
+	<!--  Added by ARTI for Security Deposit Loan Bulk Upload -->
+	<definition name="sdlBulkupload.page" extends=".mainLayout">
+		<put name="title" value="DP Stock Level" />
+		<put name="body" value="/jsp/configuration/DPDistSecurityDepositLoan.jsp" />
+	</definition>
+	<definition name="circleActivationSummaryReport.page" extends=".mainLayout">
+		<put name="title" value="Circle Activation Summary Report" />
+		<put name="body" value="/jsp/misReport/CircleActivationSummary.jsp" />
+	</definition>
+	
+	<definition name="dayWisectivationSummaryReport.page" extends=".mainLayout">
+		<put name="title" value="Day Wise Activation Summary Report" />
+		<put name="body" value="/jsp/misReport/dayWiseActivationReport.jsp" />
+	</definition>
+	<!--  Added by VARUN -->
+	<definition name="rejectedInvReport.page" extends=".mainLayout">
+		<put name="title" value="Rejected Invoice Report" />
+		<put name="body" value="/jsp/report/RejectedInvReport.jsp" />
+	</definition>
+	
+	<!--  Added by ARTI for Product Security List Bulk Upload -->
+	<definition name="pslBulkupload.page" extends=".mainLayout">
+		<put name="title" value="DP Product Security List" />
+		<put name="body" value="/jsp/configuration/DPProductSecurityList.jsp" />
+	</definition>
+	
+	<!--  Added by Sugandha for Initiate FnF -->
+	<definition name="dpInitiateFnf.page" extends=".mainLayout">
+		<put name="title" value="DP Initiate FnF" />
+		<put name="body" value="/jsp/transaction/initiateFnf.jsp" />
+	</definition>
+	<!--  Added by Sugandha for View stock of distributor whose Initiating FnF is going to be initated -->
+	<definition name="dpViewStockFnFDist.page" extends=".popupLayout">
+		<put name="title" value="STB Status" />
+		<put name="body" value="/jsp/transaction/dpViewStockFnFDist.jsp" />
+	</definition>
+	<!--  Added by Sugandha for Approval by ZSM to FnF -->
+	<definition name="dpApproveFnF.page" extends=".mainLayout">
+		<put name="title" value="DP Approve FnF" />
+		<put name="body" value="/jsp/transaction/approveFnF.jsp" />
+	</definition>
+	<!--  Added by Sugandha for Confirm by Finance User to FnF -->
+	<definition name="dpConfirmFnF.page" extends=".mainLayout">
+		<put name="title" value="DP Confirm FnF" />
+		<put name="body" value="/jsp/transaction/confirmFnF.jsp" />
+	</definition>
+	<!--  Added by Sugandha for AvStockUploadForDthAdmin -->
+	<definition name="AvStockUpload.page" extends=".mainLayout">
+		<put name="title" value="Av Stock Upload" />
+		<put name="body" value="/jsp/transaction/AvStockUpload.jsp" />
+	</definition>
+	<!--  Added by Sugandha for DistAvStockUploadForDistributor -->
+	<definition name="DistAvStockUpload.page" extends=".mainLayout">
+		<put name="title" value="Av Stock Upload" />
+		<put name="body" value="/jsp/transaction/distAvStockUpload.jsp" />
+	</definition>
+	<definition name="SerializedUpload.page" extends=".mainLayout">
+		<put name="title" value="NonSerialized to Serialized " />
+		<put name="body" value="/jsp/transaction/nonSerializedToSerializedConversion.jsp" />
+	</definition>
+	<!--  Added by Sugandha for Distributor Pincode Mapping Upload  -->
+	<definition name="dpDistPinCodeMap.page" extends=".mainLayout">
+		<put name="title" value="DP Distributor PinCode Upload" />
+		<put name="body" value="/jsp/configuration/dpDistributorPinCodeMap.jsp" />
+	</definition>
+	<!-- Added by Sugandha for Alertconfiguration for dthadmin -->
+	<definition name="dpAdminAlertconfiguration.page" extends=".mainLayout">
+		<put name="title" value="DP Admin Alertconfiguration" />
+		<put name="body" value="/jsp/transaction/DPAlertConfiguration.jsp" />
+	</definition>
+	<!-- Added by Sugandha for Alertconfiguration for otherUser -->
+	<definition name="dpOtherUserAlertconfiguration.page" extends=".mainLayout">
+		<put name="title" value="DP  Alertconfiguration" />
+		<put name="body" value="/jsp/transaction/DPAlertConfigurationOthers.jsp" />
+	</definition>
+	<!-- Added by Sugandha to configure Alerts -->
+	<definition name="dpAlertConfiguration.page" extends=".mainLayout">
+		<put name="title" value="DP Alert Configuration" />
+		<put name="body" value="/jsp/transaction/DPAlertConfiguration.jsp" />
+	</definition>
+		<definition name="dpAlertConfigurationOthers.page" extends=".mainLayout">
+		<put name="title" value="DP Alert Configuration" />
+		<put name="body" value="/jsp/transaction/DPAlertConfigurationOthers.jsp" />
+	</definition>
+	
+	
+	<!-- Added by Sugandha to edit reco details -->
+	<definition name="editRecoDetail.page" extends=".mainLayout">
+		<put name="title" value="Edit Reco Detail" />
+		<put name="body" value="/jsp/transaction/EditRecoDetail.jsp" />
+	</definition>
+
+	<!-- Added by sugandha to view for recoperiod configuration graceperiod  -->
+	<definition name="dpViewGracePeriod.page" extends=".popupLayout">
+		<put name="title" value="Reco Period Configuration" />
+		<put name="body" value="/jsp/transaction/dpViewRecoGraceConf.jsp" />
+	</definition>
+
+	
+	<!-- Added by Rampratap For transfer hierarchy 26-06-13 -->
+	<definition name="dpTransferHierarchy.page"  extends=".mainLayout">
+		<put name="title" value="Transfer Hierarchy" />
+		<put name="body" value="/jsp/account/TransferHierarchy.jsp" />
+	</definition>
+	
+	
+	<!-- added by aman for dp-reco on 12/02/14 -->
+	
+	<definition name="debitAmountMstr.page"  extends=".mainLayout">
+		<put name="title" value="Debit Amount Master" />
+		<put name="body" value="/jsp/report/debitAmountMstr.jsp" />
+	</definition>
+	<definition name="dpCardGrpMstr.page"  extends=".mainLayout">
+		<put name="title" value="Card Group Master" />
+		<put name="body" value="/jsp/report//dpCardGrpMstr.jsp" />
+	</definition>
+	<!-- end of changes by aman -->
+	
+	<!-- Adding by RAM for uploadDistributor eligibility by dthadmin -->
+	<definition name="uploadEligibility.page" extends=".mainLayout">
+		<put name="title" value="Upload Distributor Stock Eligibility" />
+		<put name="body" value="/jsp/transaction/UploadDistStockEligibility.jsp" />
+	</definition>
+	<!-- end of Adding by RAM for uploadDistributor eligibility by dthadmin -->
+
+	
+	<definition name="dpRetailerLapuData.page" extends=".mainLayout">
+		<put name="title" value="Retailers LAPU data" />
+		<put name="body" value="/jsp/report/RetailersLapuData.jsp" />
+	</definition>
+	
+	<definition name="inactivePartnrTranfrAdmin.page" extends=".mainLayout">
+		<put name="title" value="Inactive Partner Stock Transfer" />
+		<put name="body" value="/jsp/reverse/InactivePartnerStockTrans.jsp" />
+	</definition>
+	
+	<definition name="ManufacturerDetails.page" extends=".mainLayout">
+		<put name="title" value="Manufacturer Details Upload"/>
+		<put name="body" value="/jsp/reverse/ManufacturerDetails.jsp"/>
+	</definition>
+	
+	<definition name="ViewManufacturer.page" extends=".mainLayout">
+		<put name="title" value="View_Manufacturer"/>
+		<put name="body" value="/jsp/reverse/viewManufacturer.jsp"/>
+	</definition>
+	
+	<definition name="dpInvoiceUpload.page" extends=".mainLayout">
+		<put name="title" value="Invoice Upload" />
+		<put name="body" value="/jsp/transaction/dpInvoiceUpload.jsp" />
+	</definition>
+	
+	<definition name="dpInvoiceDisp.page" extends=".mainLayout">
+		<put name="title" value="Invoice" />
+		<put name="body" value="/jsp/transaction/dpInvoice.jsp" />
+	</definition>
+	
+	<definition name="dpInvoiceList.page" extends=".mainLayout">
+		<put name="title" value="List Invoice" />
+		<put name="body" value="/jsp/transaction/ViewInvoice.jsp" />
+	</definition>
+	
+	<definition name="dpInvoiceSTBDisp.page" extends=".mainLayout">
+		<put name="title" value="Invoice" />
+		<put name="body" value="/jsp/transaction/dpInvoice2.jsp" />
+	</definition>
+	
+	<!--  added by jyotsna --> 
+	
+	<definition name="configurationMaster.page" extends=".mainLayout">
+		<put name="title" value="Configuration Master" />
+		<put name="body" value="/jsp/configuration/configurationMaster.jsp" />
+	</definition>
+	<definition name="uploadTrailReport.page" extends=".mainLayout">
+	<put name="title" value="Upload Trail Report"/>
+	<put name="body" value="/jsp/report/uploadTrailReport.jsp"/>
+	</definition>
+	
+	<!--  Added by Sanjay for Pending and inter ssd List Transfer Bulk Upload -->
+	<definition name="pltBulkupload.page" extends=".mainLayout">
+		<put name="title" value="DP Pending List Transfer" />
+		<put name="body" value="/jsp/configuration/DPPendingListTransferBulkUpload.jsp" />
+	</definition>
+	
+	<definition name="issdBulkupload.page" extends=".mainLayout">
+		<put name="title" value="DP Inter SSD Transfer" />
+		<put name="body" value="/jsp/configuration/DPInterSSDTransferBulkUpload.jsp" />
+	</definition>
+	
+</tiles-definitions>

@@ -1,0 +1,580 @@
+h1 {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	margin: 0;
+	padding: 0;
+	font-size: 1px;
+	height: 0px;
+	text-indent: -2000px;
+	display: none;
+}
+h2{
+	font-family: Tahoma;
+	font-size: 14px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	font-weight: bold;
+	color: #ff0000;
+	text-decoration: none;
+}
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-width: 0px;
+	marginheight: 0px;
+	background-color:#FFFFFF;
+	color: #999999;
+}
+.top-curve {
+	background-image: url(../images/top-grey-curve.gif);
+	background-repeat: no-repeat;
+	background-position: left top;
+	width: 10;
+	
+}
+.top-bg {
+	background-image: url(../images/top-grey-bg.gif);
+	background-repeat: repeat-x;
+	background-position: left top;
+	}
+.top-red-curve {
+	background-image: url(../images/top-red-curve.gif);
+	background-repeat: no-repeat;
+	background-position: left top;
+	height: 30px;
+	width: 232;
+}
+.bottom-curve {
+	background-image: url(../images/bottom-curve.gif);
+	background-repeat: no-repeat;
+	background-position: right top;
+	height: 10px;
+}
+a.top-right-links:Link, a.top-right-links:Visited, a.top-right-links:Active{
+	font-family: Tahoma;
+	font-size: 11px;
+	font-weight: normal;
+	color: red;
+	font-weight: bold;
+	text-decoration: underline;
+}
+a.top-right-links:hover {
+	font-family: Tahoma;
+	font-size: 11px;
+	font-weight: normal;
+	color: #000000;
+	font-weight: bold;
+	text-decoration: underline;
+}
+a.top-left-links:Link, a.top-left-links:Visited, a.top-left-links:Active{
+	font-family: Tahoma;
+	font-size: 11px;
+	font-weight: bold;
+	color: #ffffff;
+	text-decoration: none;
+}
+a.top-left-links:hover {
+	font-family: Tahoma;
+	font-size: 11px;
+	font-weight: bold;
+	color: #cccccc;
+	text-decoration: none;
+}
+a.sub-menu:Link, a.sub-menu:Visited, a.sub-menu:Active{
+	font-family: Tahoma;
+	font-size: 11px;
+	color: #ffffff;
+	text-decoration: none;
+}
+a.sub-menu:hover {
+	font-family: Tahoma;
+	font-size: 11px;
+	color: #000000;
+	text-decoration: none;
+}
+
+.head1 {
+	font-family: Verdana;
+	font-size: 12px;
+	font-weight: bold;
+	color: #4c4c4c;
+	text-decoration: none;
+}
+.head2 {
+	font-family: Verdana;
+	font-size: 13px;
+	font-weight: bold;
+	color: #4c4c4c;
+	text-decoration: none;
+}
+
+.norm-text {
+	font-family: Tahoma;
+	font-size: 11px;
+	color: #535353;
+	text-align:justify;
+	text-decoration: none;
+}
+.more {
+	font-family: Tahoma;
+	font-size: 11px;
+	color: #ff0000;
+	text-align:right;
+	text-decoration: none;
+}
+.more:hover {
+	font-family: Tahoma;
+	font-size: 11px;
+	color: #535353;
+	text-align:right;
+	text-decoration: none;
+}
+.footer {
+	font-family: Tahoma;
+	font-size: 11px;
+	color: #b7b7b7;
+	text-align:right;
+	text-decoration: none;
+}
+.dot-hor {
+	background-image: url(../images/dot-bg-horz.gif);
+	background-repeat: repeat-x;
+	background-position: left top;
+}
+.dot-ver {
+	background-image: url(../images/dot-bg.gif);
+	background-repeat: repeat-y;
+	background-position: left top;
+}.boldhead {
+	font-family: Tahoma, Verdana, Times New Roman;
+	font-size: 11px;
+	font-weight: bold;
+	color: #535353;
+	text-decoration: none;
+	padding-left:3px;
+}
+.redhead {
+	font-family: Tahoma, Verdana, Times New Roman;
+	font-size: 11px;
+	font-weight: none;
+	color: #ff000f;
+	text-decoration: none;
+}
+.spacer {
+	font-family: Tahoma;
+	font-size: 13px;
+	color: #535353;
+	text-align:justify;
+	text-decoration: none;
+	
+}.norm-textunderline {
+	font-family: Tahoma, Verdana, Times New Roman;
+	font-size: 11px;
+	font-weight: normal;
+	color: #535353;
+	text-decoration: underline;
+}
+
+.flat {  border: 1px #666666 solid; font-family: Tahoma; font-size: 11px; color: #000000; background-color: #F9F9F7;}
+.more2 {
+	font-family: Tahoma, Verdana, Times New Roman;
+	font-size: 11px;
+	font-weight: normal;
+	color: #7F7F7F;
+}
+.border {
+	border: 1px dotted #CCCCCC;
+}
+TEXTAREA {
+	PADDING-LEFT: 1px
+}
+INPUT {
+	PADDING-LEFT: 1px
+}
+.head1 {
+	font-family: Verdana;
+	font-size: 12px;
+	font-weight: bold;
+	color: #4c4c4c;
+	text-decoration: none;
+}
+.headingRedBold {
+	FONT-WEIGHT: bold; PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 11px; PADDING-BOTTOM: 0px; MARGIN: 0px; COLOR: #ff0000; PADDING-TOP: 0px; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif
+}
+.footerText {
+	FONT-SIZE: 7.5pt; COLOR: #ffffff; FONT-FAMILY: Verdana; BACKGROUND-COLOR: #E90004
+}
+.black10bold {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #000000; LINE-HEIGHT: 12px; PADDING-TOP: 3px; FONT-FAMILY: verdana, arial, helvetica, sans-serif
+}
+.pLeft30 {
+	PADDING-LEFT: 30px;
+}
+.pLeft20 {
+	PADDING-LEFT: 20px;
+}
+.pLeft10 {
+	PADDING-LEFT: 20px;
+}
+.pLeft5 {
+	PADDING-LEFT: 5px
+}
+.pTop30 {
+	PADDING-TOP: 30px
+}
+.pTop10 {
+	PADDING-TOP: 10px
+}
+.pRight5 {
+	PADDING-RIGHT: 5px
+}
+.pRight10 {
+	PADDING-RIGHT: 10px
+}
+.punchline {
+	font-family: Tahoma, Verdana, Times New Roman;
+	font-size: 13px;
+	font-weight: bold;
+	color: #a1a1a1;
+	text-decoration: none;
+	text-align:center;
+}
+.tag-line {
+	font-family: Arial;
+	font-size: 18px;
+	font-weight: normal;
+	color: #7f7f7f;
+	text-decoration: none;
+	text-align: center;
+	line-height: 22px;
+}
+.headingRedBold {
+	FONT-WEIGHT: bold; PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 11px; PADDING-BOTTOM: 0px; MARGIN: 0px; COLOR: #ff0000; PADDING-TOP: 0px; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif
+}
+A:Visited, A:Active, A:Link
+{
+	FONT-SIZE: 11px;
+	FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	text-decoration:underline;
+	color: #338899;
+}
+A:Hover
+{
+	color: #ff0000;
+}
+.greyBg {
+	BACKGROUND-COLOR: #ffe4e1
+}
+.lightGreyBg {
+	BACKGROUND-COLOR: #f5f5f5
+}
+TD {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; LINE-HEIGHT: 20px;FONT-SIZE: 11px; PADDING-BOTTOM: 0px; MARGIN: 0px; COLOR: #333333; PADDING-TOP: 0px; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif
+}
+TD.txt1
+{
+    COLOR: blue;
+    FONT-FAMILY: Arial;
+    FONT-SIZE: 9px;
+    
+}
+TD.txt
+{
+    COLOR: black;
+    FONT-FAMILY: Arial;
+    FONT-SIZE: 12px;
+    FONT-WEIGHT: bold
+}
+TD.txt2
+{
+    COLOR: blue;
+    FONT-FAMILY: Arial;
+    FONT-SIZE: 12px;
+    FONT-WEIGHT: bold
+}
+
+TD.man
+{
+    COLOR: red;
+    FONT-FAMILY: Arial, sans-serif;
+    FONT-SIZE: 12px;
+    FONT-WEIGHT: bold
+}
+TD.man1
+{
+    COLOR: #333333;
+    FONT-FAMILY: Arial, sans-serif;
+    FONT-SIZE: 12px;
+    FONT-WEIGHT: bold
+}
+.heading {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 18px; PADDING-BOTTOM: 0px; MARGIN: 0px; COLOR: #ff0000; PADDING-TOP: 0px; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif
+}
+.colhead {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: white; FONT-FAMILY: Arial, 'MS Sans Serif'; BACKGROUND-COLOR: #E90004; line-height:19px
+}
+.white10heading {
+	FONT-WEIGHT: bold; FONT-SIZE: 10px; COLOR: #ffffff; LINE-HEIGHT: 12px; PADDING-TOP: 3px; FONT-FAMILY: verdana, arial, helvetica, sans-serif
+}
+.black10bold1 {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #000000; LINE-HEIGHT: 12px; PADDING-TOP: 3px; FONT-FAMILY: verdana, arial, helvetica, sans-serif
+}
+.width90 {
+	WIDTH: 90px
+}
+
+INPUT, TEXTAREA, SELECT {
+	Z-INDEX: -1; BORDER-RIGHT: #a29c9c 1px solid; BORDER-TOP: #a29c9c 1px solid; FONT-SIZE: 10px; BORDER-LEFT: #a29c9c 1px solid; COLOR: #000000; BORDER-BOTTOM: #a29c9c 1px solid; FONT-STYLE: normal; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+.pLeft100
+{
+    padding-left:95px
+}
+.pLeft26
+{
+    padding-left:26px
+}
+.pLeft30
+{
+    padding-left:30px
+}
+.pLeft33
+{
+    padding-left:33px
+}
+.pLeft59
+{
+    padding-left:59px
+}
+.mLeft100 {
+	MARGIN-LEFT: 100px;
+}
+.mTop70 {
+	MARGIN-TOP: 70px
+}
+.mLeft30 {
+	MARGIN-LEFT: 30px
+}
+.mLeft5 {
+	MARGIN-LEFT: 5px
+}
+.pLeft165 {
+	PADDING-LEFT: 165px
+}
+.mTop5 {
+	MARGIN-TOP: 5px
+}
+
+SELECT.medium
+{
+    HEIGHT: 20px;
+    TEXT-ALIGN: left;
+    WIDTH: 90px;
+    z-index: -1;
+}
+SELECT.between
+{
+    HEIGHT: 20px;
+    TEXT-ALIGN: left;
+    WIDTH: 130px;
+    z-index: -1;
+}
+SELECT.big
+{
+    HEIGHT: 20px;
+    TEXT-ALIGN: center;
+    WIDTH: 160px;
+    z-index: -1;
+}
+SELECT.bigger
+{
+    HEIGHT: 20px;
+    TEXT-ALIGN: center;
+    WIDTH: 250px;
+    z-index: -1;
+}
+SELECT.wide
+{
+    HEIGHT: 20px;
+    TEXT-ALIGN: center;
+    WIDTH: 300px;
+    z-index: -1;
+}
+INPUT.big
+{
+    HEIGHT: 20px;
+    WIDTH: 137px
+}
+INPUT.bigger
+{
+    HEIGHT: 20px;
+    WIDTH: 160px
+}
+INPUT.medium
+{
+    HEIGHT: 20px;
+    WIDTH: 50px
+}
+INPUT.large
+{
+    BACKGROUND-COLOR: #ff0000;
+    COLOR: white;
+    CURSOR: hand;
+    HEIGHT: 20px;
+    TEXT-ALIGN: center;
+    WIDTH: 120px            
+}
+INPUT.medium
+{
+    BACKGROUND-COLOR: #ff0000;
+    COLOR: white;
+    CURSOR: hand;
+    HEIGHT: 20px;
+    TEXT-ALIGN: center;
+    WIDTH: 50px            
+}
+INPUT.small
+{
+    HEIGHT: 20px;
+    WIDTH: 30px
+}
+INPUT.between
+{
+    HEIGHT: 20px;
+    WIDTH: 118px
+}
+INPUT.wide
+{
+    HEIGHT: 20px;
+    WIDTH: 250px
+}
+INPUT.numbig
+{
+    HEIGHT: 20px;
+    TEXT-ALIGN: right;
+    WIDTH: 125px
+}
+INPUT.nummedium
+{
+    HEIGHT: 20px;
+    TEXT-ALIGN: right;
+    WIDTH: 50px
+}
+INPUT.numsmall
+{
+    HEIGHT: 20px;
+    TEXT-ALIGN: right;
+    WIDTH: 30px
+}
+INPUT.numbetween
+{
+    HEIGHT: 20px;
+    TEXT-ALIGN: right;
+    WIDTH: 80px
+}
+INPUT.subbig
+{
+    BACKGROUND-COLOR: E90004;
+    COLOR: white;
+    CURSOR: hand;
+    HEIGHT: 20px;
+    WIDTH: 75px
+}
+INPUT.subpopbut
+{
+    BACKGROUND-COLOR: #ff0000;
+    COLOR: white;
+    CURSOR: hand;
+    HEIGHT: 20px;
+    WIDTH: 47px
+}
+
+INPUT.submedium
+{
+    BACKGROUND-COLOR: #ffaa12;
+    COLOR: black;
+    CURSOR: hand;
+    HEIGHT: 20px;
+    TEXT-ALIGN: center
+}
+INPUT.subsmall
+{
+    BACKGROUND-COLOR: #ffaa12;
+    COLOR: black;
+    CURSOR: hand;
+    HEIGHT: 20px;
+    WIDTH: 30px
+}
+INPUT.subbetween
+{
+    BACKGROUND-COLOR: #ffaa12;
+    COLOR: black;
+    CURSOR: hand;
+    HEIGHT: 20px;
+    WIDTH: 80px
+}
+INPUT.subwid
+{
+    BACKGROUND-COLOR: #ffaa12;
+    COLOR: black;
+    CURSOR: hand;
+    HEIGHT: 20px;
+    WIDTH: 200px
+}
+INPUT.subwide
+{
+    BACKGROUND-COLOR: #ffaa12;
+    COLOR: black;
+    CURSOR: hand;
+    HEIGHT: 20px;
+    WIDTH: 340px
+}
+INPUT.go
+{
+    BACKGROUND-COLOR: #ffaa12;
+    COLOR: black;
+    CURSOR: hand;
+    HEIGHT: 20px;
+    WIDTH: 25px
+}
+FORM.suppress
+{
+    DISPLAY: inline
+}
+TEXTAREA.big
+{
+    HEIGHT: 75px;
+    WIDTH: 500px
+}
+TEXTAREA.wide
+{
+    HEIGHT: 40px;
+    WIDTH: 250px
+}
+SELECT.small
+{
+    HEIGHT: 20px;
+    TEXT-ALIGN: left;
+    WIDTH: 55px;
+    z-index: -1;
+}
+SELECT.tiny
+{
+    HEIGHT: 20px;
+    TEXT-ALIGN: left;
+    WIDTH: 35px;
+    z-index: -1;
+}
+
+thead tr {
+	background-color: RoyalBlue;
+}
+
+.grouped-table tr.even {
+    background-color: #fff;
+}
+.grouped-table tr.odd {
+    background-color: #fff;
+}

@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--xtools2_universal_type_manager-->
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.ibm.com/xtools/1.5.0/Notation" xmlns:uml="http://www.eclipse.org/uml2/1.0.0/UML" xmlns:umlnotation="http://www.ibm.com/xtools/1.5.0/Umlnotation" xmi:id="_PrKssL0HEdyd9tl3-3ogUQ" type="Class" name="classdiagram7.dnx">
+  <children xmi:id="_SvtbwL0HEdyd9tl3-3ogUQ" targetEdges="_bittCL0IEdyd9tl3-3ogUQ">
+    <children xmi:id="_Svtbw70HEdyd9tl3-3ogUQ" type="ImageCompartment">
+      <element xmi:type="uml:Class" href="vizref:///#jsrctype^vcore.target=uml2.Class^name=SingleFSODealerMappingBean[jcu^name=SingleFSODealerMappingBean.java[jpack^name=com.ibm.virtualization.ussdactivationweb.beans[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]"/>
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_SvtbxL0HEdyd9tl3-3ogUQ" width="1320" height="1320"/>
+    </children>
+    <children xmi:id="_Svtbxb0HEdyd9tl3-3ogUQ" type="Stereotype">
+      <element xmi:type="uml:Class" href="vizref:///#jsrctype^vcore.target=uml2.Class^name=SingleFSODealerMappingBean[jcu^name=SingleFSODealerMappingBean.java[jpack^name=com.ibm.virtualization.ussdactivationweb.beans[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]"/>
+    </children>
+    <children xmi:id="_Svtbxr0HEdyd9tl3-3ogUQ" type="Name">
+      <element xmi:type="uml:Class" href="vizref:///#jsrctype^vcore.target=uml2.Class^name=SingleFSODealerMappingBean[jcu^name=SingleFSODealerMappingBean.java[jpack^name=com.ibm.virtualization.ussdactivationweb.beans[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]"/>
+    </children>
+    <children xmi:id="_Svtbx70HEdyd9tl3-3ogUQ" type="AttributeCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_SvtbyL0HEdyd9tl3-3ogUQ"/>
+      <element xmi:type="uml:Class" href="vizref:///#jsrctype^vcore.target=uml2.Class^name=SingleFSODealerMappingBean[jcu^name=SingleFSODealerMappingBean.java[jpack^name=com.ibm.virtualization.ussdactivationweb.beans[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]"/>
+    </children>
+    <children xmi:id="_Svtbyb0HEdyd9tl3-3ogUQ" type="OperationCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_Svtbyr0HEdyd9tl3-3ogUQ"/>
+      <element xmi:type="uml:Class" href="vizref:///#jsrctype^vcore.target=uml2.Class^name=SingleFSODealerMappingBean[jcu^name=SingleFSODealerMappingBean.java[jpack^name=com.ibm.virtualization.ussdactivationweb.beans[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]"/>
+    </children>
+    <children xmi:id="_Svtby70HEdyd9tl3-3ogUQ" visible="false" type="SignalCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_SvtbzL0HEdyd9tl3-3ogUQ"/>
+      <element xmi:type="uml:Class" href="vizref:///#jsrctype^vcore.target=uml2.Class^name=SingleFSODealerMappingBean[jcu^name=SingleFSODealerMappingBean.java[jpack^name=com.ibm.virtualization.ussdactivationweb.beans[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]"/>
+    </children>
+    <children xmi:id="_Svtbzb0HEdyd9tl3-3ogUQ" visible="false" type="StructureCompartment">
+      <styles xmi:type="umlnotation:UMLShapeCompartmentStyle" xmi:id="_Svtbzr0HEdyd9tl3-3ogUQ"/>
+      <element xmi:type="uml:Class" href="vizref:///#jsrctype^vcore.target=uml2.Class^name=SingleFSODealerMappingBean[jcu^name=SingleFSODealerMappingBean.java[jpack^name=com.ibm.virtualization.ussdactivationweb.beans[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_Svtbwb0HEdyd9tl3-3ogUQ" showStereotype="Label"/>
+    <element xmi:type="uml:Class" href="vizref:///#jsrctype^vcore.target=uml2.Class^name=SingleFSODealerMappingBean[jcu^name=SingleFSODealerMappingBean.java[jpack^name=com.ibm.virtualization.ussdactivationweb.beans[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Svtbwr0HEdyd9tl3-3ogUQ" x="12084" y="318" height="4804"/>
+  </children>
+  <children xmi:id="_Vt2n4L0HEdyd9tl3-3ogUQ" sourceEdges="_WpdUgL0HEdyd9tl3-3ogUQ _cW1HAL0HEdyd9tl3-3ogUQ" targetEdges="_bi22970IEdyd9tl3-3ogUQ">
+    <children xmi:id="_Vt2n470HEdyd9tl3-3ogUQ" type="ImageCompartment">
+      <element xmi:type="uml:Class" href="vizref:///#jsrctype^vcore.target=uml2.Class^name=SingleFSODealerMappingDAO[jcu^name=SingleFSODealerMappingDAO.java[jpack^name=com.ibm.virtualization.ussdactivationweb.dao[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]"/>
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_Vt2n5L0HEdyd9tl3-3ogUQ" width="1320" height="1320"/>
+    </children>
+    <children xmi:id="_Vt2n5b0HEdyd9tl3-3ogUQ" type="Stereotype">
+      <element xmi:type="uml:Class" href="vizref:///#jsrctype^vcore.target=uml2.Class^name=SingleFSODealerMappingDAO[jcu^name=SingleFSODealerMappingDAO.java[jpack^name=com.ibm.virtualization.ussdactivationweb.dao[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]"/>
+    </children>
+    <children xmi:id="_Vt2n5r0HEdyd9tl3-3ogUQ" type="Name">
+      <element xmi:type="uml:Class" href="vizref:///#jsrctype^vcore.target=uml2.Class^name=SingleFSODealerMappingDAO[jcu^name=SingleFSODealerMappingDAO.java[jpack^name=com.ibm.virtualization.ussdactivationweb.dao[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]"/>
+    </children>
+    <children xmi:id="_Vt2n570HEdyd9tl3-3ogUQ" type="AttributeCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_Vt2n6L0HEdyd9tl3-3ogUQ"/>
+      <element xmi:type="uml:Class" href="vizref:///#jsrctype^vcore.target=uml2.Class^name=SingleFSODealerMappingDAO[jcu^name=SingleFSODealerMappingDAO.java[jpack^name=com.ibm.virtualization.ussdactivationweb.dao[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]"/>
+    </children>
+    <children xmi:id="_Vt2n6b0HEdyd9tl3-3ogUQ" type="OperationCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_Vt2n6r0HEdyd9tl3-3ogUQ"/>
+      <element xmi:type="uml:Class" href="vizref:///#jsrctype^vcore.target=uml2.Class^name=SingleFSODealerMappingDAO[jcu^name=SingleFSODealerMappingDAO.java[jpack^name=com.ibm.virtualization.ussdactivationweb.dao[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]"/>
+    </children>
+    <children xmi:id="_Vt2n670HEdyd9tl3-3ogUQ" visible="false" type="SignalCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_Vt2n7L0HEdyd9tl3-3ogUQ"/>
+      <element xmi:type="uml:Class" href="vizref:///#jsrctype^vcore.target=uml2.Class^name=SingleFSODealerMappingDAO[jcu^name=SingleFSODealerMappingDAO.java[jpack^name=com.ibm.virtualization.ussdactivationweb.dao[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]"/>
+    </children>
+    <children xmi:id="_Vt2n7b0HEdyd9tl3-3ogUQ" visible="false" type="StructureCompartment">
+      <styles xmi:type="umlnotation:UMLShapeCompartmentStyle" xmi:id="_Vt2n7r0HEdyd9tl3-3ogUQ"/>
+      <element xmi:type="uml:Class" href="vizref:///#jsrctype^vcore.target=uml2.Class^name=SingleFSODealerMappingDAO[jcu^name=SingleFSODealerMappingDAO.java[jpack^name=com.ibm.virtualization.ussdactivationweb.dao[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_Vt2n4b0HEdyd9tl3-3ogUQ" showStereotype="Label"/>
+    <element xmi:type="uml:Class" href="vizref:///#jsrctype^vcore.target=uml2.Class^name=SingleFSODealerMappingDAO[jcu^name=SingleFSODealerMappingDAO.java[jpack^name=com.ibm.virtualization.ussdactivationweb.dao[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Vt2n4r0HEdyd9tl3-3ogUQ" x="2544" y="6996"/>
+  </children>
+  <children xmi:id="_WoaLoL0HEdyd9tl3-3ogUQ" sourceEdges="_WpdUiL0HEdyd9tl3-3ogUQ _gUCG8L0IEdyd9tl3-3ogUQ" targetEdges="_WpdUgL0HEdyd9tl3-3ogUQ _WpdUiL0HEdyd9tl3-3ogUQ">
+    <children xmi:id="_WoaLo70HEdyd9tl3-3ogUQ" type="ImageCompartment">
+      <element xmi:type="uml:Class" href="vizref:///#jsrctype^vcore.target=uml2.Class^name=DBConnection[jcu^name=DBConnection.java[jpack^name=com.ibm.virtualization.ussdactivationweb.dao[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]"/>
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_WoaLpL0HEdyd9tl3-3ogUQ" width="1320" height="1320"/>
+    </children>
+    <children xmi:id="_WoaLpb0HEdyd9tl3-3ogUQ" type="Stereotype">
+      <element xmi:type="uml:Class" href="vizref:///#jsrctype^vcore.target=uml2.Class^name=DBConnection[jcu^name=DBConnection.java[jpack^name=com.ibm.virtualization.ussdactivationweb.dao[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]"/>
+    </children>
+    <children xmi:id="_WoaLpr0HEdyd9tl3-3ogUQ" type="Name">
+      <element xmi:type="uml:Class" href="vizref:///#jsrctype^vcore.target=uml2.Class^name=DBConnection[jcu^name=DBConnection.java[jpack^name=com.ibm.virtualization.ussdactivationweb.dao[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]"/>
+    </children>
+    <children xmi:id="_WoaLp70HEdyd9tl3-3ogUQ" type="AttributeCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_WoaLqL0HEdyd9tl3-3ogUQ"/>
+      <element xmi:type="uml:Class" href="vizref:///#jsrctype^vcore.target=uml2.Class^name=DBConnection[jcu^name=DBConnection.java[jpack^name=com.ibm.virtualization.ussdactivationweb.dao[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]"/>
+    </children>
+    <children xmi:id="_WoaLqb0HEdyd9tl3-3ogUQ" type="OperationCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_WoaLqr0HEdyd9tl3-3ogUQ"/>
+      <element xmi:type="uml:Class" href="vizref:///#jsrctype^vcore.target=uml2.Class^name=DBConnection[jcu^name=DBConnection.java[jpack^name=com.ibm.virtualization.ussdactivationweb.dao[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]"/>
+    </children>
+    <children xmi:id="_WoaLq70HEdyd9tl3-3ogUQ" visible="false" type="SignalCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_WoaLrL0HEdyd9tl3-3ogUQ"/>
+      <element xmi:type="uml:Class" href="vizref:///#jsrctype^vcore.target=uml2.Class^name=DBConnection[jcu^name=DBConnection.java[jpack^name=com.ibm.virtualization.ussdactivationweb.dao[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]"/>
+    </children>
+    <children xmi:id="_WoaLrb0HEdyd9tl3-3ogUQ" visible="false" type="StructureCompartment">
+      <styles xmi:type="umlnotation:UMLShapeCompartmentStyle" xmi:id="_WoaLrr0HEdyd9tl3-3ogUQ"/>
+      <element xmi:type="uml:Class" href="vizref:///#jsrctype^vcore.target=uml2.Class^name=DBConnection[jcu^name=DBConnection.java[jpack^name=com.ibm.virtualization.ussdactivationweb.dao[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_WoaLob0HEdyd9tl3-3ogUQ" showStereotype="Label"/>
+    <element xmi:type="uml:Class" href="vizref:///#jsrctype^vcore.target=uml2.Class^name=DBConnection[jcu^name=DBConnection.java[jpack^name=com.ibm.virtualization.ussdactivationweb.dao[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WoaLor0HEdyd9tl3-3ogUQ" x="10176" y="11130"/>
+  </children>
+  <children xmi:id="_a-eM8L0HEdyd9tl3-3ogUQ">
+    <children xmi:id="_a-eM870HEdyd9tl3-3ogUQ" type="ImageCompartment">
+      <element xmi:type="uml:Interface" href="vizref:///#jsrctype^vcore.target=uml2.Interface^name=FSORegistrationInterface[jcu^name=FSORegistrationInterface.java[jpack^name=com.ibm.virtualization.ussdactivationweb.daoInterfaces[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]"/>
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_a-eM9L0HEdyd9tl3-3ogUQ" width="530" height="530"/>
+    </children>
+    <children xmi:id="_a-eM9b0HEdyd9tl3-3ogUQ" type="Stereotype">
+      <element xmi:type="uml:Interface" href="vizref:///#jsrctype^vcore.target=uml2.Interface^name=FSORegistrationInterface[jcu^name=FSORegistrationInterface.java[jpack^name=com.ibm.virtualization.ussdactivationweb.daoInterfaces[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]"/>
+    </children>
+    <children xmi:id="_a-eM9r0HEdyd9tl3-3ogUQ" type="Kind">
+      <element xmi:type="uml:Interface" href="vizref:///#jsrctype^vcore.target=uml2.Interface^name=FSORegistrationInterface[jcu^name=FSORegistrationInterface.java[jpack^name=com.ibm.virtualization.ussdactivationweb.daoInterfaces[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]"/>
+    </children>
+    <children xmi:id="_a-eM970HEdyd9tl3-3ogUQ" type="Name">
+      <element xmi:type="uml:Interface" href="vizref:///#jsrctype^vcore.target=uml2.Interface^name=FSORegistrationInterface[jcu^name=FSORegistrationInterface.java[jpack^name=com.ibm.virtualization.ussdactivationweb.daoInterfaces[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]"/>
+    </children>
+    <children xmi:id="_a-eM-L0HEdyd9tl3-3ogUQ" type="AttributeCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_a-eM-b0HEdyd9tl3-3ogUQ"/>
+      <element xmi:type="uml:Interface" href="vizref:///#jsrctype^vcore.target=uml2.Interface^name=FSORegistrationInterface[jcu^name=FSORegistrationInterface.java[jpack^name=com.ibm.virtualization.ussdactivationweb.daoInterfaces[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]"/>
+    </children>
+    <children xmi:id="_a-eM-r0HEdyd9tl3-3ogUQ" type="OperationCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_a-eM-70HEdyd9tl3-3ogUQ"/>
+      <element xmi:type="uml:Interface" href="vizref:///#jsrctype^vcore.target=uml2.Interface^name=FSORegistrationInterface[jcu^name=FSORegistrationInterface.java[jpack^name=com.ibm.virtualization.ussdactivationweb.daoInterfaces[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]"/>
+    </children>
+    <children xmi:id="_a-eM_L0HEdyd9tl3-3ogUQ" visible="false" type="SignalCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_a-eM_b0HEdyd9tl3-3ogUQ"/>
+      <element xmi:type="uml:Interface" href="vizref:///#jsrctype^vcore.target=uml2.Interface^name=FSORegistrationInterface[jcu^name=FSORegistrationInterface.java[jpack^name=com.ibm.virtualization.ussdactivationweb.daoInterfaces[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLClassifierStyle" xmi:id="_a-eM8b0HEdyd9tl3-3ogUQ" showStereotype="Label" useClassifierShape="true"/>
+    <element xmi:type="uml:Interface" href="vizref:///#jsrctype^vcore.target=uml2.Interface^name=FSORegistrationInterface[jcu^name=FSORegistrationInterface.java[jpack^name=com.ibm.virtualization.ussdactivationweb.daoInterfaces[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_a-eM8r0HEdyd9tl3-3ogUQ" x="14946" y="7950"/>
+  </children>
+  <children xmi:id="_cWPRIL0HEdyd9tl3-3ogUQ" targetEdges="_cW1HAL0HEdyd9tl3-3ogUQ">
+    <children xmi:id="_cWPRI70HEdyd9tl3-3ogUQ" type="ImageCompartment">
+      <element xmi:type="uml:Class" href="vizref:///#jsrctype^vcore.target=uml2.Class^name=FSODealerMappingDTO[jcu^name=FSODealerMappingDTO.java[jpack^name=com.ibm.virtualization.ussdactivationweb.dto[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]"/>
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_cWPRJL0HEdyd9tl3-3ogUQ" width="1320" height="1320"/>
+    </children>
+    <children xmi:id="_cWPRJb0HEdyd9tl3-3ogUQ" type="Stereotype">
+      <element xmi:type="uml:Class" href="vizref:///#jsrctype^vcore.target=uml2.Class^name=FSODealerMappingDTO[jcu^name=FSODealerMappingDTO.java[jpack^name=com.ibm.virtualization.ussdactivationweb.dto[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]"/>
+    </children>
+    <children xmi:id="_cWPRJr0HEdyd9tl3-3ogUQ" type="Name">
+      <element xmi:type="uml:Class" href="vizref:///#jsrctype^vcore.target=uml2.Class^name=FSODealerMappingDTO[jcu^name=FSODealerMappingDTO.java[jpack^name=com.ibm.virtualization.ussdactivationweb.dto[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]"/>
+    </children>
+    <children xmi:id="_cWPRJ70HEdyd9tl3-3ogUQ" type="AttributeCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_cWPRKL0HEdyd9tl3-3ogUQ"/>
+      <element xmi:type="uml:Class" href="vizref:///#jsrctype^vcore.target=uml2.Class^name=FSODealerMappingDTO[jcu^name=FSODealerMappingDTO.java[jpack^name=com.ibm.virtualization.ussdactivationweb.dto[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]"/>
+    </children>
+    <children xmi:id="_cWPRKb0HEdyd9tl3-3ogUQ" type="OperationCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_cWPRKr0HEdyd9tl3-3ogUQ"/>
+      <element xmi:type="uml:Class" href="vizref:///#jsrctype^vcore.target=uml2.Class^name=FSODealerMappingDTO[jcu^name=FSODealerMappingDTO.java[jpack^name=com.ibm.virtualization.ussdactivationweb.dto[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]"/>
+    </children>
+    <children xmi:id="_cWPRK70HEdyd9tl3-3ogUQ" visible="false" type="SignalCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_cWPRLL0HEdyd9tl3-3ogUQ"/>
+      <element xmi:type="uml:Class" href="vizref:///#jsrctype^vcore.target=uml2.Class^name=FSODealerMappingDTO[jcu^name=FSODealerMappingDTO.java[jpack^name=com.ibm.virtualization.ussdactivationweb.dto[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]"/>
+    </children>
+    <children xmi:id="_cWPRLb0HEdyd9tl3-3ogUQ" visible="false" type="StructureCompartment">
+      <styles xmi:type="umlnotation:UMLShapeCompartmentStyle" xmi:id="_cWPRLr0HEdyd9tl3-3ogUQ"/>
+      <element xmi:type="uml:Class" href="vizref:///#jsrctype^vcore.target=uml2.Class^name=FSODealerMappingDTO[jcu^name=FSODealerMappingDTO.java[jpack^name=com.ibm.virtualization.ussdactivationweb.dto[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_cWPRIb0HEdyd9tl3-3ogUQ" showStereotype="Label"/>
+    <element xmi:type="uml:Class" href="vizref:///#jsrctype^vcore.target=uml2.Class^name=FSODealerMappingDTO[jcu^name=FSODealerMappingDTO.java[jpack^name=com.ibm.virtualization.ussdactivationweb.dto[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_cWPRIr0HEdyd9tl3-3ogUQ" x="9540" y="7950"/>
+  </children>
+  <children xmi:id="_biaLAL0IEdyd9tl3-3ogUQ" sourceEdges="_bittAL0IEdyd9tl3-3ogUQ _bittCL0IEdyd9tl3-3ogUQ _bi22970IEdyd9tl3-3ogUQ" targetEdges="_bittAL0IEdyd9tl3-3ogUQ">
+    <children xmi:id="_biaLA70IEdyd9tl3-3ogUQ" type="ImageCompartment">
+      <element xmi:type="uml:Class" href="vizref:///#jsrctype^vcore.target=uml2.Class^name=SingleFSODealerMappingAction[jcu^name=SingleFSODealerMappingAction.java[jpack^name=com.ibm.virtualization.ussdactivationweb.actions[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]"/>
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_biaLBL0IEdyd9tl3-3ogUQ" width="1320" height="1320"/>
+    </children>
+    <children xmi:id="_biaLBb0IEdyd9tl3-3ogUQ" type="Stereotype">
+      <element xmi:type="uml:Class" href="vizref:///#jsrctype^vcore.target=uml2.Class^name=SingleFSODealerMappingAction[jcu^name=SingleFSODealerMappingAction.java[jpack^name=com.ibm.virtualization.ussdactivationweb.actions[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]"/>
+    </children>
+    <children xmi:id="_biaLBr0IEdyd9tl3-3ogUQ" type="Name">
+      <element xmi:type="uml:Class" href="vizref:///#jsrctype^vcore.target=uml2.Class^name=SingleFSODealerMappingAction[jcu^name=SingleFSODealerMappingAction.java[jpack^name=com.ibm.virtualization.ussdactivationweb.actions[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]"/>
+    </children>
+    <children xmi:id="_biaLB70IEdyd9tl3-3ogUQ" type="AttributeCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_biaLCL0IEdyd9tl3-3ogUQ"/>
+      <element xmi:type="uml:Class" href="vizref:///#jsrctype^vcore.target=uml2.Class^name=SingleFSODealerMappingAction[jcu^name=SingleFSODealerMappingAction.java[jpack^name=com.ibm.virtualization.ussdactivationweb.actions[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]"/>
+    </children>
+    <children xmi:id="_biaLCb0IEdyd9tl3-3ogUQ" type="OperationCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_biaLCr0IEdyd9tl3-3ogUQ"/>
+      <element xmi:type="uml:Class" href="vizref:///#jsrctype^vcore.target=uml2.Class^name=SingleFSODealerMappingAction[jcu^name=SingleFSODealerMappingAction.java[jpack^name=com.ibm.virtualization.ussdactivationweb.actions[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]"/>
+    </children>
+    <children xmi:id="_biaLC70IEdyd9tl3-3ogUQ" visible="false" type="SignalCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_biaLDL0IEdyd9tl3-3ogUQ"/>
+      <element xmi:type="uml:Class" href="vizref:///#jsrctype^vcore.target=uml2.Class^name=SingleFSODealerMappingAction[jcu^name=SingleFSODealerMappingAction.java[jpack^name=com.ibm.virtualization.ussdactivationweb.actions[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]"/>
+    </children>
+    <children xmi:id="_biaLDb0IEdyd9tl3-3ogUQ" visible="false" type="StructureCompartment">
+      <styles xmi:type="umlnotation:UMLShapeCompartmentStyle" xmi:id="_biaLDr0IEdyd9tl3-3ogUQ"/>
+      <element xmi:type="uml:Class" href="vizref:///#jsrctype^vcore.target=uml2.Class^name=SingleFSODealerMappingAction[jcu^name=SingleFSODealerMappingAction.java[jpack^name=com.ibm.virtualization.ussdactivationweb.actions[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_biaLAb0IEdyd9tl3-3ogUQ" showStereotype="Label"/>
+    <element xmi:type="uml:Class" href="vizref:///#jsrctype^vcore.target=uml2.Class^name=SingleFSODealerMappingAction[jcu^name=SingleFSODealerMappingAction.java[jpack^name=com.ibm.virtualization.ussdactivationweb.actions[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_biaLAr0IEdyd9tl3-3ogUQ" x="2862" y="318"/>
+  </children>
+  <children xmi:id="_gTvMAL0IEdyd9tl3-3ogUQ" targetEdges="_gUCG8L0IEdyd9tl3-3ogUQ">
+    <children xmi:id="_gTvMA70IEdyd9tl3-3ogUQ" type="ImageCompartment">
+      <element xmi:type="uml:Class" href="vizref:///#jsrctype^vcore.target=uml2.Class^name=DAOException[jcu^name=DAOException.java[jpack^name=com.ibm.virtualization.ussdactivationweb.exception[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]"/>
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_gTvMBL0IEdyd9tl3-3ogUQ" width="1320" height="1320"/>
+    </children>
+    <children xmi:id="_gTvMBb0IEdyd9tl3-3ogUQ" type="Stereotype">
+      <element xmi:type="uml:Class" href="vizref:///#jsrctype^vcore.target=uml2.Class^name=DAOException[jcu^name=DAOException.java[jpack^name=com.ibm.virtualization.ussdactivationweb.exception[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]"/>
+    </children>
+    <children xmi:id="_gTvMBr0IEdyd9tl3-3ogUQ" type="Name">
+      <element xmi:type="uml:Class" href="vizref:///#jsrctype^vcore.target=uml2.Class^name=DAOException[jcu^name=DAOException.java[jpack^name=com.ibm.virtualization.ussdactivationweb.exception[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]"/>
+    </children>
+    <children xmi:id="_gTvMB70IEdyd9tl3-3ogUQ" type="AttributeCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_gTvMCL0IEdyd9tl3-3ogUQ"/>
+      <element xmi:type="uml:Class" href="vizref:///#jsrctype^vcore.target=uml2.Class^name=DAOException[jcu^name=DAOException.java[jpack^name=com.ibm.virtualization.ussdactivationweb.exception[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]"/>
+    </children>
+    <children xmi:id="_gTvMCb0IEdyd9tl3-3ogUQ" type="OperationCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_gTvMCr0IEdyd9tl3-3ogUQ"/>
+      <element xmi:type="uml:Class" href="vizref:///#jsrctype^vcore.target=uml2.Class^name=DAOException[jcu^name=DAOException.java[jpack^name=com.ibm.virtualization.ussdactivationweb.exception[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]"/>
+    </children>
+    <children xmi:id="_gTvMC70IEdyd9tl3-3ogUQ" visible="false" type="SignalCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_gTvMDL0IEdyd9tl3-3ogUQ"/>
+      <element xmi:type="uml:Class" href="vizref:///#jsrctype^vcore.target=uml2.Class^name=DAOException[jcu^name=DAOException.java[jpack^name=com.ibm.virtualization.ussdactivationweb.exception[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]"/>
+    </children>
+    <children xmi:id="_gTvMDb0IEdyd9tl3-3ogUQ" visible="false" type="StructureCompartment">
+      <styles xmi:type="umlnotation:UMLShapeCompartmentStyle" xmi:id="_gTvMDr0IEdyd9tl3-3ogUQ"/>
+      <element xmi:type="uml:Class" href="vizref:///#jsrctype^vcore.target=uml2.Class^name=DAOException[jcu^name=DAOException.java[jpack^name=com.ibm.virtualization.ussdactivationweb.exception[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_gTvMAb0IEdyd9tl3-3ogUQ" showStereotype="Label"/>
+    <element xmi:type="uml:Class" href="vizref:///#jsrctype^vcore.target=uml2.Class^name=DAOException[jcu^name=DAOException.java[jpack^name=com.ibm.virtualization.ussdactivationweb.exception[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gTvMAr0IEdyd9tl3-3ogUQ" x="17808" y="10812"/>
+  </children>
+  <styles xmi:type="umlnotation:UMLDiagramStyle" xmi:id="_PrKssb0HEdyd9tl3-3ogUQ"/>
+  <edges xmi:id="_WpdUgL0HEdyd9tl3-3ogUQ" source="_Vt2n4L0HEdyd9tl3-3ogUQ" target="_WoaLoL0HEdyd9tl3-3ogUQ">
+    <children xmi:id="_WpdUg70HEdyd9tl3-3ogUQ" type="KindLabel">
+      <children xmi:id="_WpdUhb0HEdyd9tl3-3ogUQ" type="Stereotype">
+        <element xmi:type="uml:Usage" href="vizref:///#jdep^vcore.target=uml2.Usage[jsrctype^name=SingleFSODealerMappingDAO[jcu^name=SingleFSODealerMappingDAO.java[jpack^name=com.ibm.virtualization.ussdactivationweb.dao[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]][jsrctype^name=DBConnection[jcu^name=DBConnection.java[jpack^name=com.ibm.virtualization.ussdactivationweb.dao[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]]"/>
+      </children>
+      <children xmi:id="_WpdUh70HEdyd9tl3-3ogUQ" type="Kind">
+        <element xmi:type="uml:Usage" href="vizref:///#jdep^vcore.target=uml2.Usage[jsrctype^name=SingleFSODealerMappingDAO[jcu^name=SingleFSODealerMappingDAO.java[jpack^name=com.ibm.virtualization.ussdactivationweb.dao[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]][jsrctype^name=DBConnection[jcu^name=DBConnection.java[jpack^name=com.ibm.virtualization.ussdactivationweb.dao[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]]"/>
+      </children>
+      <children xmi:id="_WpdUhr0HEdyd9tl3-3ogUQ" type="Name">
+        <element xmi:type="uml:Usage" href="vizref:///#jdep^vcore.target=uml2.Usage[jsrctype^name=SingleFSODealerMappingDAO[jcu^name=SingleFSODealerMappingDAO.java[jpack^name=com.ibm.virtualization.ussdactivationweb.dao[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]][jsrctype^name=DBConnection[jcu^name=DBConnection.java[jpack^name=com.ibm.virtualization.ussdactivationweb.dao[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]]"/>
+      </children>
+      <element xmi:type="uml:Usage" href="vizref:///#jdep^vcore.target=uml2.Usage[jsrctype^name=SingleFSODealerMappingDAO[jcu^name=SingleFSODealerMappingDAO.java[jpack^name=com.ibm.virtualization.ussdactivationweb.dao[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]][jsrctype^name=DBConnection[jcu^name=DBConnection.java[jpack^name=com.ibm.virtualization.ussdactivationweb.dao[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]]"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_WpdUhL0HEdyd9tl3-3ogUQ" y="-185"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_WpdUgb0HEdyd9tl3-3ogUQ" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="vizref:///#jdep^vcore.target=uml2.Usage[jsrctype^name=SingleFSODealerMappingDAO[jcu^name=SingleFSODealerMappingDAO.java[jpack^name=com.ibm.virtualization.ussdactivationweb.dao[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]][jsrctype^name=DBConnection[jcu^name=DBConnection.java[jpack^name=com.ibm.virtualization.ussdactivationweb.dao[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_WpdUgr0HEdyd9tl3-3ogUQ" points="[2910, 2408, -4684, -450]$[3016, 2408, -4578, -450]$[4736, 2408, -2858, -450]"/>
+  </edges>
+  <edges xmi:id="_WpdUiL0HEdyd9tl3-3ogUQ" source="_WoaLoL0HEdyd9tl3-3ogUQ" target="_WoaLoL0HEdyd9tl3-3ogUQ">
+    <children xmi:id="_WpdUi70HEdyd9tl3-3ogUQ" type="KindLabel">
+      <children xmi:id="_WpdUjb0HEdyd9tl3-3ogUQ" type="Stereotype">
+        <element xmi:type="uml:Usage" href="vizref:///#jdep^vcore.target=uml2.Usage[jsrctype^name=DBConnection[jcu^name=DBConnection.java[jpack^name=com.ibm.virtualization.ussdactivationweb.dao[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]][jsrctype^name=DBConnection[jcu^name=DBConnection.java[jpack^name=com.ibm.virtualization.ussdactivationweb.dao[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]]"/>
+      </children>
+      <children xmi:id="_WpdUj70HEdyd9tl3-3ogUQ" type="Kind">
+        <element xmi:type="uml:Usage" href="vizref:///#jdep^vcore.target=uml2.Usage[jsrctype^name=DBConnection[jcu^name=DBConnection.java[jpack^name=com.ibm.virtualization.ussdactivationweb.dao[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]][jsrctype^name=DBConnection[jcu^name=DBConnection.java[jpack^name=com.ibm.virtualization.ussdactivationweb.dao[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]]"/>
+      </children>
+      <children xmi:id="_WpdUjr0HEdyd9tl3-3ogUQ" type="Name">
+        <element xmi:type="uml:Usage" href="vizref:///#jdep^vcore.target=uml2.Usage[jsrctype^name=DBConnection[jcu^name=DBConnection.java[jpack^name=com.ibm.virtualization.ussdactivationweb.dao[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]][jsrctype^name=DBConnection[jcu^name=DBConnection.java[jpack^name=com.ibm.virtualization.ussdactivationweb.dao[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]]"/>
+      </children>
+      <element xmi:type="uml:Usage" href="vizref:///#jdep^vcore.target=uml2.Usage[jsrctype^name=DBConnection[jcu^name=DBConnection.java[jpack^name=com.ibm.virtualization.ussdactivationweb.dao[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]][jsrctype^name=DBConnection[jcu^name=DBConnection.java[jpack^name=com.ibm.virtualization.ussdactivationweb.dao[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]]"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_WpdUjL0HEdyd9tl3-3ogUQ" y="-185"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_WpdUib0HEdyd9tl3-3ogUQ" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="vizref:///#jdep^vcore.target=uml2.Usage[jsrctype^name=DBConnection[jcu^name=DBConnection.java[jpack^name=com.ibm.virtualization.ussdactivationweb.dao[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]][jsrctype^name=DBConnection[jcu^name=DBConnection.java[jpack^name=com.ibm.virtualization.ussdactivationweb.dao[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_WpdUir0HEdyd9tl3-3ogUQ" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+  </edges>
+  <edges xmi:id="_cW1HAL0HEdyd9tl3-3ogUQ" source="_Vt2n4L0HEdyd9tl3-3ogUQ" target="_cWPRIL0HEdyd9tl3-3ogUQ">
+    <children xmi:id="_cW1HA70HEdyd9tl3-3ogUQ" type="KindLabel">
+      <children xmi:id="_cW1HBb0HEdyd9tl3-3ogUQ" type="Stereotype">
+        <element xmi:type="uml:Usage" href="vizref:///#jdep^vcore.target=uml2.Usage[jsrctype^name=SingleFSODealerMappingDAO[jcu^name=SingleFSODealerMappingDAO.java[jpack^name=com.ibm.virtualization.ussdactivationweb.dao[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]][jsrctype^name=FSODealerMappingDTO[jcu^name=FSODealerMappingDTO.java[jpack^name=com.ibm.virtualization.ussdactivationweb.dto[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]]"/>
+      </children>
+      <children xmi:id="_cW1HB70HEdyd9tl3-3ogUQ" type="Kind">
+        <element xmi:type="uml:Usage" href="vizref:///#jdep^vcore.target=uml2.Usage[jsrctype^name=SingleFSODealerMappingDAO[jcu^name=SingleFSODealerMappingDAO.java[jpack^name=com.ibm.virtualization.ussdactivationweb.dao[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]][jsrctype^name=FSODealerMappingDTO[jcu^name=FSODealerMappingDTO.java[jpack^name=com.ibm.virtualization.ussdactivationweb.dto[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]]"/>
+      </children>
+      <children xmi:id="_cW1HBr0HEdyd9tl3-3ogUQ" type="Name">
+        <element xmi:type="uml:Usage" href="vizref:///#jdep^vcore.target=uml2.Usage[jsrctype^name=SingleFSODealerMappingDAO[jcu^name=SingleFSODealerMappingDAO.java[jpack^name=com.ibm.virtualization.ussdactivationweb.dao[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]][jsrctype^name=FSODealerMappingDTO[jcu^name=FSODealerMappingDTO.java[jpack^name=com.ibm.virtualization.ussdactivationweb.dto[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]]"/>
+      </children>
+      <element xmi:type="uml:Usage" href="vizref:///#jdep^vcore.target=uml2.Usage[jsrctype^name=SingleFSODealerMappingDAO[jcu^name=SingleFSODealerMappingDAO.java[jpack^name=com.ibm.virtualization.ussdactivationweb.dao[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]][jsrctype^name=FSODealerMappingDTO[jcu^name=FSODealerMappingDTO.java[jpack^name=com.ibm.virtualization.ussdactivationweb.dto[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]]"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_cW1HBL0HEdyd9tl3-3ogUQ" y="-185"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_cW1HAb0HEdyd9tl3-3ogUQ" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="vizref:///#jdep^vcore.target=uml2.Usage[jsrctype^name=SingleFSODealerMappingDAO[jcu^name=SingleFSODealerMappingDAO.java[jpack^name=com.ibm.virtualization.ussdactivationweb.dao[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]][jsrctype^name=FSODealerMappingDTO[jcu^name=FSODealerMappingDTO.java[jpack^name=com.ibm.virtualization.ussdactivationweb.dto[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_cW1HAr0HEdyd9tl3-3ogUQ" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+  </edges>
+  <edges xmi:id="_bittAL0IEdyd9tl3-3ogUQ" source="_biaLAL0IEdyd9tl3-3ogUQ" target="_biaLAL0IEdyd9tl3-3ogUQ">
+    <children xmi:id="_bittA70IEdyd9tl3-3ogUQ" type="KindLabel">
+      <children xmi:id="_bittBb0IEdyd9tl3-3ogUQ" type="Stereotype">
+        <element xmi:type="uml:Usage" href="vizref:///#jdep^vcore.target=uml2.Usage[jsrctype^name=SingleFSODealerMappingAction[jcu^name=SingleFSODealerMappingAction.java[jpack^name=com.ibm.virtualization.ussdactivationweb.actions[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]][jsrctype^name=SingleFSODealerMappingAction[jcu^name=SingleFSODealerMappingAction.java[jpack^name=com.ibm.virtualization.ussdactivationweb.actions[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]]"/>
+      </children>
+      <children xmi:id="_bittB70IEdyd9tl3-3ogUQ" type="Kind">
+        <element xmi:type="uml:Usage" href="vizref:///#jdep^vcore.target=uml2.Usage[jsrctype^name=SingleFSODealerMappingAction[jcu^name=SingleFSODealerMappingAction.java[jpack^name=com.ibm.virtualization.ussdactivationweb.actions[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]][jsrctype^name=SingleFSODealerMappingAction[jcu^name=SingleFSODealerMappingAction.java[jpack^name=com.ibm.virtualization.ussdactivationweb.actions[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]]"/>
+      </children>
+      <children xmi:id="_bittBr0IEdyd9tl3-3ogUQ" type="Name">
+        <element xmi:type="uml:Usage" href="vizref:///#jdep^vcore.target=uml2.Usage[jsrctype^name=SingleFSODealerMappingAction[jcu^name=SingleFSODealerMappingAction.java[jpack^name=com.ibm.virtualization.ussdactivationweb.actions[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]][jsrctype^name=SingleFSODealerMappingAction[jcu^name=SingleFSODealerMappingAction.java[jpack^name=com.ibm.virtualization.ussdactivationweb.actions[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]]"/>
+      </children>
+      <element xmi:type="uml:Usage" href="vizref:///#jdep^vcore.target=uml2.Usage[jsrctype^name=SingleFSODealerMappingAction[jcu^name=SingleFSODealerMappingAction.java[jpack^name=com.ibm.virtualization.ussdactivationweb.actions[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]][jsrctype^name=SingleFSODealerMappingAction[jcu^name=SingleFSODealerMappingAction.java[jpack^name=com.ibm.virtualization.ussdactivationweb.actions[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]]"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_bittBL0IEdyd9tl3-3ogUQ" x="701" y="521"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_bittAb0IEdyd9tl3-3ogUQ" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="vizref:///#jdep^vcore.target=uml2.Usage[jsrctype^name=SingleFSODealerMappingAction[jcu^name=SingleFSODealerMappingAction.java[jpack^name=com.ibm.virtualization.ussdactivationweb.actions[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]][jsrctype^name=SingleFSODealerMappingAction[jcu^name=SingleFSODealerMappingAction.java[jpack^name=com.ibm.virtualization.ussdactivationweb.actions[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_bittAr0IEdyd9tl3-3ogUQ" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+  </edges>
+  <edges xmi:id="_bittCL0IEdyd9tl3-3ogUQ" source="_biaLAL0IEdyd9tl3-3ogUQ" target="_SvtbwL0HEdyd9tl3-3ogUQ">
+    <children xmi:id="_bi228r0IEdyd9tl3-3ogUQ" type="KindLabel">
+      <children xmi:id="_bi229L0IEdyd9tl3-3ogUQ" type="Stereotype">
+        <element xmi:type="uml:Usage" href="vizref:///#jdep^vcore.target=uml2.Usage[jsrctype^name=SingleFSODealerMappingAction[jcu^name=SingleFSODealerMappingAction.java[jpack^name=com.ibm.virtualization.ussdactivationweb.actions[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]][jsrctype^name=SingleFSODealerMappingBean[jcu^name=SingleFSODealerMappingBean.java[jpack^name=com.ibm.virtualization.ussdactivationweb.beans[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]]"/>
+      </children>
+      <children xmi:id="_bi229r0IEdyd9tl3-3ogUQ" type="Kind">
+        <element xmi:type="uml:Usage" href="vizref:///#jdep^vcore.target=uml2.Usage[jsrctype^name=SingleFSODealerMappingAction[jcu^name=SingleFSODealerMappingAction.java[jpack^name=com.ibm.virtualization.ussdactivationweb.actions[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]][jsrctype^name=SingleFSODealerMappingBean[jcu^name=SingleFSODealerMappingBean.java[jpack^name=com.ibm.virtualization.ussdactivationweb.beans[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]]"/>
+      </children>
+      <children xmi:id="_bi229b0IEdyd9tl3-3ogUQ" type="Name">
+        <element xmi:type="uml:Usage" href="vizref:///#jdep^vcore.target=uml2.Usage[jsrctype^name=SingleFSODealerMappingAction[jcu^name=SingleFSODealerMappingAction.java[jpack^name=com.ibm.virtualization.ussdactivationweb.actions[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]][jsrctype^name=SingleFSODealerMappingBean[jcu^name=SingleFSODealerMappingBean.java[jpack^name=com.ibm.virtualization.ussdactivationweb.beans[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]]"/>
+      </children>
+      <element xmi:type="uml:Usage" href="vizref:///#jdep^vcore.target=uml2.Usage[jsrctype^name=SingleFSODealerMappingAction[jcu^name=SingleFSODealerMappingAction.java[jpack^name=com.ibm.virtualization.ussdactivationweb.actions[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]][jsrctype^name=SingleFSODealerMappingBean[jcu^name=SingleFSODealerMappingBean.java[jpack^name=com.ibm.virtualization.ussdactivationweb.beans[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]]"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_bi22870IEdyd9tl3-3ogUQ" y="-185"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_bi228L0IEdyd9tl3-3ogUQ" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="vizref:///#jdep^vcore.target=uml2.Usage[jsrctype^name=SingleFSODealerMappingAction[jcu^name=SingleFSODealerMappingAction.java[jpack^name=com.ibm.virtualization.ussdactivationweb.actions[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]][jsrctype^name=SingleFSODealerMappingBean[jcu^name=SingleFSODealerMappingBean.java[jpack^name=com.ibm.virtualization.ussdactivationweb.beans[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_bi228b0IEdyd9tl3-3ogUQ" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+  </edges>
+  <edges xmi:id="_bi22970IEdyd9tl3-3ogUQ" source="_biaLAL0IEdyd9tl3-3ogUQ" target="_Vt2n4L0HEdyd9tl3-3ogUQ">
+    <children xmi:id="_bi22-r0IEdyd9tl3-3ogUQ" type="KindLabel">
+      <children xmi:id="_bi22_L0IEdyd9tl3-3ogUQ" type="Stereotype">
+        <element xmi:type="uml:Usage" href="vizref:///#jdep^vcore.target=uml2.Usage[jsrctype^name=SingleFSODealerMappingAction[jcu^name=SingleFSODealerMappingAction.java[jpack^name=com.ibm.virtualization.ussdactivationweb.actions[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]][jsrctype^name=SingleFSODealerMappingDAO[jcu^name=SingleFSODealerMappingDAO.java[jpack^name=com.ibm.virtualization.ussdactivationweb.dao[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]]"/>
+      </children>
+      <children xmi:id="_bi22_r0IEdyd9tl3-3ogUQ" type="Kind">
+        <element xmi:type="uml:Usage" href="vizref:///#jdep^vcore.target=uml2.Usage[jsrctype^name=SingleFSODealerMappingAction[jcu^name=SingleFSODealerMappingAction.java[jpack^name=com.ibm.virtualization.ussdactivationweb.actions[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]][jsrctype^name=SingleFSODealerMappingDAO[jcu^name=SingleFSODealerMappingDAO.java[jpack^name=com.ibm.virtualization.ussdactivationweb.dao[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]]"/>
+      </children>
+      <children xmi:id="_bi22_b0IEdyd9tl3-3ogUQ" type="Name">
+        <element xmi:type="uml:Usage" href="vizref:///#jdep^vcore.target=uml2.Usage[jsrctype^name=SingleFSODealerMappingAction[jcu^name=SingleFSODealerMappingAction.java[jpack^name=com.ibm.virtualization.ussdactivationweb.actions[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]][jsrctype^name=SingleFSODealerMappingDAO[jcu^name=SingleFSODealerMappingDAO.java[jpack^name=com.ibm.virtualization.ussdactivationweb.dao[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]]"/>
+      </children>
+      <element xmi:type="uml:Usage" href="vizref:///#jdep^vcore.target=uml2.Usage[jsrctype^name=SingleFSODealerMappingAction[jcu^name=SingleFSODealerMappingAction.java[jpack^name=com.ibm.virtualization.ussdactivationweb.actions[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]][jsrctype^name=SingleFSODealerMappingDAO[jcu^name=SingleFSODealerMappingDAO.java[jpack^name=com.ibm.virtualization.ussdactivationweb.dao[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]]"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_bi22-70IEdyd9tl3-3ogUQ" y="-185"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_bi22-L0IEdyd9tl3-3ogUQ" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="vizref:///#jdep^vcore.target=uml2.Usage[jsrctype^name=SingleFSODealerMappingAction[jcu^name=SingleFSODealerMappingAction.java[jpack^name=com.ibm.virtualization.ussdactivationweb.actions[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]][jsrctype^name=SingleFSODealerMappingDAO[jcu^name=SingleFSODealerMappingDAO.java[jpack^name=com.ibm.virtualization.ussdactivationweb.dao[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_bi22-b0IEdyd9tl3-3ogUQ" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+  </edges>
+  <edges xmi:id="_gUCG8L0IEdyd9tl3-3ogUQ" source="_WoaLoL0HEdyd9tl3-3ogUQ" target="_gTvMAL0IEdyd9tl3-3ogUQ">
+    <children xmi:id="_gUCG870IEdyd9tl3-3ogUQ" type="KindLabel">
+      <children xmi:id="_gUCG9b0IEdyd9tl3-3ogUQ" type="Stereotype">
+        <element xmi:type="uml:Usage" href="vizref:///#jdep^vcore.target=uml2.Usage[jsrctype^name=DBConnection[jcu^name=DBConnection.java[jpack^name=com.ibm.virtualization.ussdactivationweb.dao[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]][jsrctype^name=DAOException[jcu^name=DAOException.java[jpack^name=com.ibm.virtualization.ussdactivationweb.exception[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]]"/>
+      </children>
+      <children xmi:id="_gUCG970IEdyd9tl3-3ogUQ" type="Kind">
+        <element xmi:type="uml:Usage" href="vizref:///#jdep^vcore.target=uml2.Usage[jsrctype^name=DBConnection[jcu^name=DBConnection.java[jpack^name=com.ibm.virtualization.ussdactivationweb.dao[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]][jsrctype^name=DAOException[jcu^name=DAOException.java[jpack^name=com.ibm.virtualization.ussdactivationweb.exception[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]]"/>
+      </children>
+      <children xmi:id="_gUCG9r0IEdyd9tl3-3ogUQ" type="Name">
+        <element xmi:type="uml:Usage" href="vizref:///#jdep^vcore.target=uml2.Usage[jsrctype^name=DBConnection[jcu^name=DBConnection.java[jpack^name=com.ibm.virtualization.ussdactivationweb.dao[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]][jsrctype^name=DAOException[jcu^name=DAOException.java[jpack^name=com.ibm.virtualization.ussdactivationweb.exception[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]]"/>
+      </children>
+      <element xmi:type="uml:Usage" href="vizref:///#jdep^vcore.target=uml2.Usage[jsrctype^name=DBConnection[jcu^name=DBConnection.java[jpack^name=com.ibm.virtualization.ussdactivationweb.dao[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]][jsrctype^name=DAOException[jcu^name=DAOException.java[jpack^name=com.ibm.virtualization.ussdactivationweb.exception[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]]"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_gUCG9L0IEdyd9tl3-3ogUQ" y="-185"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_gUCG8b0IEdyd9tl3-3ogUQ" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="vizref:///#jdep^vcore.target=uml2.Usage[jsrctype^name=DBConnection[jcu^name=DBConnection.java[jpack^name=com.ibm.virtualization.ussdactivationweb.dao[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]][jsrctype^name=DAOException[jcu^name=DAOException.java[jpack^name=com.ibm.virtualization.ussdactivationweb.exception[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_gUCG8r0IEdyd9tl3-3ogUQ" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+  </edges>
+</notation:Diagram>

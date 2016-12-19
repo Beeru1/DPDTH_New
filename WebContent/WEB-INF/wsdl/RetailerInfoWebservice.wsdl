@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://local.webServices.dp.ibm.com" xmlns:impl="http://local.webServices.dp.ibm.com" xmlns:intf="http://local.webServices.dp.ibm.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsi="http://ws-i.org/profiles/basic/1.1/xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+ <wsdl:types>
+  <schema targetNamespace="http://local.webServices.dp.ibm.com" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <element name="getRetailerDistInfoCannonNewResponse">
+    <complexType>
+     <sequence>
+      <element name="getRetailerDistInfoCannonNewReturn" nillable="true" type="impl:ArrayOf_xsd_nillable_string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getRetailerInfo">
+    <complexType>
+     <sequence>
+      <element name="mobilenumber" nillable="true" type="xsd:string"/>
+      <element name="userid" nillable="true" type="xsd:string"/>
+      <element name="password" nillable="true" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getRetailerInfoResponse">
+    <complexType>
+     <sequence>
+      <element name="getRetailerInfoReturn" nillable="true" type="impl:ArrayOf_xsd_nillable_string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getRetailerDistInfoCannon">
+    <complexType>
+     <sequence>
+      <element name="mobilenumber" nillable="true" type="xsd:string"/>
+      <element name="pinCode" nillable="true" type="xsd:string"/>
+      <element name="userid" nillable="true" type="xsd:string"/>
+      <element name="password" nillable="true" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getRetailerDistInfoCannonResponse">
+    <complexType>
+     <sequence>
+      <element name="getRetailerDistInfoCannonReturn" nillable="true" type="impl:ArrayOf_xsd_nillable_string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getRetailerInfoCannon">
+    <complexType>
+     <sequence>
+      <element name="mobilenumber" nillable="true" type="xsd:string"/>
+      <element name="userid" nillable="true" type="xsd:string"/>
+      <element name="password" nillable="true" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getRetailerInfoCannonResponse">
+    <complexType>
+     <sequence>
+      <element name="getRetailerInfoCannonReturn" nillable="true" type="impl:ArrayOf_xsd_nillable_string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getRetailerDistInfoCannonNew">
+    <complexType>
+     <sequence>
+      <element name="mobilenumber" nillable="true" type="xsd:string"/>
+      <element name="pinCode" nillable="true" type="xsd:string"/>
+      <element name="userid" nillable="true" type="xsd:string"/>
+      <element name="password" nillable="true" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="ArrayOf_xsd_nillable_string">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="string" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="getRetailerDistInfoCannonResponse">
+     <wsdl:part element="intf:getRetailerDistInfoCannonResponse" name="parameters"/>
+
+  </wsdl:message>
+
+   <wsdl:message name="getRetailerDistInfoCannonRequest">
+     <wsdl:part element="intf:getRetailerDistInfoCannon" name="parameters"/>
+
+  </wsdl:message>
+
+   <wsdl:message name="getRetailerInfoRequest">
+     <wsdl:part element="intf:getRetailerInfo" name="parameters"/>
+
+  </wsdl:message>
+
+   <wsdl:message name="getRetailerDistInfoCannonNewResponse">
+     <wsdl:part element="intf:getRetailerDistInfoCannonNewResponse" name="parameters"/>
+
+  </wsdl:message>
+
+   <wsdl:message name="getRetailerInfoCannonRequest">
+     <wsdl:part element="intf:getRetailerInfoCannon" name="parameters"/>
+
+  </wsdl:message>
+
+   <wsdl:message name="getRetailerInfoCannonResponse">
+     <wsdl:part element="intf:getRetailerInfoCannonResponse" name="parameters"/>
+
+  </wsdl:message>
+
+   <wsdl:message name="getRetailerInfoResponse">
+     <wsdl:part element="intf:getRetailerInfoResponse" name="parameters"/>
+
+  </wsdl:message>
+
+   <wsdl:message name="getRetailerDistInfoCannonNewRequest">
+     <wsdl:part element="intf:getRetailerDistInfoCannonNew" name="parameters"/>
+
+  </wsdl:message>
+
+   <wsdl:portType name="RetailerInfoWebservice">
+     <wsdl:operation name="getRetailerDistInfoCannonNew">
+       <wsdl:input message="intf:getRetailerDistInfoCannonNewRequest" name="getRetailerDistInfoCannonNewRequest"/>
+
+       <wsdl:output message="intf:getRetailerDistInfoCannonNewResponse" name="getRetailerDistInfoCannonNewResponse"/>
+
+    </wsdl:operation>
+
+     <wsdl:operation name="getRetailerInfo">
+       <wsdl:input message="intf:getRetailerInfoRequest" name="getRetailerInfoRequest"/>
+
+       <wsdl:output message="intf:getRetailerInfoResponse" name="getRetailerInfoResponse"/>
+
+    </wsdl:operation>
+
+     <wsdl:operation name="getRetailerDistInfoCannon">
+       <wsdl:input message="intf:getRetailerDistInfoCannonRequest" name="getRetailerDistInfoCannonRequest"/>
+
+       <wsdl:output message="intf:getRetailerDistInfoCannonResponse" name="getRetailerDistInfoCannonResponse"/>
+
+    </wsdl:operation>
+
+     <wsdl:operation name="getRetailerInfoCannon">
+       <wsdl:input message="intf:getRetailerInfoCannonRequest" name="getRetailerInfoCannonRequest"/>
+
+       <wsdl:output message="intf:getRetailerInfoCannonResponse" name="getRetailerInfoCannonResponse"/>
+
+    </wsdl:operation>
+
+  </wsdl:portType>
+
+   <wsdl:binding name="RetailerInfoWebserviceSoapBinding" type="intf:RetailerInfoWebservice">
+ <wsaw:UsingAddressing wsdl:required="false" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"/>
+
+     <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+     <wsdl:operation name="getRetailerDistInfoCannonNew">
+       <wsdlsoap:operation soapAction="getRetailerDistInfoCannonNew"/>
+
+       <wsdl:input name="getRetailerDistInfoCannonNewRequest">
+         <wsdlsoap:body use="literal"/>
+
+      </wsdl:input>
+
+       <wsdl:output name="getRetailerDistInfoCannonNewResponse">
+         <wsdlsoap:body use="literal"/>
+
+      </wsdl:output>
+
+    </wsdl:operation>
+
+     <wsdl:operation name="getRetailerInfo">
+       <wsdlsoap:operation soapAction="getRetailerInfo"/>
+
+       <wsdl:input name="getRetailerInfoRequest">
+         <wsdlsoap:body use="literal"/>
+
+      </wsdl:input>
+
+       <wsdl:output name="getRetailerInfoResponse">
+         <wsdlsoap:body use="literal"/>
+
+      </wsdl:output>
+
+    </wsdl:operation>
+
+     <wsdl:operation name="getRetailerDistInfoCannon">
+       <wsdlsoap:operation soapAction="getRetailerDistInfoCannon"/>
+
+       <wsdl:input name="getRetailerDistInfoCannonRequest">
+         <wsdlsoap:body use="literal"/>
+
+      </wsdl:input>
+
+       <wsdl:output name="getRetailerDistInfoCannonResponse">
+         <wsdlsoap:body use="literal"/>
+
+      </wsdl:output>
+
+    </wsdl:operation>
+
+     <wsdl:operation name="getRetailerInfoCannon">
+       <wsdlsoap:operation soapAction="getRetailerInfoCannon"/>
+
+       <wsdl:input name="getRetailerInfoCannonRequest">
+         <wsdlsoap:body use="literal"/>
+
+      </wsdl:input>
+
+       <wsdl:output name="getRetailerInfoCannonResponse">
+         <wsdlsoap:body use="literal"/>
+
+      </wsdl:output>
+
+    </wsdl:operation>
+
+  </wsdl:binding>
+
+   <wsdl:service name="RetailerInfoWebserviceService">
+     <wsdl:port binding="intf:RetailerInfoWebserviceSoapBinding" name="RetailerInfoWebservice">
+       <wsdlsoap:address location="http://localhost:9081/DPDTH/services/RetailerInfoWebservice"/>
+
+    </wsdl:port>
+
+  </wsdl:service>
+
+</wsdl:definitions>

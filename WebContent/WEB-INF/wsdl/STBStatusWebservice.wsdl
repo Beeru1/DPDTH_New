@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://local.webServices.dp.ibm.com" xmlns:impl="http://local.webServices.dp.ibm.com" xmlns:intf="http://local.webServices.dp.ibm.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsi="http://ws-i.org/profiles/basic/1.1/xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+ <wsdl:types>
+  <schema targetNamespace="http://local.webServices.dp.ibm.com" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <element name="stbStatusChangeResponse">
+    <complexType>
+     <sequence>
+      <element name="stbStatusChangeReturn" nillable="true" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="stbStatusChange">
+    <complexType>
+     <sequence>
+      <element name="strSrNos" nillable="true" type="xsd:string"/>
+      <element name="status" nillable="true" type="xsd:string"/>
+      <element name="userid" nillable="true" type="xsd:string"/>
+      <element name="password" nillable="true" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="stbStatusChangeRequest">
+     <wsdl:part element="intf:stbStatusChange" name="parameters"/>
+
+  </wsdl:message>
+
+   <wsdl:message name="stbStatusChangeResponse">
+     <wsdl:part element="intf:stbStatusChangeResponse" name="parameters"/>
+
+  </wsdl:message>
+
+   <wsdl:portType name="STBStatusWebservice">
+     <wsdl:operation name="stbStatusChange">
+       <wsdl:input message="intf:stbStatusChangeRequest" name="stbStatusChangeRequest"/>
+
+       <wsdl:output message="intf:stbStatusChangeResponse" name="stbStatusChangeResponse"/>
+
+    </wsdl:operation>
+
+  </wsdl:portType>
+
+   <wsdl:binding name="STBStatusWebserviceSoapBinding" type="intf:STBStatusWebservice">
+ <wsaw:UsingAddressing wsdl:required="false" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"/>
+
+     <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+     <wsdl:operation name="stbStatusChange">
+       <wsdlsoap:operation soapAction="stbStatusChange"/>
+
+       <wsdl:input name="stbStatusChangeRequest">
+         <wsdlsoap:body use="literal"/>
+
+      </wsdl:input>
+
+       <wsdl:output name="stbStatusChangeResponse">
+         <wsdlsoap:body use="literal"/>
+
+      </wsdl:output>
+
+    </wsdl:operation>
+
+  </wsdl:binding>
+
+   <wsdl:service name="STBStatusWebserviceService">
+     <wsdl:port binding="intf:STBStatusWebserviceSoapBinding" name="STBStatusWebservice">
+       <wsdlsoap:address location="http://localhost:9080/DPDTH/services/STBStatusWebservice"/>
+
+    </wsdl:port>
+
+  </wsdl:service>
+
+</wsdl:definitions>

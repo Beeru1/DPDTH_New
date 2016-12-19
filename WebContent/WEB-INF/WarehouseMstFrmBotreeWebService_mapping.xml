@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java-wsdl-mapping xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.1" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://www.ibm.com/webservices/xsd/j2ee_jaxrpc_mapping_1_1.xsd">
+    <package-mapping>
+        <package-type>com.ibm.dp.webServices.local</package-type>
+        <namespaceURI>http://local.webServices.dp.ibm.com</namespaceURI>
+    </package-mapping>
+    <java-xml-type-mapping>
+        <java-type>int</java-type>
+        <root-type-qname xmlns:rtq="http://www.w3.org/2001/XMLSchema">rtq:int</root-type-qname>
+        <qname-scope>simpleType</qname-scope>
+    </java-xml-type-mapping>
+    <java-xml-type-mapping>
+        <java-type>java.lang.String</java-type>
+        <root-type-qname xmlns:rtq="http://www.w3.org/2001/XMLSchema">rtq:string</root-type-qname>
+        <qname-scope>simpleType</qname-scope>
+    </java-xml-type-mapping>
+    <java-xml-type-mapping>
+        <java-type>java.lang.String[]</java-type>
+        <anonymous-type-qname>http://www.w3.org/2001/XMLSchema:string[0,unbounded]</anonymous-type-qname>
+        <qname-scope>complexType</qname-scope>
+    </java-xml-type-mapping>
+    <java-xml-type-mapping>
+        <java-type>java.lang.String[]</java-type>
+        <root-type-qname xmlns:rtq="http://local.webServices.dp.ibm.com">rtq:ArrayOf_xsd_nillable_string</root-type-qname>
+        <qname-scope>complexType</qname-scope>
+        <variable-mapping>
+            <java-variable-name>string</java-variable-name>
+            <xml-element-name>string</xml-element-name>
+        </variable-mapping>
+    </java-xml-type-mapping>
+    <java-xml-type-mapping>
+        <java-type>java.lang.String[]</java-type>
+        <anonymous-type-qname>http://local.webServices.dp.ibm.com:ArrayOf_xsd_nillable_string&gt;string[0,unbounded]</anonymous-type-qname>
+        <qname-scope>complexType</qname-scope>
+    </java-xml-type-mapping>
+    <service-interface-mapping>
+        <service-interface>com.ibm.dp.webServices.local.WarehouseMstFrmBotreeWebServiceService</service-interface>
+        <wsdl-service-name xmlns:sim="http://local.webServices.dp.ibm.com">sim:WarehouseMstFrmBotreeWebServiceService</wsdl-service-name>
+        <port-mapping>
+            <port-name>WarehouseMstFrmBotreeWebService</port-name>
+            <java-port-name>WarehouseMstFrmBotreeWebService</java-port-name>
+        </port-mapping>
+    </service-interface-mapping>
+    <service-endpoint-interface-mapping>
+        <service-endpoint-interface>com.ibm.dp.webServices.local.WarehouseMstFrmBotreeWebService</service-endpoint-interface>
+        <wsdl-port-type xmlns:seimwpt="http://local.webServices.dp.ibm.com">seimwpt:WarehouseMstFrmBotreeWebService</wsdl-port-type>
+        <wsdl-binding xmlns:seimwb="http://local.webServices.dp.ibm.com">seimwb:WarehouseMstFrmBotreeWebServiceSoapBinding</wsdl-binding>
+        <service-endpoint-method-mapping>
+            <java-method-name>wareHouseDataFrmBotree</java-method-name>
+            <wsdl-operation>wareHouseDataFrmBotree</wsdl-operation>
+            <wrapped-element/>
+            <method-param-parts-mapping>
+                <param-position>0</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:wareHouseDataFrmBotreeRequest</wsdl-message>
+                    <wsdl-message-part-name>whCode</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>1</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:wareHouseDataFrmBotreeRequest</wsdl-message>
+                    <wsdl-message-part-name>whName</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>2</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:wareHouseDataFrmBotreeRequest</wsdl-message>
+                    <wsdl-message-part-name>whAddress1</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>3</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:wareHouseDataFrmBotreeRequest</wsdl-message>
+                    <wsdl-message-part-name>whAddress2</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>4</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:wareHouseDataFrmBotreeRequest</wsdl-message>
+                    <wsdl-message-part-name>whPhone</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>5</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:wareHouseDataFrmBotreeRequest</wsdl-message>
+                    <wsdl-message-part-name>whFax</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>6</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:wareHouseDataFrmBotreeRequest</wsdl-message>
+                    <wsdl-message-part-name>tinNumber</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>7</param-position>
+                <param-type>int</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:wareHouseDataFrmBotreeRequest</wsdl-message>
+                    <wsdl-message-part-name>whType</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>8</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:wareHouseDataFrmBotreeRequest</wsdl-message>
+                    <wsdl-message-part-name>circleCode</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>9</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:wareHouseDataFrmBotreeRequest</wsdl-message>
+                    <wsdl-message-part-name>employee</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>10</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:wareHouseDataFrmBotreeRequest</wsdl-message>
+                    <wsdl-message-part-name>compCode</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>11</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:wareHouseDataFrmBotreeRequest</wsdl-message>
+                    <wsdl-message-part-name>area</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>12</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:wareHouseDataFrmBotreeRequest</wsdl-message>
+                    <wsdl-message-part-name>subArea</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>13</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:wareHouseDataFrmBotreeRequest</wsdl-message>
+                    <wsdl-message-part-name>srcType</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>14</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:wareHouseDataFrmBotreeRequest</wsdl-message>
+                    <wsdl-message-part-name>defCompCode</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>15</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:wareHouseDataFrmBotreeRequest</wsdl-message>
+                    <wsdl-message-part-name>defArea</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>16</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:wareHouseDataFrmBotreeRequest</wsdl-message>
+                    <wsdl-message-part-name>defSubArea</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>17</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:wareHouseDataFrmBotreeRequest</wsdl-message>
+                    <wsdl-message-part-name>defSrcType</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>18</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:wareHouseDataFrmBotreeRequest</wsdl-message>
+                    <wsdl-message-part-name>chrunCompCode</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>19</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:wareHouseDataFrmBotreeRequest</wsdl-message>
+                    <wsdl-message-part-name>chrunArea</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>20</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:wareHouseDataFrmBotreeRequest</wsdl-message>
+                    <wsdl-message-part-name>chrunSubArea</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>21</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:wareHouseDataFrmBotreeRequest</wsdl-message>
+                    <wsdl-message-part-name>chrunSrcType</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>22</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:wareHouseDataFrmBotreeRequest</wsdl-message>
+                    <wsdl-message-part-name>inTransCompCode</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>23</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:wareHouseDataFrmBotreeRequest</wsdl-message>
+                    <wsdl-message-part-name>inTransArea</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>24</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:wareHouseDataFrmBotreeRequest</wsdl-message>
+                    <wsdl-message-part-name>inTransSubArea</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>25</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:wareHouseDataFrmBotreeRequest</wsdl-message>
+                    <wsdl-message-part-name>inTransSrcType</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>26</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:wareHouseDataFrmBotreeRequest</wsdl-message>
+                    <wsdl-message-part-name>nonRepCompCode</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>27</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:wareHouseDataFrmBotreeRequest</wsdl-message>
+                    <wsdl-message-part-name>nonRepArea</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>28</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:wareHouseDataFrmBotreeRequest</wsdl-message>
+                    <wsdl-message-part-name>nonRepSubArea</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>29</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:wareHouseDataFrmBotreeRequest</wsdl-message>
+                    <wsdl-message-part-name>nonRepSrcType</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>30</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:wareHouseDataFrmBotreeRequest</wsdl-message>
+                    <wsdl-message-part-name>isActive</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>31</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:wareHouseDataFrmBotreeRequest</wsdl-message>
+                    <wsdl-message-part-name>isEdit</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>32</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:wareHouseDataFrmBotreeRequest</wsdl-message>
+                    <wsdl-message-part-name>userid</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>33</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:wareHouseDataFrmBotreeRequest</wsdl-message>
+                    <wsdl-message-part-name>password</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <wsdl-return-value-mapping>
+                <method-return-value>java.lang.String[]</method-return-value>
+                <wsdl-message xmlns:wrvm="http://local.webServices.dp.ibm.com">wrvm:wareHouseDataFrmBotreeResponse</wsdl-message>
+                <wsdl-message-part-name>wareHouseDataFrmBotreeReturn</wsdl-message-part-name>
+            </wsdl-return-value-mapping>
+        </service-endpoint-method-mapping>
+    </service-endpoint-interface-mapping>
+</java-wsdl-mapping>

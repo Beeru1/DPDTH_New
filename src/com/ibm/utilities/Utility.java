@@ -1,0 +1,1060 @@
+/**************************************************************************
+* File     : Utility.java
+* Author   : Sampreet
+* Created  : Apr 17, 2008
+* Modified : Apr 17, 2008
+* Version  : 0.1
+**************************************************************************
+*                               HISTORY
+**************************************************************************
+* V0.1		Apr 17, 2008 	Sampreet	First Cut.
+* V0.2		Apr 17, 2008 	Sampreet	First modification
+**************************************************************************
+*
+* Copyright @ 2002 This document has been prepared and written by 
+* IBM Global Services on behalf of Bharti, and is copyright of Bharti
+*
+**************************************************************************/
+
+package com.ibm.utilities;
+
+import java.io.FileOutputStream;
+import java.io.PrintWriter;
+import java.io.StringWriter;
+import java.net.InetAddress;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.sql.Timestamp;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+import java.util.HashMap;
+import java.util.MissingResourceException;
+import java.util.ResourceBundle;
+
+import org.apache.log4j.Logger;
+import org.apache.poi.hssf.usermodel.HSSFCell;
+import org.apache.poi.hssf.usermodel.HSSFRow;
+import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+
+import com.ibm.dp.common.Constants;
+import com.ibm.virtualization.recharge.common.ResourceReader;
+import com.ibm.virtualization.recharge.db.DBConnectionManager;
+import com.ibm.virtualization.recharge.exception.VirtualizationServiceException;
+
+
+public class Utility {
+	
+	public static java.sql.Date getSqlDate(String strDate) {
+		logger.debug(" Started getSqlDate(). Date:" + strDate);
+		return new java.sql.Date(Utility.getDate(strDate).getTime());
+	}
+	
+	public static Date getDate(String date) {
+		logger.debug(" Started getDate(). Date:" + date);
+		SimpleDateFormat sdf;
+		try {
+			sdf = new SimpleDateFormat("M/dd/yyyy");
+
+			return sdf.parse(date);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			logger.warn("Exception occured while parsign date", e);
+			return null;
+		} catch (Exception virtualizationExp) {
+			logger.warn("caught VirtualizationServiceException"
+					+ virtualizationExp.getMessage());
+			return null;
+		}
+	}
+	/*
+	 * Logger for this class.
+	 *
+	 */
+	private static Logger logger = Logger.getLogger(Utility.class.getName());	
+
+	
+	/**
+	 * 
+	 * @param date
+	 * @param format
+	 * @return
+	 */
+
+	public static Date getDateAsDate(String date, String format) throws Exception {
+		
+		SimpleDateFormat sdf;
+		try {
+      		sdf = new SimpleDateFormat(format);
+         	return sdf.parse(date);
+			
+		} catch (ParseException e) {
+		    logger.error("Error pasring date string - " + date, e);
+			throw new Exception("Invalid Date String");
+		}
+	}
+	
+	
+	/**
+	 * 
+	 * @param date
+	 * @param format
+	 * @return
+	 */
+
+	public static long getDate(String date, String format) {
+		
+		SimpleDateFormat sdf;
+		try {
+      		sdf = new SimpleDateFormat(format);
+         	return sdf.parse(date).getTime();
+			
+		} catch (ParseException e) {
+		    e.printStackTrace();
+			logger.info("Exception occured while parsign date", e);
+			return 00;
+		}
+	}
+	
+	
+	/**
+	 * 
+	 * @param date
+	 * @param format
+	 * @return
+	 */
+	public static String getTimestampAsString(Timestamp timestamp, String format) {
+		
+		format = (format == null) ? "dd-MM-yyyy-hh-mm-ss" : format;
+		Date date = (timestamp == null) ? new Date(): new Date(timestamp.getTime());
+		SimpleDateFormat sdf = new SimpleDateFormat(format);
+        return sdf.format(date);		
+	}
+	
+public static String getDateAsString(Date date, String format) {
+		
+		format = (format == null) ? "dd-MM-yyyy-hh-mm-ss" : format;
+		date = (date == null) ? new Date(): date;
+		SimpleDateFormat sdf = new SimpleDateFormat(format);
+        return sdf.format(date);		
+	}
+	
+	/**
+	 * This method reads the values from the input String <code>strInput</code> separated by the <code>delimiter</code>,  
+	 * and returns the values as ArrayList of String objects.
+	 * 
+	 * @param strInput The input String <code>strInput</code> containing the values
+	 * @param delimiter The delimiter which separates the values within the input String <code>strInput</code>. Default delimiter is ",".
+	 * 
+	 * @return The values as ArrayList of String objects.
+	 */
+	public static ArrayList stringToArrayList(String strInput, String delimiter) {
+		
+		 ArrayList<String> arrayList = new ArrayList<String>();
+		 if(strInput.indexOf(delimiter)!=-1) {
+			String arr[]=strInput.split(",");
+			for (int num = 0, len = arr.length; num < len; num++){ 
+				arrayList.add(arr[num].trim()); 
+			}
+		 } else{
+		 arrayList.add(strInput);
+		 }
+		return arrayList;
+	}
+	
+	/**
+	 * This method reads the values from the input String Array <code>array</code>   
+	 * and returns a single String with values separated by the <code>delimiter</code>.
+	 * 
+	 * @param array The input String Array <code>array</code>
+	 * @param delimiter The delimiter which separates the values within the returned String. Default delimiter is ",".
+	 * 
+	 * @return the String haveing the values of <code>array</code>, separated by the delimiter.
+	 */
+	public static String arrayToString(String array[], String delimiter ) {
+		
+		StringBuffer buffer = new StringBuffer(50);
+		delimiter = (delimiter != null) ? delimiter : ",";
+		if(array != null) {
+			for(int index = 0, len = array.length; index < len; index++)
+			{
+				if( array[index] != null) { buffer.append(array[index]); }
+				else continue;
+				if(index < (len - 1)) { buffer.append(delimiter); }
+			}
+		}
+		
+		return buffer.toString();
+	}
+	
+
+	
+
+	
+	public static String getDateAsStringFromString(String date, String formate) {
+		long date1= Utility.getDate(date, "dd/MM/yyyy");
+		   Timestamp timeStamp=new Timestamp(date1);
+		   return Utility.getTimestampAsString(timeStamp, formate);
+		
+	}
+	public static String getDateAsStringFromString1(String date, String strFormate) {
+
+		long longDate= Utility.getDate(date, "yyyy-MM-dd");
+		Timestamp timeStamp=new Timestamp(longDate);
+		return Utility.getTimestampAsString(timeStamp, strFormate);
+
+	}
+	
+	/**
+	 * 
+	 * @param strDate input date 
+	 * @param strFormat date formate
+	 * @return Sql Date corresponding to String date
+	 */
+	
+	public static java.sql.Date getSqlDateFromString(String strDate,String strFormat) {
+
+		SimpleDateFormat sdf;
+		try {
+			sdf = new SimpleDateFormat(strFormat);
+			return new java.sql.Date(sdf.parse(strDate).getTime());
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			logger.info("Exception occured while parsign date", e);
+			return null;
+		} 
+	}
+	
+	/**
+	 * This method return map having all the month and correspong value 
+	 * @return map 
+	 */
+/*	public static HashMap getMonthList(){
+		 String months[] = {"January",
+			      "February","March","April",
+			      "May","June","July","August","September",
+			      "October","November","December"};
+		 LinkedHashMap monthMap = new LinkedHashMap();
+		 for (int i = 1; i <= months.length; i++) {
+			 monthMap.put(months[i-1],i);
+		} 
+		 	return monthMap;
+	}*/
+	/**
+	 * 
+	 * @param  intYear input year 
+	 * @param intMonth input month for which last date required
+	 * @return last date of the month
+	 */
+	public static int  getDaysInMonth(int intMonth,int intYear) {
+		int daysInMonth[] = {31,28,31,30,31,30,31,31,30,31,30,31};
+		if (intMonth != 2) return daysInMonth[intMonth - 1];
+		if (intYear%4 != 0) return daysInMonth[1];
+		if (intYear % 100 == 0 && intYear % 400 != 0) return daysInMonth[1];
+		return daysInMonth[1] + 1;
+	}
+	
+	/**
+	 * This method returns the value of property of the given resource bundle
+	 * and property.
+	 *
+	 * @param propertyKey
+	 * @param resourceBundleName
+	 * @return String
+	 * @throws VirtualizationServiceException
+	 */
+	public static String getValueFromBundle(String propertyKey,
+			String resourceBundleName) {
+
+		String keyValue = null;
+		try {
+
+			ResourceBundle resourceBundle = ResourceBundle
+					.getBundle(resourceBundleName);
+			return resourceBundle.getString(propertyKey);
+				
+		}
+		catch (MissingResourceException missingResourceExp) {
+			missingResourceExp.printStackTrace();
+			logger.error(new StringBuffer(75)
+				.append(
+				"getValueFromBundle() method : caught MissingResourceException : Unable to get ")
+				.append(resourceBundleName).append(" : ")
+				.append(missingResourceExp.getMessage())
+				.toString(), missingResourceExp);
+		}
+		return keyValue;
+	}
+	/** return the Map containg first and last date of the month for input date 
+	 *  if input data parameter is null it returns first and last date of the current month
+	 * @return map object having first and last date of the month 
+	 */
+	public static HashMap getFtAndLtDateOfMonth(String strDate) {
+		Calendar cal=Calendar.getInstance();
+		
+		Date sqlDate=null;
+		
+		if(strDate != null && !"".equals(strDate)){
+			sqlDate = new Date(Utility.getDate(strDate, "dd/MM/yyyy"));
+			cal.setTime(sqlDate);	
+		}
+		cal.set(Calendar.DAY_OF_MONTH, 1);
+		String firstDateOfMonth = Utility.getDateAsString(cal.getTime(), "dd/MM/yyyy");
+		cal.set(Calendar.DAY_OF_MONTH, cal.getActualMaximum(Calendar.DATE));
+		String lastDateOfMonth = Utility.getDateAsString(cal.getTime(), "dd/MM/yyyy");
+		String monthOftheDate =Utility.getDateAsString(cal.getTime(),
+		"MMM");
+		HashMap hashMap = new HashMap();
+		hashMap.put("firstDateOfMonth",firstDateOfMonth);
+		hashMap.put("lastDateOfMonth",lastDateOfMonth);
+		hashMap.put("monthOftheDate",monthOftheDate);
+		return hashMap;
+	}
+	
+	
+	
+	public static Date stringToDate(String date) {
+		Date dt = null;
+		try {
+			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+			String date1 = new String(date);
+			dt = sdf.parse(date1);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return dt;
+	}
+	
+	public static Timestamp stringToTimestamp(String date) {
+		Timestamp timestamp = null;
+		try {
+			SimpleDateFormat sdf1 = new SimpleDateFormat(
+			"dd-MM-yyyy-HH-mm-ss");
+			String date1 = new String(date);
+			java.util.Date dt1 = sdf1.parse(date1);
+			timestamp = new Timestamp(dt1.getTime());
+				
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return timestamp;
+	}
+	
+	public static Timestamp stringToTimestamp1(String date) {
+		Timestamp timestamp = null;
+		try {
+			SimpleDateFormat sdf1 = new SimpleDateFormat(
+			"MM/dd/yyyy");
+			String date1 = new String(date);
+			java.util.Date dt1 = sdf1.parse(date1);
+			timestamp = new Timestamp(dt1.getTime());
+				
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return timestamp;
+	}
+	
+	public static Timestamp stringToTimestampAmPm(String date) throws ParseException
+	{
+		Timestamp timestamp = null;
+//		Commented as date format is incorrect @ CR58299
+//		SimpleDateFormat sdf1 = new SimpleDateFormat(
+//		"MM/dd/yyyy hh:mm:ss aa");
+		SimpleDateFormat sdf1 = new SimpleDateFormat(
+		"dd/MM/yyyy hh:mm:ss aa");
+		String date1 = new String(date);
+		java.util.Date dt1 = sdf1.parse(date1);
+		timestamp = new Timestamp(dt1.getTime());
+				
+
+		return timestamp;
+	}
+
+	public static String checkForMachingCharactersInPwdLogin(String password , String loginId)
+	{
+		String matched = "false";
+		try{
+				for(int i =0;i<loginId.length();i++)
+				{
+					for(int j=0;j<password.length();j++)
+					{
+						if(password.charAt(j)==loginId.charAt(i))
+						{
+							if(password.length()-1 > j+1 && loginId.length()-1>i+1)
+							{
+								if(password.charAt(j+1)==loginId.charAt(i+1))
+								{
+									if(password.length()-1 > j+2 && loginId.length()-1>i+2)
+									{
+										if(password.charAt(j+2)==loginId.charAt(i+2))
+										{
+											if(password.length()-1 >= j+3 && loginId.length()-1 >= i+3)
+											{
+												if(password.charAt(j+3)==loginId.charAt(i+3))
+												{
+													matched = "true";
+													break;
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		
+		return matched; 
+	}
+	
+	
+	/**
+	 * Method to validate whether the number is in range or not.
+	 * 
+	 * @param start
+	 * @param end
+	 * @param value
+	 * @return
+	 */
+	public static boolean inRange(int start, int end, int value){
+		if(value>=start && value<=end){
+			return true;
+		}
+		return false;
+	}
+
+	public static String convertDateFormat(String strDate,String strFromFormat,String strToFormat) {
+
+		SimpleDateFormat sdfFrom;
+		SimpleDateFormat sdfTo;
+		try {
+			sdfFrom = new SimpleDateFormat(strFromFormat);
+			sdfTo = new SimpleDateFormat(strToFormat);
+			java.util.Date date = sdfFrom.parse(strDate);
+			return sdfTo.format(date);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			logger.info("Exception occured while parsign date", e);
+			return null;
+		} 
+	}
+	
+	public static String getIPAddress()
+	{
+		String ipAddress;
+		try {
+			ipAddress = InetAddress.getLocalHost().getHostAddress();
+		}
+		catch (Exception e) {
+			ipAddress = "0";
+			logger.error("****** Error while retrieving IP address - "+e.getMessage()+" ********* ", e);
+		}
+		return ipAddress;
+	}
+	
+	/**
+	 * @author Nazim Hussain
+	 * Utility Method to get System Current Time and Date in TimeStamp format
+	 */
+	
+		public static Timestamp getCurrentTimeStamp()
+		{
+			java.util.Date date = new java.util.Date(System.currentTimeMillis());
+			java.sql.Timestamp timestamp = new java.sql.Timestamp(date.getTime());
+			return timestamp;
+		}
+		
+		//get current date
+		public static String getCurrentDate()
+		{
+			java.util.Date date = new java.util.Date(System.currentTimeMillis());
+			String currentDate = getDateAsString(date,"yyyy_MM_dd");
+			System.out.println(currentDate);
+			return currentDate;
+		}
+		public static void main(String[] args) {
+			Utility.getCurrentDate();
+		}
+		public static boolean isValidateDate(String strDate,String formatStr)
+		{
+			 
+			
+			if(strDate == null || "".equalsIgnoreCase(strDate.trim()))
+				return false;
+			
+			SimpleDateFormat df = new SimpleDateFormat(formatStr);
+			Date testDate = null;
+			
+			try
+			{
+			testDate = df.parse(strDate);
+			}
+			catch (ParseException e)
+			{
+	          // invalid date format
+			return false;
+			}
+			
+			return true;
+		}
+		
+		public static boolean validateDateTodayFalse(String strDate) {
+			// Handling Active Date
+			SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
+			boolean flag = true;
+			try {
+				if (strDate != null && !"".equals(strDate)) {
+					java.util.Date actDate = sdf.parse(strDate);
+					// initialise the calendar to midnight to prevent the current
+					// day from being rejected
+					Calendar cal = Calendar.getInstance();
+					cal.set(Calendar.HOUR_OF_DAY, 0);
+					cal.set(Calendar.MINUTE, 0);
+					cal.set(Calendar.SECOND, 0);
+					cal.set(Calendar.MILLISECOND, 0);
+
+					if (cal.getTime().equals(actDate)) {
+						flag = false;
+					}
+					if (cal.getTime().after(actDate)) {
+						flag = false;
+					}
+				}
+			} catch (ParseException e) {
+				// TODO Auto-generated catch block
+			}
+			return flag;
+		}
+		
+		
+		
+		public static boolean DateDiff(String fromDate, String toDate, String days, String dateFormat)
+		{
+			int day = 0;
+			
+			if(!isValidateDate(fromDate,dateFormat) || !isValidateDate(toDate, dateFormat))
+			{
+				return false;
+			}
+			
+			try{
+			day = Integer.parseInt(days);
+			}catch(NumberFormatException ex)
+			{
+				return false;
+			}
+			
+			SimpleDateFormat formatter = new SimpleDateFormat(dateFormat);
+			Calendar begin = new GregorianCalendar();
+			Calendar end = new GregorianCalendar();
+			try {
+				begin.setTime((Date) formatter.parse(fromDate));
+				end.setTime((Date) formatter.parse(toDate));
+			} catch (ParseException e) {
+				// Ignore parse exception
+				return false;
+			}
+			
+			 long diff = end.getTime().getTime() - begin.getTime().getTime();
+			 int diffDay = (int)(diff / (1000*60*60*24));
+			 if( diffDay > day)
+			  return false;
+			 else
+			return true;
+		}
+		/**
+		 * @author Nazim Hussain
+		 * 
+		 * This method accepts a SQL Date (sqlDate) and an ouput format (strOutFormat) 
+		 * and returns a String date in the format (strOutFormat) provided
+		 * 
+		 * @param sqlDate
+		 * @param strOutFormat
+		 * @return
+		 */
+		public static String converDateToString(java.sql.Date sqlDate, String strOutFormat)
+		{
+			try
+			{
+				String strReturnDate = null;
+				DateFormat dateFormat = new SimpleDateFormat(strOutFormat);
+
+				java.util.Date utilDate = new Date(sqlDate.getTime());
+				strReturnDate = dateFormat.format(utilDate);
+				return strReturnDate;
+			}
+			catch (Exception e) {
+				e.printStackTrace();
+				return "EXCEPTION";
+			}
+		}
+		
+		public static String getCurentFy(Date forDate){
+			logger.info("forDate == "+forDate);
+			Integer intCurrentYear = forDate.getYear();
+			Integer intCurrentMonth = forDate.getMonth();
+			String strCurrentFY = "";
+			Integer intFyPartI ;
+			String strPartI ="";
+			String strPartII ="";
+			if(intCurrentMonth<=2){
+				intFyPartI = intCurrentYear-1;
+				strPartI = (intFyPartI.toString()).substring(1);
+				strPartII = (intCurrentYear.toString()).substring(1);
+			}else{
+				intFyPartI = intCurrentYear+1;
+				strPartI = (intCurrentYear.toString()).substring(1);
+				strPartII = (intFyPartI.toString()).substring(1);
+			}
+			strCurrentFY = strPartI + "-"+strPartII;
+			
+			return strCurrentFY;
+		}
+		//Added by SHilpa
+		public static String converUtilDateToString(java.util.Date utilDate, String strOutFormat)
+		{
+			try
+			{
+				String strReturnDate = null;
+				DateFormat dateFormat = new SimpleDateFormat(strOutFormat);
+
+				strReturnDate = dateFormat.format(utilDate);
+				return strReturnDate;
+			}
+			catch (Exception e) {
+				e.printStackTrace();
+				return "EXCEPTION";
+			}
+		}
+		
+		
+		public static void writeDataToExcelFile(String fileName,String [][]excelData,int cellNumber) {        
+			
+			HSSFWorkbook myWorkBook = new HSSFWorkbook();        
+			HSSFSheet mySheet = myWorkBook.createSheet();         
+			HSSFRow myRow = null;         
+			HSSFCell myCell = null;  
+			for (int rowNum = 0; rowNum < excelData.length; rowNum++){      
+			myRow = mySheet.createRow(rowNum);               
+			for (int cellNum = 0; cellNum < cellNumber ; cellNum++){     
+			myCell = myRow.createCell(cellNum);   
+			System.out.println("excelData[rowNum][cellNum]"+excelData[rowNum][cellNum]);
+			myCell.setCellValue(excelData[rowNum][cellNum]);             
+			}         
+			}           
+			try{ 
+			FileOutputStream out = new FileOutputStream(fileName);            
+			myWorkBook.write(out);             
+			out.close();          
+			}catch(Exception e)
+			{ e.printStackTrace();}               
+			} 
+		
+		public static String stbPresentinDP(Connection conDP, String strSTBSerialNumber)throws Exception
+		{
+			String strReturn = "";
+			
+			PreparedStatement psCHURN_STB = null;
+			PreparedStatement psFRESH_STB = null;
+			PreparedStatement psDEF_STB = null;
+//			PreparedStatement psREV_FRESH_STB = null;
+			ResultSet rs =null;
+			
+			try
+			{
+				String strQrCHURN_STB = "SELECT SERIAL_NUMBER FROM DP_REV_CHURN_INVENTORY where SERIAL_NUMBER=? with ur";
+				String strQrFRESH_STB = "Select SERIAL_NO from DP_STOCK_INVENTORY where SERIAL_NO=? with ur";
+				String strQrDEF_STB = "select (Select  count(1) as INV_CHANGE_STOCK from DP_REV_INVENTORY_CHANGE where DEFECTIVE_SR_NO=? AND STATUS='REC'" +
+				" fetch first 1 row only) AS INV_CHANGE_STOCK," +
+				" (Select count(1) as REV_STOCK from DP_REV_STOCK_INVENTORY where SERIAL_NO_COLLECT=? and STATUS in ('COL','ERR') " +
+				" fetch first 1 row only ) AS REV_STOCK" +
+				" from sysibm.sysdummy1 with ur";
+				
+//				String strQrREV_FRESH_STB = "select (Select SERIAL_NO from DP_REV_FRESH_STOCK where SERIAL_NO=?" +
+//										" fetch first 1 row only) AS FRESH_REV_STOCK," +
+//										" (Select SERIAL_NO from DP_REV_FRESH_STOCK_HIST where SERIAL_NO=? AND STATUS='S2W'" +
+//										" fetch first 1 row only) AS FRESH_REV_HIST_STOCK" +
+//										" from sysibm.sysdummy1 with ur";
+				
+				psCHURN_STB = conDP.prepareStatement(strQrCHURN_STB);
+				psFRESH_STB = conDP.prepareStatement(strQrFRESH_STB);
+				psDEF_STB = conDP.prepareStatement(strQrDEF_STB);
+//				psREV_FRESH_STB = conDP.prepareStatement(strQrREV_FRESH_STB);
+				
+				psCHURN_STB.setString(1, strSTBSerialNumber);
+				rs = psCHURN_STB.executeQuery();
+									
+				if (rs.next())
+				{
+					strReturn = "The Serial Number exists as Churn STB in DP";
+					return strReturn;
+				}
+				
+				psFRESH_STB.setString(1, strSTBSerialNumber);
+				rs = psFRESH_STB.executeQuery();
+									
+				if (rs.next())
+				{
+					strReturn = "The Serial Number exists as Fresh STB in DP";
+					return strReturn;
+				}
+				
+				psDEF_STB.setString(1, strSTBSerialNumber);
+				psDEF_STB.setString(2, strSTBSerialNumber);
+				rs = psDEF_STB.executeQuery();
+									
+				if (rs.next())
+				{
+					if(Integer.parseInt(rs.getString("INV_CHANGE_STOCK")) >0  || Integer.parseInt(rs.getString("REV_STOCK")) > 0)
+					{
+						strReturn = "The Serial Number exists as Defective STB in DP";
+						return strReturn;
+					}
+				}
+			}
+			catch (Exception e) 
+			{
+				e.printStackTrace();
+				throw new Exception(e);
+			}
+			finally
+			{
+				DBConnectionManager.releaseResources(psCHURN_STB, rs);
+				DBConnectionManager.releaseResources(psFRESH_STB, rs);
+				DBConnectionManager.releaseResources(psDEF_STB, rs);
+//				DBConnectionManager.releaseResources(strQrREV_FRESH_STB, rs);
+			}
+			
+			return strReturn;
+		}
+		
+		public static String churnStbPresentinDP(Connection conDP, String strSTBSerialNumber)throws Exception
+		{
+			String strReturn = "";
+			
+			PreparedStatement psCHURN_STB = null;
+			PreparedStatement psFRESH_STB = null;
+			PreparedStatement psDEF_STB = null;
+//			PreparedStatement psREV_FRESH_STB = null;
+			ResultSet rs =null;
+			
+			try
+			{
+				String strQrCHURN_STB = "SELECT STATUS FROM DP_REV_CHURN_INVENTORY where SERIAL_NUMBER=? with ur";
+				String strQrFRESH_STB = "Select SERIAL_NO from DP_STOCK_INVENTORY where SERIAL_NO=? with ur";
+				
+				//Commented by Nazim Hussain to restrict CPE recovery upload against Pending DC STBs.
+				
+//				String strQrDEF_STB = "select (Select  count(1) as INV_CHANGE_STOCK from DP_REV_INVENTORY_CHANGE where DEFECTIVE_SR_NO=? AND STATUS='REC'" +
+//				" fetch first 1 row only) AS INV_CHANGE_STOCK," +
+//				" (Select count(1) as REV_STOCK from DP_REV_STOCK_INVENTORY where SERIAL_NO_COLLECT=? and STATUS in ('COL','ERR') " +
+//				" fetch first 1 row only ) AS REV_STOCK" +
+//				" from sysibm.sysdummy1 with ur";
+				
+				//Added by Nazim Hussain to restrict CPE recovery upload against Pending DC STBs.
+				String strQrDEF_STB = "select (Select  count(1) as INV_CHANGE_STOCK from DP_REV_INVENTORY_CHANGE where DEFECTIVE_SR_NO=?  AND STATUS='REC'" +
+						" fetch first 1 row only) AS INV_CHANGE_STOCK, (Select count(1) as REV_STOCK from DP_REV_STOCK_INVENTORY where SERIAL_NO_COLLECT=?" +
+						" and STATUS!='IDC' fetch first 1 row only ) AS REV_STOCK, (Select count(1) as REV_STOCK from DP_REV_STOCK_INVENTORY where SERIAL_NO_COLLECT=?" +
+						" and STATUS='IDC' fetch first 1 row only ) AS REV_STOCK_IDC,(Select count(1) as REV_STOCK_S2W from DP_REV_STOCK_INVENTORY_HIST where SERIAL_NO_COLLECT=?" +
+						" and STATUS in ('S2W') fetch first 1 row only ) AS REV_STOCK_S2W from DP_CONFIGURATION_MASTER fetch first 1 row only with ur";
+				
+				psCHURN_STB = conDP.prepareStatement(strQrCHURN_STB);
+				psFRESH_STB = conDP.prepareStatement(strQrFRESH_STB);
+				psDEF_STB = conDP.prepareStatement(strQrDEF_STB);
+//				psREV_FRESH_STB = conDP.prepareStatement(strQrREV_FRESH_STB);
+				
+				psCHURN_STB.setString(1, strSTBSerialNumber);
+				rs = psCHURN_STB.executeQuery();
+									
+				if (rs.next()==true)
+				{
+					String strStatus = rs.getString("STATUS");
+					if(strStatus.equals("IDC") || strStatus.equals("S2W"))
+						strReturn = "The Serial Number exists in a Churn pending DC in DP";
+					else
+						strReturn = "The Serial Number exists as Churn STB in DP";
+					
+					return strReturn;
+				}
+				
+				psFRESH_STB.setString(1, strSTBSerialNumber);
+				rs = psFRESH_STB.executeQuery();
+									
+				if (rs.next()==true)
+				{
+					strReturn = "The Serial Number exists as Fresh STB in DP";
+					return strReturn;
+				}
+				
+				psDEF_STB.setString(1, strSTBSerialNumber);
+				psDEF_STB.setString(2, strSTBSerialNumber);
+				psDEF_STB.setString(3, strSTBSerialNumber);
+				psDEF_STB.setString(4, strSTBSerialNumber);
+				rs = psDEF_STB.executeQuery();
+									
+				if (rs.next())
+				{
+					if(rs.getInt("INV_CHANGE_STOCK") >0  || rs.getInt("REV_STOCK") > 0 )
+						strReturn = "The Serial Number exists as Defective STB in DP";
+							
+					else if(rs.getInt("REV_STOCK_IDC")>0 || rs.getInt("REV_STOCK_S2W")>0)
+						strReturn = "The Serial Number exists in an STN pending DC in DP";
+					
+					return strReturn;
+				}
+				
+//				psREV_FRESH_STB.setString(1, strSTBSerialNumber);
+//				rs = psREV_FRESH_STB.executeQuery();
+//									
+//				if (rs.next()==true)
+//				{
+//					strReturn = "The Serial Number exists Fresh STB in DP";
+//					return strReturn;
+//				}
+				
+			}
+			catch (Exception e) 
+			{
+				e.printStackTrace();
+				throw new Exception(e);
+			}
+			finally
+			{
+				DBConnectionManager.releaseResources(psCHURN_STB, rs);
+				DBConnectionManager.releaseResources(psFRESH_STB, rs);
+				DBConnectionManager.releaseResources(psDEF_STB, rs);
+//				DBConnectionManager.releaseResources(strQrREV_FRESH_STB, rs);
+			}
+			
+			return strReturn;
+		}
+	
+		public static String stbPresentinDPForPO(Connection conDP, String strSTBSerialNumber ,String dc_no , String categoryCode )throws Exception
+		{
+			String strReturn = "";
+			
+			PreparedStatement psCHURN_STB = null;
+			PreparedStatement psFRESH_STB = null;
+			PreparedStatement psDEF_STB = null;
+//			PreparedStatement psREV_FRESH_STB = null;
+			ResultSet rs =null;
+			
+			try
+			{
+											// to resolve the po acceptance bulk churn inventory issue...
+				String strQrCHURN_STB = "SELECT SERIAL_NUMBER FROM DP_REV_CHURN_INVENTORY where SERIAL_NUMBER=? and status in ('REC','COL','ERR') with ur";
+				
+				String strQrFRESH_STB = "Select SERIAL_NO from DP_STOCK_INVENTORY a , INVOICE_HEADER b "
+									+" where a.INV_NO=b.INV_NO and SERIAL_NO=? and b.DC_NO != ? with ur";
+
+				String strQrDEF_STB = "select (Select  count(1) as INV_CHANGE_STOCK from DP_REV_INVENTORY_CHANGE where DEFECTIVE_SR_NO=? AND STATUS='REC'" +
+									" fetch first 1 row only) AS INV_CHANGE_STOCK," +
+									" (Select count(1) as REV_STOCK from DP_REV_STOCK_INVENTORY where SERIAL_NO_COLLECT=? and STATUS in ('COL','ERR') " +
+									" fetch first 1 row only ) AS REV_STOCK" +
+									" from sysibm.sysdummy1 with ur";
+				
+//				String strQrREV_FRESH_STB = "select (Select SERIAL_NO from DP_REV_FRESH_STOCK where SERIAL_NO=?" +
+//										" fetch first 1 row only) AS FRESH_REV_STOCK," +
+//										" (Select SERIAL_NO from DP_REV_FRESH_STOCK_HIST where SERIAL_NO=? AND STATUS='S2W'" +
+//										" fetch first 1 row only) AS FRESH_REV_HIST_STOCK" +
+//										" from sysibm.sysdummy1 with ur";
+				
+//				Commented to be validated against CPE POs only
+				
+//				psCHURN_STB = conDP.prepareStatement(strQrCHURN_STB);
+//				psFRESH_STB = conDP.prepareStatement(strQrFRESH_STB);
+//				psDEF_STB = conDP.prepareStatement(strQrDEF_STB);
+//				psREV_FRESH_STB = conDP.prepareStatement(strQrREV_FRESH_STB);
+				
+				psFRESH_STB = conDP.prepareStatement(strQrFRESH_STB);
+				psFRESH_STB.setString(1, strSTBSerialNumber);
+				psFRESH_STB.setString(2, dc_no);
+				rs = psFRESH_STB.executeQuery();
+				//System.out.println("11111111");					
+				if (rs.next()==true)
+				{
+				
+					//System.out.println("222222222222");
+					strReturn = "The Serial Number exists Fresh Stock in DP";
+					return strReturn;
+				}
+				//Added to validate against CPE POs only
+				if(categoryCode != null && categoryCode.equalsIgnoreCase(Constants.PRODUCT_CATEGORY_CPE))
+				{
+					psCHURN_STB = conDP.prepareStatement(strQrCHURN_STB);
+					psDEF_STB = conDP.prepareStatement(strQrDEF_STB);
+					psCHURN_STB.setString(1, strSTBSerialNumber);
+					rs = psCHURN_STB.executeQuery();
+										
+					if (rs.next()==true)
+					{
+						strReturn = "The Serial Number exists in Churn Stock ";
+						return strReturn;
+					}
+					//System.out.println("dc_no:::"+dc_no);
+	
+					//System.out.println("3333333333333");
+					psDEF_STB.setString(1, strSTBSerialNumber);
+					psDEF_STB.setString(2, strSTBSerialNumber);
+					rs = psDEF_STB.executeQuery();
+										
+					if (rs.next())
+					{
+						if(Integer.parseInt(rs.getString("INV_CHANGE_STOCK")) >0  || Integer.parseInt(rs.getString("REV_STOCK")) > 0)
+						{
+							strReturn = "The Serial Number exists Defective Stock in DP";
+							return strReturn;
+						}
+					}
+				}
+			}
+			catch (Exception e) 
+			{
+				e.printStackTrace();
+				throw new Exception(e);
+			}
+			finally
+			{
+				DBConnectionManager.releaseResources(psCHURN_STB, rs);
+				DBConnectionManager.releaseResources(psFRESH_STB, rs);
+				DBConnectionManager.releaseResources(psDEF_STB, rs);
+//				DBConnectionManager.releaseResources(strQrREV_FRESH_STB, rs);
+			}
+			
+			return strReturn;
+		}
+		
+
+		public static String getDcDetail(Connection conDP, String dcNo)throws Exception
+		{
+			PreparedStatement pstmtDcDetails = null;
+			ResultSet rs =null;
+			String categoryCode="1";
+			try
+			{
+				String sqlDcDetails = "select CATEGORY_CODE from INVOICE_HEADER where DC_NO = ? with ur ";
+				
+				
+				pstmtDcDetails = conDP.prepareStatement(sqlDcDetails);
+				pstmtDcDetails.setString(1, dcNo);
+				
+				rs = pstmtDcDetails.executeQuery();
+									
+				if (rs.next())
+				{
+					categoryCode = rs.getString("CATEGORY_CODE");
+				}
+			}
+			catch (Exception e) 
+			{
+				e.printStackTrace();
+				throw new Exception(e);
+			}
+			finally
+			{
+				DBConnectionManager.releaseResources(pstmtDcDetails, rs);
+			}
+			
+			return categoryCode;
+		}
+
+		public static String stbPresentinCPE(Connection conCPE, String stb_no) throws Exception
+		{
+			String strReturn = "";
+			
+			PreparedStatement psCPE = null;
+			ResultSet rsCPE =null;
+			
+			try
+			{
+				String cpeUser= ResourceReader.getCoreResourceBundleValue(com.ibm.virtualization.recharge.common.Constants.DP_CPE_USER);
+				String strQuery = "Select CPE_INVENTORY_STATUS_KEY from "+cpeUser+".cpe_inventory_details where ASSET_SERIAL_NO = ? and ASSET_TYPE='STB' ";
+				psCPE = conCPE.prepareStatement(strQuery);
+				logger.info("************psCPE"+psCPE);
+				psCPE.setString(1, stb_no);
+				rsCPE = psCPE.executeQuery();
+				logger.info("************stb_no"+stb_no);
+									
+				if(rsCPE.next())
+				{
+					int cpestatus = rsCPE.getInt("CPE_INVENTORY_STATUS_KEY");
+					if(cpestatus!=5)
+					{
+						strReturn = "The Serial Number is not restricted in CPE";
+						return strReturn;
+					}
+				}
+				else
+				{
+					strReturn = "The Serial Number does not exist in CPE";
+					return strReturn;
+				}
+			}
+			catch (Exception e) 
+			{
+				e.printStackTrace();
+				throw new Exception(e);
+			}
+			finally
+			{
+				DBConnectionManager.releaseResources(psCPE, rsCPE);
+			}
+			
+			return strReturn;
+		}
+
+		public static Integer getProductID(Connection connection, String strProdName, int intCircleID)throws Exception 
+		{
+			PreparedStatement pstmt = null;
+			ResultSet rs = null;
+			Integer intReturn = 0;
+			try
+			{
+				pstmt = connection.prepareStatement("select PRODUCT_ID from DP_PRODUCT_MASTER where upper(PRODUCT_NAME)=? and CIRCLE_ID=? and CM_STATUS='A' with ur");
+				pstmt.setString(1, strProdName.toUpperCase());
+				pstmt.setInt(2, intCircleID);
+				rs =pstmt.executeQuery();
+				logger.info("getproductID:" +pstmt);
+				logger.info("circleID:" +intCircleID);
+				if(rs.next())
+				{
+					intReturn = rs.getInt(1);
+				}
+			}
+			catch (Exception e) 
+			{
+				e.printStackTrace();
+				logger.info("Inside main Exception of validateProductName method--"+e.getMessage());
+				throw new Exception(e.getMessage());
+			}
+			finally
+			{
+				DBConnectionManager.releaseResources(pstmt, rs);
+			}
+			
+			return intReturn;
+		}
+		
+		//added by Beeru on 16 Apr 2014
+		public static String getStackTrace(Exception e)
+		{
+		    StringWriter sWriter = new StringWriter();
+		    PrintWriter pWriter = new PrintWriter(sWriter);
+		    e.printStackTrace(pWriter);
+		    return sWriter.toString();
+		}
+}

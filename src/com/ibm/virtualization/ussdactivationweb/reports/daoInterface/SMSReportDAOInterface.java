@@ -1,0 +1,649 @@
+/**************************************************************************
+ * File     : SMSReportDAO.java
+ * Author   : Ashad
+ * Created  : Oct 10, 2008
+ * Modified : Oct 10, 2008
+ * Version  : 1.0
+ **************************************************************************
+ *
+ * Copyright @ 2002 This document has been prepared and written by 
+ * IBM Global Services on behalf of Bharti, and is copyright of Bharti
+ *
+ **************************************************************************/
+package com.ibm.virtualization.ussdactivationweb.reports.daoInterface;
+
+import com.ibm.virtualization.ussdactivationweb.utils.SQLConstants;
+
+/**
+ * @author Ashad 
+ *
+ */
+public interface SMSReportDAOInterface {
+	/****************************************db2 queries******************************************************/
+
+
+	/** find the requestor information for particular registered no **/
+
+	public static final String SELECT_REQUESTER_DETAILS_FOR_REG_NO = new StringBuffer()
+	.append("SELECT RN.BUS_USER_ID,RN.MOBILE_NO,RN.STATUS,US.USER_NAME,US.USER_CODE,")
+	.append("US.CONTACT_NO,US.CIRCLE_CODE,US.HUB_CODE,BM.USER_TYPE,BM.MASTER_ID FROM " )
+	.append(SQLConstants.DISTPORTAL_SCHEMA)
+	.append(".V_REGISTERED_NUMBER RN,")
+	.append(SQLConstants.DISTPORTAL_SCHEMA)
+	.append(".V_BUSINESS_USER_DATA US,")
+	.append(SQLConstants.DISTPORTAL_SCHEMA)
+	.append(".V_BUSINESS_USER_MASTER BM ")
+	.append(" WHERE MOBILE_NO=? AND RN.STATUS='A'")
+	.append(" AND US.DATA_ID=RN.BUS_USER_ID AND US.MASTER_ID = BM.MASTER_ID AND BM.STATUS='A' WITH UR ").toString();
+
+	public static final String QUERY_SMS_PERMISSION = new StringBuffer(500)
+	.append(" SELECT RM.REPORT_TYPE,RM.REPORT_ID,RM.REPORT_NAME FROM ")
+	.append(SQLConstants.FTA_SCHEMA).append(".V_SMS_CONFIG SG INNER JOIN ")
+	.append(SQLConstants.FTA_SCHEMA).append(".V_REPORT_MSTR RM ON RM.REPORT_ID = SG.SMS_REPORT_ID")
+	.append(" WHERE REPORT_CODE=? AND SMS_REQUESTER_ID =? ").toString();
+
+	/** Activation/Pending count for Distributor and Dealer **/
+
+	public static final String SELECT_ACTIVATION_COUNT = new StringBuffer(500)
+	.append("SELECT COUNT(*) AS ACTV_COUNT, REQUESTER_TYPE FROM ")
+	.append(SQLConstants.FTA_SCHEMA).append(".V_TRANSACTION_MSTR TM INNER JOIN ").append(SQLConstants.FTA_SCHEMA)
+	.append(".V_TRAN_TYPE_MSTR TTM  ON (TM.TRAN_TYPE_ID=TTM.TRAN_TYPE_ID AND LOWER(TTM.TRAN_TYPE_NAME)='activation')")
+	.append(" WHERE REQUESTER_MSISDN=?").toString();
+
+
+	public static final String SELECT_DEALER_ACT_COUNT = new StringBuffer(500)
+	.append("SELECT COUNT(*) AS ACTV_COUNT, REQUESTER_TYPE FROM ")
+	.append(SQLConstants.FTA_SCHEMA).append(".V_TRANSACTION_MSTR TM INNER JOIN ").append(SQLConstants.FTA_SCHEMA)
+	.append(".V_TRAN_TYPE_MSTR TTM  ON (TM.TRAN_TYPE_ID=TTM.TRAN_TYPE_ID AND LOWER(TTM.TRAN_TYPE_NAME)='activation')")
+	.append(" WHERE TM.SUBS_MSISDN IN (<MSISDN_LIST>)").toString();
+
+
+	/** Activation status for a single mobile number through SMS. **/
+
+	/*public static final String SELECT_ACTV_STATUS_FOR_SINGLE_MOBILE=new StringBuffer(500)
+	.append(" SELECT tm.TRAN_TYPE_ID,ttm.TRAN_TYPE_NAME|| ' is ' ||  CASE WHEN (STATUS='I') THEN 'PENDING' WHEN (STATUS='S') THEN 'DONE' ")
+	.append(" WHEN (STATUS='F') THEN 'FAILED' END AS SUBR_STATUS FROM ")
+	.append(SQLConstants.FTA_SCHEMA).append(".V_TRANSACTION_MSTR tm INNER JOIN ")
+	.append(SQLConstants.FTA_SCHEMA).append(".V_TRAN_TYPE_MSTR ttm ")
+	.append(" ON ttm.TRAN_TYPE_ID = tm.TRAN_TYPE_ID ")
+	.append(" WHERE SUBS_MSISDN = ? AND REQUESTER_MSISDN = ? AND tm.OTHER_DETAILS NOT IN('Request Already Processed.')")
+	.append(" ORDER BY CREATED_DT DESC  FETCH FIRST ROW ONLY WITH UR ").toString();
+	 */	
+
+	public static final String SELECT_ACTV_STATUS_FOR_SINGLE_MOBILE = new StringBuffer(600).append(" SELECT * FROM (SELECT tm.TRAN_TYPE_ID AS TRAN_TYPE_ID,ttm.TRAN_TYPE_NAME|| ' is ' ||  CASE WHEN (STATUS='I') THEN 'PENDING' WHEN (STATUS='S') THEN 'DONE' ")
+	.append(" WHEN (STATUS='F') THEN 'FAILED' END AS SUBR_STATUS FROM ")
+	.append(SQLConstants.FTA_SCHEMA).append(".V_TRANSACTION_MSTR tm INNER JOIN ")
+	.append(SQLConstants.FTA_SCHEMA).append(".V_TRAN_TYPE_MSTR ttm ")
+	.append(" ON ttm.TRAN_TYPE_ID = tm.TRAN_TYPE_ID AND LOWER(TTM.TRAN_TYPE_NAME)='activation' and STATUS='S'")
+	.append(" WHERE SUBS_MSISDN = ?")  
+	.append(" UNION ")
+	.append(" (SELECT tm.TRAN_TYPE_ID AS TRAN_TYPE_ID,ttm.TRAN_TYPE_NAME|| ' is ' ||  CASE WHEN (STATUS='I') THEN 'PENDING' WHEN (STATUS='S') THEN 'DONE'")
+	.append(" WHEN (STATUS='F') THEN 'FAILED' END AS SUBR_STATUS FROM ")
+	.append(SQLConstants.FTA_SCHEMA).append(".V_TRANSACTION_MSTR tm INNER JOIN ")
+	.append(SQLConstants.FTA_SCHEMA).append(".V_TRAN_TYPE_MSTR ttm ")
+	.append(" ON ttm.TRAN_TYPE_ID = tm.TRAN_TYPE_ID ")
+	.append(" WHERE SUBS_MSISDN = ? AND tm.STATUS NOT IN('A')")
+	.append(" AND REQUESTER_TYPE is NOT NULL ")
+	.append(" ORDER BY CREATED_DT DESC FETCH FIRST ROW ONLY )) AS ACTTEMP FETCH FIRST ROW ONLY WITH UR ").toString();
+
+
+
+
+	/** Circle wise activation count (FTD/MTD). (Push/pull SMS) **/
+
+	public static final String SELECT_ACTV_COUNT_CIRCLE_WISE= new StringBuffer()
+	.append(" SELECT COUNT(*) AS ACTV_COUNT FROM ")
+	.append(SQLConstants.FTA_SCHEMA).append(".V_TRANSACTION_MSTR TM INNER JOIN ").append(SQLConstants.FTA_SCHEMA)
+	.append(".V_TRAN_TYPE_MSTR TTM  ON (TM.TRAN_TYPE_ID=TTM.TRAN_TYPE_ID AND LOWER(TTM.TRAN_TYPE_NAME)='activation')")
+	.append(" WHERE UPPER(CIRCLE_CODE) =? AND STATUS=? ").toString();
+
+
+	/** HUB wise activation count (FTD/MTD). (Push/pull SMS) **/
+
+	public static final String SELECT_CIRCLE_BY_HUB= new StringBuffer()
+	.append("SELECT CIRCLE_CODE FROM ")
+	.append(SQLConstants.PRODCAT_SCHEMA).append(".PC_CIRCLE_MSTR ")
+	.append(" WHERE HUB_CODE =? AND STATUS =1 WITH UR").toString();
+
+	public static final String SELECT_ACTV_COUNT_HUB_WISE= new StringBuffer()
+	.append(" SELECT COUNT(*) AS ACTV_COUNT FROM ")
+	.append(SQLConstants.FTA_SCHEMA).append(".V_TRANSACTION_MSTR TM INNER JOIN ").append(SQLConstants.FTA_SCHEMA)
+	.append(".V_TRAN_TYPE_MSTR TTM  ON (TM.TRAN_TYPE_ID=TTM.TRAN_TYPE_ID AND LOWER(TTM.TRAN_TYPE_NAME)='activation')")
+	.append(" WHERE CIRCLE_CODE IN (<CIRCLE_CODE>)")
+	.append(" AND STATUS=? ").toString();
+
+
+	/** Service Category wise activation count (FTD/MTD). (Push/pull SMS) **/
+
+	public static final String SELECT_SERVICE_CLASS_BY_CATEGORY_NAME= new StringBuffer()
+	.append("SELECT S.CATEGORY_ID,S.SERVICECLASS_ID,C.CATEGORY_DESC FROM ")
+	.append(SQLConstants.PRODCAT_SCHEMA).append(".PC_SERVICECLASS_MSTR S,")
+	.append(SQLConstants.PRODCAT_SCHEMA).append(".PC_SC_CATEGORY_MSTR C ")
+	.append(" WHERE S.CATEGORY_ID=C.CATEGORY_ID AND UPPER(C.CATEGORY_DESC)=? WITH UR").toString();
+	
+	/**** Get MSISDN By Service class Id and circle code *****/
+	
+	public static final String SELECT_MSISDN_BY_SERVICEID_AND_CIRCLE_CODE= new StringBuffer()
+	.append("SELECT MSISDN  FROM ")
+	.append(SQLConstants.FTA_SCHEMA).append(".V_SUBSCRIBER_MSTR ")
+	.append(" WHERE SERVICECLASS_ID = ? AND UPPER(CIRCLE_CODE)=? AND STATUS=? WITH UR").toString();
+	
+	
+
+/*	public static final String SELECT_ACTV_COUNT_SERVICE_CATEGORY_WISE= new StringBuffer()
+	.append(" SELECT COUNT(*) AS ACTV_COUNT FROM ")
+	.append(SQLConstants.FTA_SCHEMA).append(".V_SUBSCRIBER_MSTR SM INNER JOIN ")
+	.append(SQLConstants.FTA_SCHEMA).append(".V_TRANSACTION_MSTR TM")
+	.append(" ON SM.MSISDN=TM.SUBS_MSISDN AND TM.STATUS=?")
+	.append(" INNER JOIN ").append(SQLConstants.FTA_SCHEMA).append(".V_TRAN_TYPE_MSTR TTM  ON (TM.TRAN_TYPE_ID=TTM.TRAN_TYPE_ID AND LOWER(TTM.TRAN_TYPE_NAME)='activation')")
+	.append(" WHERE SM.SERVICECLASS_ID IN (<SC_ID>) ").toString();*/
+	
+	
+	public static final String SELECT_ACTV_COUNT_SERVICE_CLASS_WISE= new StringBuffer()
+	.append(" SELECT COUNT(*) AS ACTV_COUNT FROM ")
+	.append(SQLConstants.FTA_SCHEMA).append(".V_SUBSCRIBER_MSTR SM INNER JOIN ")
+	.append(SQLConstants.FTA_SCHEMA).append(".V_TRANSACTION_MSTR TM")
+	.append(" ON SM.MSISDN=TM.SUBS_MSISDN AND TM.STATUS=?")
+	.append(" INNER JOIN ").append(SQLConstants.FTA_SCHEMA).append(".V_TRAN_TYPE_MSTR TTM  ON (TM.TRAN_TYPE_ID=TTM.TRAN_TYPE_ID AND LOWER(TTM.TRAN_TYPE_NAME)='activation')")
+	.append(" WHERE TM.SUBS_MSISDN IN (<MSISDN>) ").toString();
+
+	public static final String SELECT_BUSERS__INFO= new StringBuffer()
+	.append("SELECT RN.BUS_USER_ID,RN.MOBILE_NO,RN.STATUS,US.USER_NAME,US.USER_CODE,")
+	.append("US.CONTACT_NO,US.CIRCLE_CODE,US.HUB_CODE,BM.USER_TYPE,BM.MASTER_ID FROM " )
+	.append(SQLConstants.DISTPORTAL_SCHEMA)
+	.append(".V_REGISTERED_NUMBER RN,")
+	.append(SQLConstants.DISTPORTAL_SCHEMA)
+	.append(".V_BUSINESS_USER_DATA US,")
+	.append(SQLConstants.DISTPORTAL_SCHEMA)
+	.append(".V_BUSINESS_USER_MASTER BM ")
+	.append(" RN.STATUS='A'")
+	.append(" AND US.DATA_ID=RN.BUS_USER_ID AND US.MASTER_ID = BM.MASTER_ID AND BM.STATUS='A' AND BM.MASTER_ID=? WITH UR ").toString();
+
+	public static final String SELECT_USER_ROLE_BY_REPORT_ID= new StringBuffer()
+	.append("SELECT SMS_REQUESTER_ID,SMS_REPORT_ID,CIRCLE_CODE FROM ")
+	.append(SQLConstants.FTA_SCHEMA)
+	.append(".V_SMS_CONFIG ")
+	.append(" WHERE SMS_REPORT_ID=? ").toString();
+
+	public static final String GET_MSISDN_BY_DEALER = new StringBuffer(500)
+	.append(" SELECT DISTINCT SUBS_MSISDN FROM ")
+	.append(SQLConstants.FTA_SCHEMA).append(".V_TRANSACTION_MSTR WHERE REQUESTER_MSISDN=? AND REQUESTER_TYPE='DEALER' ").toString();
+	
+	
+	
+	public static final String GET_ACTIVE_MSISDN = new StringBuffer(500)
+	.append(" SELECT DISTINCT MSISDN FROM ")
+	.append(SQLConstants.FTA_SCHEMA).append(".V_SUBSCRIBER_MSTR WHERE STATUS=? AND MSISDN=? ").toString();
+
+
+
+	public static final String SELECT_USER_INFO_BY_ROLE_AND_CIRCLE= new StringBuffer()
+	.append("SELECT RN.BUS_USER_ID,RN.MOBILE_NO,RN.STATUS,US.USER_NAME,US.USER_CODE,US.FOS_ACTV_CHK,")
+	.append("US.CONTACT_NO,US.CIRCLE_CODE,US.HUB_CODE,BM.USER_TYPE,BM.MASTER_ID,BM.BASE_LOC,US.LOC_ID FROM " )
+	.append(SQLConstants.DISTPORTAL_SCHEMA)
+	.append(".V_REGISTERED_NUMBER RN,")
+	.append(SQLConstants.DISTPORTAL_SCHEMA)
+	.append(".V_BUSINESS_USER_DATA US,")
+	.append(SQLConstants.DISTPORTAL_SCHEMA)
+	.append(".V_BUSINESS_USER_MASTER BM WHERE ")
+	.append(" RN.STATUS='A'")
+	.append(" AND US.DATA_ID=RN.BUS_USER_ID AND US.MASTER_ID = BM.MASTER_ID AND BM.STATUS='A'")
+	.append(" AND BM.MASTER_ID =?").toString();
+
+	public static final String GET_HUB_CODE_BY_CIRCLE_CODE = new StringBuffer()
+	.append("SELECT HUB_CODE FROM ")
+	.append(SQLConstants.PRODCAT_SCHEMA).append(".PC_CIRCLE_MSTR WHERE CIRCLE_CODE =? WITH UR").toString();
+	
+	public static final String GET_ACTIVE_CIRCLE = new StringBuffer()
+	.append("SELECT CIRCLE_CODE FROM ")
+	.append(SQLConstants.PRODCAT_SCHEMA).append(".PC_CIRCLE_MSTR WHERE STATUS=? AND UPPER(CIRCLE_CODE) =? WITH UR").toString();
+
+	
+	public static final String RETRIEVE_REQUESTER_DETAILS = new StringBuffer(500)
+	.append("SELECT bu.USER_NAME, ")
+	.append("bu.STATUS,bu.CONTACT_NO,bu.ADDRESS,bu.CIRCLE_CODE,bu.HUB_CODE, ")
+	.append("bm.USER_TYPE,bm.BASE_LOC,rn.MOBILE_NO FROM ")
+	.append(SQLConstants.DISTPORTAL_SCHEMA)
+	.append(".V_BUSINESS_USER_DATA bu , ")
+	.append(SQLConstants.DISTPORTAL_SCHEMA)
+	.append(".V_BUSINESS_USER_MASTER bm , ")
+	.append(SQLConstants.DISTPORTAL_SCHEMA)
+	.append(".V_REGISTERED_NUMBER rn  ")
+	.append("WHERE bu.MASTER_ID=bm.MASTER_ID AND rn.BUS_USER_ID=bu.DATA_ID ")
+	.append("AND rn.MOBILE_NO=? AND rn.STATUS=? AND bu.STATUS=? ").toString();
+	
+	
+	/*** Get the service class id and circle code for updated date ***/
+	
+	public static final String GET_SC_ID_CIRCLE_CODE = new StringBuffer()
+	.append("SELECT DISTINCT SERVICECLASS_ID, CIRCLE_CODE FROM V_SUBSCRIBER_MSTR ")
+	.append(" WHERE MSISDN IN (SELECT SUBS_MSISDN FROM V_TRANSACTION_MSTR WHERE DATE(UPDATED_DT) =? ").toString();
+	
+	
+	
+
+	/**** SMS Report Scheduling related queries ****/
+
+	public static String FETCH_REPORT_SCHEDULE = new StringBuffer(500)
+	.append(" SELECT REPORT_START_DATE,CIRCLE_CODE,REPORT_ID,REPORT_TYPE,REPORT_NAME,FORCE_START,FORCE_START_DATE  FROM ")
+	.append(SQLConstants.FTA_SCHEMA).append(".V_SMS_REPORT_MSTR WHERE ")
+	.append(" ((REPORT_START_DATE <= CURRENT_TIMESTAMP AND (UPPER(FORCE_START)='N')) ")
+	.append(" OR (UPPER(FORCE_START)='Y' AND FORCE_START_DATE IS NOT NULL) ) ")
+	.append(" AND UPPER(RE_RUN_FLAG)='Y' ")
+	.append(" AND STATUS='A' AND REPORT_NAME_TYPE='SMS' WITH UR").toString();
+
+	/** Not Being Used **/
+	public static final String UPDATE_REPORT_ENGINE_SCHEDULE_TIME =new StringBuffer(500)
+	.append("UPDATE  ").append(SQLConstants.FTA_SCHEMA).append(".V_REPORT_MSTR ")
+	.append(" SET REPORT_START_DATE= REPORT_START_DATE + 2 HOUR WHERE CIRCLE_CODE=? ").append(" WITH UR").toString();
+
+	
+	public static final String NEW_QUERY_SMS_PERMISSION = new StringBuffer(500)
+	.append(" SELECT RM.REPORT_TYPE,RM.REPORT_ID,RM.REPORT_NAME FROM ")
+	.append(SQLConstants.FTA_SCHEMA).append(".V_SMS_CONFIG SG INNER JOIN ")
+	.append(SQLConstants.FTA_SCHEMA).append(".V_REPORT_MSTR RM ON RM.REPORT_ID = SG.SMS_REPORT_ID")
+	.append(" WHERE REPORT_CODE=? AND SMS_REQUESTER_ID =? ").toString();
+	
+	/** Zone wise activation count (FTD/MTD). (Push/pull SMS) **/
+
+	public static final String SELECT_ACTV_COUNT_ZONE_WISE= new StringBuffer()
+	.append(" SELECT COUNT(*) AS ACTV_COUNT FROM ")
+	.append(SQLConstants.FTA_SCHEMA).append(".V_TRANSACTION_MSTR TM INNER JOIN ").append(SQLConstants.FTA_SCHEMA)
+	.append(".V_TRAN_TYPE_MSTR TTM  ON (TM.TRAN_TYPE_ID=TTM.TRAN_TYPE_ID AND LOWER(TTM.TRAN_TYPE_NAME)='activation')")
+	.append(" WHERE UPPER(CIRCLE_CODE) =? AND STATUS=? ").toString();
+	
+	/** city wise activation count (FTD/MTD). (Push/pull SMS) **/
+
+	public static final String SELECT_ACTV_COUNT_CITY_WISE= new StringBuffer()
+	.append(" SELECT COUNT(*) AS ACTV_COUNT FROM ")
+	.append(SQLConstants.FTA_SCHEMA).append(".V_TRANSACTION_MSTR TM INNER JOIN ").append(SQLConstants.FTA_SCHEMA)
+	.append(".V_TRAN_TYPE_MSTR TTM  ON (TM.TRAN_TYPE_ID=TTM.TRAN_TYPE_ID AND LOWER(TTM.TRAN_TYPE_NAME)='activation')")
+	.append(" WHERE UPPER(CIRCLE_CODE) =? AND STATUS=? ").toString();
+	
+	public static final String QUERY_SMS_REPORT_PERMISSION = new StringBuffer(500)
+	.append("SELECT RM.SMS_REPORT_TYPE,RM.SMS_REPORT_ID FROM ") 
+	.append(SQLConstants.FTA_SCHEMA)
+	.append(".V_SMS_CONFIG SG INNER JOIN ")
+	.append(SQLConstants.FTA_SCHEMA)
+	.append(".V_SMS_REPORT_MSTR RM ON RM.SMS_REPORT_ID = SG.SMS_REPORT_ID ")
+	.append("WHERE SG.SMS_REQUESTER_ID =? AND RM.REPORT_CODE = ? ").toString();
+	
+	
+	/*******  Queries for pending reports   *******/
+	
+	public static final String TM_GET_PENDING_REPORT_COUNT = new StringBuffer(500)
+	.append(" SELECT DIST_ID,DIST_NAME,DIST_REG_NO,COUNT(*) AS PENDING_COUNT FROM ")
+	.append(SQLConstants.FTA_SCHEMA).append(".V_TRAN_BIZ_DETAILS ")
+	.append("WHERE TM_ID=? AND CITY_ID=? AND ACTIVATION_STATUS IS NULL GROUP BY DIST_ID,DIST_NAME,DIST_REG_NO WITH UR ").toString();
+	
+	/*public static final String  DIST_GET_PENDING_REPORT_COUNT= new StringBuffer(500)
+	.append(" SELECT DIST_ID,DIST_NAME,DIST_REG_NO,COUNT(*) AS PENDING_COUNT FROM ")
+	.append(SQLConstants.FTA_SCHEMA).append(".V_TRAN_BIZ_DETAILS ")
+	.append(" WHERE DIST_ID=? AND CITY_ID=? AND (ACTIVATION_STATUS IS NULL OR ACTIVATION_STATUS NOT IN('S')) ")
+	.append(" GROUP BY DIST_ID,DIST_NAME,DIST_REG_NO WITH UR").toString();
+
+	
+	public static final String FOS_GET_PENDING_REPORT_COUNT = new StringBuffer(500)
+	.append(" SELECT DIST_ID,DIST_NAME,DIST_REG_NO,COUNT(*) AS PENDING_COUNT FROM ")
+	.append(SQLConstants.FTA_SCHEMA).append(".V_TRAN_BIZ_DETAILS ")
+	.append("WHERE WHERE FOS_ID=? AND CITY_ID=? AND (ACTIVATION_STATUS IS NULL OR ACTIVATION_STATUS NOT IN('S'))")
+	.append(" GROUP BY DIST_ID,DIST_NAME,DIST_REG_NOWITH UR ").toString();*/
+	
+	/*** Queries for pending detail report ***/
+	
+	// Distributor 
+	public static final String  DIST_GET_PENDING_DETAIL_REPORT_COUNT= new StringBuffer(500)
+	.append(" SELECT DEALER_REG_NO,MSISDN,REGISTRATION_COMPLETED_DATE,DIST_NAME FROM ")
+	.append(SQLConstants.FTA_SCHEMA).append(".V_TRAN_BIZ_DETAILS ")
+	.append(" WHERE DIST_ID=? AND CITY_ID=? AND (ACTIVATION_STATUS IS NULL OR ACTIVATION_STATUS NOT IN('S')) ")
+	.append(" ORDER BY DEALER_REG_NO,MSISDN WITH UR ").toString();
+
+	// FOS
+	public static final String  FOS_GET_PENDING_DETAIL_REPORT_COUNT= new StringBuffer(500)
+	.append(" SELECT DEALER_REG_NO,MSISDN,REGISTRATION_COMPLETED_DATE,FOS_NAME FROM ")
+	.append(SQLConstants.FTA_SCHEMA).append(".V_TRAN_BIZ_DETAILS ")
+	.append(" WHERE FOS_ID=? AND CITY_ID=? AND (ACTIVATION_STATUS IS NULL OR ACTIVATION_STATUS NOT IN('S')) ")
+	.append(" ORDER BY DEALER_REG_NO,MSISDN WITH UR ").toString();
+	
+	/*******  Queries for getting Subscriber Status *******/
+	
+	public static final String  GET_SUBSCRIBER_CURRENT_STATUS = new StringBuffer(500)
+	.append(" SELECT DEALER_REG_NO,REGISTRATION_COMPLETED_DATE,FOS_REG_NO,VERIFICATION_COMPLETED_DATE,DIST_REG_NO,ACTIVATION_COMPLETED_DATE FROM ")
+	.append(SQLConstants.FTA_SCHEMA).append(".V_TRAN_BIZ_DETAILS ")
+	.append(" WHERE MSISDN = ? AND CIRCLE_CODE= ? WITH UR ").toString();
+	
+	
+	/*public static final String  DIST_GET_SUBSCRIBER_CURRENT_STATUS = new StringBuffer(500)
+	.append(" SELECT DEALER_REG_NO,REGISTRATION_COMPLETED_DATE,FOS_REG_NO,VERIFICATION_COMPLETED_DATE,DIST_REG_NO,ACTIVATION_COMPLETED_DATE FROM ")
+	.append(SQLConstants.FTA_SCHEMA).append(".V_TRAN_BIZ_DETAILS ")
+	.append(" WHERE MSISDN = ? AND CITY_ID = ? AND DIST_ID = ? WITH UR ").toString();
+	
+	public static final String  FOS_GET_SUBSCRIBER_CURRENT_STATUS = new StringBuffer(500)
+	.append(" SELECT DEALER_REG_NO,REGISTRATION_COMPLETED_DATE,FOS_REG_NO,VERIFICATION_COMPLETED_DATE,DIST_REG_NO,ACTIVATION_COMPLETED_DATE FROM ")
+	.append(SQLConstants.FTA_SCHEMA).append(".V_TRAN_BIZ_DETAILS ")
+	.append(" WHERE MSISDN = ? AND CITY_ID =? AND FOS_ID =? WITH UR").toString();
+	
+	public static final String  DEALER_GET_SUBSCRIBER_CURRENT_STATUS = new StringBuffer(500)
+	.append(" SELECT DEALER_REG_NO,REGISTRATION_COMPLETED_DATE,FOS_REG_NO,VERIFICATION_COMPLETED_DATE,DIST_REG_NO,ACTIVATION_COMPLETED_DATE FROM ")
+	.append(SQLConstants.FTA_SCHEMA).append(".V_TRAN_BIZ_DETAILS ")
+	.append(" WHERE MSISDN = ? AND CITY_ID = ? AND DEALER_ID = ? WITH UR").toString();
+	*/
+
+	
+	/*** Queries for Activation(Total Sale FTD/MTD) count report ***/
+	
+	
+	public static final String  ED_GET_TOTAL_SALE_FOR_HUB = new StringBuffer(500)
+	.append(" SELECT HUB_CODE, COUNT(*) AS MTD_ACTV_COUNT, SUM(CASE WHEN (ACTIVATION_DT = ? ) THEN 1 ELSE 0 END) AS FTD_ACTV_COUNT FROM ")
+	.append(SQLConstants.FTA_SCHEMA).append(".V_TRAN_BIZ_DETAILS ")
+	.append("WHERE ACTIVATION_STATUS='S'  AND HUB_CODE = ? AND  ACTIVATION_DT  BETWEEN ? AND ? ")
+	.append("GROUP BY HUB_CODE WITH UR ").toString();
+	
+	public static final String  CEO_AND_SHO_GET_TOTAL_SALE_FOR_CIRCLE = new StringBuffer(500)
+	.append("SELECT CIRCLE_CODE, COUNT(*) AS MTD_ACTV_COUNT, SUM(CASE WHEN (ACTIVATION_DT = ? ) THEN 1 ELSE 0 END) AS FTD_ACTV_COUNT FROM ")
+	.append(SQLConstants.FTA_SCHEMA).append(".V_TRAN_BIZ_DETAILS ")
+	.append("WHERE ACTIVATION_STATUS='S'  AND CIRCLE_CODE = ? AND  ACTIVATION_DT  BETWEEN ? AND ? ")
+	.append("GROUP BY CIRCLE_CODE WITH UR ").toString();
+	
+	
+	public static final String  ZBM_GET_TOTAL_SALE_FOR_ZONE = new StringBuffer(500)
+	.append("SELECT ZBM_ID,ZBM_NAME, COUNT(*) AS MTD_ACTV_COUNT, SUM(CASE WHEN (ACTIVATION_DT = ?) THEN 1 ELSE 0 END) AS FTD_ACTV_COUNT FROM ")
+	.append(SQLConstants.FTA_SCHEMA).append(".V_TRAN_BIZ_DETAILS ")
+	.append("WHERE ACTIVATION_STATUS='S'  AND ZBM_ID=? AND ZONE_ID=? AND  ACTIVATION_DT  BETWEEN ? AND ? ")
+	.append("GROUP BY ZBM_ID,ZBM_NAME WITH UR ").toString();
+	
+	public static final String  ZSM_GET_TOTAL_SALE_FOR_ZONE = new StringBuffer(500)
+	.append("SELECT ZSM_ID,ZSM_NAME, COUNT(*) AS MTD_ACTV_COUNT, SUM(CASE WHEN (ACTIVATION_DT = ? ) THEN 1 ELSE 0 END) AS FTD_ACTV_COUNT FROM ")
+	.append(SQLConstants.FTA_SCHEMA).append(".V_TRAN_BIZ_DETAILS ")
+	.append("WHERE ACTIVATION_STATUS='S'  AND ZSM_ID=? AND ZONE_ID=? AND  ACTIVATION_DT  BETWEEN ? AND ? ")
+	.append("GROUP BY ZSM_ID,ZSM_NAME WITH UR ").toString();
+	
+
+	public static final String  TM_GET_TOTAL_SALE_FOR_CITY = new StringBuffer(500)
+	.append("SELECT TM_ID,TM_NAME, COUNT(*) AS MTD_ACTV_COUNT, SUM(CASE WHEN (DATE(ACTIVATION_DT) = ?) THEN 1 ELSE 0 END) AS FTD_ACTV_COUNT FROM ")
+	.append(SQLConstants.FTA_SCHEMA).append(".V_TRAN_BIZ_DETAILS ")
+	.append("WHERE ACTIVATION_STATUS='S'  AND TM_ID=? AND CITY_ID=? AND  ACTIVATION_DT  BETWEEN ? AND ? ")
+	.append("GROUP BY TM_ID,TM_NAME WITH UR ").toString();
+	
+	
+
+	public static final String  DIST_GET_TOTAL_SALE_FOR_CITY = new StringBuffer(500)
+	.append("SELECT TD.DIST_ID,DIST_NAME, COUNT(*) AS MTD_ACTV_COUNT, SUM(CASE WHEN (TD.ACTIVATION_DT = ? ) THEN 1 ELSE 0 END) AS FTD_ACTV_COUNT FROM ")
+	.append(SQLConstants.FTA_SCHEMA).append(".V_TRAN_BIZ_DETAILS TD ")
+	.append("WHERE TD.ACTIVATION_STATUS='S' AND TD.DIST_ID=? AND TD.CITY_ID=? AND UPPER(TD.ACTIVATION_DONE_BY) = UPPER('Distributor') AND TD.ACTIVATION_DT  BETWEEN ? AND ? ")
+	.append("GROUP BY TD.DIST_ID,DIST_NAME WITH UR ").toString();
+	
+	
+
+	public static final String  FOS_GET_TOTAL_SALE_FOR_CITY = new StringBuffer(500)
+	.append("SELECT TD.FOS_ID,TD.FOS_NAME, COUNT(*) AS MTD_ACTV_COUNT, SUM(CASE WHEN (TD.ACTIVATION_DT = ? ) THEN 1 ELSE 0 END) AS FTD_ACTV_COUNT FROM ")
+	.append(SQLConstants.FTA_SCHEMA).append(".V_TRAN_BIZ_DETAILS TD ")
+	.append("WHERE TD.ACTIVATION_STATUS='S' AND TD.FOS_ID=? AND TD.CITY_ID=? AND UPPER(TD.ACTIVATION_DONE_BY) = UPPER('FOS') AND TD.ACTIVATION_DT  BETWEEN ? AND ? ")
+	.append("GROUP BY TD.FOS_ID,TD.FOS_NAME WITH UR ").toString();
+	
+	
+
+	public static final String  DEALER_GET_TOTAL_SALE_FOR_CITY = new StringBuffer(500)
+	.append(" SELECT TD.DEALER_ID,DEALER_NAME, COUNT(*) AS MTD_ACTV_COUNT, SUM(CASE WHEN (TD.ACTIVATION_DT = ? ) THEN 1 ELSE 0 END) AS FTD_ACTV_COUNT FROM ")
+	.append(SQLConstants.FTA_SCHEMA).append(".V_TRAN_BIZ_DETAILS TD ")
+	.append("WHERE TD.ACTIVATION_STATUS='S' AND TD.DEALER_ID=? AND TD.CITY_ID=? AND TD.ACTIVATION_DT  BETWEEN ? AND ? ")
+	.append("GROUP BY TD.DEALER_ID,DEALER_NAME WITH UR ").toString();
+	
+	
+	//  Wise reports
+	public static final String  ED_GET_CIRCLE_WISE_TOTAL_SALE = new StringBuffer(500)
+	.append("SELECT CIRCLE_CODE, COUNT(*) AS MTD_ACTV_COUNT,SUM(CASE WHEN (DATE(ACTIVATION_DT) = ?) THEN 1 ELSE 0 END) AS FTD_ACTV_COUNT FROM ")
+	.append(SQLConstants.FTA_SCHEMA).append(".V_TRAN_BIZ_DETAILS ")
+	.append("WHERE ACTIVATION_STATUS='S'  AND HUB_CODE = ? AND  ACTIVATION_DT  BETWEEN ? AND ?")
+	.append("GROUP BY CIRCLE_CODE WITH UR ").toString();
+
+	public static final String  CEO_AND_SHO_GET_ZONE_WISE_TOTAL_SALE = new StringBuffer(500)
+	.append("SELECT ZONE_ID, ZONE_NAME, COUNT(*) AS MTD_ACTV_COUNT,SUM(CASE WHEN (ACTIVATION_DT = ?) THEN 1 ELSE 0 END) AS FTD_ACTV_COUNT FROM ")
+	.append(SQLConstants.FTA_SCHEMA).append(".V_TRAN_BIZ_DETAILS ")
+	.append("WHERE ACTIVATION_STATUS='S'  AND CIRCLE_CODE = ? AND  ACTIVATION_DT  BETWEEN ? AND ? ")
+	.append("GROUP BY ZONE_ID,ZONE_NAME WITH UR ").toString();
+
+	public static final String  ZBM_GET_ZSM_WISE_TOTAL_SALE = new StringBuffer(500)
+	.append("SELECT ZSM_ID,ZSM_NAME, COUNT(*) AS MTD_ACTV_COUNT, SUM(CASE WHEN (ACTIVATION_DT = ?) THEN 1 ELSE 0 END) AS FTD_ACTV_COUNT FROM ")
+	.append(SQLConstants.FTA_SCHEMA).append(".V_TRAN_BIZ_DETAILS ")
+	.append("WHERE ACTIVATION_STATUS='S'  AND ZBM_ID=? AND ZONE_ID=? AND  ACTIVATION_DT  BETWEEN ? AND ? ")
+	.append("GROUP BY ZSM_ID,ZSM_NAME WITH UR ").toString();
+
+	public static final String  ZSM_GET_TM_WISE_TOTAL_SALE = new StringBuffer(500)
+	.append("SELECT TM_ID,TM_NAME, COUNT(*) AS MTD_ACTV_COUNT, SUM(CASE WHEN (ACTIVATION_DT = ?) THEN 1 ELSE 0 END) AS FTD_ACTV_COUNT FROM ")
+	.append(SQLConstants.FTA_SCHEMA).append(".V_TRAN_BIZ_DETAILS ")
+	.append("WHERE ACTIVATION_STATUS='S'  AND ZSM_ID=? AND ZONE_ID=? AND  ACTIVATION_DT  BETWEEN ? AND ? ")
+	.append("GROUP BY TM_ID,TM_NAME WITH UR ").toString();
+
+	
+	public static final String  TM_GET_DISTRIBUTOR_WISE_TOTAL_SALE = new StringBuffer(500)
+	.append("SELECT TD.DIST_ID,TD.DIST_NAME, COUNT(*) AS MTD_ACTV_COUNT, SUM(CASE WHEN (TD.ACTIVATION_DT = ?) THEN 1 ELSE 0 END) AS FTD_ACTV_COUNT FROM ")
+	.append(SQLConstants.FTA_SCHEMA).append(".V_TRAN_BIZ_DETAILS TD ")
+	.append("WHERE TD.ACTIVATION_STATUS='S' AND TD.TM_ID=? AND TD.CITY_ID=? AND UPPER(TD.ACTIVATION_DONE_BY) = UPPER('FOS') AND TD.ACTIVATION_DT  BETWEEN ? AND ? ")
+	.append("GROUP BY TD.DIST_ID,TD.DIST_NAME WITH UR ").toString();
+
+	public static final String  DISTRIBUTOR_GET_FOS_WISE_TOTAL_SALE = new StringBuffer(500)
+	.append("SELECT TD.FOS_ID,FOS_NAME, COUNT(*) AS MTD_ACTV_COUNT, SUM(CASE WHEN (TD.ACTIVATION_DT = ?) THEN 1 ELSE 0 END) AS FTD_ACTV_COUNT FROM ")
+	.append(SQLConstants.FTA_SCHEMA).append(".V_TRAN_BIZ_DETAILS TD ")
+	.append("WHERE TD.ACTIVATION_STATUS='S' AND TD.DIST_ID=? AND TD.CITY_ID=? AND UPPER(TD.ACTIVATION_DONE_BY) = UPPER('Distributor') AND TD.ACTIVATION_DT  BETWEEN ? AND ? ")
+	.append("GROUP BY TD.FOS_ID,TD.FOS_NAME WITH UR ").toString();
+	
+	public static final String  FOS_GET_DEALERS_WISE_TOTAL_SALE = new StringBuffer(500)
+	.append("SELECT TD.DEALER_ID,TD.DEALER_NAME, COUNT(*) AS MTD_ACTV_COUNT, SUM(CASE WHEN (TD.ACTIVATION_DT = ?) THEN 1 ELSE 0 END) AS FTD_ACTV_COUNT FROM ")
+	.append(SQLConstants.FTA_SCHEMA).append(".V_TRAN_BIZ_DETAILS TD ")
+	.append("WHERE TD.ACTIVATION_STATUS='S' AND TD.FOS_ID=? AND TD.CITY_ID=? AND UPPER(TD.ACTIVATION_DONE_BY) = UPPER('FOS') AND TD.ACTIVATION_DT  BETWEEN ? AND ? ")
+	.append("GROUP BY TD.DEALER_ID,TD.DEALER_NAME WITH UR ").toString();
+	
+	// for 111TT 
+	
+	
+	public static final String  CEO_AND_SHO_GET_ZBM_WISE_TOTAL_SALE = new StringBuffer(500)
+	.append("SELECT ZBM_ID, ZBM_NAME, COUNT(*) AS MTD_ACTV_COUNT, SUM(CASE WHEN (DATE(ACTIVATION_DT) = ?) THEN 1 ELSE 0 END) AS FTD_ACTV_COUNT FROM ")
+	.append(SQLConstants.FTA_SCHEMA).append(".V_TRAN_BIZ_DETAILS ")
+	.append("WHERE ACTIVATION_STATUS='S'  AND CIRCLE_CODE = ? AND  ACTIVATION_DT  BETWEEN ? AND ? ")
+	.append("GROUP BY ZBM_ID, ZBM_NAME WITH UR ").toString();
+	
+	public static final String  ZBM_GET_TM_WISE_TOTAL_SALE = new StringBuffer(500)
+	.append("SELECT TM_ID,TM_NAME, COUNT(*) AS MTD_ACTV_COUNT, SUM(CASE WHEN (DATE(ACTIVATION_DT) = ?) THEN 1 ELSE 0 END) AS FTD_ACTV_COUNT FROM ")
+	.append(SQLConstants.FTA_SCHEMA).append(".V_TRAN_BIZ_DETAILS ")
+	.append(" WHERE ACTIVATION_STATUS='S'  AND ZBM_ID=? AND ZONE_ID=? AND  ACTIVATION_DT  BETWEEN ? AND ? ")
+	.append(" GROUP BY TM_ID,TM_NAME WITH UR ").toString();
+	
+	
+	public static final String  ZSM_GET_DISTRIBUTOR_WISE_TOTAL_SALE = new StringBuffer(500)
+	.append("SELECT DIST_ID,DIST_NAME, COUNT(*) AS MTD_ACTV_COUNT, SUM(CASE WHEN (DATE(ACTIVATION_DT) = ?) THEN 1 ELSE 0 END) AS FTD_ACTV_COUNT FROM ")
+	.append(SQLConstants.FTA_SCHEMA).append(".V_TRAN_BIZ_DETAILS ")
+	.append(" WHERE ACTIVATION_STATUS='S'  AND ZSM_ID=? AND ZONE_ID=? AND  ACTIVATION_DT  BETWEEN ? AND ? ")
+	.append(" GROUP BY DIST_ID, DIST_NAME WITH UR ").toString();
+	
+	public static final String  TM_GET_FOS_WISE_TOTAL_SALE = new StringBuffer(500)
+	.append("SELECT TD.FOS_ID,TD.FOS_NAME, COUNT(*) AS MTD_ACTV_COUNT, SUM(CASE WHEN (TD.ACTIVATION_DT = ?) THEN 1 ELSE 0 END) AS FTD_ACTV_COUNT FROM ")
+	.append(SQLConstants.FTA_SCHEMA).append(".V_TRAN_BIZ_DETAILS TD")
+	.append(" WHERE TD.ACTIVATION_STATUS='S' AND TD.TM_ID=? AND TD.CITY_ID=? AND UPPER(TD.ACTIVATION_DONE_BY) = UPPER('FOS') AND TD.ACTIVATION_DT  BETWEEN ? AND ? ")
+	.append("GROUP BY TD.FOS_ID,TD.FOS_NAME WITH UR ").toString();
+	
+	public static final String  DIST_GET_DEALER_WISE_TOTAL_SALE = new StringBuffer(500)
+	.append("SELECT TD.DEALER_ID,TD.DEALER_NAME, COUNT(*) AS MTD_ACTV_COUNT, SUM(CASE WHEN (TD.ACTIVATION_DT = ?) THEN 1 ELSE 0 END) AS FTD_ACTV_COUNT FROM ")
+	.append(SQLConstants.FTA_SCHEMA).append(".V_TRAN_BIZ_DETAILS TD")
+	.append(" WHERE TD.ACTIVATION_STATUS='S' AND TD.DIST_ID=? AND TD.CITY_ID=? AND UPPER(TD.ACTIVATION_DONE_BY) = UPPER('Distributor') AND TD.ACTIVATION_DT  BETWEEN ? AND ? ")
+	.append("GROUP BY TD.DEALER_ID,TD.DEALER_NAME WITH UR ").toString();
+	
+	
+
+	/*** Queries for service class wise report ***/
+	
+	// ED - Hub total sale
+	public static final String  ED_GET_TOTAL_SALE_FOR_HUB_FOR_SC_ID = new StringBuffer(500)
+	.append("SELECT HUB_CODE,HUB_NAME,SERVICECLASS_ID, COUNT(*) AS MTD_ACTV_COUNT, SUM(CASE WHEN (DATE(ACTIVATION_DT) = ? ) THEN 1 ELSE 0 END) AS FTD_ACTV_COUNT FROM ")
+	.append(SQLConstants.FTA_SCHEMA).append(".V_TRAN_BIZ_DETAILS ")
+	.append("WHERE ACTIVATION_STATUS='S' AND HUB_CODE = ? AND SERVICECLASS_ID=? AND  ACTIVATION_DT  BETWEEN ? AND ? ")
+	.append("GROUP BY HUB_CODE,HUB_NAME,SERVICECLASS_ID WITH UR ").toString();
+	
+	//	 ED - Circle wise total sale
+	public static final String  ED_GET_CIRCLE_WISE_TOTAL_SALES_FOR_SC_ID  = new StringBuffer(500)
+	.append(" SELECT CIRCLE_CODE,CIRCLE_NAME, COUNT(*) AS MTD_ACTV_COUNT, SUM(CASE WHEN ACTIVATION_DT  = ?  THEN 1 ELSE 0 END) AS FTD_ACTV_COUNT FROM ")
+	.append(SQLConstants.FTA_SCHEMA).append(".V_TRAN_BIZ_DETAILS ")
+	.append("WHERE ACTIVATION_STATUS='S'  AND HUB_CODE = ? AND SERVICECLASS_ID=? AND  ACTIVATION_DT  BETWEEN ? AND ? ")
+	.append("GROUP BY CIRCLE_CODE,CIRCLE_NAME WITH UR ").toString();
+	
+	//	 CEO/SHO - circle total sale
+	
+	public static final String  CEO_AND_SHO_GET_TOTAL_SALE_FOR_CIRCLE_FOR_SC_ID = new StringBuffer(500)
+	.append(" SELECT CIRCLE_CODE,CIRCLE_NAME, COUNT(*) AS MTD_ACTV_COUNT, SUM(CASE WHEN ACTIVATION_DT  = ?  THEN 1 ELSE 0 END) AS FTD_ACTV_COUNT FROM ")
+	.append(SQLConstants.FTA_SCHEMA).append(".V_TRAN_BIZ_DETAILS ")
+	.append("WHERE ACTIVATION_STATUS='S'  AND CIRCLE_CODE = ? AND SERVICECLASS_ID=? AND  ACTIVATION_DT  BETWEEN ? AND ? ")
+	.append("GROUP BY CIRCLE_CODE,CIRCLE_NAME WITH UR ").toString();
+	
+	//	 CEO/SHO - Zone wise total sale
+	
+	public static final String  CEO_AND_SHO_GET_TOTAL_SALE_FOR_ZONE_FOR_SC_ID = new StringBuffer(500)
+	.append("SELECT ZONE_ID, ZONE_NAME,SERVICECLASS_ID, COUNT(*) AS MTD_ACTV_COUNT,SUM(CASE WHEN (ACTIVATION_DT = ?) THEN 1 ELSE 0 END) AS FTD_ACTV_COUNT FROM ")
+	.append(SQLConstants.FTA_SCHEMA).append(".V_TRAN_BIZ_DETAILS ")
+	.append("WHERE ACTIVATION_STATUS='S' AND CIRCLE_CODE = ? AND SERVICECLASS_ID=? AND  ACTIVATION_DT  BETWEEN ? AND ? ")
+	.append("GROUP BY ZONE_ID,ZONE_NAME,SERVICECLASS_ID WITH UR ").toString();
+	
+	// CEO/SHO - ZBM wise total sale
+	public static final String  CEO_AND_SHO_GET_ZBM_WISE_SC_ACT_COUNT = new StringBuffer(500)
+	.append("SELECT ZBM_ID, ZBM_NAME, COUNT(*) AS MTD_ACTV_COUNT, SUM(CASE WHEN (DATE(ACTIVATION_DT) = '2/19/2009') THEN 1 ELSE 0 END) AS FTD_ACTV_COUNT FROM ")
+	.append(SQLConstants.FTA_SCHEMA).append(".V_TRAN_BIZ_DETAILS ")
+	.append("WHERE ACTIVATION_STATUS='S' AND CIRCLE_CODE = ? AND SERVICECLASS_ID=? AND  ACTIVATION_DT  BETWEEN ? AND ? ")
+	.append("GROUP BY ZONE_ID,ZONE_NAME,SERVICECLASS_ID WITH UR ").toString();
+	
+	 //	 23 feb 
+	 
+	// ZBM - Zone total sale
+	public static final String  ZBM_GET_TOTAL_SALE_FOR_ZONE_FOR_SC_ID = new StringBuffer(500)
+	.append("SELECT ZBM_NAME,SERVICECLASS_ID, COUNT(*) AS MTD_ACTV_COUNT, SUM(CASE WHEN (ACTIVATION_DT = ?) THEN 1 ELSE 0 END) AS FTD_ACTV_COUNT FROM ")
+	.append(SQLConstants.FTA_SCHEMA).append(".V_TRAN_BIZ_DETAILS ")
+	.append("WHERE ACTIVATION_STATUS='S'  AND ZBM_ID=? AND ZONE_ID=? AND SERVICECLASS_ID = ? AND  ACTIVATION_DT  BETWEEN ? AND ?")
+	.append("GROUP BY ZBM_NAME,SERVICECLASS_ID WITH UR ").toString();
+	 
+	// ZBM-ZSM
+	public static final String  ZBM_GET_ZSM_WISE_TOTAL_SALE_FOR_SC_ID = new StringBuffer(500)
+	.append("SELECT ZSM_ID,ZSM_NAME,SERVICECLASS_ID, COUNT(*) AS MTD_ACTV_COUNT, SUM(CASE WHEN (ACTIVATION_DT = ?) THEN 1 ELSE 0 END) AS FTD_ACTV_COUNT FROM ")
+	.append(SQLConstants.FTA_SCHEMA).append(".V_TRAN_BIZ_DETAILS ")
+	.append("WHERE ACTIVATION_STATUS='S'  AND ZBM_ID=? AND ZONE_ID=? AND SERVICECLASS_ID = ? AND  ACTIVATION_DT  BETWEEN ? AND ? ")
+	.append("GROUP BY ZSM_ID,ZSM_NAME,SERVICECLASS_ID WITH UR ").toString();
+	//	 ZBM-TM
+	public static final String  ZBM_GET_TM_WISE_TOTAL_SALE_FOR_SC_ID = new StringBuffer(500)
+	.append("SELECT TM_ID,TM_NAME,SERVICECLASS_ID, COUNT(*) AS MTD_ACTV_COUNT, SUM(CASE WHEN (DATE(ACTIVATION_DT) = ?) THEN 1 ELSE 0 END) AS FTD_ACTV_COUNT FROM ")
+	.append(SQLConstants.FTA_SCHEMA).append(".V_TRAN_BIZ_DETAILS ")
+	.append("WHERE ACTIVATION_STATUS='S'  AND ZBM_ID=? AND ZONE_ID=? AND SERVICECLASS_ID = ? AND  ACTIVATION_DT  BETWEEN ? AND ?")
+	.append("GROUP BY TM_ID,TM_NAME,SERVICECLASS_ID WITH UR ").toString();
+	
+	
+	//	 ZSM-ZONE
+	public static final String  ZSM_GET_TOTAL_SALE_FOR_ZONE_FOR_SC_ID = new StringBuffer(500)
+	.append("SELECT ZSM_ID,ZONE_NAME,SERVICECLASS_ID, COUNT(*) AS MTD_ACTV_COUNT, SUM(CASE WHEN (ACTIVATION_DT = ?) THEN 1 ELSE 0 END) AS FTD_ACTV_COUNT FROM ")
+	.append(SQLConstants.FTA_SCHEMA).append(".V_TRAN_BIZ_DETAILS ")
+	.append("WHERE ACTIVATION_STATUS='S'  AND ZSM_ID=? AND ZONE_ID=? AND SERVICECLASS_ID = ? AND  ACTIVATION_DT  BETWEEN ? AND ? ")
+	.append("GROUP BY ZSM_ID,ZONE_NAME,SERVICECLASS_ID WITH UR ").toString();
+	
+	// ZSM-TM
+	public static final String  ZSM_GET_TM_WISE_TOTAL_SALE_FOR_SC_ID = new StringBuffer(500)
+	.append("SELECT TM_ID,TM_NAME,SERVICECLASS_ID, COUNT(*) AS MTD_ACTV_COUNT, SUM(CASE WHEN (DATE(ACTIVATION_DT) = ?) THEN 1 ELSE 0 END) AS FTD_ACTV_COUNT FROM ")
+	.append(SQLConstants.FTA_SCHEMA).append(".V_TRAN_BIZ_DETAILS ")
+	.append("WHERE ACTIVATION_STATUS='S'  AND ZSM_ID=? AND ZONE_ID=? AND SERVICECLASS_ID = ? AND  ACTIVATION_DT  BETWEEN ? AND ? ")
+	.append("GROUP BY TM_ID,TM_NAME,SERVICECLASS_ID WITH UR ").toString();
+	
+	//	 ZSM-Distributor
+	public static final String  ZSM_GET_DISTRIBUTOR_WISE_TOTAL_SALE_FOR_SC_ID = new StringBuffer(500)
+	.append("SELECT DIST_ID,DIST_NAME,SERVICECLASS_ID, COUNT(*) AS MTD_ACTV_COUNT, SUM(CASE WHEN (DATE(ACTIVATION_DT) = ?) THEN 1 ELSE 0 END) AS FTD_ACTV_COUNT FROM ")
+	.append(SQLConstants.FTA_SCHEMA).append(".V_TRAN_BIZ_DETAILS ")
+	.append("WHERE ACTIVATION_STATUS='S'  AND ZSM_ID=? AND  SERVICECLASS_ID = ? AND  ZONE_ID=? AND  ACTIVATION_DT  BETWEEN ? AND ? ")
+	.append("GROUP BY DIST_ID,DIST_NAME,SERVICECLASS_ID WITH UR ").toString();
+	
+	// TM - City 
+	
+	public static final String  TM_GET_TOTAL_SALE_FOR_CITY_FOR_SC_ID  = new StringBuffer(500)
+	.append("SELECT DIST_ID,DIST_NAME,SERVICECLASS_ID, COUNT(*) AS M_ACTV_COUNT, SUM(CASE WHEN (ACTIVATION_DT = ?) THEN 1 ELSE 0 END) AS F_ACTV_COUNT FROM ")
+	.append(SQLConstants.FTA_SCHEMA).append(".V_TRAN_BIZ_DETAILS ")
+	.append("WHERE ACTIVATION_STATUS='S' AND TM_ID=? AND SERVICECLASS_ID = ? AND CITY_ID=? AND UPPER(ACTIVATION_DONE_BY) = UPPER('FOS') AND ACTIVATION_DT  BETWEEN ? AND / ")
+	.append("GROUP BY TM_ID,TM_NAME,SERVICECLASS_ID WITH UR ").toString();
+	
+	// TM - Distributor 
+	
+	public static final String   TM_GET_DISTRIBUTOR_WISE_TOTAL_SALE_FOR_SC_ID = new StringBuffer(500)
+	.append("SELECT TM_ID,TM_NAME,SERVICECLASS_ID, COUNT(*) AS MTD_ACTV_COUNT, SUM(CASE WHEN (ACTIVATION_DT = ?) THEN 1 ELSE 0 END) AS FTD_ACTV_COUNT FROM ")
+	.append(SQLConstants.FTA_SCHEMA).append(".V_TRAN_BIZ_DETAILS ")
+	.append("WHERE ACTIVATION_STATUS='S'  AND TM_ID=? AND CITY_ID=? AND SERVICECLASS_ID = ? AND  ACTIVATION_DT  BETWEEN ? AND ? ")
+	.append("GROUP BY DIST_ID,DIST_NAME,SERVICECLASS_ID WITH UR ").toString();
+	
+	//	 TM - FOS
+	
+	public static final String  TM_GET_FOS_WISE_TOTAL_SALE_FOR_SC_ID = new StringBuffer(500)
+	.append("SELECT FOS_ID,FOS_NAME,SERVICECLASS_ID, COUNT(*) AS MTD_ACTV_COUNT, SUM(CASE WHEN (ACTIVATION_DT = ?) THEN 1 ELSE 0 END) AS FTD_ACTV_COUNT FROM ")
+	.append(SQLConstants.FTA_SCHEMA).append(".V_TRAN_BIZ_DETAILS ")
+	.append("WHERE ACTIVATION_STATUS='S' AND TM_ID=? AND SERVICECLASS_ID = ? AND CITY_ID=? AND UPPER(ACTIVATION_DONE_BY) = UPPER('FOS') AND ACTIVATION_DT  BETWEEN ? AND ? ")
+	.append("GROUP BY FOS_ID,FOS_NAME,SERVICECLASS_ID WITH UR ").toString();
+	
+	
+	// Distribuor  - City 
+	
+	public static final String  DIST_GET_TOTAL_SALE_FOR_CITY_FOR_SC_ID  = new StringBuffer(500)
+	.append("SELECT DIST_ID,DIST_NAME,SERVICECLASS_ID, COUNT(*) AS MTD_ACTV_COUNT, SUM(CASE WHEN (ACTIVATION_DT = ?) THEN 1 ELSE 0 END) AS FTD_ACTV_COUNT FROM ")
+	.append(SQLConstants.FTA_SCHEMA).append(".V_TRAN_BIZ_DETAILS ")
+	.append("WHERE ACTIVATION_STATUS='S' AND DIST_ID=? AND CITY_ID=? AND SERVICECLASS_ID = ? AND UPPER(ACTIVATION_DONE_BY) = UPPER('Distributor') AND ACTIVATION_DT  BETWEEN ? AND ? ")
+	.append("GROUP BY DIST_ID,DIST_NAME,SERVICECLASS_ID WITH UR ").toString();
+	
+	// DIST - FOS
+	public static final String  DIST_GET_FOS_WISE_TOTAL_SALE_FOR_SC_ID = new StringBuffer(500)
+	.append("SELECT FOS_ID,FOS_NAME,SERVICECLASS_ID, COUNT(*) AS MTD_ACTV_COUNT, SUM(CASE WHEN (ACTIVATION_DT = ?) THEN 1 ELSE 0 END) AS FTD_ACTV_COUNT FROM ")
+	.append(SQLConstants.FTA_SCHEMA).append(".V_TRAN_BIZ_DETAILS ")
+	.append("WHERE ACTIVATION_STATUS='S' AND DIST_ID=? AND CITY_ID=? AND SERVICECLASS_ID = ? AND UPPER(ACTIVATION_DONE_BY) = UPPER('Distributor') AND ACTIVATION_DT  BETWEEN ? AND ? ")
+	.append("GROUP BY FOS_ID,FOS_NAME,SERVICECLASS_ID WITH UR ").toString();
+	
+	//	 DIST - Dealer
+	public static final String  DIST_GET_DEALER_WISE_TOTAL_SALE_FOR_SC_ID = new StringBuffer(500)
+	.append("SELECT DEALER_ID,DEALER_NAME,SERVICECLASS_ID, COUNT(*) AS MTD_ACTV_COUNT, SUM(CASE WHEN (ACTIVATION_DT = ?) THEN 1 ELSE 0 END) AS FTD_ACTV_COUNT FROM ")
+	.append(SQLConstants.FTA_SCHEMA).append(".V_TRAN_BIZ_DETAILS ")
+	.append("WHERE ACTIVATION_STATUS='S' AND DIST_ID=? AND CITY_ID=? AND UPPER(ACTIVATION_DONE_BY) = UPPER('Distributor') AND SERVICECLASS_ID = ? AND ACTIVATION_DT  BETWEEN ? AND ? ")
+	.append("GROUP BY DEALER_ID,DEALER_NAME,SERVICECLASS_ID WITH UR ").toString();
+	
+	// FOS  - City 
+	
+	public static final String  FOS_GET_TOTAL_SALE_FOR_CITY_FOR_SC_ID  = new StringBuffer(500)
+	.append("SELECT FOS_ID,FOS_NAME,SERVICECLASS_ID, COUNT(*) AS MTD_ACTV_COUNT, SUM(CASE WHEN (ACTIVATION_DT = ?) THEN 1 ELSE 0 END) AS FTD_ACTV_COUNT FROM ")
+	.append(SQLConstants.FTA_SCHEMA).append(".V_TRAN_BIZ_DETAILS ")
+	.append("WHERE ACTIVATION_STATUS='S' AND FOS_ID=? AND CITY_ID=? AND SERVICECLASS_ID = ? AND UPPER(ACTIVATION_DONE_BY) = UPPER('FOS') AND ACTIVATION_DT  BETWEEN ? AND ? ")
+	.append("GROUP BY FOS_ID,FOS_NAME,SERVICECLASS_ID WITH UR ").toString();
+
+	//	 FOS - Dealer
+	public static final String  FOS_GET_DEALER_WISE_TOTAL_SALE_FOR_SC_ID = new StringBuffer(500)
+	.append("SELECT DEALER_ID,DEALER_NAME,SERVICECLASS_ID, COUNT(*) AS MTD_ACTV_COUNT, SUM(CASE WHEN (ACTIVATION_DT = ?) THEN 1 ELSE 0 END) AS FTD_ACTV_COUNT FROM ")
+	.append(SQLConstants.FTA_SCHEMA).append(".V_TRAN_BIZ_DETAILS ")
+	.append("WHERE ACTIVATION_STATUS='S' AND FOS_ID=? AND CITY_ID=? AND UPPER(ACTIVATION_DONE_BY) = UPPER('FOS') AND SERVICECLASS_ID = ? AND ACTIVATION_DT  BETWEEN ? AND ? ")
+	.append("GROUP BY DEALER_ID,DEALER_NAME,SERVICECLASS_ID WITH UR ").toString();
+
+	// Dealer  - City 
+	
+	public static final String  DEALER_GET_TOTAL_SALE_FOR_CITY_FOR_SC_ID  = new StringBuffer(500)
+	.append("SELECT DEALER_ID,DEALER_NAME,SERVICECLASS_ID, COUNT(*) AS MTD_ACTV_COUNT, SUM(CASE WHEN (ACTIVATION_DT = ?) THEN 1 ELSE 0 END) AS FTD_ACTV_COUNT FROM ")
+	.append(SQLConstants.FTA_SCHEMA).append(".V_TRAN_BIZ_DETAILS ")
+	.append("WHERE ACTIVATION_STATUS='S' AND DEALER_ID=? AND CITY_ID=? AND SERVICECLASS_ID = ? AND ACTIVATION_DT  BETWEEN ? AND ? ")
+	.append("GROUP BY  DEALER_ID,DEALER_NAME,SERVICECLASS_ID WITH UR ").toString();
+
+
+	// fetch scheduled reports
+	/*public static String FETCH_NEW_REPORT_SCHEDULE = new StringBuffer(500)
+	.append("SELECT REPORT_START_DATE,RM.SMS_REPORT_ID,SMS_REPORT_TYPE,SMS_REPORT_NAME,SMS_REQUESTER_ID,CIRCLE_CODE,REPORT_CODE FROM ")
+	.append(SQLConstants.FTA_SCHEMA).append(".V_SMS_REPORT_MSTR RM INNER JOIN ")
+	.append(SQLConstants.FTA_SCHEMA)
+	.append(".V_SMS_CONFIG SCG  ")
+	.append(" ON RM.SMS_REPORT_ID=SCG.SMS_REPORT_ID WHERE REPORT_START_DATE <= CURRENT_TIMESTAMP AND UPPER(RE_RUN_FLAG)='Y'")
+	.append(" AND (PUSH_PULL_CHECK='PS' OR PUSH_PULL_CHECK='BH') AND STATUS='A' WITH UR").toString();
+*/	
+	
+	public static String FETCH_NEW_REPORT_SCHEDULE = new StringBuffer(500)
+	.append("SELECT RM.SMS_REPORT_ID,SMS_REPORT_NAME,SMS_REQUESTER_ID,CIRCLE_CODE,REPORT_CODE,SMS_KEYWORD FROM ")
+	.append(SQLConstants.FTA_SCHEMA).append(".V_SMS_REPORT_MSTR RM INNER JOIN ")
+	.append(SQLConstants.FTA_SCHEMA)
+	.append(".V_SMS_CONFIG SCG  ")
+	.append(" ON RM.SMS_REPORT_ID=SCG.SMS_REPORT_ID WHERE ")
+	.append(" (PUSH_PULL_CHECK='PS' OR PUSH_PULL_CHECK='BH') AND STATUS='A' WITH UR").toString();
+	
+	public static final String GET_NEW_SC_ID_CIRCLE_CODE = new StringBuffer()
+	.append("SELECT DISTINCT SERVICECLASS_ID, CIRCLE_CODE FROM ").append(SQLConstants.FTA_SCHEMA).append(".V_SUBSCRIBER_MSTR ")
+	.append(" WHERE MSISDN IN (SELECT MSISDN FROM ").append(SQLConstants.FTA_SCHEMA).append(".V_TRAN_BIZ_DETAILS ").append(" WHERE ACTIVATION_DT = CURRENT_DATE )" ).toString();
+	
+}

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://local.webServices.dp.ibm.com" xmlns:impl="http://local.webServices.dp.ibm.com" xmlns:intf="http://local.webServices.dp.ibm.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsi="http://ws-i.org/profiles/basic/1.1/xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+ <wsdl:types>
+  <schema targetNamespace="http://local.webServices.dp.ibm.com" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <element name="canonDataUpdateResponse">
+    <complexType>
+     <sequence>
+      <element name="canonDataUpdateReturn" nillable="true" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="updateCannonInventory">
+    <complexType>
+     <sequence>
+      <element name="recordId" nillable="true" type="xsd:string"/>
+      <element name="defectiveSerialNo" nillable="true" type="xsd:string"/>
+      <element name="defectiveStbType" nillable="true" type="xsd:string"/>
+      <element name="newSerialNo" nillable="true" type="xsd:string"/>
+      <element name="newStbType" nillable="true" type="xsd:string"/>
+      <element name="inventoryChangeDate" nillable="true" type="xsd:string"/>
+      <element name="inventoryChangeType" nillable="true" type="xsd:string"/>
+      <element name="distributorOlmId" nillable="true" type="xsd:string"/>
+      <element name="status" nillable="true" type="xsd:string"/>
+      <element name="errorMsg" nillable="true" type="xsd:string"/>
+      <element name="customerId" nillable="true" type="xsd:string"/>
+      <element name="defectId" type="xsd:int"/>
+      <element name="modelManKey" nillable="true" type="xsd:string"/>
+      <element name="modelManKeyOld" nillable="true" type="xsd:string"/>
+      <element name="userid" nillable="true" type="xsd:string"/>
+      <element name="password" nillable="true" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="updateCannonInventoryResponse">
+    <complexType>
+     <sequence>
+      <element name="updateCannonInventoryReturn" nillable="true" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="canonDataUpdate">
+    <complexType>
+     <sequence>
+      <element name="recId" nillable="true" type="xsd:string"/>
+      <element name="serialNo" nillable="true" type="xsd:string"/>
+      <element name="distOlmId" nillable="true" type="xsd:string"/>
+      <element name="itemCode" nillable="true" type="xsd:string"/>
+      <element name="assignedDate" nillable="true" type="xsd:string"/>
+      <element name="customerId" nillable="true" type="xsd:string"/>
+      <element name="status" nillable="true" type="xsd:string"/>
+      <element name="stbType" nillable="true" type="xsd:string"/>
+      <element name="transactionType" nillable="true" type="xsd:string"/>
+      <element name="modelManKey" nillable="true" type="xsd:string"/>
+      <element name="modelManKeyOld" nillable="true" type="xsd:string"/>
+      <element name="userId" nillable="true" type="xsd:string"/>
+      <element name="password" nillable="true" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="updateCannonInventoryResponse">
+     <wsdl:part element="impl:updateCannonInventoryResponse" name="parameters"/>
+
+  </wsdl:message>
+
+   <wsdl:message name="canonDataUpdateResponse">
+     <wsdl:part element="impl:canonDataUpdateResponse" name="parameters"/>
+
+  </wsdl:message>
+
+   <wsdl:message name="canonDataUpdateRequest">
+     <wsdl:part element="impl:canonDataUpdate" name="parameters"/>
+
+  </wsdl:message>
+
+   <wsdl:message name="updateCannonInventoryRequest">
+     <wsdl:part element="impl:updateCannonInventory" name="parameters"/>
+
+  </wsdl:message>
+
+   <wsdl:portType name="CanonDPDataWebservice">
+     <wsdl:operation name="canonDataUpdate">
+       <wsdl:input message="impl:canonDataUpdateRequest" name="canonDataUpdateRequest"/>
+
+       <wsdl:output message="impl:canonDataUpdateResponse" name="canonDataUpdateResponse"/>
+
+    </wsdl:operation>
+
+     <wsdl:operation name="updateCannonInventory">
+       <wsdl:input message="impl:updateCannonInventoryRequest" name="updateCannonInventoryRequest"/>
+
+       <wsdl:output message="impl:updateCannonInventoryResponse" name="updateCannonInventoryResponse"/>
+
+    </wsdl:operation>
+
+  </wsdl:portType>
+
+   <wsdl:binding name="CanonDPDataWebserviceSoapBinding" type="impl:CanonDPDataWebservice">
+     <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+     <wsdl:operation name="canonDataUpdate">
+       <wsdlsoap:operation soapAction="canonDataUpdate"/>
+
+       <wsdl:input name="canonDataUpdateRequest">
+         <wsdlsoap:body use="literal"/>
+
+      </wsdl:input>
+
+       <wsdl:output name="canonDataUpdateResponse">
+         <wsdlsoap:body use="literal"/>
+
+      </wsdl:output>
+
+    </wsdl:operation>
+
+     <wsdl:operation name="updateCannonInventory">
+       <wsdlsoap:operation soapAction="updateCannonInventory"/>
+
+       <wsdl:input name="updateCannonInventoryRequest">
+         <wsdlsoap:body use="literal"/>
+
+      </wsdl:input>
+
+       <wsdl:output name="updateCannonInventoryResponse">
+         <wsdlsoap:body use="literal"/>
+
+      </wsdl:output>
+
+    </wsdl:operation>
+
+  </wsdl:binding>
+
+   <wsdl:service name="CanonDPDataWebserviceService">
+     <wsdl:port binding="impl:CanonDPDataWebserviceSoapBinding" name="CanonDPDataWebservice">
+       <wsdlsoap:address location="http://localhost:9080/DPDTH/services/CanonDPDataWebservice"/>
+
+    </wsdl:port>
+
+  </wsdl:service>
+
+</wsdl:definitions>

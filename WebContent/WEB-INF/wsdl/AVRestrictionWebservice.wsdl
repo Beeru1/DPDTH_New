@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://local.webServices.dp.ibm.com" xmlns:impl="http://local.webServices.dp.ibm.com" xmlns:intf="http://local.webServices.dp.ibm.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsi="http://ws-i.org/profiles/basic/1.1/xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+ <wsdl:types>
+  <schema targetNamespace="http://local.webServices.dp.ibm.com" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <element name="checkAVRestrictionResponse">
+    <complexType>
+     <sequence>
+      <element name="checkAVRestrictionReturn" nillable="true" type="impl:ArrayOf_xsd_nillable_string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="checkAVRestriction">
+    <complexType>
+     <sequence>
+      <element name="distOLMId" nillable="true" type="xsd:string"/>
+      <element name="avSerialNumber" nillable="true" type="xsd:string"/>
+      <element name="userid" nillable="true" type="xsd:string"/>
+      <element name="password" nillable="true" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="ArrayOf_xsd_nillable_string">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="string" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="checkAVRestrictionResponse">
+     <wsdl:part element="intf:checkAVRestrictionResponse" name="parameters"/>
+
+  </wsdl:message>
+
+   <wsdl:message name="checkAVRestrictionRequest">
+     <wsdl:part element="intf:checkAVRestriction" name="parameters"/>
+
+  </wsdl:message>
+
+   <wsdl:portType name="AVRestrictionWebservice">
+     <wsdl:operation name="checkAVRestriction">
+       <wsdl:input message="intf:checkAVRestrictionRequest" name="checkAVRestrictionRequest"/>
+
+       <wsdl:output message="intf:checkAVRestrictionResponse" name="checkAVRestrictionResponse"/>
+
+    </wsdl:operation>
+
+  </wsdl:portType>
+
+   <wsdl:binding name="AVRestrictionWebserviceSoapBinding" type="intf:AVRestrictionWebservice">
+ <wsaw:UsingAddressing wsdl:required="false" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"/>
+
+     <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+     <wsdl:operation name="checkAVRestriction">
+       <wsdlsoap:operation soapAction="checkAVRestriction"/>
+
+       <wsdl:input name="checkAVRestrictionRequest">
+         <wsdlsoap:body use="literal"/>
+
+      </wsdl:input>
+
+       <wsdl:output name="checkAVRestrictionResponse">
+         <wsdlsoap:body use="literal"/>
+
+      </wsdl:output>
+
+    </wsdl:operation>
+
+  </wsdl:binding>
+
+   <wsdl:service name="AVRestrictionWebserviceService">
+     <wsdl:port binding="intf:AVRestrictionWebserviceSoapBinding" name="AVRestrictionWebservice">
+       <wsdlsoap:address location="http://localhost:9080/DPDTH/services/AVRestrictionWebservice"/>
+
+    </wsdl:port>
+
+  </wsdl:service>
+
+</wsdl:definitions>

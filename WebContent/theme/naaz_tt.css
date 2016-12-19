@@ -1,0 +1,44 @@
+.TTcontainer {
+	MARGIN: 0px; WIDTH: 100%; BORDER-BOTTOM: #000000 1px solid; BACKGROUND-COLOR: #dfdfdf
+}
+.test {
+	MARGIN: 0px; WIDTH: 100%; BORDER-BOTTOM: #000000 1px solid; BACKGROUND-COLOR: #ff0000
+}
+.TTdivcontainer {
+	BORDER-RIGHT: #995e5e 1px solid; PADDING-RIGHT: 10px; BORDER-TOP: #995e5e 1px solid; PADDING-LEFT: 10px; PADDING-BOTTOM: 10px; MARGIN: 0px 10px; BORDER-LEFT: #995e5e 1px solid; WIDTH: 100%; PADDING-TOP: 10px; BORDER-BOTTOM: #995e5e 1px solid; HEIGHT: 150px; BACKGROUND-COLOR: #c7c3c6
+}
+.tabNormal {
+	CURSOR: hand; BACKGROUND-COLOR: #995e5e
+}
+.tabNormal .ltCurve {
+	CURSOR: hand
+}
+.tabNormal .rtCurve {
+	CURSOR: hand
+}
+.tabNormal .midBlock {
+	PADDING-RIGHT: 5px;
+	PADDING-LEFT: 5px;
+	FONT-WEIGHT: bold;
+	FONT-SIZE: 10px;
+	BACKGROUND: #dfdfdf;
+	PADDING-BOTTOM: 5px;
+	CURSOR: hand; COLOR: #000000;
+	PADDING-TOP: 5px;
+	FONT-FAMILY: Verdana,Arial,Helvetica
+}
+.tabHighlight {
+	CURSOR: hand; BACKGROUND-COLOR: #E41B17
+}
+.tabHighlight .ltCurve {
+	WIDTH: 9px; CURSOR: hand
+}
+.tabHighlight .rtCurve {
+	WIDTH: 9px; CURSOR: hand
+}
+.tabHighlight .midBlock {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; FONT-WEIGHT: bold; FONT-SIZE: 10px; BACKGROUND: #E41B17; PADDING-BOTTOM: 5px; CURSOR: hand; COLOR: #ffffff; PADDING-TOP: 5px; FONT-FAMILY: Verdana,Arial,Helvetica
+}
+.tabseparator {
+	FONT-SIZE: 2px; WIDTH: 0px; BACKGROUND-COLOR: #ffffff
+}

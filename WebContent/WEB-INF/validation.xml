@@ -1,0 +1,350 @@
+
+<form-validation>
+	<formset>
+		<form name="HBORequisitionForm">
+			<field property="businessCategory" depends="required">
+				<arg0 key="createRequisition.businessCategory"/>
+			</field>
+			<field property="productCode" depends="required">
+				<arg0 key="createRequisition.productCode" />
+			</field>
+			<field property="qtyRequisition" depends="required,integer">
+				<arg0 key="createRequisition.qtyRequisition" />
+				<arg1 key="createRequisition.qtyRequisitionInteger" />				
+			</field>
+			<field property="warehouse_to" depends="required">
+				<arg0 key="createRequisition.warehouse_to" />
+			</field>
+			<field property="month" depends="required">
+				<arg0  key="createRequisition.month" />
+			</field>
+		</form>		
+		<form name="HBOAssignSimStockForm">
+			<field property="warehouseId" depends="required">
+				<arg0 key="hboAssignSimStockForm.assignTo" />		
+				
+			</field>	
+			<field property="assignedSimQty" depends="required,integer,mask">
+				<arg0 key="hboAssignSimStockForm.assignedSimQty" />
+				<arg1 key ="${var:minlength}" name = "minlength" resource = "false"/>
+				<var>
+					<var-name>mask</var-name>
+					<var-value>[1-9]*$</var-value>
+				</var>	
+			</field>	
+		
+		</form>
+		<form name="HBOProjectionForm">
+			<field property="circle" depends="required">
+				<arg0 key="HBOProjectionForm.circle" />
+			</field>
+			<field property="business_catg" depends="required">
+				<arg0 key="HBOProjectionForm.businessCategory" />
+			</field>
+			<field property="product" depends="required">
+				<arg0 key="HBOProjectionForm.product" />
+			</field>
+			<field property="month" depends="required">
+				<arg0 key="HBOProjectionForm.month" />
+			</field>
+			
+			<field property="year" depends="required">
+				<arg0 key="HBOProjectionForm.year" />
+			</field>
+			<field property="quantity" depends="required,integer">
+				<arg0 key="HBOProjectionForm.quantity" />
+			</field>
+		</form>
+		<form name="HBOMinReorderForm">
+			<field property="distributor" depends="required">
+				<arg0 key="HBOMinReorderForm.distributor" />
+			</field>
+			<field property="product" depends="required">
+				<arg0 key="HBOMinReorderForm.product" />
+			</field>
+			<field property="minreorder" depends="required,integer">
+				<arg0 key="HBOMinReorderForm.minreorder" />
+			</field>
+
+		</form>
+		<form name="HBOMarkDamagedForm">
+			<field property="imeiNo" depends="required,minlength,maxlength">
+				<arg0 key="HBOMarkDamagedForm.imeino" />
+				<arg1 key ="${var:minlength}" name = "minlength" resource = "false"/>
+				<arg1 key ="${var:maxlength}" name = "maxlength" resource = "false"/>
+				<var>
+		            <var-name>mask</var-name>
+		            <var-value>^[0-9a-zA-Z]*$</var-value>
+		        </var>
+		        <var>
+					<var-name>maxlength</var-name>
+					<var-value>20</var-value>
+				</var>
+				<var>
+					<var-name>minlength</var-name>
+					<var-value>15</var-value>
+				</var>
+				
+			</field>
+		</form>
+		<form name="HBOAssignProdStockForm">
+			<field property="product" depends="required">
+				<arg0 key="HBOAssignProdStockForm.product" />
+			</field>
+
+			<field property="circle" depends="required">
+				<arg0 key="HBOAssignProdStockForm.circle" />
+			</field>
+			<field property="warehouseId" depends="required">
+				<arg0 key="HBOAssignProdStockForm.warehouseId" />
+			</field>
+			<field property="assignedProdQty" depends="required,integer">
+				<arg0 key="HBOAssignProdStockForm.assignedProdQty" />
+			</field>
+		</form>
+
+		<form name="HBORequisitionForm">
+			<field property="businessCategory" depends="required">
+				<arg0 key="createRequisition.businessCategory" />
+			</field>
+			<field property="productCode" depends="required">
+				<arg0 key="createRequisition.productCode" />
+			</field>
+			<field property="qtyRequisition" depends="required,integer">
+				<arg0 key="createRequisition.qtyRequisition" />
+			</field>
+			<field property="warehouse_to" depends="required">
+				<arg0 key="createRequisition.warehouse_to" />
+			</field>
+			<field property="month" depends="required">
+				<arg0 key="createRequisition.month" />
+			</field>
+		</form>
+		
+		
+		<form name="DPCreateProductFormBean">
+		<field property="productname" depends="required">
+		<arg0 key="editproduct.productname" />
+		</field>
+		<field property="companyname" depends="required">
+		<arg0 key="editproduct.companyname" />
+		</field>
+		<field property="stocktype" depends="required">
+		<arg0 key="editproduct.stocktype" />
+		</field>
+		<field property="productwarranty" depends="required,integer,mask,maxlength">
+		<arg0 key="editproduct.warranty" />
+		<arg1 key ="${var:maxlength}" name = "maxlength" resource = "false"/>
+				<var>
+					<var-name>mask</var-name>
+					<var-value>[1-9]*$</var-value>
+				</var>
+				 <var>
+					<var-name>maxlength</var-name>
+					<var-value>10</var-value>
+				</var>
+				</field>
+		<field property="productdescription" depends="required">
+		<arg0 key="editproduct.description" />
+		</field>
+		<field property="cardgroup" depends="required">
+		<arg0 key="editproduct.cardgroup" />
+		</field>
+		<field property="packtype" depends="required">
+		<arg0 key="editproduct.packtype" />
+		</field>
+		<field property="simcardcost" depends="required,mask,maxlength">
+		<arg0 key="editproduct.simcost" />
+		<arg1 key ="${var:maxlength}" name = "maxlength" resource = "false"/>
+				<var>
+					<var-name>mask</var-name>
+					<var-value>[1-9].*$</var-value>
+				</var>
+				 <var>
+					<var-name>maxlength</var-name>
+					<var-value>10</var-value>
+				</var>
+		 </field>
+		 <field property="talktime" depends="required,integer,mask,maxlength">
+		 <arg0 key="editproduct.talktime" />
+		 <arg1 key ="${var:maxlength}" name = "maxlength" resource = "false"/>
+				<var>
+					<var-name>mask</var-name>
+					<var-value>[1-9].*$</var-value>
+				</var>
+				 <var>
+					<var-name>maxlength</var-name>
+					<var-value>10</var-value>
+				</var>
+		</field>
+		<field property="mrp" depends="required,integer,mask,maxlength">
+				<arg0 key="editproduct.mrp" />
+				<arg1 key="${var:maxlength}" name = "maxlength" resource = "false"/>
+				<var>
+					<var-name>mask</var-name>
+					<var-value>[1-9].*$</var-value>
+				</var>
+				 <var>
+					<var-name>maxlength</var-name>
+					<var-value>10</var-value>
+				</var>
+		</field>
+		<field property="activation" depends="required">
+		<arg0 key="editproduct.activation"/>
+		</field>
+		<field property="processingfee" depends="required,integer,mask,maxlength">
+				<arg0 key="editproduct.processingfee" />
+				<arg1 key="${var:maxlength}" name = "maxlength" resource = "false"/>
+				<var>
+					<var-name>mask</var-name>
+					<var-value>[1-9].*$</var-value>
+				</var>
+				 <var>
+					<var-name>maxlength</var-name>
+					<var-value>10</var-value>
+				</var>
+		</field>
+		<field property="salestax" depends="required,integer,mask,maxlength">
+				<arg0 key="editproduct.salestax" />
+				<arg1 key="${var:maxlength}" name = "maxlength" resource = "false"/>
+				<var>
+					<var-name>mask</var-name>
+					<var-value>[1-9].*$</var-value>
+				</var>
+				 <var>
+					<var-name>maxlength</var-name>
+					<var-value>10</var-value>
+				</var>
+		</field>
+		<field property="cesstax" depends="required,integer,mask,maxlength">
+				<arg0 key="editproduct.cesstax" />
+				<arg1 key="${var:maxlength}" name = "maxlength" resource = "false"/>
+				<var>
+					<var-name>mask</var-name>
+					<var-value>[1-9].*$</var-value>
+				</var>
+				 <var>
+					<var-name>maxlength</var-name>
+					<var-value>10</var-value>
+				</var>
+		</field>
+		<field property="vat" depends="required,integer,mask,maxlength">
+				<arg0 key="editproduct.vat" />
+				<arg1 key="${var:maxlength}" name = "maxlength" resource = "false"/>
+				<var>
+					<var-name>mask</var-name>
+					<var-value>[1-9].*$</var-value>
+				</var>
+				 <var>
+					<var-name>maxlength</var-name>
+					<var-value>10</var-value>
+				</var>
+		</field>
+		<field property="servicetax" depends="required,integer,mask,maxlength">
+				<arg0 key="editproduct.servicetax" />
+				<arg1 key="${var:maxlength}" name = "maxlength" resource = "false"/>
+				<var>
+					<var-name>mask</var-name>
+					<var-value>[1-9].*$</var-value>
+				</var>
+				 <var>
+					<var-name>maxlength</var-name>
+					<var-value>10</var-value>
+				</var>
+		</field>
+		<field property="turnovertax" depends="required,integer,mask,maxlength">
+				<arg0 key="editproduct.turnovertax" />
+				<arg1 key="${var:maxlength}" name = "maxlength" resource = "false"/>
+				<var>
+					<var-name>mask</var-name>
+					<var-value>[1-9].*$</var-value>
+				</var>
+				 <var>
+					<var-name>maxlength</var-name>
+					<var-value>10</var-value>
+				</var>
+		</field>
+		<field property="sheducess" depends="required,integer,mask,maxlength">
+				<arg0 key="editproduct.sheducess" />
+				<arg1 key="${var:maxlength}" name = "maxlength" resource = "false"/>
+				<var>
+					<var-name>mask</var-name>
+					<var-value>[1-9].*$</var-value>
+				</var>
+				 <var>
+					<var-name>maxlength</var-name>
+					<var-value>10</var-value>
+				</var>
+		</field>
+		<field property="goldennumbercharge" depends="required,integer,mask,maxlength">
+				<arg0 key="editproduct.goldennumbercharge" />
+				<arg1 key="${var:maxlength}" name = "maxlength" resource = "false"/>
+				<var>
+					<var-name>mask</var-name>
+					<var-value>[1-9].*$</var-value>
+				</var>
+				 <var>
+					<var-name>maxlength</var-name>
+					<var-value>10</var-value>
+				</var>
+		</field>
+		<field property="discount" depends="required,integer,mask,maxlength">
+				<arg0 key="editproduct.discount" />
+				<arg1 key="${var:maxlength}" name = "maxlength" resource = "false"/>
+				<var>
+					<var-name>mask</var-name>
+					<var-value>[1-9].*$</var-value>
+				</var>
+				 <var>
+					<var-name>maxlength</var-name>
+					<var-value>10</var-value>
+				</var>
+		</field>
+		<field property="distprice" depends="required,integer,mask,maxlength">
+				<arg0 key="editproduct.distprice" />
+				<arg1 key="${var:maxlength}" name = "maxlength" resource = "false"/>
+				<var>
+					<var-name>mask</var-name>
+					<var-value>[1-9].*$</var-value>
+				</var>
+				 <var>
+					<var-name>maxlength</var-name>
+					<var-value>10</var-value>
+				</var>
+		</field>
+		<field property="costprice" depends="required,integer,mask,maxlength">
+				<arg0 key="editproduct.costprice" />
+				<arg1 key="${var:maxlength}" name = "maxlength" resource = "false"/>
+				<var>
+					<var-name>mask</var-name>
+					<var-value>[1-9].*$</var-value>
+				</var>
+				 <var>
+					<var-name>maxlength</var-name>
+					<var-value>10</var-value>
+				</var>
+		</field>
+		<field property="octoriprice" depends="required,integer,mask,maxlength">
+				<arg0 key="editproduct.octoriprice" />
+				<arg1 key="${var:maxlength}" name = "maxlength" resource = "false"/>
+				<var>
+					<var-name>mask</var-name>
+					<var-value>[1-9].*$</var-value>
+				</var>
+				 <var>
+					<var-name>maxlength</var-name>
+					<var-value>10</var-value>
+				</var>
+		</field>
+		<field property="effectivedate" depends="required">
+		<arg0 key="editproduct.date" />
+		</field>
+		
+		<field property="version" depends="required">
+		<arg0 key="editproduct.version" />
+		</field>
+		 
+		</form>
+
+	</formset>
+</form-validation>

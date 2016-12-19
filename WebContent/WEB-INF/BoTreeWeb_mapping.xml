@@ -1,0 +1,1387 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java-wsdl-mapping xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.1" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://www.ibm.com/webservices/xsd/j2ee_jaxrpc_mapping_1_1.xsd">
+    <package-mapping>
+        <package-type>org.tempuri</package-type>
+        <namespaceURI>http://tempuri.org/</namespaceURI>
+    </package-mapping>
+    <java-xml-type-mapping>
+        <java-type>int</java-type>
+        <root-type-qname xmlns:rtq="http://www.w3.org/2001/XMLSchema">rtq:int</root-type-qname>
+        <qname-scope>simpleType</qname-scope>
+    </java-xml-type-mapping>
+    <java-xml-type-mapping>
+        <java-type>double</java-type>
+        <root-type-qname xmlns:rtq="http://www.w3.org/2001/XMLSchema">rtq:double</root-type-qname>
+        <qname-scope>simpleType</qname-scope>
+    </java-xml-type-mapping>
+    <java-xml-type-mapping>
+        <java-type>boolean</java-type>
+        <root-type-qname xmlns:rtq="http://www.w3.org/2001/XMLSchema">rtq:boolean</root-type-qname>
+        <qname-scope>simpleType</qname-scope>
+    </java-xml-type-mapping>
+    <java-xml-type-mapping>
+        <java-type>java.lang.String</java-type>
+        <root-type-qname xmlns:rtq="http://www.w3.org/2001/XMLSchema">rtq:string</root-type-qname>
+        <qname-scope>simpleType</qname-scope>
+    </java-xml-type-mapping>
+    <java-xml-type-mapping>
+        <java-type>long</java-type>
+        <root-type-qname xmlns:rtq="http://www.w3.org/2001/XMLSchema">rtq:long</root-type-qname>
+        <qname-scope>simpleType</qname-scope>
+    </java-xml-type-mapping>
+    <service-interface-mapping>
+        <service-interface>org.tempuri.Integration</service-interface>
+        <wsdl-service-name xmlns:sim="http://tempuri.org/">sim:Integration</wsdl-service-name>
+        <port-mapping>
+            <port-name>IntegrationSoap</port-name>
+            <java-port-name>IntegrationSoap</java-port-name>
+        </port-mapping>
+        <port-mapping>
+            <port-name>IntegrationHttpPost</port-name>
+            <java-port-name>IntegrationHttpPost</java-port-name>
+        </port-mapping>
+        <port-mapping>
+            <port-name>IntegrationHttpGet</port-name>
+            <java-port-name>IntegrationHttpGet</java-port-name>
+        </port-mapping>
+    </service-interface-mapping>
+    <service-endpoint-interface-mapping>
+        <service-endpoint-interface>org.tempuri.IntegrationSoap</service-endpoint-interface>
+        <wsdl-port-type xmlns:seimwpt="http://tempuri.org/">seimwpt:IntegrationSoap</wsdl-port-type>
+        <wsdl-binding xmlns:seimwb="http://tempuri.org/">seimwb:IntegrationSoap</wsdl-binding>
+        <service-endpoint-method-mapping>
+            <java-method-name>dth_zonecreate</java-method-name>
+            <wsdl-operation>dth_zonecreate</wsdl-operation>
+            <wrapped-element/>
+            <method-param-parts-mapping>
+                <param-position>0</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_zonecreateSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sZoneCode</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>1</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_zonecreateSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sZoneName</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>2</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_zonecreateSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sCircleCode</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>3</param-position>
+                <param-type>boolean</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_zonecreateSoapIn</wsdl-message>
+                    <wsdl-message-part-name>bEditMode</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>4</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_zonecreateSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sUserName</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>5</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_zonecreateSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sPassWord</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <wsdl-return-value-mapping>
+                <method-return-value>java.lang.String</method-return-value>
+                <wsdl-message xmlns:wrvm="http://tempuri.org/">wrvm:dth_zonecreateSoapOut</wsdl-message>
+                <wsdl-message-part-name>dth_zonecreateResult</wsdl-message-part-name>
+            </wsdl-return-value-mapping>
+        </service-endpoint-method-mapping>
+        <service-endpoint-method-mapping>
+            <java-method-name>dth_shipmentprocess</java-method-name>
+            <wsdl-operation>dth_shipmentprocess</wsdl-operation>
+            <wrapped-element/>
+            <method-param-parts-mapping>
+                <param-position>0</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_shipmentprocessSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sCircleCode</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>1</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_shipmentprocessSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sDistributorCode</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>2</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_shipmentprocessSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sProductCode</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>3</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_shipmentprocessSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sPORefNO</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>4</param-position>
+                <param-type>int</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_shipmentprocessSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sShipmentType</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>5</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_shipmentprocessSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sSerialNumber</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>6</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_shipmentprocessSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sUserName</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>7</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_shipmentprocessSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sPassWord</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <wsdl-return-value-mapping>
+                <method-return-value>java.lang.String</method-return-value>
+                <wsdl-message xmlns:wrvm="http://tempuri.org/">wrvm:dth_shipmentprocessSoapOut</wsdl-message>
+                <wsdl-message-part-name>dth_shipmentprocessResult</wsdl-message-part-name>
+            </wsdl-return-value-mapping>
+        </service-endpoint-method-mapping>
+        <service-endpoint-method-mapping>
+            <java-method-name>dth_product</java-method-name>
+            <wsdl-operation>dth_product</wsdl-operation>
+            <wrapped-element/>
+            <method-param-parts-mapping>
+                <param-position>0</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_productSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sCircleCode</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>1</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_productSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sProductCode</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>2</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_productSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sProductName</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>3</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_productSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sCardGroup</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>4</param-position>
+                <param-type>int</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_productSoapIn</wsdl-message>
+                    <wsdl-message-part-name>iPackType</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>5</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_productSoapIn</wsdl-message>
+                    <wsdl-message-part-name>iproductType</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>6</param-position>
+                <param-type>int</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_productSoapIn</wsdl-message>
+                    <wsdl-message-part-name>iStatus</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>7</param-position>
+                <param-type>double</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_productSoapIn</wsdl-message>
+                    <wsdl-message-part-name>dBasicValue</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>8</param-position>
+                <param-type>double</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_productSoapIn</wsdl-message>
+                    <wsdl-message-part-name>dRechargeValue</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>9</param-position>
+                <param-type>double</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_productSoapIn</wsdl-message>
+                    <wsdl-message-part-name>dActivation</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>10</param-position>
+                <param-type>double</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_productSoapIn</wsdl-message>
+                    <wsdl-message-part-name>dProcessingFee</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>11</param-position>
+                <param-type>double</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_productSoapIn</wsdl-message>
+                    <wsdl-message-part-name>dSalesTaxPer</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>12</param-position>
+                <param-type>double</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_productSoapIn</wsdl-message>
+                    <wsdl-message-part-name>dServiceTax</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>13</param-position>
+                <param-type>double</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_productSoapIn</wsdl-message>
+                    <wsdl-message-part-name>dCessTax</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>14</param-position>
+                <param-type>double</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_productSoapIn</wsdl-message>
+                    <wsdl-message-part-name>dVatPer</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>15</param-position>
+                <param-type>double</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_productSoapIn</wsdl-message>
+                    <wsdl-message-part-name>dAddVatPer</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>16</param-position>
+                <param-type>double</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_productSoapIn</wsdl-message>
+                    <wsdl-message-part-name>dTurnoverTax</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>17</param-position>
+                <param-type>double</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_productSoapIn</wsdl-message>
+                    <wsdl-message-part-name>dSHEduCess</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>18</param-position>
+                <param-type>double</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_productSoapIn</wsdl-message>
+                    <wsdl-message-part-name>dGoldenNumberCharge</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>19</param-position>
+                <param-type>double</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_productSoapIn</wsdl-message>
+                    <wsdl-message-part-name>dCostPrice</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>20</param-position>
+                <param-type>double</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_productSoapIn</wsdl-message>
+                    <wsdl-message-part-name>dOctraiPrice</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>21</param-position>
+                <param-type>double</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_productSoapIn</wsdl-message>
+                    <wsdl-message-part-name>dSurcharge</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>22</param-position>
+                <param-type>double</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_productSoapIn</wsdl-message>
+                    <wsdl-message-part-name>dFreight</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>23</param-position>
+                <param-type>double</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_productSoapIn</wsdl-message>
+                    <wsdl-message-part-name>dInsurance</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>24</param-position>
+                <param-type>double</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_productSoapIn</wsdl-message>
+                    <wsdl-message-part-name>dTradeDiscount</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>25</param-position>
+                <param-type>double</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_productSoapIn</wsdl-message>
+                    <wsdl-message-part-name>dCashDiscount</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>26</param-position>
+                <param-type>double</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_productSoapIn</wsdl-message>
+                    <wsdl-message-part-name>dDistMargin</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>27</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_productSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sOracleitemcode</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>28</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_productSoapIn</wsdl-message>
+                    <wsdl-message-part-name>beditMode</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>29</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_productSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sUserName</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>30</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_productSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sPassWord</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <wsdl-return-value-mapping>
+                <method-return-value>java.lang.String</method-return-value>
+                <wsdl-message xmlns:wrvm="http://tempuri.org/">wrvm:dth_productSoapOut</wsdl-message>
+                <wsdl-message-part-name>dth_productResult</wsdl-message-part-name>
+            </wsdl-return-value-mapping>
+        </service-endpoint-method-mapping>
+        <service-endpoint-method-mapping>
+            <java-method-name>dth_regioncreate</java-method-name>
+            <wsdl-operation>dth_regioncreate</wsdl-operation>
+            <wrapped-element/>
+            <method-param-parts-mapping>
+                <param-position>0</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_regioncreateSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sRgnCode</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>1</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_regioncreateSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sRgnName</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>2</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_regioncreateSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sCountryCode</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>3</param-position>
+                <param-type>boolean</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_regioncreateSoapIn</wsdl-message>
+                    <wsdl-message-part-name>bEditMode</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>4</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_regioncreateSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sUserName</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>5</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_regioncreateSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sPassWord</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <wsdl-return-value-mapping>
+                <method-return-value>java.lang.String</method-return-value>
+                <wsdl-message xmlns:wrvm="http://tempuri.org/">wrvm:dth_regioncreateSoapOut</wsdl-message>
+                <wsdl-message-part-name>dth_regioncreateResult</wsdl-message-part-name>
+            </wsdl-return-value-mapping>
+        </service-endpoint-method-mapping>
+        <service-endpoint-method-mapping>
+            <java-method-name>dth_createtown</java-method-name>
+            <wsdl-operation>dth_createtown</wsdl-operation>
+            <wrapped-element/>
+            <method-param-parts-mapping>
+                <param-position>0</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_createtownSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sTownCode</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>1</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_createtownSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sTownName</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>2</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_createtownSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sZoneCode</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>3</param-position>
+                <param-type>boolean</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_createtownSoapIn</wsdl-message>
+                    <wsdl-message-part-name>bEditMode</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>4</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_createtownSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sUserName</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>5</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_createtownSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sPassWord</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <wsdl-return-value-mapping>
+                <method-return-value>java.lang.String</method-return-value>
+                <wsdl-message xmlns:wrvm="http://tempuri.org/">wrvm:dth_createtownSoapOut</wsdl-message>
+                <wsdl-message-part-name>dth_createtownResult</wsdl-message-part-name>
+            </wsdl-return-value-mapping>
+        </service-endpoint-method-mapping>
+        <service-endpoint-method-mapping>
+            <java-method-name>dth_tsmcreate</java-method-name>
+            <wsdl-operation>dth_tsmcreate</wsdl-operation>
+            <wrapped-element/>
+            <method-param-parts-mapping>
+                <param-position>0</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_tsmcreateSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sTsmCode</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>1</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_tsmcreateSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sTsmName</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>2</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_tsmcreateSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sCircleCode</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>3</param-position>
+                <param-type>boolean</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_tsmcreateSoapIn</wsdl-message>
+                    <wsdl-message-part-name>bEditMode</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>4</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_tsmcreateSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sUserName</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>5</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_tsmcreateSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sPassWord</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <wsdl-return-value-mapping>
+                <method-return-value>java.lang.String</method-return-value>
+                <wsdl-message xmlns:wrvm="http://tempuri.org/">wrvm:dth_tsmcreateSoapOut</wsdl-message>
+                <wsdl-message-part-name>dth_tsmcreateResult</wsdl-message-part-name>
+            </wsdl-return-value-mapping>
+        </service-endpoint-method-mapping>
+        <service-endpoint-method-mapping>
+            <java-method-name>dth_circlecreate</java-method-name>
+            <wsdl-operation>dth_circlecreate</wsdl-operation>
+            <wrapped-element/>
+            <method-param-parts-mapping>
+                <param-position>0</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_circlecreateSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sCircleCode</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>1</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_circlecreateSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sCircleName</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>2</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_circlecreateSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sRegionCode</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>3</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_circlecreateSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sCompanyName</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>4</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_circlecreateSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sAddress1</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>5</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_circlecreateSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sAddress2</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>6</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_circlecreateSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sPhoneNo</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>7</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_circlecreateSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sFaxNo</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>8</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_circlecreateSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sCstNo</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>9</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_circlecreateSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sCstDate</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>10</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_circlecreateSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sSalesTaxNo</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>11</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_circlecreateSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sLstDate</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>12</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_circlecreateSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sServicetaxNo</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>13</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_circlecreateSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sTinNo</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>14</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_circlecreateSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sTinDate</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>15</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_circlecreateSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sTerms1</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>16</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_circlecreateSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sTerms2</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>17</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_circlecreateSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sTerms3</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>18</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_circlecreateSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sTerms4</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>19</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_circlecreateSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sRemarks</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>20</param-position>
+                <param-type>boolean</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_circlecreateSoapIn</wsdl-message>
+                    <wsdl-message-part-name>bEditMode</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>21</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_circlecreateSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sUserName</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>22</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_circlecreateSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sPassWord</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <wsdl-return-value-mapping>
+                <method-return-value>java.lang.String</method-return-value>
+                <wsdl-message xmlns:wrvm="http://tempuri.org/">wrvm:dth_circlecreateSoapOut</wsdl-message>
+                <wsdl-message-part-name>dth_circlecreateResult</wsdl-message-part-name>
+            </wsdl-return-value-mapping>
+        </service-endpoint-method-mapping>
+        <service-endpoint-method-mapping>
+            <java-method-name>dth_pocreate</java-method-name>
+            <wsdl-operation>dth_pocreate</wsdl-operation>
+            <wrapped-element/>
+            <method-param-parts-mapping>
+                <param-position>0</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_pocreateSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sPOReqNo</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>1</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_pocreateSoapIn</wsdl-message>
+                    <wsdl-message-part-name>distcode</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>2</param-position>
+                <param-type>int</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_pocreateSoapIn</wsdl-message>
+                    <wsdl-message-part-name>iPOType</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>3</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_pocreateSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sRemarks</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>4</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_pocreateSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sPrd</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>5</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_pocreateSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sQtyAmt</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>6</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_pocreateSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sUserName</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>7</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_pocreateSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sPassWord</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <wsdl-return-value-mapping>
+                <method-return-value>java.lang.String</method-return-value>
+                <wsdl-message xmlns:wrvm="http://tempuri.org/">wrvm:dth_pocreateSoapOut</wsdl-message>
+                <wsdl-message-part-name>dth_pocreateResult</wsdl-message-part-name>
+            </wsdl-return-value-mapping>
+        </service-endpoint-method-mapping>
+        <service-endpoint-method-mapping>
+            <java-method-name>dth_transferdefectsno</java-method-name>
+            <wsdl-operation>dth_transferdefectsno</wsdl-operation>
+            <wrapped-element/>
+            <method-param-parts-mapping>
+                <param-position>0</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_transferdefectsnoSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sDCNumber</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>1</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_transferdefectsnoSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sDistributorCode</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>2</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_transferdefectsnoSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sDistributorDCdate</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>3</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_transferdefectsnoSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sSerialNumbers</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>4</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_transferdefectsnoSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sProductCode</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>5</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_transferdefectsnoSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sCollectiontype</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>6</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_transferdefectsnoSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sDefectiveType</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>7</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_transferdefectsnoSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sUserName</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>8</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_transferdefectsnoSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sPassWord</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <wsdl-return-value-mapping>
+                <method-return-value>java.lang.String</method-return-value>
+                <wsdl-message xmlns:wrvm="http://tempuri.org/">wrvm:dth_transferdefectsnoSoapOut</wsdl-message>
+                <wsdl-message-part-name>dth_transferdefectsnoResult</wsdl-message-part-name>
+            </wsdl-return-value-mapping>
+        </service-endpoint-method-mapping>
+        <service-endpoint-method-mapping>
+            <java-method-name>dth_pocancel</java-method-name>
+            <wsdl-operation>dth_pocancel</wsdl-operation>
+            <wrapped-element/>
+            <method-param-parts-mapping>
+                <param-position>0</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_pocancelSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sPORefNo</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>1</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_pocancelSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sUserName</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>2</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_pocancelSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sPassWord</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <wsdl-return-value-mapping>
+                <method-return-value>java.lang.String</method-return-value>
+                <wsdl-message xmlns:wrvm="http://tempuri.org/">wrvm:dth_pocancelSoapOut</wsdl-message>
+                <wsdl-message-part-name>dth_pocancelResult</wsdl-message-part-name>
+            </wsdl-return-value-mapping>
+        </service-endpoint-method-mapping>
+        <service-endpoint-method-mapping>
+            <java-method-name>dth_distributor</java-method-name>
+            <wsdl-operation>dth_distributor</wsdl-operation>
+            <wrapped-element/>
+            <method-param-parts-mapping>
+                <param-position>0</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_distributorSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sDistributorName</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>1</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_distributorSoapIn</wsdl-message>
+                    <wsdl-message-part-name>SCircleCode</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>2</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_distributorSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sTownCode</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>3</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_distributorSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sTsmCode</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>4</param-position>
+                <param-type>int</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_distributorSoapIn</wsdl-message>
+                    <wsdl-message-part-name>iDistributorType</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>5</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_distributorSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sSalesEmpCode</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>6</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_distributorSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sCommEmpCode</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>7</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_distributorSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sFinancialEmpCode</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>8</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_distributorSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sAddress1</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>9</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_distributorSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sTelephone</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>10</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_distributorSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sOctroiApplicableon</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>11</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_distributorSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sContactPerson</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>12</param-position>
+                <param-type>int</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_distributorSoapIn</wsdl-message>
+                    <wsdl-message-part-name>iTaxType</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>13</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_distributorSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sLSTTINno</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>14</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_distributorSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sLstTinDate</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>15</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_distributorSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sCSTNo</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>16</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_distributorSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sCSTDate</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>17</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_distributorSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sAreaName</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>18</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_distributorSoapIn</wsdl-message>
+                    <wsdl-message-part-name>SReportingEmail</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>19</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_distributorSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sPanNo</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>20</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_distributorSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sServicetaxNo</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>21</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_distributorSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sAppointmentDate</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>22</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_distributorSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sActivateDate</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>23</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_distributorSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sAddress2</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>24</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_distributorSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sEmail</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>25</param-position>
+                <param-type>long</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_distributorSoapIn</wsdl-message>
+                    <wsdl-message-part-name>lLapuno</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>26</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_distributorSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sAccountCode</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>27</param-position>
+                <param-type>boolean</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_distributorSoapIn</wsdl-message>
+                    <wsdl-message-part-name>bEditMode</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>28</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_distributorSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sUserName</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>29</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://tempuri.org/">mppm:dth_distributorSoapIn</wsdl-message>
+                    <wsdl-message-part-name>sPassWord</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <wsdl-return-value-mapping>
+                <method-return-value>java.lang.String</method-return-value>
+                <wsdl-message xmlns:wrvm="http://tempuri.org/">wrvm:dth_distributorSoapOut</wsdl-message>
+                <wsdl-message-part-name>dth_distributorResult</wsdl-message-part-name>
+            </wsdl-return-value-mapping>
+        </service-endpoint-method-mapping>
+    </service-endpoint-interface-mapping>
+</java-wsdl-mapping>

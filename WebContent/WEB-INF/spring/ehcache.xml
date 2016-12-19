@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache>
+
+	<defaultCache maxElementsInMemory="50" eternal="false"
+		overflowToDisk="false" memoryStoreEvictionPolicy="LFU" />
+
+	
+		
+	<cache name="allAccountsSingleCircleCache"
+		maxElementsInMemory="50" eternal="false" overflowToDisk="false"
+		memoryStoreEvictionPolicy="LFU" />
+		
+	
+	<cache name="allAccountsUnderSingleAccountCache"
+		maxElementsInMemory="50" eternal="false" overflowToDisk="false"
+		memoryStoreEvictionPolicy="LFU" />
+		
+	 <cache name="allCirclesCache"
+		maxElementsInMemory="50" eternal="false" overflowToDisk="false"
+		memoryStoreEvictionPolicy="LFU" />
+		
+		
+		 
+</ehcache>

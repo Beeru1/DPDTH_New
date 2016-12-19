@@ -1,0 +1,204 @@
+input.submit {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+}
+INPUT.blue {
+	BORDER-RIGHT: #a29c9c 1px solid; BORDER-TOP: #a29c9c 1px solid; FONT-SIZE: 11px; BORDER-LEFT: #a29c9c 1px solid; COLOR: #ffffff; BORDER-BOTTOM: #a29c9c 1px solid; FONT-STYLE: normal; font-family: Verdana, Arial, Helvetica, sans-serif; background-color:#666666
+}
+INPUT.box, TEXTAREA {
+	BORDER-RIGHT: #a29c9c 1px solid; BORDER-TOP: #a29c9c 1px solid; FONT-SIZE: 11px; BORDER-LEFT: #a29c9c 1px solid; COLOR: #000000; BORDER-BOTTOM: #a29c9c 1px solid; FONT-STYLE: normal; font-family: Verdana, Arial, Helvetica, sans-serif; background-color:#f7e6e6
+}
+.btnActive {
+	BORDER-BOTTOM: #a29c9c 1px solid; BORDER-LEFT: #a29c9c 1px solid; BORDER-RIGHT: #a29c9c 1px solid; BORDER-TOP: #a29c9c 1px solid; FONT-SIZE: 11px; COLOR: #333333; FONT-STYLE: normal; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; background-color:#d27474;
+}
+SELECT {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 11px; PADDING-BOTTOM: 0px; MARGIN: 0px; COLOR: #000000; PADDING-TOP: 0px; FONT-STYLE: normal; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+SELECT.w130 {
+	WIDTH: 130px; PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 11px; PADDING-BOTTOM: 0px; MARGIN: 0px; COLOR: #000000; PADDING-TOP: 0px; FONT-STYLE: normal; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+SELECT.w130ExraLarge{
+	WIDTH: 300px; PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 11px; PADDING-BOTTOM: 0px; MARGIN: 0px; COLOR: #000000; PADDING-TOP: 0px; FONT-STYLE: normal; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+SELECT.w130Extended {
+	WIDTH: 200px; PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 11px; PADDING-BOTTOM: 0px; MARGIN: 0px; COLOR: #000000; PADDING-TOP: 0px; FONT-STYLE: normal; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+SELECT.w200Extended {
+	WIDTH: 350px; PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 11px; PADDING-BOTTOM: 0px; MARGIN: 0px; COLOR: #000000; PADDING-TOP: 0px; FONT-STYLE: normal; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+H2 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 16px; PADDING-BOTTOM: 0px; MARGIN: 0px; COLOR: #444444; PADDING-TOP: 0px; FONT-FAMILY: Arial, Helvetica, sans-serif; BACKGROUND-COLOR: transparent
+}
+H3 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-WEIGHT: bold; FONT-SIZE: 13px; PADDING-BOTTOM: 0px; MARGIN: 0px; COLOR: #f7e6e6; LINE-HEIGHT: 13px; PADDING-TOP: 0px
+}
+.darkRedBg {
+	BACKGROUND-COLOR: #621717
+}
+.greyBg {
+	BACKGROUND-COLOR: #f7e6e6
+}
+.lightGreyBg {
+	BACKGROUND-COLOR: #f4eded
+}
+.DarkBg {
+	BACKGROUND-COLOR: #f5d4d4
+}
+.text {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+}
+.black10
+{
+    PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 11px; PADDING-BOTTOM: 0px; MARGIN: 0px; COLOR: #333333; PADDING-TOP: 0px; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif
+}
+.orange8{
+	FONT-SIZE: 8px; COLOR: #c24343; LINE-HEIGHT: 12px; PADDING-TOP: 2px; FONT-FAMILY: verdana, arial, helvetica, sans-serif
+}
+.black10Bold {
+	FONT-WEIGHT: bold; FONT-SIZE: 10px; COLOR: #000000; LINE-HEIGHT: 12px; PADDING-TOP: 3px; FONT-FAMILY: verdana, arial, helvetica, sans-serif
+}
+.white10heading {
+	FONT-WEIGHT: bold; FONT-SIZE: 10px; COLOR: #ffffff; LINE-HEIGHT: 12px; PADDING-TOP: 3px; FONT-FAMILY: verdana, arial, helvetica, sans-serif
+}
+.scrollacc {
+	SCROLLBAR-FACE-COLOR: #b61a1a; SCROLLBAR-HIGHLIGHT-COLOR: #ecf0fc; SCROLLBAR-SHADOW-COLOR: #ecf0fc; SCROLLBAR-3DLIGHT-COLOR: #ffe4e1; SCROLLBAR-ARROW-COLOR: #ffffff; SCROLLBAR-TRACK-COLOR: #ffe4e1; SCROLLBAR-DARKSHADOW-COLOR: #b61a1a
+}
+.mTop5 {
+	MARGIN-TOP: 5px
+}
+.mLeft5 {
+	MARGIN-LEFT: 5px
+}
+.mLeft10 {
+	MARGIN-LEFT: 10px
+}
+.mLeft40 {
+	MARGIN-LEFT: 50px
+}
+.pLeft10
+{
+    padding-left:10px;
+}
+.pLeft15
+{
+    padding-left:15px;
+}
+.pLeft20
+{
+    padding-left:20px;
+}
+.pTop2 {
+	PADDING-TOP: 2px
+}
+.pTop5 {
+	PADDING-TOP: 5px
+}
+.black11Bold {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #000000; LINE-HEIGHT: 12px; PADDING-TOP: 3px; FONT-FAMILY: verdana, arial, helvetica, sans-serif
+}
+.red11Bold {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #c24343; LINE-HEIGHT: 12px; PADDING-TOP: 3px; FONT-FAMILY: verdana, arial, helvetica, sans-serif
+}
+.width125 {
+	WIDTH: 125px
+}
+.width150 {
+	WIDTH: 150px
+}
+.width200 {
+	WIDTH: 200px
+}
+.height19 {
+	HEIGHT: 19px
+}
+a:link	{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #000000;
+	text-decoration: none;
+}
+a:visited	{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #ffffff;
+	text-decoration: none;
+}
+a:hover	{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #ffffff;
+	text-decoration: underline;
+}
+a.Red10:link	{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #ca2c2c;
+	text-decoration: underline;
+}
+a.Red10:visited	{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #ca2c2c;
+	text-decoration: underline;
+}
+a.Red10:hover	{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #ca2c2c;
+	text-decoration: none;
+}
+.dropmenudiv A:link{
+	font-family: verdana, arial, helvetica, sans-serif;
+	font : 10px/14px Verdana;
+	display: block;
+	text-indent: 3px;
+	border-bottom: 1px solid #AFDBDA; /*THEME CHANGE HERE*/
+	padding: 2px 0;
+	text-decoration: none;
+	font-weight: bold;
+	color: black;
+}
+.pagelinks A:link{
+	color: black !important;
+}
+.pagelinks A:visited{
+	color: black !important;
+}
+
+.displayTagHeader
+{
+	BACKGROUND-COLOR: #CD0504;
+	FONT-WEIGHT: bold; FONT-SIZE: 13px; COLOR: #ffffff; LINE-HEIGHT: 12px; PADDING-TOP: 3px; FONT-FAMILY: verdana, arial, helvetica, sans-serif;
+	MARGIN-LEFT: 5px;
+	MARGIN-TOP: 5px;
+	position: center;
+	text-align: center;
+	padding:5px;
+	border: 1px solid BLACK;	
+}
+.displayData
+{	
+	
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	padding:2px;
+	text-align: center;	
+
+
+}
+.tableclasss
+{
+	width: 500;	
+	border: 1px solid Black;	
+	text-align: center;
+}
+.odd{
+background-color:#f7e6e6
+}

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--xtools2_universal_type_manager-->
+<topic:TopicQuery xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:topic="http://www.ibm.com/xtools/6.0.0/Topic" xmlns:uml="http://www.eclipse.org/uml2/1.0.0/UML" xmi:id="_PowyUE_BEdydK_s9YSVu-w" topicId="com.ibm.xtools.viz.j2se.ui.J2SEStaticMethodInteractions">
+  <context xmi:type="uml:Interaction" href="vizref:///#jmethod^vcore.target=uml2.Interaction^name=execute^sign=(QActionMapping%3bQActionForm%3bQHttpServletRequest%3bQHttpServletResponse%3b)QActionForward%3b[jsrctype^name=VSubscriberMstrAction[jcu^name=VSubscriberMstrAction.java[jpack^name=com.ibm.virtualization.ussdactivationweb.actions[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]]"/>
+</topic:TopicQuery>

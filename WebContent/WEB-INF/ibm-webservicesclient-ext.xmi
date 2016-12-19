@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.etools.webservice.wscext:WsClientExtension xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.etools.webservice.wscext="http://www.ibm.com/websphere/appserver/schemas/5.0.2/wscext.xmi" xmi:id="WsClientExtension_1234484917875">
+  <serviceRefs xmi:id="ServiceRef_1234914255390" serviceRefLink="service/Integration">
+    <portQnameBindings xmi:id="PortQnameBinding_1234914255390" portQnameLocalNameLink="IntegrationSoap"/>
+    <portQnameBindings xmi:id="PortQnameBinding_1234914255391" portQnameLocalNameLink="IntegrationHttpPost"/>
+    <portQnameBindings xmi:id="PortQnameBinding_1234914255392" portQnameLocalNameLink="IntegrationHttpGet"/>
+  </serviceRefs>
+</com.ibm.etools.webservice.wscext:WsClientExtension>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://local.webServices.dp.ibm.com" xmlns:impl="http://local.webServices.dp.ibm.com" xmlns:intf="http://local.webServices.dp.ibm.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsi="http://ws-i.org/profiles/basic/1.1/xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+ <wsdl:types>
+  <schema targetNamespace="http://local.webServices.dp.ibm.com" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <element name="depleteOpenStockResponse">
+    <complexType>
+     <sequence>
+      <element name="depleteOpenStockReturn" nillable="true" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="depleteOpenStock">
+    <complexType>
+     <sequence>
+      <element name="distributorCode" nillable="true" type="xsd:string"/>
+      <element name="productCode" nillable="true" type="xsd:string"/>
+      <element name="productQuantity" type="xsd:int"/>
+      <element name="userid" nillable="true" type="xsd:string"/>
+      <element name="password" nillable="true" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="depleteOpenStockRequest">
+     <wsdl:part element="intf:depleteOpenStock" name="parameters"/>
+
+  </wsdl:message>
+
+   <wsdl:message name="depleteOpenStockResponse">
+     <wsdl:part element="intf:depleteOpenStockResponse" name="parameters"/>
+
+  </wsdl:message>
+
+   <wsdl:portType name="OpenStockDepleteWebservice">
+     <wsdl:operation name="depleteOpenStock">
+       <wsdl:input message="intf:depleteOpenStockRequest" name="depleteOpenStockRequest"/>
+
+       <wsdl:output message="intf:depleteOpenStockResponse" name="depleteOpenStockResponse"/>
+
+    </wsdl:operation>
+
+  </wsdl:portType>
+
+   <wsdl:binding name="OpenStockDepleteWebserviceSoapBinding" type="intf:OpenStockDepleteWebservice">
+ <wsaw:UsingAddressing wsdl:required="false" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"/>
+
+     <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+     <wsdl:operation name="depleteOpenStock">
+       <wsdlsoap:operation soapAction="depleteOpenStock"/>
+
+       <wsdl:input name="depleteOpenStockRequest">
+         <wsdlsoap:body use="literal"/>
+
+      </wsdl:input>
+
+       <wsdl:output name="depleteOpenStockResponse">
+         <wsdlsoap:body use="literal"/>
+
+      </wsdl:output>
+
+    </wsdl:operation>
+
+  </wsdl:binding>
+
+   <wsdl:service name="OpenStockDepleteWebserviceService">
+     <wsdl:port binding="intf:OpenStockDepleteWebserviceSoapBinding" name="OpenStockDepleteWebservice">
+       <wsdlsoap:address location="http://localhost:9080/DPDTH/services/OpenStockDepleteWebservice"/>
+
+    </wsdl:port>
+
+  </wsdl:service>
+
+</wsdl:definitions>

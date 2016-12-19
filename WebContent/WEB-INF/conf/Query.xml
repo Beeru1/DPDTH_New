@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<storedqueries>
+	<!-- dataSrc details -->
+	<datasources>
+		<datasource name="db2">#FF3300
+		  <path>jdbc/DPDTH</path>
+		</datasource>
+	</datasources>
+	
+	<!-- Stored Query -->
+	<storedquery name="validatePwdExpiry" datasource="db2">
+		<query>Select  diffdate from VR_VIEW_CHANGE_PASSWORD where LOGIN_NAME = '?'</query>
+	</storedquery>
+	
+	<storedquery name="validatePwdHistory" datasource="db2">
+		<query>Select count(b.OLDPASSWORD) as matches from VR_LOGIN_MASTER a, VR_PASSWORD_HISTORY b where a.LOGIN_NAME = '?' and b.LOGIN_ID = a.LOGIN_ID and b.OLDPASSWORD = '?'</query>
+	</storedquery>
+	
+	<storedquery name="authenticate" datasource="db2">
+		<query>Select LOGIN_ID as loginId, TYPE from VR_LOGIN_MASTER where LOGIN_NAME='?' and PASSWORD='?' and LOGIN_ATTEMPTED &lt;? and STATUS='A'</query>
+	</storedquery>
+	
+	<storedquery name="invalidLoginCnt" datasource="db2">
+		<query>update VR_LOGIN_MASTER set LOGIN_ATTEMPTED = LOGIN_ATTEMPTED+1 where LOGIN_NAME='?'</query>
+	</storedquery>
+	
+	<storedquery name="resetLoginCnt" datasource="db2">
+		<query>update VR_LOGIN_MASTER set LOGIN_ATTEMPTED=0, LAST_LOGIN_TIME = CURRENT TIMESTAMP where LOGIN_NAME='?'</query>
+	</storedquery>
+
+	<storedquery name="chkAcctLocked" datasource="db2">
+		<query>select LOGIN_ATTEMPTED from VR_LOGIN_MASTER where LOGIN_NAME='?' and STATUS='A'</query>
+	</storedquery>
+</storedqueries>

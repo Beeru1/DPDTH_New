@@ -1,0 +1,780 @@
+/*****************************************************************************\
+ **
+ ** Virtualization - Recharge.
+ **
+ ** Copyright (c) 2007-2008 IBM.
+ ** All Rights Reserved
+ **
+ **
+ \****************************************************************************/
+
+package com.ibm.virtualization.recharge.common;
+
+/**
+ * Class use to define error code as constants .
+ */
+public abstract class ExceptionCode {
+
+	public static final String ERROR_DB_INTERNAL = "error.db.internal";
+	
+	public static final String ERROR_DB_PRODUCT_EXIST = "errors.product.alreadyExist";
+	
+	public static final String STOCK_EXIST = "errors.product.alreadyExist";
+	
+	public static final String ERROR_DB_PRODUCT_COMBINATION_EXIST = "errors.product.combinationExist";
+	
+	public static final String ERROR_DB_PRODUCT_PARENT_EXIST = "errors.product.parentExist";
+	
+	public static final String ERROR_DB_ORACLE_ITEM_EXIST = "error.oracle.item";
+
+	public static final String ERROR_NO_RECORD_EXIST = "errors.miscellaneous.norecord";
+
+	public static final String ERROR_TRANSACTION_COMMIT = "errors.transaction.commit";
+
+	public static final String ERROR_INSERT_FAIL = "errors.miscellaneous.insert.fail";
+	
+	public static final String ERROR_STOCK_RCVD = "error.stockReceived";
+
+	public static final String ERROR_FATAL = "errors.fatal";
+
+	public static final String ERROR_NO_REGION = "errors.region.noregion";
+
+	public static final String ERROR_NO_ACTIVE_REGION = "errors.region.no_active_region";
+
+	public static final String ERROR_TRANSACTION_FAILED = "errors.transaction.failed";
+	
+	public static final String ERROR_STATE_NO_RECORD_FAILED = "errors.state.norecord";
+	
+	public static final String ERROR_CITY_NO_RECORD_FAILED = "errors.city.norecord";
+	
+	public static final String ERROR_RESET_IPASSWORD = "errors.resetipassword";
+	
+	public static final String ERROR_BACKOUT_IN = "error.backout.in";
+	
+	public static final String ERROR_BACKOUT_REQUEST_FAILURE = "error.backout.";
+	
+	public static final String ERROR_BACKOUT_IN_ROUTER_SUCCESS = "error.backout.in.router.success";
+	
+	public static final String ERROR_BACKOUT_REQUEST_SUCCESS = "error.backout.request.process.success";
+	
+	public static final String ERROR_RECHARGE_SYSTEM_TIMEOUT="errors.system.timeout";
+	
+	public static final String ERROR_RECHARGE_INSUFFICIENT_BALANCE="errors.insufficient.balance";
+	
+	public static final String ERROR_RECHARGE_DATABASE_ERROR="errors.database.error";
+	
+	public static final String ERROR_RECHARGE_INVALID_DETAILS="errors.invalid.details";
+	
+	public static final String ERROR_RECHARGE_INVALID_SUBSCRIBER_NO="errors.invalid.subscriber.no";
+
+	public static final String ERROR_RETAILER = "error.retailer";
+	
+	public static final String PACK_TYPE_NOT_FOUND = "pack.type.not.found";
+
+	// this class use to define connection error codes
+	public abstract class Connection {
+		public static final String ERROR_CONNECTION_NOT_FOUND = "errors.db.create_connection";
+
+		public static final String ERROR_CLOSE_RESULTSET = "errors.dbconnection.close_rsps";
+
+		public static final String ERROR_CONNECTION_CLOSE = "errors.dbconnection.close_connection";
+
+	}
+
+	// this class use to authentication error codes
+	public abstract class Authentication {
+
+		public static final String ERROR_INACTIVE_SOURCEACCOUNT = "error.transaction.source_Inactive";
+		
+		public static final String ERROR_INACTIVE_SOURCECIRCLE = "error.transaction.source_Inactive_Circle";
+		
+		public static final String ERROR_AUTHENTICATION_FAILED = "errors.authentication.failed";
+
+		public static final String ERROR_USER_DOESNOT_EXIST = "errors.user.nouser";
+		
+		public static final String ERROR_USER_SUBSCRIBER_NOT_FOUND="errors.user.subscribernotfound";
+		
+		public static final String ERROR_USER_ALREADY_EXIST = "errors.user.username_already_exists";
+
+		public static final String ERROR_INVALID_NAME_PASSWORD = "error.login.invalid_usernamepassword";
+
+		public static final String ERROR_USER_NAME_REQ = "errors.login.username_required";
+
+		public static final String ERROR_PASSWORD_REQ = "errors.login.password_required";
+
+		public static final String ERROR_APPLICATION_UNABLE = "errors.login.unable_authenticate";
+
+		public static final String ERROR_USER_NOT_AUTHORIZED = "user.not.authorized";
+
+		public static final String ERROR_LOGIN_NAME_REQ = "errors.changepassword.required_login_name";
+
+		public static final String ERROR_LOGIN_NAME_NOT_EXIST = "errors.changepassword.invalid_loginname";
+
+		public static final String ERROR_SAME_CHANGE_PASSWORD = "errors.changepassword.samepassword";
+
+		public static final String ERROR_INVALID_CHANGE_OLD_PASSWORD = "errors.changepassword.oldpassword_invalid";
+
+		public static final String ERROR_APPLICATION_SEVERE = "errors.login.unable_authenticate_contact_admin";
+		
+		public static final String ERROR_ACCOUNT_LOGIN_FAILURE = "errors.login.opening_date_has_not_arrived";
+		
+		public static final String ERROR_LOGIN_FAILURE_INACTIVE_CIRCLE ="errors.login.failure_inactive_circle";
+		public static final String ERROR_USER_ALREADY_UNLOCKED="errors.user.loginattempted";
+		
+		public static final String ERROR_USER_ALREADY_LOCKED="errors.user.already.locked";
+		
+		public static final String ERROR_LOGIN_DATA_REQUIRED ="errors.login.datarequired";
+
+		public static final String ERROR_CHANGEPASSWORD_DATA_REQUIRED ="errors.changepassword.datarequired";
+		
+		public static final String ERROR_CHANGEPASSWORD_OLD_REQ ="errors.changepassword.required_oldpassword";
+		
+		public static final String ERROR_CHANGEPASSWORD_OLD_INVALID ="errors.changepassword.oldpassword_invalid";
+		
+		public static final String ERROR_CHANGEPASSWORD_NEW_REQ ="errors.changepassword.required_newpassword";
+		
+		public static final String ERROR_CHANGEPASSWORD_NEW_INVALID ="errors.changepassword.newpassword_invalid";
+		
+		public static final String ERROR_CHANGEPASSWORD_CONFIRMNEW_REQ ="errors.changepassword.required_confirmpassword";
+		
+		public static final String ERROR_CHANGEPASSWORD_CONFIRM_INVALID ="errors.changepassword.confirmpassword_invalid";
+		
+		public static final String ERROR_CHANGEPASSWORD_MISMATCH ="errors.changepassword.mismatch";
+		
+		public static final String ERROR_CHANGEPASSWORD_NUMERIC_INVALID = "changepassword.mismatch";
+		
+		public static final String ERROR_NOPASSWORD_INFO="errors.nopassword.info";
+	}
+
+	
+//	 this class use to define product error codes vivek kumar
+	public abstract class Product{
+		
+	//public static final String ERROR_PRODUCT_NO_RECORD_FOUND = "error.product.productID";
+	public static final String ERROR_PRODUCT_NO_ACTIVITY_FOUND = "error.product.activityID";
+	public static final String ERROR_PRODUCT_NO_CATEGORY_FOUND = "error.product.selectedSub";
+	public static final String ERROR_PRODUCT_NO_PRODUCT_FOUND = "error.product.productname";
+	public static final String ERROR_PRODUCT_NO_COMPANY_FOUND = "error.product.companyname";
+	public static final String ERROR_PRODUCT_NO_STOCKTYPE_FOUND = "error.product.stocktype";
+	public static final String ERROR_PRODUCT_NO_WARRANTY_FOUND = "error.product.warranty";
+	public static final String ERROR_PRODUCT_NO_PRODDESC_FOUND = "error.product.productdesc";
+	public static final String ERROR_PRODUCT_NO_RECORD_FOUND = "error.product.productID";	
+	}
+
+	
+//	 this class use to define product error codes
+
+
+
+	// this class use to define account error codes
+	public abstract class Account {
+		public static final String ERROR_ACCOUNT_CODE_NOT_EXIST = "error.account.accountcode";
+
+		public static final String ERROR_INVALID_PARENT_CODE = "error.account.parentAccount";
+
+		public static final String ERROR_INVALID_ACCOUNT_CODE = "error.account.accountcode";
+
+		public static final String ERROR_ACCOUNT_NAME = "error.account.accountname";
+
+		public static final String ERROR_ACCOUNT_SIMNUMBER = "error.account.simnumber";
+
+		public static final String ERROR_MOBILE_NO = "error.account.mobilenumber";
+
+		public static final String ERROR_ADDRESS = "error.account.accountaddress";
+
+		public static final String ERROR_EMAIL = "error.account.email";
+
+		public static final String ERROR_IPASSWORD = "error.account.IPassword";
+
+		public static final String ERROR_THRESHOLD = "error.account.threshold";
+
+		public static final String ERROR_OPENING_BALANCE = "error.account.openingBalance";
+
+		public static final String ERROR_OPERATING_BALANCE = "error.account.operatingBalance";
+
+		public static final String ERROR_AVAILABLE_BALANCE = "error.account.availablebalance";
+
+		public static final String ERROR_CATEGORY = "error.account.category";
+
+		public static final String ERROR_CIRCLE_NAME = "error.account.circleid";
+
+		public static final String ERROR_ACCOUNT_CODE = "error.account.invalidcode";
+
+		public static final String ERROR_SEQUENCE_ID = "error.account.sequence_id";
+
+		public static final String ERROR_PASSWORD_ENCRYPTION = "errors.account.password_encryption";
+
+		public static final String ERROR_ACCOUNT_ALREADY_USED = "error.account.accountcodealreadyexists";
+
+		public static final String ERROR_ACCOUNT_PASSWORD_LENGTH = "error.account.passwordlength";
+
+		public static final String ERROR_INVALID_SEARCH = "error.account.invalidsearch";
+
+		public static final String ERROR_INSUFFICIENT_OPERATING_BAL = "errors.account.oprbalance";
+
+		public static final String ERROR_ACCOUNT_DATA_REQUIRED = "error.account.datarequired";
+
+		public static final String ERROR_ACCOUNT_SIM_LENGTH = "error.account.simnolength";
+
+		public static final String ERROR_INVALID_RATE = "error.account.invalidrate";
+
+		public static final String ERROR_INVALID_ACC_LEVEL = "error.account.invalidlevel";
+
+		public static final String ERROR_INVALID_MPASSWORD = "error.account.MPassword";
+
+		public static final String ERROR_RATE = "error.account.rate";
+
+		public static final String ERROR_ACCOUNT_NO_RECORD_FOUND = "error.account.norecord_found";
+
+		public static final String ERROR_ACC_ALREADY_EXIST_MOBILE_NO = "error.account.alreadyexistmobileno";
+
+		public static final String ERROR_ACCOUNT_CHILD_ACTIVE = "error.account.childisactive";
+
+		public static final String ERROR_ACCOUNT_PARENT_INACTIVE = "error.account.parentisinactive";
+
+		public static final String ERROR_ACCOUNT_PARENT_CHILD_DIFF_CIRCLE = "error.account.parent_child_diff_circle";
+
+		public static final String ERROR_ACCOUNT_PARENT_RECORD_NOT_FOUND = "errors.account.parentrecord_notfound";
+
+		public static final String ERROR_ACCOUNT_ACCOUNT_LEVEL_RECORD_NOT_FOUND = "errors.account.accountlevel_notfound";
+
+		public static final String ERROR_ACCOUNT_DEFAULT_GROUP ="error.account.defaultgroupnotfound";
+		
+		public static final String ERROR_INVALID_BILLABLE_CODE ="error.account.invalidbillablecode";
+		
+		public static final String ERROR_INVALID_ROOT_CODE ="error.account.invalidrootcode";
+		
+		public static final String ERROR_ACCOUNT_BILLABLE_INACTIVE = "error.account.billableisinactive";
+		
+		public static final String ERROR_ACCOUNT_CANNOT_CREATE_ACCOUNT ="error.account.cannotcreateaccount";
+		
+		public static final String ERROR_ACCOUNT_ADDRESS_LIMIT_ERROR ="error.account.addresslimiterror";
+		
+		public static final String ERROR_MISMATCH_MPASSWORD = "error.account.mpasswordmatch";
+		
+		public static final String ERROR_MISMATCH_IPASSWORD = "error.account.passwordmatch";
+		
+		public static final String ERROR_ACCOUNT_ADDRESS_JUNK = "error.account.addressjunk";
+		
+		public static final String ERROR_ACCOUNT_MPASSWORD_MINLENGTH = "error.account.mpassword_minlength";
+		
+		public static final String ERROR_ACCOUNT_MPASSWORD_NUMERIC = "error.account.mpassword_numeric";
+		
+		public static final String ERROR_ACCOUNT_MPASSWORD_MAXLENGTH = "error.account.mpassword_maxlength";
+		
+		public static final String ERROR_ACC_ALREADY_EXIST_LAPU = "error.account.alreadyexistlapu";
+		public static final String ERROR_ACC_ALREADY_EXIST_LAPU_2 = "error.account.alreadyexistlapu2";
+		public static final String ERROR_ACC_ALREADY_EXIST_FTA = "error.account.alreadyexistFta";
+		public static final String ERROR_ACC_ALREADY_EXIST_FTA_2 = "error.account.alreadyexistFta2";
+		public static final String ERROR_ACC_UPDATE = "error.update";
+		public static final String ERROR_BEAT_EXISTS = "error.beat.exists";
+		public static final String ERROR_NO_BEAT_EXISTS = "error.no.beats";
+		public static final String ERROR_BEAT_UPDATE = "error.update.beat";
+	 }
+
+	// this class use to define Circle error codes
+	public abstract class Circle {
+		public static final String ERROR_USERS_NOT_EXIST = "errors.user.nouser";
+		public static final String ERROR_CIRCLE_NOT_EXIST = "errors.circle.nocircle";
+
+		public static final String ERROR_CIRCLE_ALREADY_DEFINED = "errors.circle.circleid_already_exists";
+
+		public static final String ERROR_ACTIVE_CIRCLE_NOT_EXIST = "errors.circle.noactivecircle";
+
+		public static final String ERROR_UPDATE_CIRCLE = "errors.circle.update";
+
+		public static final String ERROR_CIRCLE_NAME = "errors.circle.circlename_required";
+
+		public static final String ERROR_CIRCLE_CODE = "errors.circle.circlecode_required";
+
+		public static final String ERROR_CIRCLE_RATE = "errors.circle.rate_invalid";
+
+		public static final String ERROR_AVAILABLE_BALANCE = "errors.circle.availablebalance_invalid";
+
+		public static final String ERROR_OPENING_BALANCE = "errors.circle.openingbalance_invalid";
+
+		public static final String ERROR_OPERATING_BALANCE = "errors.circle.operatingbalance_invalid";
+
+		public static final String ERROR_THRESHOLD_BALANCE = "errors.circle.threshold_invalid";
+
+		public static final String ERROR_REGION = "errors.circle.region_invalid";
+
+		public static final String ERROR_STATUS = "errors.circle.status_invalid";
+
+		public static final String ERROR_COMMISION_RATE = "errors.circle.commissionrate_required";
+
+		public static final String ERROR_COMMISION_RATE_NUMERIC = "errors.circle.rate_non_numeric";
+
+		public static final String ERROR_OPENING_BALANCE_REQUIRED = "errors.circle.openingbalance_required";
+
+		public static final String ERROR_OPENING_BALANCE_NON_NUMERIC = "errors.circle.openingbalance_non_numeric";
+
+		public static final String ERROR_OPERATING_BALANCE_REQUIRED = "errors.circle.operatingbalance_required";
+
+		public static final String ERROR_OPERATING_BALANCE_NON_NUMERIC = "errors.circle.operatingbalance_non_numeric";
+
+		public static final String ERROR_THRESHOLD = "errors.circle.threshold_required";
+
+		public static final String ERROR_THRESHOLD_NON_NUMERIC = "errors.circle.threshold_non_numeric";
+
+		public static final String ERROR_AVAILABLE_BALANCE_REQUIRED = "errors.circle.availablebalance_required";
+
+		public static final String ERROR_AVAILABLE_BALANCE_NON_NUMERIC = "errors.circle.availablebalance_non_numeric";
+
+		public static final String ERROR_DESCRIPTION_EXCEED = "errors.circle.description_maxlimit";
+
+		public static final String ERROR_THRESHOLD_MORE = "errors.circle.threshold_openingbalance";
+
+		public static final String ERROR_AVAILABLE_BALANCE_LESS = "errors.circle.threshold_availablebalance";
+
+		public static final String ERROR_OPERATING_BALANCE_LESS = "errors.circle.threshold_operatingbalance";
+
+		public static final String ERROR_CIRCLE_NOT_FOUND = "errors.circle.notfound";
+
+		public static final String ERROR_CIRCLE_ID_IN_USE = "errors.circle.circleid.inuse";
+
+		public static final String ERROR_CIRCLE_NAME_ALREADY_EXIST = "errors.circle.circlename_already_exists";
+
+		public static final String ERROR_CIRCLE_CODE_ALREADY_EXIST = "errors.circle.circlecode_already_exists";
+
+		public static final String ERROR_CIRCLE_NAME_ALPHANUMERIC = "errors.circle.circlename_alphanumeric";
+
+		public static final String ERROR_CIRCLE_CODE_ALPHANUMERIC = "errors.circle.circlecode_alphanumeric";
+		
+		public static final String ERROR_CIRCLE_DESC_JUNK = "errors.circle.desc_junk";
+		
+
+	}
+
+	// this class use to define SystemConfig error codes
+	public abstract class SystemConfig {
+		
+		public static final String ERROR_SOURCE_ACCOUNT_INSUFFICENT_BALANCE = "Insufficient Balance";
+
+		public static final String ERROR_CHANNEL_REQUIRED = "errors.sys.channelname_required ";
+
+		public static final String ERROR_CIRCLE_REQ = "errors.sys.circleid_required";
+
+		public static final String ERROR_TRANSACTION_TYPE_REQ = "errors.sys.transtype_required";
+
+		public static final String ERROR_TRANSACTION_TYPE_IN_VALID = "errors.sys.transtype_invalid";
+
+		public static final String ERROR_CHANNEL_INVALID = "errors.sys.channelname_invalid";
+
+		public static final String ERROR_MAXRECHARGE_REQ = "errors.sys.maxrecharge_required";
+
+		public static final String ERROR_MINRECHARGE_REQ = "errors.sys.minrecharge_required";
+
+		public static final String ERROR_INSERT_SYS_CONFIG_ALEARDY_EXIST = "errors.sysconfig.insert_failed";
+
+		public static final String ERROR_MAXTRANS_GRETER = "errors.sys.transfer_invalid";
+
+		public static final String ERROR_MAXRECHARGE_GRETER = "errors.sys.recharge_invalid";
+
+		public static final String ERROR_INSERT_SYS_CONFIG_FAILED = "errors.sys.insert_failed";
+
+		public static final String ERROR_UPDATE_SYS_CONFIG_FAILED = "errors.sys.update_failed";
+
+		public static final String ERROR_SYS_CONFIG_ALREDY_DEFINED = "errors.sys.already_exists";
+
+		public static final String ERROR_SYS_CONFIG_DATA_REQ = "errors.sys.data_required";
+
+		public static final String ERROR_CIRCLEID_INVALID = "errors.sys.circleid_invalid";
+
+		public static final String ERROR_SYS_CONFIG_FETCH = "errors.sysconfig.fetch_failed";
+
+		public static final String ERROR_TOPUP_OVERLAPPING = "errors.topup.overlapping";
+
+		public static final String ERROR_MINAMOUNT_REQUIRED = "errors.sys.minamount_required";
+		
+		public static final String ERROR_MINAMOUNT_LESS = "errors.sys.minamount_less";
+
+		public static final String ERROR_MINAMOUNT_INVALID = "errors.sys.minamount_invalid";
+
+		public static final String ERROR_MAXAMOUNT_INVALID = "errors.sys.maxamount_invalid";
+
+		public static final String ERROR_MAXMIN_AMOUNT = "errors.sys.max_min_amount";
+
+	}
+
+	// this class use to define Transaction error codes
+	public abstract class Transaction {
+		public static final String ERROR_TRANSACTION_NO_EXTERNAL_ID = "error.transaction.ExternalIdNotFound";
+		
+		public static final String ERROR_REQUESTER_MOBILENO_REQUIRED = "errors.transaction.requester_mobileno.required";
+
+		public static final String ERROR_SUBSCRIBER_MOBILENO_REQUIRED = "errors.transaction.subscriber_mobileno.required";
+
+		public static final String ERROR_MPASSWORD = "errors.transaction.mPassword.required";
+
+		public static final String ERROR_UNAUTHERIZED_REQ_MOBILE_NO = "rrors.transaction.unauthorized_account.requesterMobileNo";
+
+		public static final String ERROR_UNAUTHERIZED_SUB_MOBILE_NO = "errors.transaction.unauthorized_account.subscriberMobileNo";
+
+		public static final String ERROR_UNAUTH_MPASSWORD = "errors.transaction.unauthorized_account.mPassword";
+
+		public static final String ERROR__CANNOT_RECHARGE = "errors.transaction.cannot_recharge";
+
+		public static final String ERROR_UPDATE_OPERATING_BAL = "error.transaction.update_operatingBalance";
+
+		public static final String ERROR_UPDATE_AVAILABLE_BAL = "error.transaction.update_availableBalance";
+
+		public static final String ERROR_ACCOUNT_ID_REQ = "errors.transaction.accountId.required";
+
+		public static final String ERROR_TRANSACTION_ID_REQ = "errors.transaction.transactionId.required";
+
+		public static final String ERROR_INVALID_ACC_ID = "errors.transaction.invalid_accountId";
+
+		public static final String ERROR_SUBSCRIBER_MOBILENO_INVALID = "errors.transaction.subscriber_mobileno_invalid";
+
+		public static final String ERROR_ROLLBACK = "error.transaction.rollback";
+
+		public static final String ERROR_COMMIT = "errors.transaction.commit";
+
+		public static final String ERROR_AUTHENTICATION = "errors.transaction.unauthorized";
+
+		public static final String ERROR_ACTIVE_IN_ACCOUNT = "error.transaction.isActive_error";
+
+		public static final String ERROR_IS_ACTIVE_ACCOUNT = "error.transaction.isActive";
+
+		public static final String ERROR_IS_IN_ACTIVE_ACCOUNT = "error.transaction.account_inActive";
+
+		public static final String ERROR_GET_TRANSACTION_ID = "error.transaction.getTransactionId";
+
+		public static final String ERROR_FIND_CIRCLE_ID = "error.transaction.getCircleId";
+
+		public static final String ERROR_GETTING_PROCESSING_FEE = "error.transaction.getProcessingFees";
+
+		public static final String ERROR_SERVICE_TAX = "error.transaction.getServiceTax";
+
+		public static final String ERROR_GET_COMMISSION_RATE = "error.transaction.getCommision";
+
+		public static final String ERROR_GET_BALANCE = "error.transaction.getBalance";
+
+		public static final String ERROR_INSERTION_TRANSACTION_MASTER = "error.insertion_Transaction_Master";
+
+		public static final String ERROR_UPDATE_CUSTOMER_TRANSACTON_STATUS = "error.transaction.update_TransactionStatus";
+
+		public static final String ERROR_IS_CHILD = "errors.transaction.isChild";
+
+		public static final String ERROR_NO_RATE = "error.transaction.noRate";
+
+		public static final String ERROR_GET_RATE = "error.transaction.getRate";
+
+		public static final String ERROR_DEST_ACC_INACTIVE = "error.transaction.destination_Inactive";
+
+		public static final String ERROR_SOURCE_INACTIVE = "error.transaction.source_Inactive";
+
+		public static final String ERROR_CIRCLE_TOPUP_DETAIL_FIND = "error.transaction.getCircleTopUpConfigDetails";
+
+		public static final String ERROR_CIRCLE_TOPUP_DETAIL = "error.transaction.CircleTopUpConfigDetails";
+
+		public static final String ERROR_AMT_OUT_RANGE = "errors.transaction.invalid_recharge_value";
+
+		public static final String ERROR_TRANSFER_OUT_RANGE = "errors.transaction.invalid_transfer_value";
+
+		public static final String ERROR_CREDIT_AMT_NAGETIVE = "errors.transaction.credit_amount_negative";
+
+		public static final String ERROR_SOURCE_IN_SUFFICIENT_AMT = "errors.transaction.sourceAccountInsufficient";
+
+		public static final String ERROR_TRANSFERRING_MOB_REQ = "errors.transaction.transferring_moblie.required";
+
+		public static final String ERROR_RECEIVING_MOB_REQ = "errors.transaction.receiving_Mobile.required";
+
+		public static final String ERROR_TRANSCTION_STATUS_REQ = "errors.transaction.TransactionStatus";
+
+		public static final String ERROR_FINDING_CHILD_LIST = "errors.childList";
+
+		public static final String ERROR_MOBILE_NO_REQ = "errors.transaction.customer_mobileno.required";
+
+		public static final String ERROR_MOBILE_NO_NUMERIC = "errors.group.mobilenumber_numeric";
+
+		public static final String ERROR_MOBILE_NO_LENGTH = "errors.transaction.mobilenumber_inValidlength";
+
+		public static final String ERROR_NOT_RECHARGE = "error.transaction.cannotRecharge";
+
+		public static final String ERROR_ACCOUNT_DISABLED = "error.transaction.accountDisabled";
+
+		public static final String ERROR_INSUFFICIENT_BAL = "error.transaction.insufficientBalance";
+
+		public static final String ERROR_IS_NOT_CHILD = "error.transaction.isNotChild";
+
+		public static final String ERROR_TRANSFER_AMT_REQ = "errors.transaction.transferamount.required";
+
+		public static final String ERROR_TRANSFER_AMT_NUMERIC = "errors.transaction.transactionAmount_numeric";
+
+		public static final String ERROR_RECEIVING_AMT_NUMERIC = "errors.transaction.receivingAccount.required";
+
+		public static final String ERROR_AMT_REC_REQ = "errors.transaction.receivingAccount.required";
+
+		public static final String ERROR_ACC_INVALID = "errors.transaction.unauthorized_account";
+		
+		public static final String ERROR_BILLABLE_SOURCE_ACC_INVALID = "errors.transaction.source_account_nonBillable";
+		
+		public static final String ERROR_BILLABLE_DESTINATION_ACC_INVALID = "errors.transaction.destination_account_nonBillable";
+
+		public static final String ERROR_GETTING_ACC_ID = "errors.transaction.getAccountId";
+
+		public static final String ERROR_GETTING_MPASSWORD = "errors.transaction.getAccountId";
+
+		public static final String ERROR_LOG_TRANSACTION = "error.transaction.logTransaction";
+
+		public static final String ERROR_INVALID_DESTINATION = "error.transaction.invalidDestination";
+
+		public static final String ERROR_TRANSACTON = "error.transaction";
+
+		public static final String ERROR_INVALID_ACCOUNT_CODE = "errors.transaction.invalidaccountcode";
+
+		public static final String ERROR_UPDATE_ACC_BALANCE = "error.Transaction.UpdateSuccess";
+
+		public static final String ERROR_NO_CHILD_ACCOUNT = "errors.transaction.noChildAccount";
+
+		public static final String ERROR_OPERATING_BALANCE = "errors.transaction.oprbalance";
+
+		public static final String ERROR_NO_RECORD = "errors.transaction.norecord";
+
+		public static final String ERROR_INVALID_TRANSACTION_ID = "errors.transaction.id_invalid";
+
+		public static final String ERROR_UPDATE_FAILURE = "errors.transaction.updatefailure";
+
+		public static final String ERROR_RECHARGE_DTO_NULL = "error.transaction.recharge_dto_null";
+
+		public static final String ERROR_TRANSACTION_IN = "error.transaction.in";
+
+		public static final String ERROR_TRANSACTION_STATUS_UPDATE = "errors.transaction.transactionStatus_update";
+
+		public static final String ERROR_TRANSACTION_INVALID_SUBSCRIBER = "error.transaction.invalid.subscriber";
+		
+		public static final String RECHARGE_AIRURL_NULL="error.transaction.airurl_null";
+		
+		public static final String RECHARGE_MOBILE_SERIES_MAPPING_LIST_NULL="error.transaction.mobileSeriesMappingNull";
+
+		public static final String ERROR_TRANSACTION_RECHARGE = "error.transaction.recharge";
+
+		public static final String ERROR_TRANSACTION_NO_SUBS_CIRCLE = "error.transaction.SubcriberCircleNotFound";
+		
+
+		public static final String ERROR_DISTIBUTOR_TRANSACTION_DATAREQ = "errors.distributor.transaction.datareq";
+
+		public static final String ERROR_TRANSACTION_TRANSFER_AMOUNT_REQUIRED = "errors.transaction.transfer_amount.required";
+
+		public static final String ERROR_TRANSACTION_TYPE = "errors.transaction.transaction.transactiontype";
+
+		public static final String ERROR_TRANSACTION_CARDLENGTH = "error.transaction.cardlength";
+
+		public static final String ERROR_POSTPAID_BILL_PAYMENT = "error.transaction.billpayment";
+
+		public static final String ERROR_TRANSACTION_VALID_TRANSACTION_TIME_DELAY = "error.transaction.valid_transaction_time_delay";
+
+		public static final String ERROR_POSTPAID_SELFCARE = "error.transaction.billpayment.selfcare";
+		
+		public static final String ERROR_TRANSACTION_STATE = "error.transaction.state";
+		
+		public static final String TRANSACTION_INVALID_TRANSACTION_TYPE = "Invalid Transaction type";
+		
+		public static final String DUPLICATE_REQUEST = "errors.transaction.duplicate";
+		
+		public static final String BLACKOUT_REQUEST = "errors.transaction.blackout";
+		
+		public static final String ERROR_TRANSACTION_REMARKSLENGTH = "error.transaction.remarkslength";
+		
+		public static final String ERROR_TRANSACTION_REMARKSMINLENGTH = "error.transaction.remarksminlength";
+		
+		public static final String ERROR_TRANSACTION_REMARKSJUNK = "errors.transaction.remarksjunk";
+		
+		public static final String ERROR_USER_SESSION_CONTEXT = "errors.transaction.user_session_context_req";
+
+		public static final String ERROR_RECEIVING_MOBILENO_REQUIRED = "errors.transaction.receiver_mobileno_req" ;
+		
+		public static final String ERROR_RECEIVING_MOBILENO_INVALID = "errors.transaction.receiver_mobileno_invalid" ;
+				
+		public static final String ERROR_SEND_SMS_FAILED= "errors.transaction.sms_send_failed_" ;
+	}
+
+	// this class use to define user error codes
+	public abstract class User {
+		public static final String ERROR_NO_ACTIVE_USER = "errors.user.no_active_user";
+
+		public static final String ERROR_USER_NOT_FOUND = "errors.user.notfound";
+
+		public static final String ERROR_USER_MAX_NAME_LENGTH = "errors.user.username_maxlength";
+
+		public static final String ERROR_USER_MIN_NAME_LENGTH = "errors.user.username_minlength";
+
+		public static final String ERROR_USER_CONTACT_MIN_LENGTH = "errors.user.contactno_maxlength";
+
+		public static final String ERROR_USER_CONTACT_MAX_LENGTH = "errors.user.contactno_minlength";
+
+		public static final String ERROR_INVALID_MAIL = "errors.user.email_invalid";
+
+		public static final String ERROR_INVALID_MAX_LENGTH_MAIL = "errors.user.email_maxlength";
+
+		public static final String ERROR_INVALID_MAX_LENGTH_PASSWORD = "errors.user.password_maxlength";
+
+		public static final String ERROR_INVALID_MIN_LENGTH_PASSWORD = "errors.user.password_minlength";
+
+		public static final String ERROR_PASSWORD_REQ = "errors.user.password_required";
+
+		public static final String ERROR_PASSWORD_ENCRYPTION = "errors.user.password_encryption";
+
+		public static final String ERROR_SELECT_USERTYPE = "errors.user.usertype_required";
+
+		public static final String ERROR_CONTACT_NO_REQ = "errors.user.contactno_required";
+
+		public static final String ERROR_CIRCLE_ID_REQ = "errors.user.circleid_required";
+
+		public static final String ERROR_GROUP_ID_REQ = "errors.user.groupid_required";
+
+		public static final String ERROR_USER_NAME_ALREADY_EXIST = "errors.user.username_already_exists";
+
+		public static final String ERROR_USER_SEQ_ID = "error.user.sequence_id";
+
+		public static final String ERROR_USER_NAME_REQUIRED = "errors.user.username_required";
+
+		public static final String ERROR_USER_NAME_ALPHANUMERIC = "errors.user.username_alphanumeric";
+
+		public static final String ERROR_USER_CONTACTNO_INVALID = "errors.user.contactno_invalid";
+
+		public static final String ERROR_USER_STATUS_INVALID = "errors.user.status_invalid";
+		
+		public static final String ERROR_INVALID_MATCH_PASSWORD = "errors.user.password_mismatch";
+		
+		public static final String ERROR_INVALID_PASSWORD = "errors.user.password_invalid";
+	}
+
+	// this class use to define Query error codes
+	public abstract class Query {
+		public static final String ERROR_INVALID_REQUEST = "errors.invalid.request";
+
+		public static final String ERROR_NO_CHILD_FOUND = "error.query.nochild_found";
+
+		public static final String ERROR_INVALID_CHILD_MOBILE_NO = "error.query.invalid_childmobilno";
+
+		public static final String ERROR_INVALID_CHILD_ACC_CODE = "error.query.invalid_childacccode";
+
+		public static final String ERROR_NO_ACTIVE_ACC_FOUND = "error.query.noactiveaccount_found";
+
+		public static final String ERROR_NO_RECORD_FOUND_ACC_CODE = "error.query.norecord_found_AccCode";
+
+		public static final String ERROR_NO_RECORD_FOUND_MOBILE = "error.query.norecord_found_mobile";
+
+		public static final String ERROR_INVAILD_CHILD_NO = "query.prompt.invalidchildno";
+
+	}
+
+	// this class use to define Group And Role error codes
+	public abstract class GroupRole {
+		public static final String ERROR_GROUP_NAME_ALREADY_EXIST = "errors.group.groupname_already_exists";
+
+		public static final String ERROR_GROUP_NAME_NOT_EXIST = "errors.group.nogroup";
+
+		public static final String ERROR_MAX_LENGTH_DESC = "errors.group.description_maxlength";
+
+		public static final String ERROR_MAX_LENGTH_GROUP_NAME = "errors.group.groupname_maxlength";
+
+		public static final String ERROR_GROUP_ROLE_NOT_EXIST = "errors.group.nogrouprole";
+
+		public static final String ERROR_ROLE_LIST_NOT_EXIST = "errors.roleList.notfound";
+
+		public static final String ERROR_ROLE_NOT_UPDATED = "errors.roles.notupdated";
+
+		public static final String ERROR_ROLE_MAPPING = "errors.roles.mapping";
+
+		public static final String ERROR_GROUP_NAME_REQUIRED = "errors.group.groupname_required";
+
+		public static final String ERROR_GROUP_NAME_ALPHANUMERIC = "errors.group.groupname_alphanumeric";
+
+		public static final String ERROR_GROUP_JUNK = "errors.junk_characters";
+	}
+	
+//	 this class use to define Group And Role error codes
+	public abstract class SlabConfiguration {
+		
+		public static final String ERROR_SLAB_NOT_EXIST = "errors.slab.noslab";
+		
+		public static final String ERROR_INSERT_TOPUP_FAILED="errors.topup.insert_fail";
+		
+		public static final String ERROR_INVALID_START_AMOUNT="error.invalid.start.amount";
+		
+		public static final String ERROR_INVALID_TILL_AMOUNT="error.invalid.till.amount";
+		
+		public static final String ERROR_INVALID_ESP_COMMISSION="error.invalid.esp.commission";
+		
+		public static final String ERROR_INVALID_PSP_COMMISSION="error.invalid.psp.commission";
+		
+		public static final String ERROR_INVALID_PROCESSING_CODE="error.invalid.processing_code";
+		
+		public static final String ERROR_INVALID_PROCESSING_FEE="error.invalid.processing.fee";
+		
+		public static final String ERROR_INVALID_SERVICE_TAX="error.invalid.service.tax";
+		
+		public static final String ERROR_INVALID_IN_CARD="error.invalid.in.card";
+		
+		public static final String ERROR_INVALID_VALIDITY="error.invalid.validity";
+		
+		public static final String ERROR_START_AMOUNT_NUMERIC="error.start.amount.numeric";
+		
+		public static final String ERROR_TILL_AMOUNT_NUMERIC="error.till.amount.numeric";
+		
+		public static final String ERROR_ESP_COMMISSION_NUMERIC="error.esp.commission.numeric";
+		
+		public static final String ERROR_PSP_COMMISSION_NUMERIC="error.psp.commission.numeric";
+		
+		public static final String ERROR_SERVICE_TAX_NUMERIC="error.service.tax.numeric";
+		
+		public static final String ERROR_PROCESSING_FEE_NUMERIC="error.processing.fee.numeric";
+		
+		public static final String ERROR_VALIDITY_NUMERIC="error.validity.numeric";
+		
+		public static final String ERROR_INCORRECT_FILE_FORMAT="error.incorrect.file.format";
+		
+		public static final String ERROR_INSERT_INCORRECT_DATA_FAILED="errors.insert.incorrect_data_fail";
+	}
+	
+	public abstract class Report {
+	
+		public static final String ERROR_STATAUS_REQUIRED = "errors.status.required";
+		
+		public static final String ERROR_ENDDATE_REQUIRED = "errors.enddate.required";
+		
+		public static final String ERROR_STARTDATE_REQUIRED = "errors.startdate.required";
+	}
+
+	public abstract class Movement {
+		public static final String ERROR_DIST_LIST_UNAVAILABLE = "error.dist.unavailable";
+	}
+	
+	public abstract class  Geography{
+		public static final String ERROR_USERS_NOT_EXIST = "errors.user.nouser";
+		public static final String ERROR_GEOGRAPHY_NOT_EXIST = "errors.geography.nogeography";
+
+		public static final String ERROR_GEOGRAPHY_ALREADY_DEFINED = "errors.geography.geographyid_already_exists";
+
+		public static final String ERROR_ACTIVE_GEOGRAPHY_NOT_EXIST = "errors.geography.noactivegeography";
+
+		public static final String ERROR_UPDATE_GEOGRAPHY = "errors.geography.update";
+
+		public static final String ERROR_GEOGRAPHY_NAME = "errors.geography.geographyname_required";
+
+		public static final String ERROR_GEOGRAPHY_CODE = "errors.geography.geographycode_required";
+
+
+		public static final String ERROR_REGION = "errors.geography.region_invalid";
+
+		public static final String ERROR_STATUS = "errors.geography.status_invalid";
+		public static final String ERROR_GEOGRAPHY_NOT_FOUND = "errors.geography.notfound";
+
+		public static final String ERROR_GEOGRAPHY_ID_IN_USE = "errors.geography.geographyid.inuse";
+
+		public static final String ERROR_GEOGRAPHY_NAME_ALREADY_EXIST = "errors.geography.geographyname_already_exists";
+
+		public static final String ERROR_GEOGRAPHY_CODE_ALREADY_EXIST = "errors.geography.geographycode_already_exists";
+
+		public static final String ERROR_GEOGRAPHY_NAME_ALPHANUMERIC = "errors.geography.geographyname_alphanumeric";
+
+		public static final String ERROR_GEOGRAPHY_CODE_ALPHANUMERIC = "errors.geography.geographycode_alphanumeric";
+		
+
+
+	}
+}

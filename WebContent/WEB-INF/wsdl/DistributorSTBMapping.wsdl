@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://local.webServices.dp.ibm.com" xmlns:impl="http://local.webServices.dp.ibm.com" xmlns:intf="http://local.webServices.dp.ibm.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsi="http://ws-i.org/profiles/basic/1.1/xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+ <wsdl:types>
+  <schema targetNamespace="http://local.webServices.dp.ibm.com" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <element name="distStbMappingResponse">
+    <complexType>
+     <sequence>
+      <element name="distStbMappingReturn" nillable="true" type="impl:ArrayOf_xsd_nillable_string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="distStbMappingNew">
+    <complexType>
+     <sequence>
+      <element name="distOLMId" nillable="true" type="xsd:string"/>
+      <element name="stbNo" nillable="true" type="xsd:string"/>
+      <element name="andrdStbNo" nillable="true" type="xsd:string"/>
+      <element name="retailerMobNo" nillable="true" type="xsd:string"/>
+      <element name="requestType" type="xsd:int"/>
+      <element name="productName" nillable="true" type="xsd:string"/>
+      <element name="andrdProdName" nillable="true" type="xsd:string"/>
+      <element name="userid" nillable="true" type="xsd:string"/>
+      <element name="password" nillable="true" type="xsd:string"/>
+      <element name="Flag" nillable="true" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="distStbMappingNewResponse">
+    <complexType>
+     <sequence>
+      <element name="distStbMappingNewReturn" nillable="true" type="impl:ArrayOf_xsd_nillable_string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="distStbMapping">
+    <complexType>
+     <sequence>
+      <element name="distOLMId" nillable="true" type="xsd:string"/>
+      <element name="stbNo" nillable="true" type="xsd:string"/>
+      <element name="retailerMobNo" nillable="true" type="xsd:string"/>
+      <element name="requestType" type="xsd:int"/>
+      <element name="productName" nillable="true" type="xsd:string"/>
+      <element name="userid" nillable="true" type="xsd:string"/>
+      <element name="password" nillable="true" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="ArrayOf_xsd_nillable_string">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="string" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="distStbMappingResponse">
+     <wsdl:part element="impl:distStbMappingResponse" name="parameters"/>
+
+  </wsdl:message>
+
+   <wsdl:message name="distStbMappingNewRequest">
+     <wsdl:part element="impl:distStbMappingNew" name="parameters"/>
+
+  </wsdl:message>
+
+   <wsdl:message name="distStbMappingNewResponse">
+     <wsdl:part element="impl:distStbMappingNewResponse" name="parameters"/>
+
+  </wsdl:message>
+
+   <wsdl:message name="distStbMappingRequest">
+     <wsdl:part element="impl:distStbMapping" name="parameters"/>
+
+  </wsdl:message>
+
+   <wsdl:portType name="DistributorSTBMapping">
+     <wsdl:operation name="distStbMapping">
+       <wsdl:input message="impl:distStbMappingRequest" name="distStbMappingRequest"/>
+
+       <wsdl:output message="impl:distStbMappingResponse" name="distStbMappingResponse"/>
+
+    </wsdl:operation>
+
+     <wsdl:operation name="distStbMappingNew">
+       <wsdl:input message="impl:distStbMappingNewRequest" name="distStbMappingNewRequest"/>
+
+       <wsdl:output message="impl:distStbMappingNewResponse" name="distStbMappingNewResponse"/>
+
+    </wsdl:operation>
+
+  </wsdl:portType>
+
+   <wsdl:binding name="DistributorSTBMappingSoapBinding" type="impl:DistributorSTBMapping">
+     <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+     <wsdl:operation name="distStbMapping">
+       <wsdlsoap:operation soapAction="distStbMapping"/>
+
+       <wsdl:input name="distStbMappingRequest">
+         <wsdlsoap:body use="literal"/>
+
+      </wsdl:input>
+
+       <wsdl:output name="distStbMappingResponse">
+         <wsdlsoap:body use="literal"/>
+
+      </wsdl:output>
+
+    </wsdl:operation>
+
+     <wsdl:operation name="distStbMappingNew">
+       <wsdlsoap:operation soapAction="distStbMappingNew"/>
+
+       <wsdl:input name="distStbMappingNewRequest">
+         <wsdlsoap:body use="literal"/>
+
+      </wsdl:input>
+
+       <wsdl:output name="distStbMappingNewResponse">
+         <wsdlsoap:body use="literal"/>
+
+      </wsdl:output>
+
+    </wsdl:operation>
+
+  </wsdl:binding>
+
+   <wsdl:service name="DistributorSTBMappingService">
+     <wsdl:port binding="impl:DistributorSTBMappingSoapBinding" name="DistributorSTBMapping">
+       <wsdlsoap:address location="http://localhost:9080/DPDTH/services/DistributorSTBMapping"/>
+
+    </wsdl:port>
+
+  </wsdl:service>
+
+</wsdl:definitions>

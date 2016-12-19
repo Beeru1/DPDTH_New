@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java-wsdl-mapping xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.1" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://www.ibm.com/webservices/xsd/j2ee_jaxrpc_mapping_1_1.xsd">
+    <package-mapping>
+        <package-type>com.ibm.dp.webServices.local</package-type>
+        <namespaceURI>http://local.webServices.dp.ibm.com</namespaceURI>
+    </package-mapping>
+    <java-xml-type-mapping>
+        <java-type>java.lang.String</java-type>
+        <root-type-qname xmlns:rtq="http://www.w3.org/2001/XMLSchema">rtq:string</root-type-qname>
+        <qname-scope>simpleType</qname-scope>
+    </java-xml-type-mapping>
+    <java-xml-type-mapping>
+        <java-type>java.lang.String[]</java-type>
+        <anonymous-type-qname>http://www.w3.org/2001/XMLSchema:string[0,unbounded]</anonymous-type-qname>
+        <qname-scope>complexType</qname-scope>
+    </java-xml-type-mapping>
+    <java-xml-type-mapping>
+        <java-type>java.lang.String[]</java-type>
+        <root-type-qname xmlns:rtq="http://local.webServices.dp.ibm.com">rtq:ArrayOf_xsd_nillable_string</root-type-qname>
+        <qname-scope>complexType</qname-scope>
+        <variable-mapping>
+            <java-variable-name>string</java-variable-name>
+            <xml-element-name>string</xml-element-name>
+        </variable-mapping>
+    </java-xml-type-mapping>
+    <java-xml-type-mapping>
+        <java-type>java.lang.String[]</java-type>
+        <anonymous-type-qname>http://local.webServices.dp.ibm.com:ArrayOf_xsd_nillable_string&gt;string[0,unbounded]</anonymous-type-qname>
+        <qname-scope>complexType</qname-scope>
+    </java-xml-type-mapping>
+    <service-interface-mapping>
+        <service-interface>com.ibm.dp.webServices.local.AVRestrictionWebserviceService</service-interface>
+        <wsdl-service-name xmlns:sim="http://local.webServices.dp.ibm.com">sim:AVRestrictionWebserviceService</wsdl-service-name>
+        <port-mapping>
+            <port-name>AVRestrictionWebservice</port-name>
+            <java-port-name>AVRestrictionWebservice</java-port-name>
+        </port-mapping>
+    </service-interface-mapping>
+    <service-endpoint-interface-mapping>
+        <service-endpoint-interface>com.ibm.dp.webServices.local.AVRestrictionWebservice</service-endpoint-interface>
+        <wsdl-port-type xmlns:seimwpt="http://local.webServices.dp.ibm.com">seimwpt:AVRestrictionWebservice</wsdl-port-type>
+        <wsdl-binding xmlns:seimwb="http://local.webServices.dp.ibm.com">seimwb:AVRestrictionWebserviceSoapBinding</wsdl-binding>
+        <service-endpoint-method-mapping>
+            <java-method-name>checkAVRestriction</java-method-name>
+            <wsdl-operation>checkAVRestriction</wsdl-operation>
+            <wrapped-element/>
+            <method-param-parts-mapping>
+                <param-position>0</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:checkAVRestrictionRequest</wsdl-message>
+                    <wsdl-message-part-name>distOLMId</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>1</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:checkAVRestrictionRequest</wsdl-message>
+                    <wsdl-message-part-name>avSerialNumber</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>2</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:checkAVRestrictionRequest</wsdl-message>
+                    <wsdl-message-part-name>userid</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>3</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:checkAVRestrictionRequest</wsdl-message>
+                    <wsdl-message-part-name>password</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <wsdl-return-value-mapping>
+                <method-return-value>java.lang.String[]</method-return-value>
+                <wsdl-message xmlns:wrvm="http://local.webServices.dp.ibm.com">wrvm:checkAVRestrictionResponse</wsdl-message>
+                <wsdl-message-part-name>checkAVRestrictionReturn</wsdl-message-part-name>
+            </wsdl-return-value-mapping>
+        </service-endpoint-method-mapping>
+    </service-endpoint-interface-mapping>
+</java-wsdl-mapping>

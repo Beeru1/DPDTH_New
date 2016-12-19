@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://local.webServices.dp.ibm.com" xmlns:impl="http://local.webServices.dp.ibm.com" xmlns:intf="http://local.webServices.dp.ibm.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsi="http://ws-i.org/profiles/basic/1.1/xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+ <wsdl:types>
+  <schema targetNamespace="http://local.webServices.dp.ibm.com" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <element name="processDeliveryChallanResponse">
+    <complexType>
+     <sequence>
+      <element name="processDeliveryChallanReturn" nillable="true" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="poStatusUpdate">
+    <complexType>
+     <sequence>
+      <element name="poNo" nillable="true" type="xsd:string"/>
+      <element name="poStatus" nillable="true" type="xsd:string"/>
+      <element name="poStatusTime" nillable="true" type="xsd:string"/>
+      <element name="remarks" nillable="true" type="xsd:string"/>
+      <element name="productCode" nillable="true" type="xsd:string"/>
+      <element name="poQuantity" nillable="true" type="xsd:string"/>
+      <element name="userid" nillable="true" type="xsd:string"/>
+      <element name="password" nillable="true" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="poStatusUpdateResponse">
+    <complexType>
+     <sequence>
+      <element name="poStatusUpdateReturn" nillable="true" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="processDeliveryChallan">
+    <complexType>
+     <sequence>
+      <element name="prNo" nillable="true" type="xsd:string"/>
+      <element name="poNo" nillable="true" type="xsd:string"/>
+      <element name="poDate" nillable="true" type="xsd:string"/>
+      <element name="poStatusDate" nillable="true" type="xsd:string"/>
+      <element name="invoiceNo" nillable="true" type="xsd:string"/>
+      <element name="invoiceDate" nillable="true" type="xsd:string"/>
+      <element name="dcNo" nillable="true" type="xsd:string"/>
+      <element name="dcDate" nillable="true" type="xsd:string"/>
+      <element name="ddChequeNo" nillable="true" type="xsd:string"/>
+      <element name="ddChequeDate" nillable="true" type="xsd:string"/>
+      <element name="productId" nillable="true" type="xsd:string"/>
+      <element name="serialNo" nillable="true" type="xsd:string"/>
+      <element name="userid" nillable="true" type="xsd:string"/>
+      <element name="password" nillable="true" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="processDeliveryChallanRequest">
+     <wsdl:part element="intf:processDeliveryChallan" name="parameters"/>
+
+  </wsdl:message>
+
+   <wsdl:message name="poStatusUpdateResponse">
+     <wsdl:part element="intf:poStatusUpdateResponse" name="parameters"/>
+
+  </wsdl:message>
+
+   <wsdl:message name="poStatusUpdateRequest">
+     <wsdl:part element="intf:poStatusUpdate" name="parameters"/>
+
+  </wsdl:message>
+
+   <wsdl:message name="processDeliveryChallanResponse">
+     <wsdl:part element="intf:processDeliveryChallanResponse" name="parameters"/>
+
+  </wsdl:message>
+
+   <wsdl:portType name="POStatusUpdateWebservice">
+     <wsdl:operation name="processDeliveryChallan">
+       <wsdl:input message="intf:processDeliveryChallanRequest" name="processDeliveryChallanRequest"/>
+
+       <wsdl:output message="intf:processDeliveryChallanResponse" name="processDeliveryChallanResponse"/>
+
+    </wsdl:operation>
+
+     <wsdl:operation name="poStatusUpdate">
+       <wsdl:input message="intf:poStatusUpdateRequest" name="poStatusUpdateRequest"/>
+
+       <wsdl:output message="intf:poStatusUpdateResponse" name="poStatusUpdateResponse"/>
+
+    </wsdl:operation>
+
+  </wsdl:portType>
+
+   <wsdl:binding name="POStatusUpdateWebserviceSoapBinding" type="intf:POStatusUpdateWebservice">
+ <wsaw:UsingAddressing wsdl:required="false" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"/>
+
+     <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+     <wsdl:operation name="processDeliveryChallan">
+       <wsdlsoap:operation soapAction="processDeliveryChallan"/>
+
+       <wsdl:input name="processDeliveryChallanRequest">
+         <wsdlsoap:body use="literal"/>
+
+      </wsdl:input>
+
+       <wsdl:output name="processDeliveryChallanResponse">
+         <wsdlsoap:body use="literal"/>
+
+      </wsdl:output>
+
+    </wsdl:operation>
+
+     <wsdl:operation name="poStatusUpdate">
+       <wsdlsoap:operation soapAction="poStatusUpdate"/>
+
+       <wsdl:input name="poStatusUpdateRequest">
+         <wsdlsoap:body use="literal"/>
+
+      </wsdl:input>
+
+       <wsdl:output name="poStatusUpdateResponse">
+         <wsdlsoap:body use="literal"/>
+
+      </wsdl:output>
+
+    </wsdl:operation>
+
+  </wsdl:binding>
+
+   <wsdl:service name="POStatusUpdateWebserviceService">
+     <wsdl:port binding="intf:POStatusUpdateWebserviceSoapBinding" name="POStatusUpdateWebservice">
+       <wsdlsoap:address location="http://localhost:9080/DPDTH/services/POStatusUpdateWebservice"/>
+
+    </wsdl:port>
+
+  </wsdl:service>
+
+</wsdl:definitions>

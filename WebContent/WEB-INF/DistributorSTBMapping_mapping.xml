@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?><java-wsdl-mapping version="1.1" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://www.ibm.com/webservices/xsd/j2ee_jaxrpc_mapping_1_1.xsd">
+    <package-mapping>
+        <package-type>com.ibm.dp.webServices.local</package-type>
+        <namespaceURI>http://local.webServices.dp.ibm.com</namespaceURI>
+    </package-mapping>
+    <java-xml-type-mapping>
+        <java-type>java.lang.String[]</java-type>
+        <root-type-qname xmlns:rtq="http://local.webServices.dp.ibm.com">rtq:ArrayOf_xsd_nillable_string</root-type-qname>
+        <qname-scope>complexType</qname-scope>
+        <variable-mapping>
+            <java-variable-name>string</java-variable-name>
+            <xml-element-name>string</xml-element-name>
+        </variable-mapping>
+    </java-xml-type-mapping>
+    <java-xml-type-mapping>
+        <java-type>java.lang.String[]</java-type>
+        <anonymous-type-qname>http://www.w3.org/2001/XMLSchema:string[0,unbounded]</anonymous-type-qname>
+        <qname-scope>complexType</qname-scope>
+    </java-xml-type-mapping>
+    <java-xml-type-mapping>
+        <java-type>java.lang.String</java-type>
+        <root-type-qname xmlns:rtq="http://www.w3.org/2001/XMLSchema">rtq:string</root-type-qname>
+        <qname-scope>simpleType</qname-scope>
+    </java-xml-type-mapping>
+    <java-xml-type-mapping>
+        <java-type>int</java-type>
+        <root-type-qname xmlns:rtq="http://www.w3.org/2001/XMLSchema">rtq:int</root-type-qname>
+        <qname-scope>simpleType</qname-scope>
+    </java-xml-type-mapping>
+    <java-xml-type-mapping>
+        <java-type>java.lang.String[]</java-type>
+        <anonymous-type-qname>http://local.webServices.dp.ibm.com:ArrayOf_xsd_nillable_string&gt;string[0,unbounded]</anonymous-type-qname>
+        <qname-scope>complexType</qname-scope>
+    </java-xml-type-mapping>
+    <service-interface-mapping>
+        <service-interface>com.ibm.dp.webServices.local.DistributorSTBMappingService</service-interface>
+        <wsdl-service-name xmlns:sim="http://local.webServices.dp.ibm.com">sim:DistributorSTBMappingService</wsdl-service-name>
+        <port-mapping>
+            <port-name>DistributorSTBMapping</port-name>
+            <java-port-name>DistributorSTBMapping</java-port-name>
+        </port-mapping>
+    </service-interface-mapping>
+    <service-endpoint-interface-mapping>
+        <service-endpoint-interface>com.ibm.dp.webServices.local.DistributorSTBMapping</service-endpoint-interface>
+        <wsdl-port-type xmlns:seimwpt="http://local.webServices.dp.ibm.com">seimwpt:DistributorSTBMapping</wsdl-port-type>
+        <wsdl-binding xmlns:seimwb="http://local.webServices.dp.ibm.com">seimwb:DistributorSTBMappingSoapBinding</wsdl-binding>
+        <service-endpoint-method-mapping>
+            <java-method-name>distStbMappingNew</java-method-name>
+            <wsdl-operation>distStbMappingNew</wsdl-operation>
+            <wrapped-element/>
+            <method-param-parts-mapping>
+                <param-position>0</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:distStbMappingNewRequest</wsdl-message>
+                    <wsdl-message-part-name>distOLMId</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>1</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:distStbMappingNewRequest</wsdl-message>
+                    <wsdl-message-part-name>stbNo</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>2</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:distStbMappingNewRequest</wsdl-message>
+                    <wsdl-message-part-name>andrdStbNo</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>3</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:distStbMappingNewRequest</wsdl-message>
+                    <wsdl-message-part-name>retailerMobNo</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>4</param-position>
+                <param-type>int</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:distStbMappingNewRequest</wsdl-message>
+                    <wsdl-message-part-name>requestType</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>5</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:distStbMappingNewRequest</wsdl-message>
+                    <wsdl-message-part-name>productName</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>6</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:distStbMappingNewRequest</wsdl-message>
+                    <wsdl-message-part-name>andrdProdName</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>7</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:distStbMappingNewRequest</wsdl-message>
+                    <wsdl-message-part-name>userid</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>8</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:distStbMappingNewRequest</wsdl-message>
+                    <wsdl-message-part-name>password</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>9</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:distStbMappingNewRequest</wsdl-message>
+                    <wsdl-message-part-name>Flag</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <wsdl-return-value-mapping>
+                <method-return-value>java.lang.String[]</method-return-value>
+                <wsdl-message xmlns:wrvm="http://local.webServices.dp.ibm.com">wrvm:distStbMappingNewResponse</wsdl-message>
+                <wsdl-message-part-name>distStbMappingNewReturn</wsdl-message-part-name>
+            </wsdl-return-value-mapping>
+        </service-endpoint-method-mapping>
+        <service-endpoint-method-mapping>
+            <java-method-name>distStbMapping</java-method-name>
+            <wsdl-operation>distStbMapping</wsdl-operation>
+            <wrapped-element/>
+            <method-param-parts-mapping>
+                <param-position>0</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:distStbMappingRequest</wsdl-message>
+                    <wsdl-message-part-name>distOLMId</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>1</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:distStbMappingRequest</wsdl-message>
+                    <wsdl-message-part-name>stbNo</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>2</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:distStbMappingRequest</wsdl-message>
+                    <wsdl-message-part-name>retailerMobNo</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>3</param-position>
+                <param-type>int</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:distStbMappingRequest</wsdl-message>
+                    <wsdl-message-part-name>requestType</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>4</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:distStbMappingRequest</wsdl-message>
+                    <wsdl-message-part-name>productName</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>5</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:distStbMappingRequest</wsdl-message>
+                    <wsdl-message-part-name>userid</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>6</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:distStbMappingRequest</wsdl-message>
+                    <wsdl-message-part-name>password</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <wsdl-return-value-mapping>
+                <method-return-value>java.lang.String[]</method-return-value>
+                <wsdl-message xmlns:wrvm="http://local.webServices.dp.ibm.com">wrvm:distStbMappingResponse</wsdl-message>
+                <wsdl-message-part-name>distStbMappingReturn</wsdl-message-part-name>
+            </wsdl-return-value-mapping>
+        </service-endpoint-method-mapping>
+    </service-endpoint-interface-mapping>
+</java-wsdl-mapping>

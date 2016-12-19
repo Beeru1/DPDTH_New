@@ -1,0 +1,134 @@
+TD {
+	FONT-SIZE: 11px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+H3 {
+	FONT-SIZE: 11px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+SELECT {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 11px; PADDING-BOTTOM: 0px; MARGIN: 0px; COLOR: #000000; PADDING-TOP: 0px; FONT-STYLE: normal; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+.text {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+}
+.submitBtn
+{
+	background-image: url("../images/submitFile.gif");
+	width: 59px;
+	height: 17px;
+}
+.blackBold {
+	COLOR: #000000;
+}
+.heading {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 18px; PADDING-BOTTOM: 0px; MARGIN: 0px; COLOR: #E90004; PADDING-TOP: 0px; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif
+}
+.lightBg {
+	BACKGROUND-COLOR: #ffe4e1
+}
+.width1 {
+	WIDTH: 1px
+}
+.width10 {
+	WIDTH: 10px
+}
+.width80 {
+	WIDTH: 80px
+}
+.width100 {
+	WIDTH: 100px
+}
+.width150 {
+	WIDTH: 150px
+}
+.width200 {
+	WIDTH: 200px
+}
+.mTop5 {
+	MARGIN-TOP: 5px
+}
+.mTop10 {
+	MARGIN-TOP: 10px
+}
+.mTop20 {
+	MARGIN-TOP: 20px
+}
+.mTop30 {
+	MARGIN-TOP: 30px
+}
+.pLeft5 {
+	PADDING-LEFT: 5px
+}
+.pLeft10 {
+	PADDING-LEFT: 10px
+}
+.pRight5 {
+	PADDING-RIGHT: 5px
+}
+.pTop2 {
+	PADDING-TOP: 2px
+}
+.pTop5 {
+	PADDING-TOP: 5px
+}
+.pTop20 {
+	PADDING-TOP: 20px
+}
+.pTop10 {
+	PADDING-TOP: 10px
+}
+.pBot5 {
+	PADDING-BOTTOM: 5px
+}
+.pBot8 {
+	PADDING-BOTTOM: 8px
+}
+A.red, A.red:Visited, A.red:Active, A.red:Link
+{
+	COLOR: #b60402; TEXT-DECORATION: none
+}
+A.red:hover {
+	COLOR: black
+}
+A.topNav:link{
+	COLOR: #b60402; FONT-SIZE: 11px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+A.topNav:visited{
+	COLOR: #b60402; FONT-SIZE: 11px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+
+A.topNav:hover {
+		FONT-SIZE: 11px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-DECORATION: underline; COLOR: #000000
+}
+reportCol{
+	FONT-SIZE: 11px; FONT-FAMILY: Times New Roman;
+}	
+SPAN.error   { color: #990000 }
+
+.defaultCursor{
+cursor:default !important;
+}
+
+.pointerCursor{
+cursor:hand !important;
+}
+
+tab{
+position:absolute; cursor:pointer; font-weight: bold; text-align: center; border: 1px;
+border-color:#000000; border-style:outset; background-color:#d3d3d3; border-bottom-style:none;
+margin:0px;
+}
+
+tabPanel{
+position:absolute; border: 1px; border-color:#000000; background-color:#d3d3d3; border-style:outset; left:0px;
+top:28px; margin:0px; padding:6px; 
+}
+.dpReportTitle{
+	margin-left:50px !important;
+	font-size: 24px !important;
+	font-family: Verdana !important;
+	font-weight: bold;	
+	color: #CF2121;
+	padding-bottom:10px !important;
+	background:  url('../images/line.jpg') 100% left no-repeat bottom ; 
+}

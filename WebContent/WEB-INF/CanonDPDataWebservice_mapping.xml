@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?><java-wsdl-mapping version="1.1" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://www.ibm.com/webservices/xsd/j2ee_jaxrpc_mapping_1_1.xsd">
+    <package-mapping>
+        <package-type>com.ibm.dp.webServices.local</package-type>
+        <namespaceURI>http://local.webServices.dp.ibm.com</namespaceURI>
+    </package-mapping>
+    <java-xml-type-mapping>
+        <java-type>java.lang.String</java-type>
+        <root-type-qname xmlns:rtq="http://www.w3.org/2001/XMLSchema">rtq:string</root-type-qname>
+        <qname-scope>simpleType</qname-scope>
+    </java-xml-type-mapping>
+    <java-xml-type-mapping>
+        <java-type>int</java-type>
+        <root-type-qname xmlns:rtq="http://www.w3.org/2001/XMLSchema">rtq:int</root-type-qname>
+        <qname-scope>simpleType</qname-scope>
+    </java-xml-type-mapping>
+    <service-interface-mapping>
+        <service-interface>com.ibm.dp.webServices.local.CanonDPDataWebserviceService</service-interface>
+        <wsdl-service-name xmlns:sim="http://local.webServices.dp.ibm.com">sim:CanonDPDataWebserviceService</wsdl-service-name>
+        <port-mapping>
+            <port-name>CanonDPDataWebservice</port-name>
+            <java-port-name>CanonDPDataWebservice</java-port-name>
+        </port-mapping>
+    </service-interface-mapping>
+    <service-endpoint-interface-mapping>
+        <service-endpoint-interface>com.ibm.dp.webServices.local.CanonDPDataWebservice</service-endpoint-interface>
+        <wsdl-port-type xmlns:seimwpt="http://local.webServices.dp.ibm.com">seimwpt:CanonDPDataWebservice</wsdl-port-type>
+        <wsdl-binding xmlns:seimwb="http://local.webServices.dp.ibm.com">seimwb:CanonDPDataWebserviceSoapBinding</wsdl-binding>
+        <service-endpoint-method-mapping>
+            <java-method-name>updateCannonInventory</java-method-name>
+            <wsdl-operation>updateCannonInventory</wsdl-operation>
+            <wrapped-element/>
+            <method-param-parts-mapping>
+                <param-position>0</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:updateCannonInventoryRequest</wsdl-message>
+                    <wsdl-message-part-name>recordId</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>1</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:updateCannonInventoryRequest</wsdl-message>
+                    <wsdl-message-part-name>defectiveSerialNo</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>2</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:updateCannonInventoryRequest</wsdl-message>
+                    <wsdl-message-part-name>defectiveStbType</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>3</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:updateCannonInventoryRequest</wsdl-message>
+                    <wsdl-message-part-name>newSerialNo</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>4</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:updateCannonInventoryRequest</wsdl-message>
+                    <wsdl-message-part-name>newStbType</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>5</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:updateCannonInventoryRequest</wsdl-message>
+                    <wsdl-message-part-name>inventoryChangeDate</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>6</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:updateCannonInventoryRequest</wsdl-message>
+                    <wsdl-message-part-name>inventoryChangeType</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>7</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:updateCannonInventoryRequest</wsdl-message>
+                    <wsdl-message-part-name>distributorOlmId</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>8</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:updateCannonInventoryRequest</wsdl-message>
+                    <wsdl-message-part-name>status</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>9</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:updateCannonInventoryRequest</wsdl-message>
+                    <wsdl-message-part-name>errorMsg</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>10</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:updateCannonInventoryRequest</wsdl-message>
+                    <wsdl-message-part-name>customerId</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>11</param-position>
+                <param-type>int</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:updateCannonInventoryRequest</wsdl-message>
+                    <wsdl-message-part-name>defectId</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>12</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:updateCannonInventoryRequest</wsdl-message>
+                    <wsdl-message-part-name>modelManKey</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>13</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:updateCannonInventoryRequest</wsdl-message>
+                    <wsdl-message-part-name>modelManKeyOld</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>14</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:updateCannonInventoryRequest</wsdl-message>
+                    <wsdl-message-part-name>userid</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>15</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:updateCannonInventoryRequest</wsdl-message>
+                    <wsdl-message-part-name>password</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <wsdl-return-value-mapping>
+                <method-return-value>java.lang.String</method-return-value>
+                <wsdl-message xmlns:wrvm="http://local.webServices.dp.ibm.com">wrvm:updateCannonInventoryResponse</wsdl-message>
+                <wsdl-message-part-name>updateCannonInventoryReturn</wsdl-message-part-name>
+            </wsdl-return-value-mapping>
+        </service-endpoint-method-mapping>
+        <service-endpoint-method-mapping>
+            <java-method-name>canonDataUpdate</java-method-name>
+            <wsdl-operation>canonDataUpdate</wsdl-operation>
+            <wrapped-element/>
+            <method-param-parts-mapping>
+                <param-position>0</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:canonDataUpdateRequest</wsdl-message>
+                    <wsdl-message-part-name>recId</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>1</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:canonDataUpdateRequest</wsdl-message>
+                    <wsdl-message-part-name>serialNo</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>2</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:canonDataUpdateRequest</wsdl-message>
+                    <wsdl-message-part-name>distOlmId</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>3</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:canonDataUpdateRequest</wsdl-message>
+                    <wsdl-message-part-name>itemCode</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>4</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:canonDataUpdateRequest</wsdl-message>
+                    <wsdl-message-part-name>assignedDate</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>5</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:canonDataUpdateRequest</wsdl-message>
+                    <wsdl-message-part-name>customerId</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>6</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:canonDataUpdateRequest</wsdl-message>
+                    <wsdl-message-part-name>status</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>7</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:canonDataUpdateRequest</wsdl-message>
+                    <wsdl-message-part-name>stbType</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>8</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:canonDataUpdateRequest</wsdl-message>
+                    <wsdl-message-part-name>transactionType</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>9</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:canonDataUpdateRequest</wsdl-message>
+                    <wsdl-message-part-name>modelManKey</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>10</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:canonDataUpdateRequest</wsdl-message>
+                    <wsdl-message-part-name>modelManKeyOld</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>11</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:canonDataUpdateRequest</wsdl-message>
+                    <wsdl-message-part-name>userId</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>12</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:mppm="http://local.webServices.dp.ibm.com">mppm:canonDataUpdateRequest</wsdl-message>
+                    <wsdl-message-part-name>password</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <wsdl-return-value-mapping>
+                <method-return-value>java.lang.String</method-return-value>
+                <wsdl-message xmlns:wrvm="http://local.webServices.dp.ibm.com">wrvm:canonDataUpdateResponse</wsdl-message>
+                <wsdl-message-part-name>canonDataUpdateReturn</wsdl-message-part-name>
+            </wsdl-return-value-mapping>
+        </service-endpoint-method-mapping>
+    </service-endpoint-interface-mapping>
+</java-wsdl-mapping>

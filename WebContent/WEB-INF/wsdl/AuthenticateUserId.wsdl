@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://local.webServices.dp.ibm.com" xmlns:impl="http://local.webServices.dp.ibm.com" xmlns:intf="http://local.webServices.dp.ibm.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsi="http://ws-i.org/profiles/basic/1.1/xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+ <wsdl:types>
+  <schema targetNamespace="http://local.webServices.dp.ibm.com" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <element name="authenticateResponse">
+    <complexType>
+     <sequence>
+      <element name="authenticateReturn" nillable="true" type="impl:ArrayOf_xsd_nillable_string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="authenticate">
+    <complexType>
+     <sequence>
+      <element name="dpUser" nillable="true" type="xsd:string"/>
+      <element name="dpPass" nillable="true" type="xsd:string"/>
+      <element name="wsUser" nillable="true" type="xsd:string"/>
+      <element name="wsPass" nillable="true" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="ArrayOf_xsd_nillable_string">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="string" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="authenticateResponse">
+     <wsdl:part element="impl:authenticateResponse" name="parameters"/>
+
+  </wsdl:message>
+
+   <wsdl:message name="authenticateRequest">
+     <wsdl:part element="impl:authenticate" name="parameters"/>
+
+  </wsdl:message>
+
+   <wsdl:portType name="AuthenticateUserId">
+     <wsdl:operation name="authenticate">
+       <wsdl:input message="impl:authenticateRequest" name="authenticateRequest"/>
+
+       <wsdl:output message="impl:authenticateResponse" name="authenticateResponse"/>
+
+    </wsdl:operation>
+
+  </wsdl:portType>
+
+   <wsdl:binding name="AuthenticateUserIdSoapBinding" type="impl:AuthenticateUserId">
+     <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+     <wsdl:operation name="authenticate">
+       <wsdlsoap:operation soapAction="authenticate"/>
+
+       <wsdl:input name="authenticateRequest">
+         <wsdlsoap:body use="literal"/>
+
+      </wsdl:input>
+
+       <wsdl:output name="authenticateResponse">
+         <wsdlsoap:body use="literal"/>
+
+      </wsdl:output>
+
+    </wsdl:operation>
+
+  </wsdl:binding>
+
+   <wsdl:service name="AuthenticateUserIdService">
+     <wsdl:port binding="impl:AuthenticateUserIdSoapBinding" name="AuthenticateUserId">
+       <wsdlsoap:address location="http://localhost:9080/DPDTH/services/AuthenticateUserId"/>
+
+    </wsdl:port>
+
+  </wsdl:service>
+
+</wsdl:definitions>

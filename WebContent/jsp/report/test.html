@@ -1,0 +1,1392 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+
+
+<html>
+<HEAD> 
+
+<META http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<META name="GENERATOR" content="IBM WebSphere Studio">
+<META http-equiv="Content-Style-Type" content="text/css">
+<LINK href=/DPDTH/jsp/tiles_layout/theme/text.css rel="stylesheet" type="text/css">
+<TITLE>Generic Report</TITLE>
+</HEAD>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" height="100%">
+	<tr>
+		<TD bgcolor="#FFFFFF" colspan="2" valign="top" align="left" height="17%" width="100%">
+
+
+
+
+<html>  
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="/DPDTH/theme/text.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="/DPDTH/theme/chromestyle2.css" />
+<link href="/DPDTH/theme/Master.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="/DPDTH/scripts/chrome.js">
+
+</script>
+<script language="JavaScript" >
+// Tigra Calendar v4.0.4 (10/23/2009) American (mm/dd/yyyy)
+// http://www.softcomplex.com/products/tigra_calendar/
+// Public Domain Software... You're welcome.
+
+// default settins
+var A_TCALDEF = {
+	'months' : ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+	'weekdays' : ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
+	'yearscroll': true, // show year scroller
+	'weekstart': 0, // first day of week: 0-Su or 1-Mo
+	'centyear'  : 70, // 2 digit years less than 'centyear' are in 20xx, othewise in 19xx.
+	'imgpath' : 'img/' // directory with calendar images
+};
+// date parsing function
+function f_tcalParseDate (s_date) {
+
+	var re_date = /^\s*(\d{1,2})\/(\d{1,2})\/(\d{2,4})\s*$/;
+	if (!re_date.exec(s_date))
+		return alert ("Invalid date: '" + s_date + "'.\nAccepted format is mm/dd/yyyy.")
+	var n_day = Number(RegExp.$2),
+		n_month = Number(RegExp.$1),
+		n_year = Number(RegExp.$3);
+	
+	if (n_year < 100)
+		n_year += (n_year < this.a_tpl.centyear ? 2000 : 1900);
+	if (n_month < 1 || n_month > 12)
+		return alert ("Invalid month value: '" + n_month + "'.\nAllowed range is 01-12.");
+	var d_numdays = new Date(n_year, n_month, 0);
+	if (n_day > d_numdays.getDate())
+		return alert("Invalid day of month value: '" + n_day + "'.\nAllowed range for selected month is 01 - " + d_numdays.getDate() + ".");
+
+	return new Date (n_year, n_month - 1, n_day);
+}
+// date generating function
+function f_tcalGenerDate (d_date) {
+	return (
+		 (d_date.getMonth() < 9 ? '0' : '') + (d_date.getMonth() + 1) + "/"
+		+ (d_date.getDate() < 10 ? '0' : '') + d_date.getDate() + "/"
+		+ d_date.getFullYear()
+	);
+}
+
+// implementation
+function tcal (a_cfg, a_tpl) {
+	alert("111111111111");
+	// apply default template if not specified
+	if (!a_tpl)
+		a_tpl = A_TCALDEF;
+
+	// register in global collections
+	if (!window.A_TCALS)
+		window.A_TCALS = [];
+	if (!window.A_TCALSIDX)
+		window.A_TCALSIDX = [];
+	
+	this.s_id = a_cfg.id ? a_cfg.id : A_TCALS.length;
+	window.A_TCALS[this.s_id] = this;
+	window.A_TCALSIDX[window.A_TCALSIDX.length] = this;
+	
+	// assign methods
+	this.f_show = f_tcalShow;
+	this.f_hide = f_tcalHide;
+	this.f_toggle = f_tcalToggle;
+	this.f_update = f_tcalUpdate;
+	this.f_relDate = f_tcalRelDate;
+	this.f_parseDate = f_tcalParseDate;
+	this.f_generDate = f_tcalGenerDate;
+	
+	// create calendar icon
+	this.s_iconId = 'tcalico_' + this.s_id;
+	this.e_icon = f_getElement(this.s_iconId);
+	if (!this.e_icon) {
+		document.write('<img src="' + a_tpl.imgpath + 'cal.gif" id="' + this.s_iconId + '" onclick="A_TCALS[\'' + this.s_id + '\'].f_toggle()" class="tcalIcon" alt="Open Calendar" />');
+		this.e_icon = f_getElement(this.s_iconId);
+	}
+	// save received parameters
+	this.a_cfg = a_cfg;
+	this.a_tpl = a_tpl;
+}
+
+function f_tcalShow (d_date) {
+
+	// find input field
+	if (!this.a_cfg.controlname)
+		throw("TC: control name is not specified");
+	if (this.a_cfg.formname) {
+		var e_form = document.forms[this.a_cfg.formname];
+		if (!e_form)
+			throw("TC: form '" + this.a_cfg.formname + "' can not be found");
+		this.e_input = e_form.elements[this.a_cfg.controlname];
+	}
+	else
+		this.e_input = f_getElement(this.a_cfg.controlname);
+
+	if (!this.e_input || !this.e_input.tagName || this.e_input.tagName != 'INPUT')
+		throw("TC: element '" + this.a_cfg.controlname + "' does not exist in "
+			+ (this.a_cfg.formname ? "form '" + this.a_cfg.controlname + "'" : 'this document'));
+
+	// dynamically create HTML elements if needed
+	this.e_div = f_getElement('tcal');
+	if (!this.e_div) {
+		this.e_div = document.createElement("DIV");
+		this.e_div.id = 'tcal';
+		document.body.appendChild(this.e_div);
+	}
+	this.e_shade = f_getElement('tcalShade');
+	if (!this.e_shade) {
+		this.e_shade = document.createElement("DIV");
+		this.e_shade.id = 'tcalShade';
+		document.body.appendChild(this.e_shade);
+	}
+	this.e_iframe =  f_getElement('tcalIF');
+	if (b_ieFix && !this.e_iframe) {
+		this.e_iframe = document.createElement("IFRAME");
+		this.e_iframe.style.filter = 'alpha(opacity=0)';
+		this.e_iframe.id = 'tcalIF';
+		this.e_iframe.src = this.a_tpl.imgpath + 'pixel.gif';
+		document.body.appendChild(this.e_iframe);
+	}
+	
+	// hide all calendars
+	f_tcalHideAll();
+
+	// generate HTML and show calendar
+	this.e_icon = f_getElement(this.s_iconId);
+	if (!this.f_update())
+		return;
+
+	this.e_div.style.visibility = 'visible';
+	this.e_shade.style.visibility = 'visible';
+	if (this.e_iframe)
+		this.e_iframe.style.visibility = 'visible';
+
+	// change icon and status
+	this.e_icon.src = this.a_tpl.imgpath + 'no_cal.gif';
+	this.e_icon.title = 'Close Calendar';
+	this.b_visible = true;
+}
+
+function f_tcalHide (n_date) {
+	if (n_date)
+		this.e_input.value = this.f_generDate(new Date(n_date));
+
+	// no action if not visible
+	if (!this.b_visible)
+		return;
+
+	// hide elements
+	if (this.e_iframe)
+		this.e_iframe.style.visibility = 'hidden';
+	if (this.e_shade)
+		this.e_shade.style.visibility = 'hidden';
+	this.e_div.style.visibility = 'hidden';
+	
+	// change icon and status
+	this.e_icon = f_getElement(this.s_iconId);
+	this.e_icon.src = this.a_tpl.imgpath + 'cal.gif';
+	this.e_icon.title = 'Open Calendar';
+	this.b_visible = false;
+}
+
+function f_tcalToggle () {
+	return this.b_visible ? this.f_hide() : this.f_show();
+}
+
+function f_tcalUpdate (d_date) {
+	
+	var d_today = this.a_cfg.today ? this.f_parseDate(this.a_cfg.today) : f_tcalResetTime(new Date());
+	var d_selected = this.e_input.value == ''
+		? (this.a_cfg.selected ? this.f_parseDate(this.a_cfg.selected) : d_today)
+		: this.f_parseDate(this.e_input.value);
+
+	// figure out date to display
+	if (!d_date)
+		// selected by default
+		d_date = d_selected;
+	else if (typeof(d_date) == 'number')
+		// get from number
+		d_date = f_tcalResetTime(new Date(d_date));
+	else if (typeof(d_date) == 'string')
+		// parse from string
+		d_date = this.f_parseDate(d_date);
+		
+	if (!d_date) return false;
+
+	// first date to display
+	var d_firstday = new Date(d_date);
+	d_firstday.setDate(1);
+	d_firstday.setDate(1 - (7 + d_firstday.getDay() - this.a_tpl.weekstart) % 7);
+	
+	var a_class, s_html = '<table class="ctrl"><tbody><tr>'
+		+ (this.a_tpl.yearscroll ? '<td' + this.f_relDate(d_date, -1, 'y') + ' title="Previous Year"><img src="' + this.a_tpl.imgpath + 'prev_year.gif" /></td>' : '')
+		+ '<td' + this.f_relDate(d_date, -1) + ' title="Previous Month"><img src="' + this.a_tpl.imgpath + 'prev_mon.gif" /></td><th>'
+		+ this.a_tpl.months[d_date.getMonth()] + ' ' + d_date.getFullYear()
+			+ '</th><td' + this.f_relDate(d_date, 1) + ' title="Next Month"><img src="' + this.a_tpl.imgpath + 'next_mon.gif" /></td>'
+		+ (this.a_tpl.yearscroll ? '<td' + this.f_relDate(d_date, 1, 'y') + ' title="Next Year"><img src="' + this.a_tpl.imgpath + 'next_year.gif" /></td></td>' : '')
+		+ '</tr></tbody></table><table><tbody><tr class="wd">';
+
+	// print weekdays titles
+	for (var i = 0; i < 7; i++)
+		s_html += '<th>' + this.a_tpl.weekdays[(this.a_tpl.weekstart + i) % 7] + '</th>';
+	s_html += '</tr>' ;
+
+	// print calendar table
+	var n_date, n_month, d_current = new Date(d_firstday);
+	while (d_current.getMonth() == d_date.getMonth() ||
+		d_current.getMonth() == d_firstday.getMonth()) {
+	
+		// print row heder
+		s_html +='<tr>';
+		for (var n_wday = 0; n_wday < 7; n_wday++) {
+
+			a_class = [];
+			n_date  = d_current.getDate();
+			n_month = d_current.getMonth();
+
+			// other month
+			if (d_current.getMonth() != d_date.getMonth())
+				a_class[a_class.length] = 'othermonth';
+			// weekend
+			if (d_current.getDay() == 0 || d_current.getDay() == 6)
+				a_class[a_class.length] = 'weekend';
+			// today
+			if (d_current.valueOf() == d_today.valueOf())
+				a_class[a_class.length] = 'today';
+			// selected
+			if (d_current.valueOf() == d_selected.valueOf())
+				a_class[a_class.length] = 'selected';
+
+			s_html += '<td onclick="A_TCALS[\'' + this.s_id + '\'].f_hide(' + d_current.valueOf() + ')"' + (a_class.length ? ' class="' + a_class.join(' ') + '">' : '>') + n_date + '</td>';
+			d_current.setDate(++n_date);
+		}
+		// print row footer
+		s_html +='</tr>';
+	}
+	s_html +='</tbody></table>';
+	
+	// update HTML, positions and sizes
+	this.e_div.innerHTML = s_html;
+
+	var n_width  = this.e_div.offsetWidth;
+	var n_height = this.e_div.offsetHeight;
+	var n_top  = f_getPosition (this.e_icon, 'Top') + this.e_icon.offsetHeight;
+	var n_left = f_getPosition (this.e_icon, 'Left') - n_width + this.e_icon.offsetWidth;
+	if (n_left < 0) n_left = 0;
+	
+	
+	n_top = n_top - 130;
+	n_left = n_left + 50;
+	
+	
+	this.e_div.style.left = n_left + 'px';
+	this.e_div.style.top  = n_top + 'px';
+
+	this.e_shade.style.width = (n_width + 8) + 'px';
+	this.e_shade.style.left = (n_left - 1) + 'px';
+	this.e_shade.style.top = (n_top - 1) + 'px';
+	this.e_shade.innerHTML = b_ieFix
+		? '<table><tbody><tr><td rowspan="2" colspan="2" width="6"><img src="' + this.a_tpl.imgpath + 'pixel.gif"></td><td width="7" height="7" style="filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=\'' + this.a_tpl.imgpath + 'shade_tr.png\', sizingMethod=\'scale\');"><img src="' + this.a_tpl.imgpath + 'pixel.gif"></td></tr><tr><td height="' + (n_height - 7) + '" style="filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=\'' + this.a_tpl.imgpath + 'shade_mr.png\', sizingMethod=\'scale\');"><img src="' + this.a_tpl.imgpath + 'pixel.gif"></td></tr><tr><td width="7" style="filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=\'' + this.a_tpl.imgpath + 'shade_bl.png\', sizingMethod=\'scale\');"><img src="' + this.a_tpl.imgpath + 'pixel.gif"></td><td style="filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=\'' + this.a_tpl.imgpath + 'shade_bm.png\', sizingMethod=\'scale\');" height="7" align="left"><img src="' + this.a_tpl.imgpath + 'pixel.gif"></td><td style="filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=\'' + this.a_tpl.imgpath + 'shade_br.png\', sizingMethod=\'scale\');"><img src="' + this.a_tpl.imgpath + 'pixel.gif"></td></tr><tbody></table>'
+		: '<table><tbody><tr><td rowspan="2" width="6"><img src="' + this.a_tpl.imgpath + 'pixel.gif"></td><td rowspan="2"><img src="' + this.a_tpl.imgpath + 'pixel.gif"></td><td width="7" height="7"><img src="' + this.a_tpl.imgpath + 'shade_tr.png"></td></tr><tr><td background="' + this.a_tpl.imgpath + 'shade_mr.png" height="' + (n_height - 7) + '"><img src="' + this.a_tpl.imgpath + 'pixel.gif"></td></tr><tr><td><img src="' + this.a_tpl.imgpath + 'shade_bl.png"></td><td background="' + this.a_tpl.imgpath + 'shade_bm.png" height="7" align="left"><img src="' + this.a_tpl.imgpath + 'pixel.gif"></td><td><img src="' + this.a_tpl.imgpath + 'shade_br.png"></td></tr><tbody></table>';
+	
+	if (this.e_iframe) {
+		this.e_iframe.style.left = n_left + 'px';
+		this.e_iframe.style.top  = n_top + 'px';
+		this.e_iframe.style.width = (n_width + 6) + 'px';
+		this.e_iframe.style.height = (n_height + 6) +'px';
+	}
+	return true;
+}
+
+function f_getPosition (e_elemRef, s_coord) {
+	var n_pos = 0, n_offset,
+		e_elem = e_elemRef;
+
+	while (e_elem) {
+		n_offset = e_elem["offset" + s_coord];
+		n_pos += n_offset;
+		e_elem = e_elem.offsetParent;
+	}
+	// margin correction in some browsers
+	if (b_ieMac)
+		n_pos += parseInt(document.body[s_coord.toLowerCase() + 'Margin']);
+	else if (b_safari)
+		n_pos -= n_offset;
+	
+	e_elem = e_elemRef;
+	while (e_elem != document.body) {
+		n_offset = e_elem["scroll" + s_coord];
+		if (n_offset && e_elem.style.overflow == 'scroll')
+			n_pos -= n_offset;
+		e_elem = e_elem.parentNode;
+	}
+	return n_pos;
+}
+
+function f_tcalRelDate (d_date, d_diff, s_units) {
+	var s_units = (s_units == 'y' ? 'FullYear' : 'Month');
+	var d_result = new Date(d_date);
+	d_result['set' + s_units](d_date['get' + s_units]() + d_diff);
+	if (d_result.getDate() != d_date.getDate())
+		d_result.setDate(0);
+	return ' onclick="A_TCALS[\'' + this.s_id + '\'].f_update(' + d_result.valueOf() + ')"';
+}
+
+function f_tcalHideAll () {
+	if (!window.A_TCALSIDX) return;
+	for (var i = 0; i < window.A_TCALSIDX.length; i++)
+		window.A_TCALSIDX[i].f_hide();
+}
+
+function f_tcalResetTime (d_date) {
+	d_date.setHours(12);
+	d_date.setMinutes(0);
+	d_date.setSeconds(0);
+	d_date.setMilliseconds(0);
+	return d_date;
+}
+
+f_getElement = document.all ?
+	function (s_id) { return document.all[s_id] } :
+	function (s_id) { return document.getElementById(s_id) };
+
+if (document.addEventListener)
+	window.addEventListener('scroll', f_tcalHideAll, false);
+if (window.attachEvent)
+	window.attachEvent('onscroll', f_tcalHideAll);
+	
+// global variables
+var s_userAgent = navigator.userAgent.toLowerCase(),
+	re_webkit = /WebKit\/(\d+)/i;
+var b_mac = s_userAgent.indexOf('mac') != -1,
+	b_ie5 = s_userAgent.indexOf('msie 5') != -1,
+	b_ie6 = s_userAgent.indexOf('msie 6') != -1 && s_userAgent.indexOf('opera') == -1;
+var b_ieFix = b_ie5 || b_ie6,
+	b_ieMac  = b_mac && b_ie5,
+	b_safari = b_mac && re_webkit.exec(s_userAgent) && Number(RegExp.$1) < 500;
+
+</script>
+<link rel="stylesheet" href="/DPDTH/cal/calendar.css">
+</head>
+
+
+	
+
+<BODY background="/DPDTH/images/bg_main.gif"  bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+
+<table border="0" cellpadding="0" cellspacing="1" bgcolor="#000000" width="100%" valign="top">
+
+	<tr bgcolor="FE000C" valign="top" align="left">
+		<td height="17"  bgcolor="cd0504" style="padding-left:5px;padding-top:3px;"><span class="head1"><font color="white">
+		Welcome </font></span><span class="yellow10Bold">
+
+	<font color="white">MagusDelh</font>
+	</span></td>
+	<td height="17" align="right" bgcolor="cd0504" style="padding-right:5px;">
+		<span class="white10" id="clock">
+		<SCRIPT language="javascript" src="/DPDTH/scripts/DateTime.js"></SCRIPT> 
+		<SCRIPT>getthedate();dateTime();</SCRIPT></span>&nbsp;&nbsp;&nbsp;	
+		<a href="#" styleClass="menu" onclick="menulink('ChangePasswordAction.do?methodName=init')">
+	   <span class="head1"><font color="white">
+		 Change Password </font></span>	   
+	   </a>
+	    <span class="head1">&nbsp;<font color="white">|</font>&nbsp;</span>
+	   <a href="/DPDTH/LogoutAction.do" class="menu"><span class="head1"><font color="white">Logout</font></span></a>
+		</td>
+	</tr>
+
+
+	<tr bgcolor="#FFFFFF">
+		<td width="167" rowspan="2" align="left" height="90" valign="top"><img src="/DPDTH/images/pic01_1.jpg" width="167" height="90"></td>
+    	<td height="19" align="left" valign="center" bgcolor="#FE000C" >
+    <div class="chromestyle" id="chromemenu">
+
+		<ul>
+		
+			<li><a href="#" rel="dropmenu1"><img src="/DPDTH/images/sys_adm_menu.jpg"  border="0"></a></li>
+		
+		
+
+		<!--Added by nazim hussain for Reverse Flow  -->
+		
+
+		
+
+		
+		
+		
+			
+			<li><a href="#" rel="dropmenu11"><img src="/DPDTH/images/stock_reports.jpg"  border="0"></a></li>
+		
+			
+			<li><a href="#" rel="dropmenu8"><img src="/DPDTH/images/forward_reports.jpg"  border="0"></a></li>
+		
+			
+			<li><a href="#" rel="dropmenu9"><img src="/DPDTH/images/reverse_reports.jpg"  border="0"></a></li>
+		
+			
+			<li><a href="#" rel="dropmenu10"><img src="/DPDTH/images/reco_reports.jpg"  border="0"></a></li>
+		
+			
+			<li><a href="#" rel="dropmenu12"><img src="/DPDTH/images/consumption_reports.jpg" border="0"></a></li>
+		
+	
+		</ul>
+	</div>
+
+                                            
+	<div id="dropmenu1" class="dropmenudiv" style="width: 150px;">
+	
+		
+				<a href="#" onclick="menulink('/DPDTH/./GeographyAction.do?methodName=getGeographyListJsp&amp;level=3')">
+				View Zone
+			</a>
+		
+				<a href="#" onclick="menulink('/DPDTH/./GeographyAction.do?methodName=getGeographyListJsp&amp;level=4')">
+				View City
+			</a>
+		
+				<a href="#" onclick="menulink('/DPDTH/./initCreateAccount.do?methodName=init')">
+				Create Account
+			</a>
+		
+				<a href="#" onclick="menulink('/DPDTH/./initCreateAccount.do?methodName=callSearchAccount')">
+				View/Edit Account
+			</a>
+		
+				<a href="#" onclick="menulink('/DPDTH/./accountDetailReport.do?methodName=initReport')">
+				Account Detail
+			</a>
+		
+				<a href="#" onclick="menulink('/DPDTH/./GenericReportsAction.do?methodName=initReport&amp;reportId=1')">
+				View Hierarchy
+			</a>
+		
+				<a href="#" onclick="menulink('/DPDTH/./dpHierarchyTransfer.do?methodName=initHierarchyTransfer')">
+				Transfer Hierarchy
+			</a>
+		
+				<a href="#" onclick="menulink('/DPDTH/./sackDistributor.do?methodName=initSackDist')">
+				Deactivate Distributor
+			</a>
+		
+				<a href="#" onclick="menulink('/DPDTH/./interSsdTranfrAdmin.do?methodName=init')">
+				Inter SSD Stock Transfer
+			</a>
+		
+				<a href="#" onclick="menulink('/DPDTH/./transferPendingAction.do?methodName=init')">
+				Pending List Transfer
+			</a>
+		
+				<a href="#" onclick="menulink('/DPDTH/./dpProductSecurityListBulkupload.do?methodName=init')">
+				Product Security Bulk Upload
+			</a>
+		
+				<a href="#" onclick="menulink('/DPDTH/./dpStockLevelBulkupload.do?methodName=init')">
+				Min-Max Stock Level
+			</a>
+		
+				<a href="#" onclick="menulink('/DPDTH/./dpSecurityDepostLoanBulkupload.do?methodName=init')">
+				Dist Security Loan Deposit
+			</a>
+		
+				<a href="#" onclick="menulink('/DPDTH/./NegetiveEligibilityReport.do?methodName=init')">
+				Negative Eligibilty
+			</a>
+		
+				<a href="#" onclick="menulink('/DPDTH/./ErrorPO.do?methodName=init')">
+				View Error PO
+			</a>
+		
+				<a href="#" onclick="menulink('/DPDTH/./GenericReportsAction.do?methodName=initReport&amp;reportId=40')">
+				PO Error STB Report
+			</a>
+		
+				<a href="#" onclick="menulink('/DPDTH/./GenericReportsAction.do?methodName=initReport&amp;reportId=41')">
+				Reverse Error STB Report
+			</a>
+		
+				<a href="#" onclick="menulink('/DPDTH/./nonSerializedActivationAction.do?methodName=init')">
+				CircleWise Restriction
+			</a>
+		
+				<a href="#" onclick="menulink('/DPDTH/./whdistmappupload.do?methodName=init')">
+				Distributor-Warehouse Mapping Bulk Upload 
+			</a>
+		
+				<a href="#" onclick="menulink('/DPDTH/./nsBulkupload.do?methodName=init')">
+				Non Serialized Bulk Upload
+			</a>
+		
+				<a href="#" onclick="menulink('/DPDTH/./recoPeriodConf.do?methodName=init')">
+				Reco Period Configuration
+			</a>
+		
+				<a href="#" onclick="menulink('/DPDTH/./StbFlushOut.do?methodName=init')">
+				Bulk STB Flush Out
+			</a>
+		
+				<a href="#" onclick="menulink('/DPDTH/./GenericReportsAction.do?methodName=initReport&amp;reportId=42')">
+				Bulk STB Flush Out Report
+			</a>
+		
+	
+		
+	</div>
+
+	
+	<div id="dropmenu2" class="dropmenudiv" style="width: 150px;">
+	
+		
+	</div>
+	
+	
+<!--Added by nazim hussain for Reverse Flow  -->
+	<div id="dropmenu7" class="dropmenudiv" style="width: 150px;">
+	
+	</div>
+	
+	<div id="dropmenu3" class="dropmenudiv" style="width: 150px;">
+	
+	</div>
+
+	
+	<div id="dropmenu4" class="dropmenudiv" style="width: 150px;">
+	
+	</div>
+
+	
+
+	<div id="dropmenu0" class="dropmenudiv">
+	
+	</div>
+
+	<div id="dropmenu5" class="dropmenudiv">
+	
+	</div>
+	<div id="dropmenu11" class="dropmenudiv">
+	
+		
+		<a href="#" onclick="menulink('/DPDTH/./GenericReportsAction.do?methodName=initReport&amp;reportId=9')">
+				Stock Summary
+			</a>
+		
+		<a href="#" onclick="menulink('/DPDTH/./GenericReportsAction.do?methodName=initReport&amp;reportId=10')">
+				Serialized Stock As On Date
+			</a>
+		
+		<a href="#" onclick="menulink('/DPDTH/./GenericReportsAction.do?methodName=initReport&amp;reportId=19')">
+				Non Serialized Stock
+			</a>
+		
+		<a href="#" onclick="menulink('/DPDTH/./GenericReportsAction.do?methodName=initReport&amp;reportId=11')">
+				STB Wise Serialized Stock
+			</a>
+		
+		<a href="#" onclick="menulink('/DPDTH/./GenericReportsAction.do?methodName=initReport&amp;reportId=30')">
+				Stock Declaration
+			</a>
+		
+		<a href="#" onclick="menulink('/DPDTH/./stbInBulk.do?methodName=init')">
+				Search STB In Bulk
+			</a>
+		
+	
+	</div>	
+	
+	<div id="dropmenu8" class="dropmenudiv">
+	
+		
+		<a href="#" onclick="menulink('/DPDTH/./GenericReportsAction.do?methodName=initReport&amp;reportId=23')">
+				Pending PO
+			</a>
+		
+		<a href="#" onclick="menulink('/DPDTH/./GenericReportsAction.do?methodName=initReport&amp;reportId=3')">
+				PO Status
+			</a>
+		
+		<a href="#" onclick="menulink('/DPDTH/./GenericReportsAction.do?methodName=initReport&amp;reportId=4')">
+				PO Detail
+			</a>
+		
+		<a href="#" onclick="menulink('/DPDTH/./GenericReportsAction.do?methodName=initReport&amp;reportId=35')">
+				PO TAT
+			</a>
+		
+		<a href="#" onclick="menulink('/DPDTH/./GenericReportsAction.do?methodName=initReport&amp;reportId=36')">
+				In-Hand Quantity
+			</a>
+		
+		<a href="#" onclick="menulink('/DPDTH/./GenericReportsAction.do?methodName=initReport&amp;reportId=5')">
+				Inter-SSD Stock Transfer
+			</a>
+		
+		<a href="#" onclick="menulink('/DPDTH/./GenericReportsAction.do?methodName=initReport&amp;reportId=14')">
+				Activation Detail
+			</a>
+		
+	
+	</div>
+	<div id="dropmenu9" class="dropmenudiv">
+	
+		
+		<a href="#" onclick="menulink('/DPDTH/./GenericReportsAction.do?methodName=initReport&amp;reportId=29')">
+				Pending For Return
+			</a>
+		
+		<a href="#" onclick="menulink('/DPDTH/./GenericReportsAction.do?methodName=initReport&amp;reportId=33')">
+				Pending for Return Ageing
+			</a>
+		
+		<a href="#" onclick="menulink('/DPDTH/./GenericReportsAction.do?methodName=initReport&amp;reportId=6')">
+				Pending For Return Detail
+			</a>
+		
+		<a href="#" onclick="menulink('/DPDTH/./GenericReportsAction.do?methodName=initReport&amp;reportId=31')">
+				Pending List As On Date
+			</a>
+		
+		<a href="#" onclick="menulink('/DPDTH/./GenericReportsAction.do?methodName=initReport&amp;reportId=7')">
+				Collection Detail
+			</a>
+		
+		<a href="#" onclick="menulink('/DPDTH/./GenericReportsAction.do?methodName=initReport&amp;reportId=27')">
+				DC Status
+			</a>
+		
+		<a href="#" onclick="menulink('/DPDTH/./GenericReportsAction.do?methodName=initReport&amp;reportId=8')">
+				DC Status Details
+			</a>
+		
+		<a href="#" onclick="menulink('/DPDTH/./GenericReportsAction.do?methodName=initReport&amp;reportId=44')">
+				InterSSD Defective Stock
+			</a>
+		
+		<a href="#" onclick="menulink('/DPDTH/./GenericReportsAction.do?methodName=initReport&amp;reportId=24')">
+				Swap Repeat Summary
+			</a>
+		
+		<a href="#" onclick="menulink('/DPDTH/./GenericReportsAction.do?methodName=initReport&amp;reportId=32')">
+				Swap Repeat Details
+			</a>
+		
+	
+	</div>	
+	<div id="dropmenu10" class="dropmenudiv">
+	
+		
+		<a href="#" onclick="menulink('/DPDTH/./GenericReportsAction.do?methodName=initReport&amp;reportId=13')">
+				Stock Reco Summary
+			</a>
+		
+		<a href="#" onclick="menulink('/DPDTH/./recoSummaryAction.do?methodName=init')">
+				Reco Summary Report
+			</a>
+		
+		<a href="#" onclick="menulink('/DPDTH/./recoDetailReport.do?methodName=init')">
+				Reco Detailed Report
+			</a>
+		
+		<a href="#" onclick="menulink('/DPDTH/./GenericReportsAction.do?methodName=initReport&amp;reportId=20')">
+				Stock Received Summary
+			</a>
+		
+		<a href="#" onclick="menulink('/DPDTH/./GenericReportsAction.do?methodName=initReport&amp;reportId=22')">
+				Stock Returned Summary
+			</a>
+		
+		<a href="#" onclick="menulink('/DPDTH/./GenericReportsAction.do?methodName=initReport&amp;reportId=21')">
+				Stock Activation Summary
+			</a>
+		
+		<a href="#" onclick="menulink('/DPDTH/./GenericReportsAction.do?methodName=initReport&amp;reportId=28')">
+				Day Wise Stock Reco
+			</a>
+		
+		<a href="#" onclick="menulink('/DPDTH/./GenericReportsAction.do?methodName=initReport&amp;reportId=26')">
+				Serialized Stock Received
+			</a>
+		
+	
+	</div>	
+	<div id="dropmenu12" class="dropmenudiv">
+	
+		
+		<a href="#" onclick="menulink('/DPDTH/./GenericReportsAction.do?methodName=initReport&amp;reportId=34')">
+				Serialized Stock Consumption
+			</a>
+		
+		<a href="#" onclick="menulink('/DPDTH/./GenericReportsAction.do?methodName=initReport&amp;reportId=37')">
+				Non-Serialized Stock Consumption
+			</a>
+		
+		<a href="#" onclick="menulink('/DPDTH/./GenericReportsAction.do?methodName=initReport&amp;reportId=38')">
+				Serialized Stock Consumption Retrials
+			</a>
+		
+		<a href="#" onclick="menulink('/DPDTH/./GenericReportsAction.do?methodName=initReport&amp;reportId=39')">
+				Non-Serialized Stock Consumption Retrials
+			</a>
+		
+	
+	</div>	
+		
+</td>
+	    </tr>
+	<tr bgcolor="#FFFFFF"> 
+    <td height="64" align="left" valign="top" background="/DPDTH/images/t_bg.gif"><img src="/DPDTH/images/modernTrade.gif" width="556" height="64"></td>
+  </tr>
+ 
+</table>
+<script>
+cssdropdown.startchrome("chromemenu");
+</script>
+</body>
+
+</html>
+
+</TD>
+	</tr>
+	<tr>
+		<TD valign="top" align="left" width="16%"> 
+
+
+
+
+<html>
+	
+<BODY>
+
+ <table width="167" border="0" cellspacing="0" cellpadding="0" height="100%" valign="top">
+ <tr bgcolor="#FFFFFF"> 
+    <td valign="top" bgcolor="#B00000" style="background-image:url(/DPDTH/images/left_bg.gif); background-repeat: no-repeat" width="167" align="left"> 
+      <table width="167" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td valign="top"><a href="#"><img src="/DPDTH/images/but01.gif" width="168" height="37" border="0"></a></td>
+        </tr>
+		<tr> 
+          <td valign="top"><a href="#"><img src="/DPDTH/images/but05.gif" width="168" height="37" border="0"></a></td>
+        </tr>
+	     
+      </table>
+    </td>
+  </tr>
+</TABLE>
+</BODY>
+
+</html>
+</TD>
+		<td valign="top" align="left" width="84%" background="/DPDTH/images/bg_main.gif"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+<head>
+<link rel="stylesheet" href="../../theme/Master.css" type="text/css">
+<TITLE>DISTRIBUTOR PORTAL 2.0</TITLE>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<SCRIPT language="JavaScript" 
+  src="/DPDTH/scripts/subtract.js"
+	type="text/javascript"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="/DPDTH/scripts/Cal.js"></SCRIPT>
+
+<SCRIPT language="javascript" src="/DPDTH/scripts/DropDownAjax.js" type="text/javascript">
+</SCRIPT>
+<SCRIPT language="javascript" src="/DPDTH/scripts/Ajax.js" type="text/javascript">
+</SCRIPT>
+<SCRIPT language="JavaScript" src="/DPDTH/scripts/validation.js" type="text/javascript">
+</SCRIPT>
+<SCRIPT language="JavaScript" src="/DPDTH/jScripts/GenericReports.js" type="text/javascript">
+</SCRIPT>
+<script>
+function printtPage(form)
+{				
+		var recoID = document.getElementById("recoPeriod").value;
+		var circleid = document.getElementById("circleId").value;
+		var selectedProductId = document.getElementById("productId").value;	
+		populateRetailerIdArray(form);
+		var flag=false;
+		
+		if(circleid == -1 || circleid == "")
+		{
+			 alert('Please select any circle.');
+			 return false;		
+		}
+		if(circleid == "0")
+		{
+			alert("Please select circle other than Pan India ");
+			return false;		
+		}
+		
+		  var selObj = document.getElementById("circleid");
+		  var count = 0;
+		  for (i=0; i<selObj.options.length; i++) {
+		    if (selObj.options[i].selected) {
+		      count++;
+		    }
+  		}
+		if(count > 1 )
+		{
+			alert("Please select only one circle");
+			return false;
+		}
+		if(selectedProductId=="")
+		{
+			 alert('Please select any product.');
+			 return false;		
+		}
+		
+	  var selObj1 = document.getElementById("productId");
+	  for (i=0; i<selObj1.options.length; i++) {
+	    if (selObj1.options[i].selected) {
+	      if(selObj1.options[i].value == "-1")
+	      {
+	      	flag=true;
+	      }
+	    }
+ 	}
+  	if(!flag)	
+  	{
+  		alert("Please select All product");
+  		return false;
+  	}
+  	
+		if(recoID == "")
+		{
+			 alert('Please select any Reco Period.');
+			 return false;		
+		}		
+		
+	var url="recoDetailReport.do?methodName=printRecoDetail&recoID="+recoID+"&circleid="+circleid;
+	window.open(url,"SerialNo","width=750,height=650,scrollbars=yes,toolbar=no");
+  
+}
+function populateRetailerIdArray(form) { 
+	 var result = ""; 
+    var jsProductIdArr = new Array();
+    for (var i = 0; i < form.productId.length; i++) { 
+        if (form.productId.options[i].selected) { 
+        	if(form.productId.options[i].value==0) {
+        		for (var j = 1; j < form.productId.length; j++) {
+        			jsProductIdArr.push(form.productId.options[j].value);
+        		}
+        	} 
+        	else {
+        		jsProductIdArr.push(form.productId.options[i].value);
+        	}
+        } 
+    } 
+    document.forms[0].productIdArray.value=jsProductIdArr;
+   
+}
+</script>
+
+</HEAD>
+
+
+<BODY background="/DPDTH/images/bg_main.gif"  bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0"
+	marginheight="0" onload="enableDate()">
+
+<TABLE cellspacing="0" cellpadding="0" border="0" width="100%" 	height="100%" valign="top">
+<form name="GenericReportsFormBean" method="post" action="/DPDTH/GenericReportsAction.do">
+	<input type="hidden" name="reportId" value="10">
+	<input type="hidden" name="hiddendistIds" value="">
+	<input type="hidden" name="distData" value="1">
+	<input type="hidden" name="accountLevel" value="1">
+	<input type="hidden" name="otherUserData" value="1">
+	<input type="hidden" name="dateValidation" value="-1">
+	<input type="hidden" name="msgValidation" value="-1">
+	<input type="hidden" name="groupId" value="2">	
+	<input type="hidden" name="hiddenStbStatus" value="">
+	<input type="hidden" name="hiddenStockTypeSelectIds" value="">
+	
+	<input type="hidden" name="methodName" value="getStockDetailReportDataExcel">
+	<input type="hidden" name="productIdArray" value="">
+	<input type="hidden" name="groupId" value="2">
+	<input type="hidden" name="hiddenCircleSelecIds" value="">
+	<input type="hidden" name="strMessage" value="">
+		   
+		<td>    
+			<TABLE width="850" border="0" cellpadding="5" cellspacing="0" class="text" height="90%" align="top">
+			
+			
+			<TR height="20%" >
+					<TD colspan="4" valign="bottom"  class="dpReportTitle">
+								Serialized Stock As On Date Report
+					</TD>
+					
+					</TR>
+					<tr><TD colspan="4" id="displaySchTitle" style="display:none" align="left"  ><FONT  size="-1">
+							<b>	This report only reflects transactions which have happened till 01-Nov-2012</b></FONT>
+					</TD></tr>
+					<TR>
+						<TD colspan="4" align="center"><FONT color="#ff0000" size="-2"></FONT> </TD>	
+				</TR>
+			<TR>
+			
+			 
+			<TR>
+			
+				
+					<input type="hidden" name="hiddenCircleSelectIds" value="">
+						<TD align="left" width="100"><b class="text pLeft15"> Circle<span id="cirstar"><font color="red">*</font></span></b>
+						</TD>
+						<TD width="250">	
+							<select name="circleId" multiple="multiple" size="6" onchange="selectAllCircles();getTsmName();" style="width:250px; height:80px;" id="circleId"><option value="0">Pan India</option>
+<option value="16">Andhra Pradesh</option>
+<option value="1">Bihar</option>
+<option value="6">Chandigarh</option>
+<option value="2">Chattisgarh</option>
+<option value="17">Chennai</option>
+<option value="7">Delhi</option>
+<option value="22">Gujarat</option>
+<option value="8">Haryana</option>
+<option value="9">Himachal Pradesh</option>
+<option value="10">Jammu</option>
+<option value="3">Jharkhand</option>
+<option value="18">Karnataka</option>
+<option value="19">Kerala</option>
+<option value="23">Madhya Pradesh</option>
+<option value="24">Maharashtra</option>
+<option value="25">Mumbai</option>
+<option value="4">North East</option>
+<option value="20">Orissa</option>
+<option value="11">Punjab</option>
+<option value="26">Rajasthan</option>
+<option value="12">Srinagar</option>
+<option value="21">Tamil Nadu</option>
+<option value="52">Tripura</option>
+<option value="13">UP East</option>
+<option value="14">UP West</option>
+<option value="15">Uttaranchal</option>
+<option value="5">West Bengal</option></select>
+						</TD>
+						
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+					
+					
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			 
+				
+				
+					
+					<TD align="left" width="100"><b class="text pLeft15"> TSM<span id="tsmstar"><font color="red">*</font></span></b>
+					</TD>
+					<TD width="250">	
+						<select name="tsmId" multiple="multiple" size="6" onchange="getDistName();selectAllTSM();" style="width:250px; height:80px;" id="tsmId"></select>
+					</TD>
+						
+					<input type="hidden" name="hiddenTsmSelectIds" value="">
+					
+				
+				
+				
+				
+				
+				
+				
+				
+					
+					
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				 
+				</TR>
+				
+			 
+			<TR>
+			
+				
+				
+		
+					
+					<TD align="left" width="100"><b class="text pLeft15"> Distributor<span id="diststar"><font color="red">*</font></span></b></TD>
+					<TD width="250">	
+							<select name="distId" multiple="multiple" size="6" onchange="selectAllDist();" style="width:250px; height:80px;" id="distId"></select>
+					</TD>
+					
+						
+						<input type="hidden" name="hiddenDistSelectIds" value="">
+					
+				
+				
+				
+				
+				
+				
+				
+					
+					
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			 
+				
+				
+				
+				
+				
+				
+				
+					
+					
+				
+				
+				
+				
+						
+					<input type="hidden" name="hiddenAccountTypeSelectIds" value="">
+						<TD align="left" width="100"><b class="text pLeft15"> Account Type<span id="acctypestar"><font color="red">*</font></span></b>
+						</td>						
+						<td width="250">	
+							<select name="accountType" onchange="getAccountNames()" style="width:250px; height:80px;" id="accountType"><option value="-1">--All--</option>
+								 <option value="1">Distributor</option>
+<option value="2">FSE</option>
+<option value="3">Retailer</option></select> 
+							</TD>			
+					
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				 
+				</TR>
+				
+			 
+			<TR>
+			
+				
+				
+				
+				
+				
+				
+				
+					
+					
+				
+				
+				
+				
+				
+						
+					<input type="hidden" name="hiddenAccountNameSelectIds" value="">
+						<TD align="left" width="100"><b class="text pLeft15"> Account Name<span id="accnamestar"><font color="red">*</font></span></b>
+						</td>						
+						<td width="250">	
+							<select name="accountName" onchange="selectAllAccountName()" style="width:250px; height:80px;" id="accountName"><option value="-1">--All--</option></select>
+							</TD>			
+					
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			 
+				
+				
+				
+				
+				
+					
+				<input type="hidden" name="hiddenSTBTypeSelectIds" value="">
+				<input type="hidden" name="hiddenProductTypeSelectIds" value="">
+				
+					<TD align="left" height="46" width="100">
+							<b class="text pLeft15">Product Type<span id="prodstar"><font color="red">*</font></span></b>
+					</TD>
+					<TD width="250">				   
+						<select name="productId" multiple="multiple" onchange="selectAllProducts()" style="width:250px; height:80px;" id="productId"><option value="-1">--All--</option>
+							
+								<option value="1#NORMAL">NORMAL</option>
+<option value="2#HD">HD</option>
+<option value="3#DVR">DVR</option>
+<option value="4#HD DVR">HD DVR</option>
+<option value="10#NORMAL SWAP">NORMAL SWAP</option>
+<option value="20#HD SWAP">HD SWAP</option>
+<option value="30#DVR SWAP">DVR SWAP</option>
+<option value="40#HD DVR SWAP">HD DVR SWAP</option></select>
+					</TD>  
+				
+				
+				
+				
+				
+					
+					
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				 
+				</TR>
+				
+			 
+			<TR>
+			
+				
+				
+				
+				
+				
+				
+				
+					
+					
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+					<TD align="left" width="100"><b class="text pLeft15">Date<STRONG><span id="req1"><FONT color="RED">*</FONT></span></STRONG></b></TD>
+						<TD width="277px" align="left"><FONT color="#003399"> <input type="text" name="date" maxlength="15" size="38" value="" readonly="readonly" class="box" id="date">
+						 
+						<script language="JavaScript">
+						new tcal ({
+							// form name
+							'formname': 'GenericReportsFormBean',
+							// input name
+							'controlname': 'date'
+						});
+					
+						</script>
+						
+						 </FONT>
+					</TD>
+					
+					
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<TR><td></td>
+				<td colspan="3" align="center">
+					<input type="button" name="excelBtn" value="Export To Excel" onclick="return exportToExcel();">&nbsp;&nbsp;&nbsp;&nbsp;
+					
+					</td>
+				
+				 <input type="hidden" name="methodName" value="exporttoExcel" id="methodName">
+			</TR>
+
+			</table>
+		</td>
+		
+		
+	
+</TABLE>
+
+</BODY>
+</html>
+
+</TD>
+	</tr>
+	<tr align="left">
+		<td valign="top" align="left" colspan="2" bgcolor="#FFFFFF" width="100%" height="25">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+
+<html>
+<BODY background="/DPDTH/images/bg_main.gif" >
+<table width="100%" border="0" cellspacing="0" cellpadding="3" height="17">
+
+  <tr align="left" valign="top"> 
+    <td colspan="2" background="/DPDTH/images/footer_bg.gif" height="17"> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="3" height="17">
+        <tr> 
+          <td align="center" height="17"><font color="#D8F1F5" size="1" face="Verdana, Arial, Helvetica, sans-serif">Copyright © 2012 IBM, All Rights Reserved.</font></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  	<form name="menuForm">
+    </form>
+  </table>
+  
+
+  <script type="text/javascript">
+	
+	function menulink(url)
+	{
+		document.menuForm.action=url;
+		document.menuForm.method="post";
+		document.menuForm.submit();
+	}
+</script>
+</BODY>
+</html>
+</TD>
+	</tr>
+</table>
+</body>
+</html>

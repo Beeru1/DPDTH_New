@@ -1,0 +1,3461 @@
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+	
+	<data-sources />
+	
+	<form-beans>
+	
+	<form-bean name="RejectedInvBean"
+			type="com.ibm.dp.beans.RejectedInvBean" />
+	
+	<form-bean name="DayWiseActivationSummaryReportBean"
+			type="com.ibm.dp.beans.DayWiseActivationSummaryReportBean" />
+			
+			<!-- Riju -->
+			<form-bean name="CloseInactivePartnersBean"
+			type="com.ibm.dp.beans.CloseInactivePartnersBean" />
+			<!-- Riju -->
+			
+			<!-- Riju -->
+			<form-bean name="CheckRetailerBalanceBean"
+			type="com.ibm.dp.beans.CheckRetailerBalanceBean" />
+			<!-- Riju -->
+			
+			
+     		<form-bean name="DpInvoiceForm"
+     		type="com.ibm.dp.beans.DpInvoiceForm"/>
+     		
+     		<form-bean name="InvoiceListForm"
+     		type="com.ibm.dp.beans.InvoiceListForm"/>
+     		
+     		<form-bean name="InvoiceForm"
+				type="com.ibm.dp.beans.InvoiceForm"/>
+		
+		<form-bean name="CircleActivationSummaryReportBean"
+			type="com.ibm.dp.beans.CircleActivationSummaryReportBean" />
+			
+		<form-bean name="ManufacturerDetailsBean"
+			type="com.ibm.dp.beans.ManufacturerDetailsBean" />
+
+		<form-bean name="ChangeUserRoleBean"
+			type="com.ibm.dp.beans.ChangeUserRoleBean" />
+	
+		<form-bean name="AccountDetailReportBean"
+			type="com.ibm.dp.beans.AccountDetailReportBean" />
+
+		<form-bean name="AccountManagementActivityReportBean"
+			type="com.ibm.dp.beans.AccountManagementActivityReportBean" />
+			
+		<form-bean name="DPExceptionReportBean"
+			type="com.ibm.dp.beans.DPExceptionReportBean" />
+
+		<form-bean name="DPReverseCollectionBean"
+			type="com.ibm.dp.beans.DPReverseCollectionBean" />
+
+		<form-bean name="DPOpenStockDepleteReportBean"
+			type="com.ibm.dp.beans.DPOpenStockDepleteReportBean" />
+
+		<!-- beans added  by sugandha -->
+		<form-bean name="DPAlertConfigurationBean"
+			type="com.ibm.dp.beans.DPAlertConfigurationBean" />
+			
+			
+		<form-bean name="EditRecoDetailBean"
+			type="com.ibm.dp.beans.EditRecoDetailBean" />
+		<!-- beans added by sugandha ends here -->
+		<!-- beans by sugandha for  DP Release 3 -->
+		<form-bean name="DpInitiateFnfFormBean"
+			type="com.ibm.dp.beans.DpInitiateFnfFormBean" />
+			
+		<form-bean name="AvStockUploadFormBean"
+			type="com.ibm.dp.beans.AvStockUploadFormBean" />
+			
+		<form-bean name="DPDistPinCodeMapFormBean"
+			type="com.ibm.dp.beans.DPDistPinCodeMapFormBean" />	
+		<!-- beans by sugandha for  DP Release 3 ends here -->
+		<!-- beans by saumya -->
+
+		<form-bean name="DPReverseLogisticReportFormBean"
+			type="com.ibm.dp.beans.DPReverseLogisticReportFormBean" />
+
+		<form-bean name="DPPrintBulkAcceptanceBean"
+			type="com.ibm.dp.beans.DPPrintBulkAcceptanceBean" />
+
+		<form-bean name="DPPrintReverseCollectionBean"
+			type="com.ibm.dp.beans.DPPrintReverseCollectionBean" />
+
+		<form-bean name="GenericReportsFormBean"
+			type="com.ibm.reports.beans.GenericReportsFormBean" />
+
+
+		<form-bean name="DPInterSSDStockTransferReportFormBean"
+			type="com.ibm.dp.beans.DPInterSSDStockTransferReportFormBean" />
+
+		<form-bean name="CollectionReportBean"
+			type="com.ibm.dp.beans.CollectionReportBean" />
+
+		<form-bean name="NonSerializedConsumptionReportBean"
+			type="com.ibm.dp.beans.NonSerializedConsumptionReportBean" />
+
+
+		<form-bean name="DPDetailReportFormBean"
+			type="com.ibm.dp.beans.DPDetailReportFormBean" />
+
+		<!-- ended by saumya -->
+		<!-- added by sugandha for dthadmin alertconfiguration -->
+		<form-bean name="DPAlertConfigurationBean"
+			type="com.ibm.dp.beans.DPAlertConfigurationBean" />
+			<!-- ended by sugandha  -->
+		<form-bean name="InterSSDFormBean"
+			type="com.ibm.dp.beans.InterSSDFormBean" />
+
+		<form-bean name="WHdistmappbulkBean"
+			type="com.ibm.dp.beans.WHdistmappbulkBean" />
+
+
+		<form-bean name="OpeningStockDepletionFormBean"
+			type="com.ibm.dp.beans.DPOpenStockDepletionBean" />
+
+		<form-bean name="DPWrongShipmentBean"
+			type="com.ibm.dp.beans.DPWrongShipmentBean" />
+
+		<form-bean name="DPStockDetailsReportBean"
+			type="com.ibm.dp.beans.DPStockDetailsReportBean" />
+
+		<form-bean name="CreatePorBean"
+			type="com.ibm.dp.beans.DPPurchaseOrderFormBean" />
+		<form-bean name="getPrdtListBean"
+			type="com.ibm.dp.beans.DPPurchaseOrderFormBean" />
+		<form-bean name="InsertPorBean"
+			type="com.ibm.dp.beans.DPPurchaseOrderFormBean" />
+		<form-bean name="ViewPODetailsBean"
+			type="com.ibm.dp.beans.DPPurchaseOrderFormBean" />
+
+		<form-bean name="DPDeliveryChallanAcceptBean"
+			type="com.ibm.dp.beans.DPDeliveryChallanAcceptFormBean" />
+
+	<form-bean name="ErrorPOBean"
+			type="com.ibm.dp.beans.ErrorPOFormBean" />
+			
+		<form-bean name="StbFlushOutFormBean"
+			type="com.ibm.dp.beans.StbFlushOutFormBean" />
+			
+		<form-bean name="SecDataULoadBean"
+			type="com.ibm.dp.beans.DPSecFileUploadBean" />
+
+		<form-bean name="ForwdSecDataULoadBean"
+			type="com.ibm.dp.beans.DPSecFileUploadBean" />
+		<!-- Form Bean for stockDeclaration by Arvind at 5th oct 2010 -->
+		<form-bean name="DistStockDeclarationBean"
+			type="com.ibm.dp.beans.DistStockDeclarationBean" />
+		<form-bean name="stockAcceptTransferBean"
+			type="com.ibm.dp.beans.DistStockAcceptTransferBean" />
+		<!-- end of codeby Arvind at 5th oct 2010 -->
+		<form-bean name="GeographyFormBean"
+			type="com.ibm.dp.beans.GeographyFormBean" />
+
+		<!-- form bean tag start for Report poc -->
+		<form-bean name="ReportFormBean"
+			type="com.ibm.dp.beans.ReportFormBean" />
+
+		<!-- form bean tag end for Report poc -->
+
+		<!-- end Purchase Order tags -->
+
+		<!-- Form Bean For Post Paid Bill Payment  -->
+		<form-bean name="PostPaidBean"
+			type="com.ibm.virtualization.recharge.beans.PostPaidBean" />
+		<!-- Form Bean For Circle Management  -->
+		<form-bean name="CircleFormBean"
+			type="com.ibm.virtualization.recharge.beans.CircleFormBean" />
+		<!-- Form Bean For Money Transaction  -->
+		<form-bean name="DistributorTransactionFormBean"
+			type="com.ibm.virtualization.recharge.beans.DistributorTransactionFormBean" />
+		<!-- Form Bean For Group Management  -->
+		<form-bean name="GroupFormBean"
+			type="com.ibm.virtualization.recharge.beans.GroupFormBean" />
+		<!-- Form Bean For User Management  -->
+		<form-bean name="UserFormBean"
+			type="com.ibm.virtualization.recharge.beans.UserFormBean" />
+		<!-- Form Bean For Account Management  -->
+		<form-bean name="AccountFormBean"
+			type="com.ibm.virtualization.recharge.beans.AccountFormBean" />
+		<!--  Changes by Anju -->
+		<form-bean name="DPCreateAccountForm"
+			type="com.ibm.dp.beans.DPCreateAccountFormBean" />
+		<form-bean name="DPCreateBeatForm"
+			type="com.ibm.dp.beans.DPCreateBeatFormBean" />
+		<form-bean name="ReportForUnbarringForm"
+			type="com.ibm.hbo.forms.ReportForUnbarringFormBean">
+		</form-bean>
+		<!-- Form Bean For Login  -->
+		<form-bean name="LoginFormBean"
+			type="com.ibm.virtualization.recharge.beans.LoginFormBean" />
+		<!-- Form Bean For Report Module  -->
+
+		<!-- Form Bean For Query Module  -->
+		<form-bean name="QueryFormBean"
+			type="com.ibm.virtualization.recharge.beans.QueryFormBean" />
+		<!-- Form Bean For Authenication Module  -->
+		<form-bean name="AuthenticationFormBean"
+			type="com.ibm.virtualization.recharge.beans.AuthenticationFormBean" />
+		<!-- Form Bean For System Configuration Management  -->
+		<form-bean name="SysConfigFormBean"
+			type="com.ibm.virtualization.recharge.beans.SysConfigFormBean" />
+		<form-bean name="CustomerTransaction"
+			type="com.ibm.virtualization.recharge.beans.CustomerTransactionFormBean" />
+		<!--Form Bean For Account Transaction-->
+		<form-bean name="AccountTransactionBean"
+			type="com.ibm.virtualization.recharge.beans.AccountTransactionBean" />
+		<!--Form Bean For Account Transaction-->
+		<form-bean name="ChangePasswordFormBean"
+			type="com.ibm.virtualization.recharge.beans.ChangePasswordFormBean" />
+		<!-- Form Bean For Circle Topup Configuration  -->
+		<form-bean name="topupSlabBean"
+			type="com.ibm.virtualization.recharge.beans.TopupSlabBean" />
+			
+		<form-bean name="ConfigurationMasterBean"
+			type="com.ibm.dp.beans.ConfigurationMasterBean" />
+
+		<form-bean name="UploadTrailReportsBean" 
+		type="com.ibm.reports.beans.UploadTrailReportsBean"/>
+			
+		
+		<!--Form Bean For Group Role Mapping-->
+		<form-bean name="GroupRoleMappingFormBean"
+			type="com.ibm.virtualization.recharge.beans.GroupRoleMappingFormBean" />
+		<!--Form Bean For Account to Account Transaction Form Bean-->
+		<form-bean name="TransactionRptA2AFormBean"
+			type="com.ibm.virtualization.recharge.beans.TransactionRptA2AFormBean" />
+
+		<!-- Start of HBO Form Beans -->
+		<form-bean name="HBOBusinessCategoryForm"
+			type="com.ibm.hbo.forms.HBOBusinessCategoryFormBean" />
+		<form-bean name="HBOProductForm"
+			type="com.ibm.hbo.forms.HBOProductFormBean" />
+		<form-bean name="HBOWarehouseForm"
+			type="com.ibm.hbo.forms.HBOWarehouseFormBean" />
+		<form-bean name="HBOBundleStockForm"
+			type="com.ibm.hbo.forms.HBOBundleStockFormBean" />
+		<form-bean name="HBOWarrantyForm"
+			type="com.ibm.hbo.forms.HBOWarrantyFormBean" />
+
+		<!-- Form Beans Created by Aditya -->
+		<form-bean name="HBOMinReorderForm"
+			type="com.ibm.hbo.forms.HBOMinReorderFormBean" />
+		<form-bean name="HBOAssignProdStockForm"
+			type="com.ibm.hbo.forms.HBOAssignProdStockFormBean" />
+		<form-bean name="HBOProjectionForm"
+			type="com.ibm.hbo.forms.HBOProjectionFormBean" />
+		<form-bean name="HBOMarkDamagedForm"
+			type="com.ibm.hbo.forms.HBOMarkDamagedFormBean" />
+		<form-bean name="AssignDistStockForm"
+			type="com.ibm.hbo.forms.AssignDistStockFormBean" />
+		<form-bean name="SwapDOAStockForm"
+			type="com.ibm.hbo.forms.SwapDOAStockFormBean" />
+		<!-- Form Beans Created by Parul -->
+		<form-bean name="HBOAssignSimStockForm"
+			type="com.ibm.hbo.forms.HBOAssignSimStockFormBean" />
+		<form-bean name="HBOVerifySimStockForm"
+			type="com.ibm.hbo.forms.HBOVerifySimStockFormBean" />
+		<form-bean name="HBOViewSimStockForm"
+			type="com.ibm.hbo.forms.HBOViewBatchDetailsFormBean" />
+		<form-bean name="HBOViewBundledStockForm"
+			type="com.ibm.hbo.forms.HBOViewBundledStockFormBean" />
+		<form-bean name="HBOFileUploadForm"
+			type="com.ibm.hbo.forms.HBOFileUploadFormBean" />
+		<form-bean name="HBOReportForm"
+			type="com.ibm.hbo.forms.HBOReportFormBean" />
+		<form-bean name="DPDistStockSummaryForm"
+			type="com.ibm.hbo.forms.DistributorHomeForm" />
+		<!-- Form Beans Created By Sidharth -->
+		<form-bean name="HBORequisitionForm"
+			type="com.ibm.hbo.forms.HBOCreateRequisitionFormBean" />
+		<form-bean name="HBOAssignStockForm"
+			type="com.ibm.hbo.forms.HBOAssignProdStockFormBean" />
+		<!-- Form Beans Created by Anju -->
+		<form-bean name="HBOSendEmailForm"
+			type="com.ibm.hbo.forms.HBOSendEmailFormBean" />
+		<form-bean name="HBOProjectionBulkUploadForm"
+			type="com.ibm.hbo.forms.HBOProjectionBulkUploadFormBean" />
+		<!-- End of HBO Form Beans -->
+
+		<!-- Code Added By Vivek  -->
+		<form-bean name="DPCreateProductFormBean"
+			type="com.ibm.virtualization.recharge.beans.DPCreateProductFormBean" />
+
+
+		<form-bean name="DPViewProductFormBean"
+			type="com.ibm.virtualization.recharge.beans.DPViewProductFormBean" />
+
+		<form-bean name="DPEditProductFormBean"
+			type="com.ibm.virtualization.recharge.beans.DPEditProductFormBean" />
+
+		<form-bean name="MinReorderFormBean"
+			type="com.ibm.virtualization.recharge.beans.MinReorderFormBean" />
+
+		<form-bean name="DPViewWarrantyForm"
+			type="com.ibm.virtualization.recharge.beans.DPViewWarrantyFormBean" />
+
+		<form-bean name="LocationDataBean"
+			type="com.ibm.dp.beans.LocationDataBean" />
+
+		<form-bean name="DPEditWarrantyForm"
+			type="com.ibm.virtualization.recharge.beans.DPEditWarrantyFormBean" />
+
+		<form-bean name="DPReportForm"
+			type="com.ibm.dp.beans.DPReportForm" />
+
+		<form-bean name="RegistrationOfAllBean"
+			type="com.ibm.virtualization.ussdactivationweb.beans.RegistrationOfAllBean" />
+
+		<form-bean name="DPInventoryStatusFormBean"
+			type="com.ibm.dp.beans.DPInventoryStatusFormBean" />
+
+		<form-bean name="dpMissingStockApprovalBean"
+			type="com.ibm.dp.beans.DPMissingStockApprovalFormBean" />
+
+		<form-bean name="DPDistributorStockTransferFormBean"
+			type="com.ibm.dp.beans.DPDistributorStockTransferFormBean" />
+
+		<!-- Begin Added by Mohammad Aslam -->
+		<form-bean name="StockDeclarationBean"
+			type="com.ibm.dp.beans.StockDeclarationFormBean" />
+		<form-bean name="StockTransferFormBean"
+			type="com.ibm.dp.beans.StockTransferFormBean" />
+		<!-- End Added by Mohammad Aslam -->
+
+		<!-- Added By Shilpa Khanna -->
+		<form-bean name="DpDcCreationBean"
+			type="com.ibm.dp.beans.DpDcCreationBean" />
+
+		<!-- Added By Shilpa Khanna Ends Here -->
+
+		<!-- Added By Shilpa Khanna -->
+		<form-bean name="DpDcDamageStatusBean"
+			type="com.ibm.dp.beans.DpDcDamageStatusBean" />
+
+		<!-- Added By Shilpa Khanna Ends Here -->
+
+
+		<!-- Added By Digvijay Singh -->
+		<form-bean name="DpDcFreshStatusBean"
+			type="com.ibm.dp.beans.DpDcFreshStatusBean" />
+
+		<!-- Added By Digvijay Singh Ends Here -->
+
+
+		<!-- Added By Digvijay Singh -->
+		<form-bean name="RecoSummaryFormBean"
+			type="com.ibm.dp.beans.RecoSummaryFormBean" />
+
+		<!-- Added By Digvijay Singh Ends Here -->
+
+
+		<!-- Added By Shilpa Khanna for HierarchyTransfer -->
+		<form-bean name="HierarchyTransferBean"
+			type="com.ibm.dp.beans.HierarchyTransferBean" />
+
+		<!-- Added By Shilpa Khanna Ends Here -->
+
+
+
+		<!-- Added By Ajil  -->
+		<form-bean name="HierarchyAccept"
+			type="com.ibm.dp.beans.DPHierarchyAcceptBean" />
+
+
+		<!-- Global Exceptions -->
+		<!-- Added By Shilpa Khanna For repair STB-->
+		<form-bean name="RepairSTBBean"
+			type="com.ibm.dp.beans.RepairSTBBean" />
+
+		<!-- Added By Shilpa Khanna Ends Here -->
+
+		<!-- Added By Shilpa Khanna For sack Distributor-->
+		<form-bean name="SackDistributorBean"
+			type="com.ibm.dp.beans.SackDistributorBean" />
+
+		<!-- Added By Shilpa Khanna Ends Here -->
+		<form-bean name="C2SBulkUploadBean"
+			type="com.ibm.dp.beans.C2SBulkUploadBean" />
+
+
+		<!-- Added By Shilpa Khanna For Stock Summary Report-->
+		<form-bean name="StockSummaryReportBean"
+			type="com.ibm.dp.beans.StockSummaryReportBean" />
+
+		<!-- Added By Shilpa Khanna Ends Here -->
+		<!-- Added By Shilpa Khanna For Consumption Posting Detail Report-->
+		<form-bean name="ConsumptionPostingDetailReportBeans"
+			type="com.ibm.dp.beans.ConsumptionPostingDetailReportBeans" />
+
+		<!-- Added By Shilpa Khanna Ends Here -->
+		<!-- Added By Shilpa Khanna For Inter SSD Stock transfer Report-->
+		<form-bean name="InterSSDStockTrnfrReportBean"
+			type="com.ibm.dp.beans.InterSSDStockTrnfrReportBean" />
+
+		<!-- Added By Shilpa Khanna Ends Here -->
+
+
+		<form-bean name="DPViewHierarchyFormBean"
+			type="com.ibm.dp.beans.DPViewHierarchyFormBean" />
+
+		<!-- Added By Shilpa Khanna For Non Serialized Stock Bulk Upload-->
+		<form-bean name="NSBulkUploadBean"
+			type="com.ibm.dp.beans.NSBulkUploadBean" />
+		<!-- Added By Shilpa Khanna Ends Here -->
+
+		<!-- Added By ARTI For Stock Level Bulk Upload-->
+		<form-bean name="DPStockLevelBulkUploadBean"
+			type="com.ibm.dp.beans.DPStockLevelBulkUploadBean" />
+		<!-- Added By ARTI  Ends Here -->
+		<!-- Added By ARTI For Security Deposit Loan Bulk Upload-->
+		<form-bean name="DPDistSecurityDepositLoanBean"
+			type="com.ibm.dp.beans.DPDistSecurityDepositLoanBean" />
+		<!-- Added By ARTI  Ends Here -->
+
+		<!-- Added By ARTI For Product Security List Bulk Upload-->
+		<form-bean name="DPProductSecurityListBean"
+			type="com.ibm.dp.beans.DPProductSecurityListBean" />
+		<!-- Added By ARTI  Ends Here -->
+		
+		<!-- Added By Sanjay For Pending and Inter SSD List transfer Bulk Upload-->
+		<form-bean name="DPPendingListTransferBulkUploadBean"
+			type="com.ibm.dp.beans.DPPendingListTransferBulkUploadBean" />
+			
+		<form-bean name="DPInterSSDTransferBulkUploadBean"
+			type="com.ibm.dp.beans.DPInterSSDTransferBulkUploadBean" />	
+			
+		<!--  End -->
+
+
+
+		<!-- Added By Priya For Reco Period Configuation-->
+		<form-bean name="RecoPeriodConfFormBean"
+			type="com.ibm.dp.beans.RecoPeriodConfFormBean" />
+		<form-bean name="SerializedStockReportFormBean"
+			type="com.ibm.dp.beans.SerializedStockReportFormBean" />
+		<form-bean name="ActivationDetailReportFormBean"
+			type="com.ibm.dp.beans.ActivationDetailReportFormBean" />
+		<form-bean name="STBWiseSerializedStockReportFormBean"
+			type="com.ibm.dp.beans.STBWiseSerializedStockReportFormBean" />
+		<!-- Added By Priya Ends Here -->
+
+		<form-bean name="TransferPendingSTBBean"
+			type="com.ibm.dp.beans.TransferPendingSTBBean" />
+
+		<form-bean name="NonSerializedActivationBean"
+			type="com.ibm.dp.beans.NonSerializedActivationBean" />
+
+		<form-bean name="DPPoAcceptanceBulkFormBean"
+			type="com.ibm.dp.beans.DPPoAcceptanceBulkBean" />
+			
+		<form-bean name="NegetiveEligibilityReportBean"
+			type="com.ibm.dp.beans.NegetiveEligibilityReportBean" />
+
+		<!-- Added by Nazim Hussain for Drop Down Utility -->
+		<form-bean name="dropDownForm"
+			type="com.ibm.dpmisreports.beans.DropDownUtilityAjaxForm" />
+
+
+
+		<!-- Added By Shilpa Khanna For Inter SSD Transfer by DTH Admin-->
+		<form-bean name="InterSsdTransferAdminBean"
+			type="com.ibm.dp.beans.InterSsdTransferAdminBean" />
+		<!-- Added By Shilpa Khanna Ends Here -->
+		<!-- Added By Shilpa Khanna For Distributor Reco Entry -->
+		<form-bean name="DistRecoBean"
+			type="com.ibm.dp.beans.DistRecoBean" />
+		<!-- Added By Shilpa Khanna Ends Here -->
+		<!-- Added By Shilpa Khanna For MIS Report PO Detail Report -->
+		<form-bean name="PODetailReportBean"
+			type="com.ibm.dp.beans.PODetailReportBean" />
+		<!-- Added By Shilpa Khanna Ends Here -->
+
+		<!-- Added By Shilpa Khanna For MIS Report Stock Reco Summary Report -->
+		<form-bean name="StockRecoSummReportBean"
+			type="com.ibm.dp.beans.StockRecoSummReportBean" />
+		<!-- Added By Shilpa Khanna Ends Here -->
+
+		<!-- Added By AMIT MISHRA For STB IN BULK -->
+
+		<form-bean name="DPStbInBulkFormBean"
+			type="com.ibm.dp.beans.DPStbInBulkBean" />
+		<!-- Added By AMIT MISHRA Ends Here -->
+
+		<!-- Added By Shah_Rabbani For Churn Received -->
+		<form-bean name="DPReverseChurnCollectionBean"
+			type="com.ibm.dp.beans.DPReverseChurnCollectionBean" />
+
+		<form-bean name="ChurnDCGenerationBean"
+			type="com.ibm.dp.beans.ChurnDCGenerationBean" />
+			
+		<form-bean name="DpDcChurnStatusBean" 
+			type="com.ibm.dp.beans.DpDcChurnStatusBean" />
+		<!-- Added  Ends Here -->
+
+		<!-- Added By Karan for ViewStockEligibility -->
+
+
+
+		<form-bean name="ViewStockEligibilityBean"
+			type="com.ibm.dp.beans.ViewStockEligibilityBean" />
+		<!-- Added By Karan Ends Here -->
+
+		<form-bean name="DPCreateAccountITHelpFormBean"
+			type="com.ibm.dp.beans.DPCreateAccountITHelpFormBean" />
+     <form-bean name="TransferHierarchyBean"
+     		type="com.ibm.dp.beans.TransferHierarchyBean"/>
+     		
+     		<!-- added by aman -->
+     		
+     		   <form-bean name="DebitAmountMstrFormBean"
+     		type="com.ibm.dp.beans.DebitAmountMstrFormBean"/>
+     		
+     		 <form-bean name="DPCardGrpMstrFormBean"
+     		type="com.ibm.dp.beans.DPCardGrpMstrFormBean"/>
+     		<!-- added by aman ends here -->
+     		
+     			<!-- added by Rohit -->
+     		
+     		   <form-bean name="CloseDistributorRecoBean"
+     		type="com.ibm.reports.beans.CloseDistributorRecoBean"/>
+     		
+     		<!-- added by aman ends here -->
+     		
+     		<form-bean name="DPRetailerLapuDataBean"
+			type="com.ibm.dp.beans.DPRetailerLapuDataBean" />
+     		
+	</form-beans>
+	
+	<global-exceptions />
+
+
+	<!-- Global Forwards -->
+	<global-forwards>
+		<forward name="login" path="./jsp/authentication/login.jsp" />
+		<forward name="invalidoperation" path="./jsp/authentication/login.jsp" />
+		<forward name="autherization"
+			path="./jsp/authentication/authorizationFail.jsp" />
+		<forward name="error" path="./jsp/common/error.jsp" />
+	</global-forwards>
+
+	<!-- Action Mappings -->
+
+	<action-mappings>
+
+		<!-- Action Mapping for PurchaseOrder by Rohit kunder update 30sep08 -->
+
+		<action path="/CreatePurchaseOrder" name="CreatePorBean"
+			type="com.ibm.dp.actions.DPPurchaseOrderAction"
+			parameter="methodName" scope="request">
+			<forward name="initSuccess" path="purchaseOrder.page" />
+			<forward name="error" path="/jsp/transaction/dpPurchaseOrder.jsp" />
+		</action>
+		<!-- Action Mapping for stock declaration by arvind at 5th oct 2010 -->
+		
+		<!-- Riju -->
+		<action path="/closeInactivePartners" name="CloseInactivePartnersBean"
+			type="com.ibm.dp.actions.CloseInactivePartnersAction"
+			parameter="methodName" scope="request">
+			<forward name="uploadExlFileWindow" path="closeInactivePartners.page" />
+			<forward  name="successuploadExl" path="/closeInactivePartners.do?methodName=viewDistributors"/>
+		</action>	
+		
+		<!-- Riju -->
+		
+		<!-- Riju -->
+		<action path="/checkRetailerBalance" name="CheckRetailerBalanceBean"
+			type="com.ibm.dp.actions.CheckRetailerBalanceAction"
+			parameter="methodName" scope="request">
+			<forward name="checkretailerbalance" path="checkRetailerBalance.page" />
+			<forward name="successExcel" path="jsp/report/CheckRetailerBalanceExcel.jsp" />
+		</action>	
+		
+		<!-- Riju -->
+		
+		
+		
+		
+		
+
+		<action path="/diststockDecl" name="DistStockDeclarationBean"
+			type="com.ibm.dp.actions.DistStockDeclarationAction"
+			parameter="methodName" scope="request">
+			<forward name="initSuccess"
+				path="diststockDeclaration.page" />
+		</action>
+		<action path="/performStockDeclaration"
+			name="DistStockDeclarationBean"
+			type="com.ibm.dp.actions.DistStockDeclarationAction"
+			parameter="methodName" scope="request">
+			<forward name="initSuccess"
+				path="/diststockDecl.do?methodName=initStockDec" />
+		</action>
+		<action path="/stockAcceptTransfer"
+			name="stockAcceptTransferBean"
+			type="com.ibm.dp.actions.DistStockDeclarationAction"
+			parameter="methodName" scope="request">
+			<forward name="initSuccess" path="stockAcceptTransfer.page" />
+			<forward name="initViewSerialAndProduct"
+				path="StockTransferAccept.ViewSerials.page" />
+			<forward name="initSuccessAccept"
+				path="/stockAcceptTransfer.do?methodName=initStockAcceptTransfer" />
+		</action>
+
+		<action path="/getInitDCNo" name="stockAcceptTransferBean"
+			parameter="methodName" scope="request"
+			type="com.ibm.dp.actions.DistStockDeclarationAction"
+			validate="false" />
+		<action path="/stockAcceptDisplay"
+			name="stockAcceptTransferBean" parameter="methodName" scope="request"
+			type="com.ibm.dp.actions.DistStockDeclarationAction"
+			validate="false">
+			<forward name="initSuccess" path="stockAcceptTransfer.page" />
+		</action>
+		<!-- end of code by arvind-->
+		<action name="CreatePorBean" path="/getProductList"
+			parameter="methodName" scope="request"
+			type="com.ibm.dp.actions.DPPurchaseOrderAction" validate="false" />
+		<!-- Begin Added by Mohammad Aslam -->
+		<action name="CreatePorBean" path="/getQuantityAsPerDp"
+			type="com.ibm.dp.actions.DPPurchaseOrderAction"
+			parameter="methodName" scope="request" validate="false" />
+		<!-- End Added by Mohammad Aslam -->
+
+		<action path="/InsertPurchaseOrder" name="InsertPorBean"
+			type="com.ibm.dp.actions.DPPurchaseOrderAction"
+			parameter="methodName" scope="request">
+			<forward name="success"
+				path="./CreatePurchaseOrder.do?methodName=initPO" />
+			<forward name="error" path="./jsp/common/error.jsp" />
+		</action>
+<!-- Updated by SHilpa on 6-6-12 -->
+		<action path="/ViewPurchaseOrder" name="ViewPODetailsBean"
+			type="com.ibm.dp.actions.DPPurchaseOrderAction"
+			parameter="methodName" scope="request">
+
+			<forward name="viewPODetails" path="vpurchaseOrder.page" />
+			<forward name="success"
+				path="/ViewPurchaseOrder.do?methodName=viewPODetails" />
+		 <forward name="viewSerialProdStatus"
+				path="POStatusView.ViewSerials.page" />
+			</action>
+<!-- Uopdation ends here -->
+		<action path="/ForSecDataULoad" name="ForwdSecDataULoadBean"
+			type="com.ibm.dp.actions.DPSecFileUploadAction"
+			parameter="methodName" scope="request">
+			<forward name="initSuccess" path="SecFileUpload.page" />
+
+		</action>
+
+		<action path="/SecDataULoad" name="SecDataULoadBean"
+			type="com.ibm.dp.actions.DPSecFileUploadAction"
+			parameter="methodName" scope="request">
+			<forward name="succes" path="SecFileUpload.page" />
+		</action>
+		<!--Report poc action tag start -->
+
+		<!--Report poc action tag start -->
+		<action path="/ReportForm" name="ReportFormBean"
+			type="com.ibm.dp.actions.DPReportAction" parameter="methodName"
+			scope="request">
+			<!--  <forward name="initsuccess" path="./jsp/authentication/ReportLoginPOC.jsp"/> 
+				<forward name="success" path="http://10.14.76.20:8080/businessobjects/enterprise115/desktoplaunch/InfoView/logon/DP/Login.jsp" redirect="true"/> -->
+		</action>
+		<!--Report poc action tag end  -->
+		<!--Report poc action tag end  -->
+
+		<!-- Action Mapping For Post Paid Bill Payment  -->
+		<action path="/BillPaymentAction" name="PostPaidBean"
+			type="com.ibm.virtualization.recharge.actions.PostPaidAction"
+			parameter="methodName" scope="request">
+			<forward name="initSuccess"
+				path="./jsp/transaction/postPaidBillPayment.jsp" />
+			<forward name="initPage"
+				path="/BillPaymentAction.do?methodName=init" />
+
+			<forward name="makeBillPayment"
+				path="/BillPaymentAction.do?methodName=makeBillPayment" />
+
+			<forward name="openPostPaidJSP"
+				path="./jsp/transaction/postPaidBillPayment.jsp" />
+
+
+			<forward name="searchCustomerTransactionIdjsp"
+				path="/CustomerTransaction.do?methodName=searchPostPaidTransaction" />
+
+
+			<forward name="error" path="./jsp/common/error.jsp" />
+
+		</action>
+
+		<!-- Action Mapping For Circle Management  -->
+		<action path="/CircleAction" name="CircleFormBean"
+			type="com.ibm.virtualization.recharge.actions.CircleAction"
+			parameter="methodName" scope="request">
+			<forward name="initSuccess"
+				path="./jsp/circle/createCircle.jsp" />
+			<forward name="updateCircleInfo"
+				path="/CircleAction.do?methodName=editCircle" />
+			<forward name="showList"
+				path="/CircleAction.do?methodName=getCircleList" />
+			<forward name="showListJsp"
+				path="./jsp/circle/listCircle.jsp" />
+			<forward name="error" path="./jsp/common/error.jsp" />
+			<forward name="showEditJsp"
+				path="./jsp/circle/editCircle.jsp" />
+			<forward name="showViewJsp"
+				path="./jsp/circle/viewCircle.jsp" />
+			<forward name="circleIdInUs"
+				path="/CircleAction.do?methodName=init" />
+			<forward name="listCircleExport"
+				path="./jsp/circle/listCircleExport.jsp" />
+		</action>
+
+
+
+		<!-- Action Mapping For Group Management  -->
+		<action path="/GroupAction" name="GroupFormBean"
+			type="com.ibm.virtualization.recharge.actions.GroupAction"
+			parameter="methodName" scope="request">
+			<forward name="initSuccess"
+				path="./jsp/trustee/createGroup.jsp" />
+			<forward name="showList"
+				path="./jsp/trustee/createGroup.jsp" />
+			<forward name="updateGroupInfo"
+				path="/GroupAction.do?methodName=editGroup" />
+
+			<forward name="showListJsp"
+				path="./jsp/trustee/listGroup.jsp" />
+			<forward name="editSuccess"
+				path="/GroupAction.do?methodName=getGroupList" />
+			<forward name="error" path="./jsp/common/error.jsp" />
+			<forward name="showEditJsp"
+				path="./jsp/trustee/editGroup.jsp" />
+			<forward name="showViewJsp"
+				path="./jsp/trustee/viewGroup.jsp" />
+			<forward name="groupNameInUse"
+				path="/GroupAction.do?methodName=init" />
+		</action>
+
+		<!-- Action Mapping For Geography Management  -->
+		<action path="/GeographyAction" name="GeographyFormBean"
+			type="com.ibm.dp.actions.GeographyAction" parameter="methodName"
+			scope="request">
+			<forward name="initSuccess"
+				path="./jsp/geography/createGeography.jsp" />
+			<forward name="showListJsp"
+				path="./jsp/geography/listGeography.jsp" />
+			<forward name="showEditJsp"
+				path="./jsp/geography/editGeography.jsp" />
+			<forward name="showList"
+				path="/GeographyAction.do?methodName=getGeographyList" />
+			<forward name="showListJsp"
+				path="./jsp/geography/listGeography.jsp" />
+			<forward name="geographyexist"
+				path="./GeographyAction.do?methodName=getEditGeography" />
+		</action>
+
+		<!-- Action Mapping For User Management  -->
+		<action path="/UserAction" name="UserFormBean"
+			type="com.ibm.virtualization.recharge.actions.UserAction"
+			parameter="methodName" scope="request">
+			<forward name="initSuccess"
+				path="./jsp/trustee/createUser.jsp" />
+			<forward name="updateUserInfo"
+				path="/UserAction.do?methodName=editUser" />
+			<forward name="showList"
+				path="./UserAction.do?methodName=callSearchUser" />
+			<forward name="showUserList"
+				path="./UserAction.do?methodName=getUserList" />
+			<forward name="showListJsp"
+				path="./jsp/trustee/listUser.jsp" />
+			<forward name="userNameInUse"
+				path="/UserAction.do?methodName=init" />
+			<forward name="error" path="./jsp/common/error.jsp" />
+			<forward name="showEditJsp"
+				path="./jsp/trustee/editUser.jsp" />
+			<forward name="showViewJsp"
+				path="./jsp/trustee/viewUser.jsp" />
+			<forward name="nonGsdUserNamePassword"
+				path="/UserAction.do?methodName=init" />
+			<forward name="circleCreated"
+				path="/UserAction.do?methodName=init" />
+			<forward name="listUserExport"
+				path="./jsp/trustee/listUserExport.jsp" />
+			<forward name="showUnlockUserList"
+				path="./UserAction.do?methodName=getUserList" />
+
+
+
+		</action>
+
+		<!-- Action Mapping For Account Management  -->
+
+		<action path="/AccountAction" name="AccountFormBean"
+			type="com.ibm.virtualization.recharge.actions.AccountAction"
+			scope="request" parameter="methodName">
+			<forward name="createAccount"
+				path="./jsp/account/createAccount.jsp" />
+			<forward name="openAccount"
+				path="/AccountAction.do?methodName=init" />
+			<forward name="updateUserInfo"
+				path="/AccountAction.do?methodName=editAccount" />
+			<forward name="showList"
+				path="/AccountAction.do?methodName=showList" />
+			<forward name="showListJsp"
+				path="./jsp/account/searchAccount.jsp" />
+			<forward name="backPage" path="/AccountAction.do" />
+			<forward name="UsedLoginId"
+				path="/AccountAction.do?methodName=init" />
+			<forward name="editAccountDetails"
+				path="./jsp/account/editAccount.jsp" />
+			<forward name="viewAccountDetails"
+				path="./jsp/account/viewAccount.jsp" />
+			<forward name="nonGsdUserIdPassword"
+				path="/AccountAction.do?methodName=init" />
+			<forward name="showSearchAccountJsp"
+				path="./jsp/account/searchAccount.jsp" />
+			<forward name="searchAccount"
+				path="/AccountAction.do?methodName=searchAccount" />
+			<forward name="error" path="./jsp/common/error.jsp" />
+			<forward name="parentaccountlist"
+				path="./jsp/account/searchParentAccount.jsp" />
+			<forward name="listAccountExport"
+				path="./jsp/account/listAccountExport.jsp" />
+			<forward name="billablelist"
+				path="./jsp/account/searchBillableAccount.jsp" />
+
+		</action>
+
+
+		<!-- Action Mapping For Customer Transaction  -->
+		<action path="/CustomerTransaction" name="CustomerTransaction"
+			type="com.ibm.virtualization.recharge.actions.CustomerTransactionAction"
+			parameter="methodName" scope="request"
+			input="./jsp/transaction/customerTransaction.jsp">
+			<forward name="openCustomerTransactionjsp"
+				path="./jsp/transaction/customerTransaction.jsp" />
+			<forward name="intiTransactionAction"
+				path="/CustomerTransaction.do?methodName=init" />
+			<forward name="searchCustomerTransactionjsp"
+				path="./jsp/report/searchCustomerTransaction.jsp" />
+			<forward name="downloadCustomerTransList"
+				path="./jsp/report/listCustomerTransaction.jsp" />
+			<forward name="error" path="./jsp/common/error.jsp" />
+			<forward name="openCustomerTransactionAsyncjsp"
+				path="./jsp/transaction/customerTransactionAsync.jsp" />
+			<forward name="intiCustomerTransactionActionAsync"
+				path="/CustomerTransaction.do?methodName=initAsync" />
+
+			<forward name="searchCustomerTransactionIdjsp"
+				path="./jsp/report/searchCustomerTransactionId.jsp" />
+		</action>
+
+
+		<!--Action Mapping For Account Transaction -->
+		<action path="/AccountTransaction" name="AccountTransactionBean"
+			type="com.ibm.virtualization.recharge.actions.AccountTransactionAction"
+			scope="request" input="./jsp/transaction/accountTransaction.jsp"
+			parameter="methodName">
+			<forward name="initAccountAction"
+				path="/AccountTransaction.do?methodName=AccountTransaction" />
+			<forward name="openAccountTransactionJSP"
+				path="./jsp/transaction/accountTransaction.jsp" />
+			<forward name="error" path="./jsp/common/error.jsp" />
+			<forward name="confirmAccountTransactionJSP"
+				path="./jsp/transaction/confirmAccountTransaction.jsp" />
+			<forward name="cancelConfirmTransactionAsyncJSP"
+				path="./jsp/transaction/accountTransactionAsync.jsp" />
+
+			<forward name="cancelConfirmTransactionJSP"
+				path="./jsp/transaction/accountTransaction.jsp" />
+			<forward name="confirmAccountTransactionAsyncJSP"
+				path="./jsp/transaction/confirmAccountTransactionAsync.jsp" />
+			<forward name="openAccountTransactionJSPAsync"
+				path="./jsp/transaction/accountTransactionAsync.jsp" />
+
+			<forward name="initAccountTransactionAsync"
+				path="/AccountTransaction.do?methodName=initAsync" />
+
+		</action>
+
+		<!-- Action Mapping For Login   -->
+		<action path="/LoginAction"
+			type="com.ibm.virtualization.recharge.actions.LoginAction"
+			name="AuthenticationFormBean" scope="session"
+			input="./jsp/authentication/login.jsp" validate="true">
+			<forward name="loginFailure"
+				path="./jsp/authentication/login.jsp" />
+			<forward name="loginSuccess" path="./jsp/common/home.jsp" />
+			<forward name="redirectToReco" redirect="true"
+				path="/DistReco.do?methodName=init" />
+				
+				
+				<forward name="redirectToFinPayout" path="/InvoiceUpload.do" method="post"/>
+
+<forward name="redirectToInvoices" path="/ViewListInvoice.do?methodName=listAllInvoicesDist" method="post"/>
+				
+				
+		
+
+			<!--  Commented to skip the distributor Stock summary flow while logging of distributor. 19-Jul-2011  
+				
+				<forward name="distributorlogin" redirect="true"
+				path="/viewDistStockSummary.do?methodName=distStockSummary" />
+			-->
+			<!--  Added to forward to home.jsp directly while logging of distributor. 19-Jul-2011 
+			-->
+			<forward name="distributorlogin"
+				path="./jsp/common/home.jsp" />
+			<!-- added Code ends here -->
+
+			<forward name="PasswordExpired" redirect="true"
+				path="/ChangePasswordAction.do?methodName=initNonContext" />
+		</action>
+		<!-- Dummy action created by Siddhartha   -->
+		<action path="/LoginActionHeader"
+			type="com.ibm.virtualization.recharge.actions.LoginActionHeader"
+			name="AuthenticationFormBean" scope="session"
+			input="./jsp/authentication/login.jsp" validate="true">
+			<forward name="loginForward" path="/" />
+		</action>
+		<action name="DPDistStockSummaryForm"
+			path="/viewDistStockSummary" parameter="methodName" scope="request"
+			type="com.ibm.hbo.actions.DistributorHomeAction">
+			<forward name="success" path="distStockSumm.page" />
+			<forward name="prodsummary" path="prodStockSumm.page" />
+		</action>
+
+		<!-- Action Mapping for Query Module -->
+		<action name="QueryFormBean" path="/queryAction"
+			type="com.ibm.virtualization.recharge.actions.QueryHandlerAction"
+			scope="request" parameter="methodName" validate="true"
+			input="./jsp/query/balanceEnquiry.jsp">
+			<forward name="loadBalanceEnquery"
+				path="./jsp/query/balanceEnquiry.jsp" />
+			<forward name="showBalance"
+				path="./jsp/query/balanceEnquiry.jsp" />
+			<forward name="showChildBalance"
+				path="./jsp/query/balanceEnquiry.jsp" />
+			<forward name="showBalanceFailed"
+				path="./jsp/query/balanceEnquiry.jsp" />
+			<forward name="showChildBalanceFailed"
+				path="./jsp/query/balanceEnquiry.jsp" />
+			<forward name="userNotAuthenticated"
+				path="./jsp/query/userNotAuthenticated.jsp" />
+			<forward name="error" path="./jsp/common/error.jsp" />
+			<forward name="userNotAuthenticatedAsync"
+				path="./jsp/query/userNotAuthenticated.jsp" />
+
+			<forward name="loadBalanceEnqueryAsync"
+				path="./jsp/query/balanceEnquiryAsync.jsp" />
+
+		</action>
+		<!-- alert configuration starts here -->
+		<action path="/dpAlertConfiguration" name="DPAlertConfigurationBean"
+			type="com.ibm.dp.actions.DPAlertConfigurationAction"
+			parameter="methodName" scope="request">
+			 <forward name="initSuccess" path="dpAlertConfiguration.page" /> 
+			 <forward name="initSuccessOthers" path="dpAlertConfigurationOthers.page" /> 
+
+		</action>
+		<!-- alert configuration ends here -->
+		
+		<!-- edit reco details starts here -->
+		<action path="/editrecodetail"
+			name="EditRecoDetailBean"
+			type="com.ibm.dp.actions.EditRecoDetailAction"
+			parameter="methodName" scope="request">
+			<forward name="initSuccess" path="editRecoDetail.page" />
+			<forward name="uploadSuccess" path="editRecoDetail.page" />
+			<forward name="errorFile"
+				path="/jsp/reco/showRecoPeriodUpdateErrorExcel.jsp" />
+			<forward name="formatFile"
+				path="/jsp/reco/showRecoPeriodFormatEcel.jsp" />
+		</action>
+		<!-- edit reco details ends here -->
+
+		<!-- Action Mapping For Money Transaction  -->
+		<action path="/DistributorTransaction"
+			type="com.ibm.virtualization.recharge.actions.DistributorTransactionAction"
+			parameter="methodName" name="DistributorTransactionFormBean"
+			scope="request">
+			<forward name="newDistributorTransaction"
+				path="./jsp/transaction/createDistributorTransaction.jsp" />
+			<forward name="distributorTransactionList"
+				path="./jsp/transaction/listDistributorTransaction.jsp" />
+			<forward name="distributorReviewDetail"
+				path="./jsp/transaction/distributorTransactionReviewDetail.jsp" />
+			<forward name="distributorReviewDetailView"
+				path="./jsp/transaction/distributorTransactionReviewDetailView.jsp" />
+			<forward name="searchDistributorTransaction"
+				path="./jsp/transaction/searchDistributorTransaction.jsp" />
+			<forward name="searchUpdatedDistributorList"
+				path="/DistributorTransaction.do?methodName=getAllDistributorTransactionList" />
+			<forward name="showDistributorList"
+				path="./jsp/transaction/listCircleWiseDistributor.jsp" />
+			<forward name="error" path="./jsp/common/error.jsp" />
+		</action>
+
+		<!-- Action Mapping For System Configuration Management  -->
+		<action path="/SysConfigAction" name="SysConfigFormBean"
+			type="com.ibm.virtualization.recharge.actions.SysConfigAction"
+			parameter="methodName" validate="true" scope="request"
+			input="./jsp/configuration/createSystemConfiguration.jsp">
+			<forward name="initSuccess"
+				path="./jsp/configuration/createSystemConfiguration.jsp" />
+			<forward name="openSysConfig"
+				path="/SysConfigAction.do?methodName=init" />
+			<forward name="updateSysConfigInfo"
+				path="/SysConfigAction.do?methodName=editSysConfig" />
+			<forward name="showList"
+				path="/SysConfigAction.do?methodName=getSysConfigList" />
+			<forward name="showListJsp"
+				path="./jsp/configuration/searchSystemConfiguration.jsp" />
+			<forward name="error" path="./jsp/common/error.jsp" />
+			<forward name="showEditJsp"
+				path="./jsp/configuration/editSystemConfiguration.jsp" />
+			<forward name="configAlreadyDefined"
+				path="/SysConfigAction.do?methodName=init" />
+			<forward name="showSearchSysConfigJsp"
+				path="./jsp/configuration/searchSystemConfiguration.jsp" />
+			<forward name="callSearchSysConfig"
+				path="/SysConfigAction.do?methodName=callSearchSysConfig" />
+			<forward name="showSearchJsp"
+				path="/SysConfigAction.do?methodName=searchSysConfig" />
+			<forward name="viewSysConfig"
+				path="./jsp/configuration/viewSystemConfiguration.jsp" />
+			<forward name="createfail"
+				path="./jsp/configuration/createSystemConfiguration.jsp" />
+		</action>
+
+		<!-- Action Mapping For Logout  -->
+		<action path="/LogoutAction"
+			type="com.ibm.virtualization.recharge.actions.LogoutAction">
+			<forward name="logoutSuccess"
+				path="./jsp/authentication/logout.jsp" />
+			<forward name="login" path="./jsp/authentication/login.jsp" />
+			<forward name="SSFlogout"
+				path="./jsp/authentication/logoff.jsp" />
+		</action>
+
+		<!-- Action Mapping For InvalidSession  -->
+		<action path="/InvalidSession"
+			forward="./jsp/common/sessionErrorMessage.jsp" />
+
+		<!-- Action Mapping For Welcome  -->
+		<action path="/Welcome"
+			type="com.ibm.virtualization.recharge.actions.IndexAction">
+			<forward name="displayLogin"
+				path="./jsp/authentication/login.jsp" />
+			<forward name="invalidSession" path="/InvalidSession.do" />
+
+		</action>
+		<!-- Action Mapping For Change Password and M-Password  -->
+		<action path="/ChangePasswordAction"
+			name="ChangePasswordFormBean"
+			type="com.ibm.virtualization.recharge.actions.ChangePasswordAction"
+			parameter="methodName" scope="request">
+			<forward name="initSuccess"
+				path="./jsp/authentication/changePassword.jsp" />
+			<forward name="nonContextInitSuccess"
+				path="./jsp/authentication/changePasswordNonContextUser.jsp" />
+			<forward name="updateSuccess"
+				path="/ChangePasswordAction.do?methodName=init" />
+			<forward name="updateFailure"
+				path="/ChangePasswordAction.do?methodName=init" />
+			<forward name="nonContextUpdateSuccess"
+				path="./jsp/authentication/passwordExpired.jsp" />
+			<forward name="nonContextUpdateFailure"
+				path="/ChangePasswordAction.do?methodName=initNonContext" />
+			<forward name="error" path="./jsp/common/error.jsp" />
+			<forward name="passwordExpired"
+				path="/ChangePasswordAction.do?methodName=initNonContext" />
+			<forward name="initChangeMPasswordSuccess"
+				path="./jsp/authentication/changeMPassword.jsp" />
+			<forward name="updateMPasswordSuccess"
+				path="ChangePasswordAction.do?methodName=initChangeMPassword" />
+			<forward name="updateMPasswordFailure"
+				path="ChangePasswordAction.do?methodName=initChangeMPassword" />
+			<forward name="initChangeMPasswordAsync"
+				path="./jsp/authentication/changeMPasswordAsync.jsp" />
+
+			<forward name="displayLogin"
+				path="./jsp/authentication/login.jsp" />
+
+		</action>
+
+		<!-- Action Mapping For Circle Topup Configuration  -->
+		<action path="/TopupSlabAction" attribute="topupSlabBean"
+			name="topupSlabBean"
+			type="com.ibm.virtualization.recharge.actions.TopupSlabAction"
+			parameter="methodName" scope="request">
+			<forward name="initConfig"
+				path="./jsp/configuration/createTopupSlabConfig.jsp" />
+			<forward name="errorCreatingSlab"
+				path="./jsp/configuration/createTopupSlabConfig.jsp" />
+			<forward name="errorEditingSlab"
+				path="./jsp/configuration/editTopupSlabConfig.jsp" />
+			<forward name="dataSaved"
+				path="/TopupSlabAction.do?methodName=init" />
+			<forward name="dataUpdated"
+				path="/TopupSlabAction.do?methodName=showTopupConfig" />
+			<forward name="showList"
+				path="./jsp/configuration/showTopupList.jsp" />
+			<forward name="editTopupConfig"
+				path="./jsp/configuration/editTopupSlabConfig.jsp" />
+			<forward name="viewTopupConfig"
+				path="./jsp/configuration/viewTopupSlabConfig.jsp" />
+			<forward name="error" path="./jsp/common/error.jsp" />
+			<forward name="configFailure"
+				path="/TopupSlabAction.do?methodName=init" />
+			<forward name="listTopUpSlabExport"
+				path="./jsp/configuration/listTopUpSlabExport.jsp" />
+			<forward name="showUploadDataJsp"
+				path="./jsp/configuration/uploadSlabData.jsp" />
+			<forward name="uploadSuccess"
+				path="./TopupSlabAction.do?methodName=initUploadSlabData" />
+			<forward name="uploadFailure"
+				path="./TopupSlabAction.do?methodName=initUploadSlabData" />
+			<forward name="uploadFailedSuccess"
+				path="./jsp/configuration/listTopUpFailData.jsp" />
+			<forward name="uploadFailedFailure"
+				path="./TopupSlabAction.do?methodName=initUploadSlabData" />
+		</action>
+
+		<!-- Action Mapping For Group Role Mapping  -->
+		<action path="/GroupRoleAction" name="GroupRoleMappingFormBean"
+			type="com.ibm.virtualization.recharge.actions.GroupRoleMappingAction"
+			parameter="methodName" validate="true" scope="request">
+			<forward name="initSuccess"
+				path="./jsp/trustee/listRole.jsp" />
+			<forward name="rolesFailure"
+				path="./GroupRoleAction.do?methodName=init" />
+			<forward name="noRolesDefined"
+				path="./jsp/trustee/listRole.jsp" />
+			<forward name="rolesSuccess"
+				path="./jsp/trustee/listRole.jsp" />
+			<forward name="updateSuccess"
+				path="./GroupRoleAction.do?methodName=init" />
+			<forward name="updateFailure"
+				path="./GroupRoleAction.do?methodName=listRoles" />
+			<forward name="error" path="./jsp/common/error.jsp" />
+		</action>
+
+		<action path="/ChangePasswordNonContextAction"
+			forward="/ChangePasswordAction.do?methodName=initNonContext" />
+
+
+		<!-- Action Mapping For Account to Account Transaction Report  -->
+		<action path="/TransactionRptA2AAction"
+			attribute="TransactionRptA2AFormBean"
+			name="TransactionRptA2AFormBean"
+			type="com.ibm.virtualization.recharge.actions.TransactionRptA2AAction"
+			parameter="methodName" scope="request">
+			<forward name="showA2ATransactionReportCriteria"
+				path="./jsp/report/transactionReportA2A.jsp" />
+			<forward name="showA2ATransactionReportSuccess"
+				path="/TransactionRptA2AAction.do?methodName=init" />
+			<forward name="showA2ATransactionReportFailure"
+				path="/TransactionRptA2AAction.do?methodName=init" />
+			<forward name="exportA2ATransactionReportSuccess"
+				path="./jsp/report/transactionReportA2AExport.jsp" />
+		</action>
+
+		<!-- Action Mapping For Account to Account Transfer Summary Report  -->
+		<action path="/TransferSummaryRptA2AAction"
+			attribute="TransactionRptA2AFormBean"
+			name="TransactionRptA2AFormBean"
+			type="com.ibm.virtualization.recharge.actions.TransferSummaryRptA2AAction"
+			parameter="methodName" scope="request">
+			<forward name="showA2ASummaryReportCriteria"
+				path="./jsp/report/transferSummaryRptA2A.jsp" />
+			<forward name="showA2ASummaryReportSuccess"
+				path="/TransferSummaryRptA2AAction.do?methodName=init" />
+			<forward name="showA2ASummaryReportFailure"
+				path="/TransferSummaryRptA2AAction.do?methodName=init" />
+			<forward name="exportA2ASummaryReportSuccess"
+				path="./jsp/report/transferSummaryRptA2AExport.jsp" />
+		</action>
+
+		<!-- Action Mapping For Transaction Report  -->
+		<action path="/TransactionRptAction"
+			attribute="TransactionRptA2AFormBean"
+			name="TransactionRptA2AFormBean"
+			type="com.ibm.virtualization.recharge.actions.TransactionRptAction"
+			parameter="methodName" scope="request">
+			<forward name="showTransactionReportCriteria"
+				path="./jsp/report/transactionReport.jsp" />
+			<forward name="showTransactionReportSuccess"
+				path="/TransactionRptAction.do?methodName=init" />
+			<forward name="showTransactionReportViewSuccess"
+				path="./jsp/report/transactionReportView.jsp" />
+			<!--  <forward name="showTransactionReportFailure" path="./jsp/common/error.jsp" />  -->
+			<forward name="showTransactionReportFailure"
+				path="/TransactionRptAction.do?methodName=init" />
+			<forward name="exportTransactionReportSuccess"
+				path="./jsp/report/transactionReportExport.jsp" />
+
+			<!-- Added code to show CustomerTransaction Report, New Report -->
+			<forward
+				name="showCustomerRechargeTransactionReportCriteria"
+				path="./jsp/report/circleRechargeTransactionReport.jsp" />
+			<forward name="showRechargeTransactionReportSuccess"
+				path="/TransactionRptAction.do?methodName=initCustomerRechargeReport" />
+			<forward name="showRechargeTransactionReportFailure"
+				path="/TransactionRptAction.do?methodName=initCustomerRechargeReport" />
+			<forward name="exportCustomerRechargeReportSuccess"
+				path="./jsp/report/circleRechargeTransReportExport.jsp" />
+			<forward name="showRechargeTransactionReportSuccessWithId"
+				path="./jsp/report/circleRechargeTransReportWithId.jsp" />
+		</action>
+
+		<!-- Action Mapping For Transaction Summary Report  -->
+		<action path="/TransactionSummaryRptAction"
+			attribute="TransactionRptA2AFormBean"
+			name="TransactionRptA2AFormBean"
+			type="com.ibm.virtualization.recharge.actions.TransactionSummaryRptAction"
+			parameter="methodName" scope="request">
+			<forward name="showTransactionSummaryReportCriteria"
+				path="./jsp/report/transactionSummaryRpt.jsp" />
+			<forward name="showTransactionSummaryReportSuccess"
+				path="/TransactionSummaryRptAction.do?methodName=init" />
+			<forward name="showTransactionSummaryReportFailure"
+				path="/TransactionSummaryRptAction.do?methodName=init" />
+			<forward name="exportTransactionSummaryReportSuccess"
+				path="./jsp/report/transactionSummaryRptExport.jsp" />
+		</action>
+
+		<!-- Action Mapping For Account to Account Transaction View  -->
+		<action path="/TransactionViewA2AAction"
+			attribute="TransactionRptA2AFormBean"
+			name="TransactionRptA2AFormBean"
+			type="com.ibm.virtualization.recharge.actions.TransactionViewA2AAction"
+			parameter="methodName" scope="request">
+			<forward name="showA2ATransactionReportCriteria"
+				path="./jsp/transaction/transactionViewA2A.jsp" />
+			<forward name="showA2ATransactionReportSuccess"
+				path="/TransactionViewA2AAction.do?methodName=init" />
+			<forward name="showA2ATransactionReportFailure"
+				path="/TransactionViewA2AAction.do?methodName=init" />
+		</action>
+		<!--Start of HBO Actions-->
+		<action name="HBOLoginForm" path="/login" scope="request"
+			type="com.ibm.hbo.actions.HBOLoginAction" validate="false">
+			<forward name="loginSuccess" path="home.page" />
+			<forward name="loginFailure" path="/jsp/Login.jsp" />
+		</action>
+		<action name="HBOLoginForm" path="/home" scope="request"
+			type="com.ibm.hbo.actions.HBOLoginAction" validate="false">
+			<forward name="home" path="home.page" />
+		</action>
+
+		<action name="AuthenticationFormBean" path="/initForgotPassword"
+			scope="request"
+			type="com.ibm.virtualization.recharge.actions.LoginAction"
+			validate="false">
+			<forward name="forgotPassword"
+				path="/jsp/authentication/ForgotPassword.jsp" />
+			<forward name="loginFailure"
+				path="/jsp/authentication/login.jsp" />
+		</action>
+		<action name="AuthenticationFormBean" path="/forgotPassword"
+			scope="request"
+			type="com.ibm.virtualization.recharge.actions.LoginAction"
+			validate="false">
+			<forward name="forgotPwdSuccess"
+				path="/jsp/authentication/login.jsp" />
+			<forward name="forgotPassword"
+				path="/jsp/authentication/ForgotPassword.jsp" />
+			<forward name="loginFailure"
+				path="/errors/error404Page.jsp" />
+		</action>
+
+
+		<!-- Actions created by Sachin -->
+		<action name="HBOCreateUserForm" path="/initCreateUser"
+			scope="request" parameter="methodName"
+			type="com.ibm.hbo.actions.HBOCreateUserAction" validate="false">
+			<forward name="initCreateUser" path="createUser.page" />
+			<forward name="CreateUserFailure" path="createUser.page" />
+		</action>
+		<action name="HBOCreateUserForm" path="/initUserWarehouse"
+			parameter="methodName" scope="request"
+			type="com.ibm.hbo.actions.HBOCreateUserAction" validate="false">
+			<forward name="initCreateUser" path="createUser.page" />
+			<forward name="CreateUserFailure" path="createUser.page" />
+		</action>
+		<action name="HBOCreateUserForm" path="/createUser"
+			scope="request" parameter="methodName"
+			type="com.ibm.hbo.actions.HBOCreateUserAction" validate="false">
+			<forward name="UserCreatedSuccess" path="viewAllUsers.do" />
+			<forward name="CreateUserFailure" path="createUser.page" />
+		</action>
+		<action name="HBOViewUserFormBean" path="/viewAllUsers"
+			scope="request" type="com.ibm.hbo.actions.HBOViewUsersAction">
+			<forward name="viewAllUsers" path="viewAllUsers.page" />
+			<forward name="viewUserFailure" path="viewAllUsers.page" />
+		</action>
+		<action name="HBOViewUserFormBean" path="/viewUserDetails"
+			scope="request" type="com.ibm.hbo.actions.HBOViewUsersAction">
+			<forward name="viewUserDetails" path="viewUserDetails.page" />
+			<forward name="viewUserFailure" path="viewAllUsers.page" />
+		</action>
+		<action name="HBOViewUserFormBean" path="/initUpdateUser"
+			scope="request" type="com.ibm.hbo.actions.HBOViewUsersAction">
+			<forward name="editUser" path="editUser.page" />
+			<forward name="viewUserFailure" path="viewAllUsers.do" />
+		</action>
+		<action name="HBOViewUserFormBean" path="/UpdateUser"
+			scope="request" type="com.ibm.hbo.actions.HBOViewUsersAction">
+			<forward name="updateZoneSucess" path="viewAllUsers.do" />
+			<forward name="viewUserFailure" path="editUser.page" />
+		</action>
+		<action name="HBOChangePasswordFormBean"
+			path="/initChangePassword" scope="request"
+			type="com.ibm.hbo.actions.HBOChangePasswordAction">
+			<forward name="initchangePasswordSuccess"
+				path="changePassword.page" />
+			<forward name="changePasswordFailure"
+				path="changePassword.page" />
+		</action>
+		<action name="HBOChangePasswordFormBean" path="/ChangePassword"
+			scope="request" type="com.ibm.hbo.actions.HBOChangePasswordAction">
+			<forward name="changePasswordSuccess"
+				path="changePassword.page" />
+			<forward name="changePasswordFailure"
+				path="changePassword.page" />
+		</action>
+		<action path="/logout"
+			type="com.ibm.hbo.actions.HBOLogoutAction">
+			<forward name="logoutSuccess" path="jsp/Login.jsp" />
+			<forward name="logoutFailure" path="jsp/Login.jsp" />
+		</action>
+		<action name="HBOBusinessCategoryForm"
+			path="/initBusinessCategory" parameter="methodName" scope="request"
+			type="com.ibm.hbo.actions.HBOMasterAction" validate="false">
+			<forward name="success" path="viewBusinessCategory.page" />
+			<forward name="failure" path="jsp/errors/error404Page.jsp" />
+		</action>
+		<action name="HBOBusinessCategoryForm"
+			path="/createBusinessCategory" parameter="methodName" scope="request"
+			type="com.ibm.hbo.actions.HBOMasterAction" validate="false">
+			<forward name="success"
+				path="/initBusinessCategory.do?method=getValues" />
+			<forward name="failure"
+				path="/initBusinessCategory.do?method=getValues" />
+		</action>
+		<action name="HBOProductForm" path="/initProduct"
+			parameter="methodName" scope="request"
+			type="com.ibm.hbo.actions.HBOMasterAction" validate="false">
+			<forward name="success" path="viewProduct.page" />
+			<forward name="failure" path="jsp/errors/error404Page.jsp" />
+		</action>
+		<action name="HBOProductForm" path="/createProduct"
+			parameter="methodName" scope="request"
+			type="com.ibm.hbo.actions.HBOMasterAction" validate="false">
+			<forward name="success"
+				path="/initProduct.do?method=getValues" />
+			<forward name="failure"
+				path="/initProduct.do?method=getValues" />
+		</action>
+		<action name="HBOWarehouseForm" path="/initWarehouse"
+			parameter="methodName" scope="request"
+			type="com.ibm.hbo.actions.HBOMasterAction" validate="false">
+			<forward name="success" path="viewWarehouse.page" />
+			<forward name="failure" path="jsp/errors/error404Page.jsp" />
+		</action>
+		<action name="HBOWarehouseForm" path="/createWarehouse"
+			parameter="methodName" scope="request"
+			type="com.ibm.hbo.actions.HBOMasterAction" validate="false">
+			<forward name="success"
+				path="/initWarehouse.do?method=getValues" />
+			<forward name="failure"
+				path="/initWarehouse.do?method=getValues" />
+		</action>
+		<action name="HBOBundleStockForm" path="/initBundleStock"
+			parameter="methodName" scope="request"
+			type="com.ibm.hbo.actions.HBOStockAction" validate="false">
+			<forward name="success" path="createBundleStock.page" />
+			<forward name="failure" path="jsp/errors/error404Page.jsp" />
+		</action>
+		<action name="HBOBundleStockForm" path="/bundleStock"
+			parameter="methodName" scope="request"
+			type="com.ibm.hbo.actions.HBOStockAction" validate="false">
+			<forward name="success"
+				path="/viewBundledStock.do?methodName=getBundledStock" />
+			<forward name="failure" path="jsp/errors/error404Page.jsp" />
+		</action>
+		<action name="HBOWarrantyForm" path="/initWarranty"
+			parameter="methodName" scope="request"
+			type="com.ibm.hbo.actions.HBOWarrantyAction" validate="false">
+			<forward name="success" path="createWarranty.page" />
+			<forward name="failure" path="jsp/errors/error404Page.jsp" />
+		</action>
+		<action name="HBOWarrantyForm" path="/getWarranty"
+			parameter="methodName" scope="request"
+			type="com.ibm.hbo.actions.HBOWarrantyAction" validate="false">
+			<forward name="success" path="createWarranty.page" />
+			<forward name="failure" path="createWarranty.page" />
+		</action>
+		<action name="HBOWarrantyForm" path="/insertWarranty"
+			parameter="methodName" scope="request"
+			type="com.ibm.hbo.actions.HBOWarrantyAction" validate="false">
+			<forward name="success"
+				path="/initWarranty.do?method=getWarrantyPage" />
+			<forward name="failure" path="jsp/errors/error404Page.jsp" />
+		</action>
+
+
+
+		<!-- Actions created by Aditya -->
+		<action name="HBOMinReorderForm" path="/initMinReorder"
+			scope="request" parameter="methodName"
+			type="com.ibm.hbo.actions.HBOMinReorderAction" validate="false">
+			<forward name="success" path="viewMinReorder.page" />
+			<forward name="failure" path="jsp/errors/error404Page.jsp" />
+		</action>
+		<action name="HBOMinReorderForm" path="/MinReorder"
+			scope="request" parameter="methodName"
+			type="com.ibm.hbo.actions.HBOMinReorderAction" validate="true"
+			input="/initMinReorder.do?method=getValues">
+			<forward name="success"
+				path="/initMinReorder.do?method=getValues" />
+			<forward name="failure" path="viewMinReorder.page" />
+		</action>
+		<action name="HBOAssignProdStockForm"
+			path="/initAssignProdStock" parameter="methodName" scope="request"
+			type="com.ibm.hbo.actions.HBOProdAction" validate="false">
+			<forward name="success" path="assignProdStock.page" />
+			<forward name="failure" path="jsp/errors/error404Page.jsp" />
+		</action>
+		<action name="HBOAssignProdStockForm" path="/AssignProdStock"
+			parameter="methodName" scope="request"
+			type="com.ibm.hbo.actions.HBOProdAction" validate="true"
+			input="/initAssignProdStock.do?methodName=getValues">
+			<forward name="success"
+				path="initViewAssignedStockDetails.do?methodName=viewAssignedStock" />
+			<forward name="failure" path="jsp/errors/error404Page.jsp" />
+		</action>
+		<action name="HBOProjectionForm" path="/initProjectionStock"
+			parameter="methodName" scope="request"
+			type="com.ibm.hbo.actions.HBOProjectionAction" validate="false">
+			<forward name="success" path="ProjectionStock.page" />
+			<forward name="failure" path="jsp/errors/error404Page.jsp" />
+		</action>
+		<action name="HBOProjectionForm" path="/projectionStock"
+			parameter="methodName" scope="request"
+			type="com.ibm.hbo.actions.HBOProjectionAction" validate="true">
+			<forward name="success"
+				path="/initProjectionStock.do?methodName=getValues" />
+			<forward name="failure"
+				path="/initProjectionStock.do?methodName=getValues" />
+		</action>
+		<action name="HBOProjectionForm"
+			path="/initProjectionBulkUpload" parameter="methodName"
+			scope="request" type="com.ibm.hbo.actions.HBOProjectionAction"
+			validate="false">
+			<forward name="success" path="BulkProjectionUpload.page" />
+			<forward name="failure" path="jsp/errors/error404Page.jsp" />
+		</action>
+		<action path="/projectionBulkUpload" name="HBOProjectionForm"
+			type="com.ibm.hbo.actions.HBOProjectionAction" parameter="methodName"
+			validate="false">
+			<forward name="success" path="BulkProjectionUpload.page" />
+			<forward name="failure" path="jsp/errors/error404Page.jsp" />
+		</action>
+		<!-- Mark As Damage by File Upload : by Anju -->
+		<action path="/initUploadDamageFile" name="HBOFileUploadForm"
+			parameter="methodName" scope="request"
+			type="com.ibm.hbo.actions.HBOMarkDamagedAction" validate="false">
+			<forward name="loadpage" path="uploadDamageFile.page"></forward>
+			<forward name="success"
+				path="/initUploadDamageFile.do?methodName=loadPage" />
+		</action>
+		<action name="HBOMarkDamagedForm" path="/initMarkDamaged"
+			parameter="methodName" scope="request"
+			type="com.ibm.hbo.actions.HBOMarkDamagedAction" validate="false">
+			<forward name="success" path="markDamaged.page" />
+			<forward name="damage_success"
+				path="/markDamaged.do?method=getValues" />
+			<forward name="failure" path="jsp/errors/error404Page.jsp" />
+		</action>
+		<action name="HBOMarkDamagedForm" path="/initViewMarkDamaged"
+			parameter="methodName" scope="request"
+			type="com.ibm.hbo.actions.HBOMarkDamagedAction" validate="false">
+			<forward name="success"
+				path="/viewStockBatchDetailsDamage.do?methodName=viewBatchDetailsDamage" />
+			<forward name="failure" path="jsp/errors/error404Page.jsp" />
+		</action>
+		<action name="HBOMarkDamagedForm" path="/markDamaged"
+			parameter="methodName" scope="request"
+			type="com.ibm.hbo.actions.HBOMarkDamagedAction" validate="false">
+			<forward name="success" path="markDamaged.page" />
+			<forward name="failure" path="jsp/errors/error404Page.jsp" />
+		</action>
+		<action name="HBOMarkDamagedForm" path="/viewMarkDamaged"
+			parameter="methodName" scope="request"
+			type="com.ibm.hbo.actions.HBOMarkDamagedAction" validate="false">
+			<forward name="success" path="viewMarkDamaged.page" />
+			<forward name="failure" path="jsp/errors/error404Page.jsp" />
+		</action>
+		<action name="HBOMarkDamagedForm" path="/initMarkDamagedDirect"
+			parameter="methodName" scope="request"
+			type="com.ibm.hbo.actions.HBOMarkDamagedAction" validate="false">
+			<forward name="success" path="markDamageDirect.page" />
+			<forward name="failure" path="jsp/errors/error404Page.jsp" />
+		</action>
+		<action name="HBOMarkDamagedForm" path="/markDamagedDirect"
+			parameter="methodName" scope="request"
+			type="com.ibm.hbo.actions.HBOMarkDamagedAction" validate="false">
+			<forward name="successpath"
+				path="/initMarkDamagedDirect.do?methodName=populate" />
+			<forward name="failure" path="jsp/errors/error404Page.jsp" />
+		</action>
+		<action name="HBOMarkDamagedForm"
+			path="/markDamagedDirectUnbundled" parameter="methodName"
+			scope="request" type="com.ibm.hbo.actions.HBOMarkDamagedAction"
+			validate="false">
+			<forward name="successpath"
+				path="/markDamagedDirect.do?methodName=markDirectDmg" />
+			<forward name="failure" path="jsp/errors/error404Page.jsp" />
+		</action>
+		<action name="AssignDistStockForm" path="/initAssignADStock"
+			parameter="methodName" scope="request"
+			type="com.ibm.hbo.actions.AssignADStockAction" validate="false">
+			<forward name="initAssignADStock" path="assignAdStock.page" />
+			<forward name="initAssignToFSE" path="assignToFSE.page" />
+			<forward name="stockReturn" path="returnStock.page" />
+			<!-- rajiv jha add for return to fse start -->
+			<forward name="stockReturnToFSE"
+				path="returnStockToFSE.page" />
+			<!-- rajiv jha add for return to fse end -->
+			<!-- rajiv jha add for return fresh stock to warehouse start -->
+			<forward name="returnFreshStockToWH"
+				path="returnStockToWH.page" />
+			<!-- rajiv jha add for return fresh stock to warehouse end -->
+
+			<forward name="assignADStock" path="assignAdStock.page" />
+			<forward name="exportAssignStock"
+				path="exportAssignStock.page">
+			</forward>
+			<forward name="downloadData"
+				path="/ExportAssignStockServlet">
+			</forward>
+			<forward name="failure" path="jsp/errors/error404Page.jsp" />
+			<forward name="error" path="./jsp/common/error.jsp" />
+		</action>
+		<!-- Added by Priya -->
+		<action name="SwapDOAStockForm" path="/initSwapDOAStock"
+			parameter="methodName" scope="request"
+			type="com.ibm.hbo.actions.SwapDOAStockAction" validate="false">
+			<forward name="initAssignADStock" path="assignAdStock.page" />
+			<forward name="initAssignToFSE" path="assignToFSE.page" />
+			<forward name="stockReturn" path="returnStock.page" />
+			<!-- rajiv jha add for return to fse start -->
+			<forward name="stockReturnToFSE"
+				path="returnStockToFSE.page" />
+			<!-- rajiv jha add for return to fse end -->
+			<!-- rajiv jha add for return fresh stock to warehouse start -->
+			<forward name="returnFreshStockToWH"
+				path="swapDOAStockToWH.page" />
+			<!-- rajiv jha add for return fresh stock to warehouse end -->
+
+			<forward name="assignADStock" path="assignAdStock.page" />
+			<forward name="exportAssignStock"
+				path="exportAssignStock.page">
+			</forward>
+			<forward name="downloadData"
+				path="/ExportAssignStockServlet">
+			</forward>
+			<forward name="failure" path="jsp/errors/error404Page.jsp" />
+			<forward name="error" path="./jsp/common/error.jsp" />
+		</action>
+		
+		<action path="/initReport" name="HBOReportForm"
+			type="com.ibm.hbo.actions.HBOReportsAction" parameter="methodName"
+			scope="request" validate="false">
+			<forward name="success" path="Report.page" />
+			<!-- Parul  -->
+			<forward name="successReport14"
+				path="reportMinreorder.page" />
+			<forward name="successReport8" path="reportProjection.page" />
+			<forward name="successReport82"
+				path="reportProjAnnual.page" />
+			<forward name="successReport9" path="reportVariance.page" />
+			<forward name="success1" path="reportViewReqHome.page" />
+			<forward name="success2" path="reportViewReqSummary.page" />
+			<forward name="success3" path="primarySalesReport.page" />
+			<forward name="success4" path="imeaReport.page" />
+			<forward name="success5"
+				path="/Report.do?method=getReportData" />
+			<forward name="successReport13" path="reportDamaged.page" />
+			<forward name="failure" path="jsp/errors/error404Page.jsp" />
+		</action>
+
+		<action path="/Report" name="HBOReportForm"
+			type="com.ibm.hbo.actions.HBOReportsAction" parameter="methodName"
+			scope="request" validate="false">
+			<forward name="successReport1"
+				path="/initReport.do?method=getData" />
+			<!-- Parul  -->
+			<forward name="successReport13"
+				path="/initReport.do?method=getData" />
+			<forward name="successReport14"
+				path="/initReport.do?method=getData" />
+			<forward name="successReport8"
+				path="/initReport.do?method=getData" />
+			<forward name="successReport82"
+				path="/initReport.do?method=getData" />
+			<forward name="successReport9"
+				path="/initReport.do?method=getData" />
+			<forward name="success" path="/initReport.do" />
+			<forward name="successReport2"
+				path="/initReport.do?method=getData" />
+			<forward name="successReport3"
+				path="/initReport.do?method=getData" />
+			<forward name="successReport4"
+				path="/initReport.do?method=getData" />
+			<forward name="successReport5"
+				path="/initReport.do?method=getData" />
+			<forward name="successReport6" path="simReport.page" />
+			<forward name="failure" path="jsp/errors/error404Page.jsp" />
+		</action>
+
+		<action name="HBOReportForm" path="/reportExcel"
+			parameter="methodName" scope="request"
+			type="com.ibm.hbo.actions.HBOReportsAction" validate="false">
+			<forward name="successReport1" path="jsp/reportExcel.jsp" />
+			<!-- Parul  -->
+			<forward name="successReport13"
+				path="jsp/ReportDamagedExcel.jsp" />
+			<forward name="successReport14"
+				path="jsp/ReportMinreordeExcel.jsp" />
+			<forward name="successReport8"
+				path="jsp/ReportProjectionExcel.jsp" />
+			<!--Projection-->
+			<forward name="successReport82"
+				path="jsp/ReportProjAnnualExcel.jsp" />
+			<forward name="successReport9"
+				path="jsp/ReportVarianceExcel.jsp" />
+			<forward name="success" path="jsp/ReportExcel.jsp" />
+			<forward name="successReport2"
+				path="jsp/ReqReportExcel.jsp" />
+			<forward name="successReport3"
+				path="jsp/RequisitionSummaryExcel.jsp" />
+			<forward name="successReport4"
+				path="jsp/PrimarySalesExcel.jsp" />
+			<forward name="successReport5"
+				path="jsp/ImeaReportExcel.jsp" />
+			<forward name="successReport6"
+				path="jsp/SimReportExcel.jsp" />
+			<forward name="failure" path="jsp/errors/error404Page.jsp" />
+		</action>
+		<!-- Action Mappings created by Parul -->
+		<action name="HBOAssignSimStockForm" path="/initAssignSimStock"
+			parameter="methodName" scope="request"
+			type="com.ibm.hbo.actions.HBOStockAction" validate="false">
+			<forward name="success" path="assignSimStock.page" />
+			<forward name="failure" path="jsp/errors/error404Page.jsp" />
+		</action>
+		<action name="HBOAssignSimStockForm" path="/AssignSimStock"
+			parameter="methodName" scope="request"
+			type="com.ibm.hbo.actions.HBOStockAction" validate="true"
+			input="/initAssignSimStock.do?methodName=initAssignSimStock">
+			<forward name="success"
+				path="/viewAssignedSimStock.do?methodName=getSimStockList" />
+			<forward name="failure"
+				path="/initAssignSimStock.do?methodName=getValues" />
+		</action>
+		<action name="HBOVerifySimStockForm" path="/initVerifySimStock"
+			parameter="methodName" scope="request"
+			type="com.ibm.hbo.actions.HBOStockAction" validate="false">
+			<forward name="success" path="verifySimStock.page" />
+			<forward name="failure" path="jsp/errors/error404Page.jsp" />
+		</action>
+		<action name="HBOVerifySimStockForm" path="/VerifySimStock"
+			parameter="methodName" scope="request"
+			type="com.ibm.hbo.actions.HBOStockAction" validate="false">
+			<forward name="success"
+				path="/initVerifySimStock.do?methodName=verifySimStockList" />
+			<forward name="failure" path="jsp/errors/error404Page.jsp" />
+		</action>
+		<action name="HBOViewSimStockForm" path="/viewBatchDetails"
+			parameter="methodName" scope="request"
+			type="com.ibm.hbo.actions.HBOStockAction" validate="false">
+			<forward name="success" path="viewBatchDetails.page" />
+			<forward name="failure" path="jsp/errors/error404Page.jsp" />
+		</action>
+
+		<action name="HBOVerifySimStockForm"
+			path="/viewAssignedSimStock" parameter="methodName" scope="request"
+			type="com.ibm.hbo.actions.HBOStockAction" validate="false">
+			<forward name="success" path="viewAssignedSimStock.page" />
+			<forward name="failure" path="jsp/errors/error404Page.jsp" />
+		</action>
+		<action name="HBOViewBundledStockForm" path="/viewBundledStock"
+			parameter="methodName" scope="request"
+			type="com.ibm.hbo.actions.HBOStockAction" validate="false">
+			<forward name="success" path="viewBundledStock.page" />
+			<forward name="failure" path="jsp/errors/error404Page.jsp" />
+		</action>
+		<action name="HBOViewBundledStockForm"
+			path="/viewBundledStockDetails" parameter="methodName"
+			scope="request" type="com.ibm.hbo.actions.HBOStockAction"
+			validate="false">
+			<forward name="success" path="viewBundleDetails.page" />
+			<forward name="failure" path="jsp/errors/error404Page.jsp" />
+		</action>
+		<action name="HBOFileUploadForm" path="/initSimFileUpload"
+			parameter="methodName" scope="request"
+			type="com.ibm.hbo.actions.HBOFileUploadAction" validate="false">
+			<forward name="initSimUpload" path="FileUpload.page" />
+			<forward name="failure"
+				path="jsp/errors/ErrorPage_FileUpload.jsp" />
+		</action>
+		<action name="HBOFileUploadForm" path="/initFileUpload"
+			parameter="methodName" scope="request"
+			type="com.ibm.hbo.actions.HBOFileUploadAction" validate="false">
+			<forward name="success" path="FileUpload.page" />
+			<forward name="failure"
+				path="jsp/errors/ErrorPage_FileUpload.jsp" />
+		</action>
+		<action name="HBOFileUploadForm" path="/insertBulkDataAction"
+			scope="request" parameter="methodName"
+			type="com.ibm.hbo.actions.HBOFileUploadAction">
+			<forward name="success" path="jsp/hbo/FileUploadSucess.jsp" />
+			<forward name="failure" path="FileUpload.page" />
+		</action>
+		<action name="HBOFileUploadForm" path="/bulkDataAction"
+			parameter="methodName" scope="request"
+			type="com.ibm.hbo.actions.HBOFileUploadAction">
+			<forward name="success" path="uploadFileReport.page" />
+			<forward name="failure" path="jsp/hbo/UploadFileReport.jsp" />
+		</action>
+		<action name="HBOFileUploadForm" path="/status" scope="request"
+			type="com.ibm.hbo.actions.HBOFileUploadStatus">
+			<forward name="success"
+				path="messageBulkRecordSummary.page" />
+			<forward name="failure"
+				path="messageBulkRecordSummary.page" />
+		</action>
+		<action name="HBOFileUploadForm" path="/statusDetails"
+			parameter="methodName" scope="request"
+			type="com.ibm.hbo.actions.HBOFileUploadStatus">
+			<forward name="success"
+				path="messageBulkRecordSummary.page" />
+			<forward name="failure"
+				path="messageBulkRecordSummary.page" />
+		</action>
+
+
+
+		<!-- Action Mapings Created by Siddhartha-->
+		<action path="/initCreateRequisition" name="HBORequisitionForm"
+			type="com.ibm.hbo.actions.HBORequisitionAction"
+			parameter="methodName" validate="false" scope="request">
+			<forward name="success" path="createRequisition.page" />
+			<forward name="failure" path="jsp/errors/error404Page.jsp" />
+		</action>
+		<action path="/initCreateRequisitionValidation"
+			name="HBORequisitionForm"
+			type="com.ibm.hbo.actions.HBORequisitionAction"
+			parameter="methodName" validate="false" scope="request">
+			<forward name="success"
+				path="/jsp/hbo/CreateRequisition.jsp" />
+			<forward name="failure" path="jsp/errors/error404Page.jsp" />
+		</action>
+		<action path="/createRequisition" name="HBORequisitionForm"
+			type="com.ibm.hbo.actions.HBORequisitionAction"
+			parameter="methodName" validate="true"
+			input="/initCreateRequisition.do?methodName=populateValues"
+			scope="request">
+			<forward name="success"
+				path="/initCreateRequisition.do?methodName=populateValues" />
+			<forward name="error"
+				path="/initCreateRequisition.do?methodName=populateValues" />
+		</action>
+		<action path="/initViewRequisition" name="HBORequisitionForm"
+			type="com.ibm.hbo.actions.HBORequisitionAction"
+			parameter="methodName" validate="false">
+			<forward name="success" path="messageViewRequisition.page" />
+			<forward name="failure" path="jsp/errors/error404Page.jsp" />
+		</action>
+		<action path="/viewAssignedStock" name="HBOAssignStockForm"
+			type="com.ibm.hbo.actions.HBOAcceptRejectHandsetsAction"
+			parameter="methodName" validate="false" scope="request">
+			<forward name="success" path="viewAssignedStock.page" />
+			<forward name="failure" path="jsp/errors/error404Page.jsp" />
+		</action>
+		<action path="/viewBatch" name="HBOAssignStockForm"
+			type="com.ibm.hbo.actions.HBOAcceptRejectHandsetsAction"
+			parameter="methodName" validate="false">
+			<forward name="success"
+				path="messageViewStockBatchDetails.page" />
+			<forward name="failure" path="jsp/errors/error404Page.jsp" />
+		</action>
+		<action path="/viewStockBatchDetails" name="HBOAssignStockForm"
+			type="com.ibm.hbo.actions.HBOAcceptRejectHandsetsAction"
+			parameter="methodName" validate="false">
+			<forward name="success"
+				path="messageViewStockBatchDetails.page" />
+			<forward name="failure" path="jsp/errors/error404Page.jsp" />
+		</action>
+		<action path="/viewStockBatchDetailsDamage"
+			name="HBOAssignStockForm"
+			type="com.ibm.hbo.actions.HBOAcceptRejectHandsetsAction"
+			parameter="methodName" validate="false">
+			<forward name="success"
+				path="messageViewStockBatchDetails.page" />
+			<forward name="failure" path="jsp/errors/error404Page.jsp" />
+		</action>
+		<action path="/initAcceptRejectStock" name="HBOAssignStockForm"
+			type="com.ibm.hbo.actions.HBOAcceptRejectHandsetsAction"
+			parameter="methodName" validate="false" scope="request">
+			<forward name="success"
+				path="messageAcceptRejectStock.page" />
+			<forward name="error" path="jsp/errors/error404Page.jsp" />
+		</action>
+		<action path="/acceptRejectStock" name="HBOAssignStockForm"
+			type="com.ibm.hbo.actions.HBOAcceptRejectHandsetsAction"
+			parameter="methodName" validate="false" scope="request">
+			<forward name="success"
+				path="/initAcceptRejectStock.do?methodName=viewStock" />
+			<forward name="failure" path="jsp/errors/error404Page.jsp" />
+		</action>
+		<action path="/initViewAssignedStockDetails"
+			name="HBOAssignStockForm"
+			type="com.ibm.hbo.actions.HBOAcceptRejectHandsetsAction"
+			parameter="methodName" validate="false" scope="request">
+			<forward name="success"
+				path="messageViewAssignedStock.page" />
+			<forward name="failure" path="jsp/errors/error404Page.jsp" />
+		</action>
+		<!-- End of Action Mapping created by Siddhartha -->
+		<!-- Start of Action Mapping created by Anju -->
+		<action path="/initSendEmail" name="HBOSendEmailForm"
+			type="com.ibm.hbo.actions.HBOSendEmailAction" scope="request"
+			parameter="methodName" validate="false">
+			<forward name="reachPage"
+				path="jsp/DP_Portal/SendEmail.jsp" />
+		</action>
+		<action path="/sendEmail" name="HBOSendEmailForm"
+			type="com.ibm.hbo.actions.HBOSendEmailAction" parameter="methodName"
+			validate="false">
+			<forward name="SendEmail"
+				path="/initSendEmail.do?methodName=sendEmailMethod" />
+			<forward name="failure" path="jsp/errors/error404Page.jsp" />
+		</action>
+		<action path="/initUnbarringAction"
+			name="ReportForUnbarringForm"
+			type="com.ibm.hbo.actions.ReportForUnbarringAction"
+			parameter="methodName" scope="request">
+			<forward name="success"
+				path="jsp/report/ReportForUnbarring.jsp" />
+		</action>
+
+		<!-- End of HBO Actions -->
+		<!--  Changes by Anju -->
+		<action path="/createBeatAction" name="DPCreateBeatForm"
+			type="com.ibm.dp.actions.DPCreateBeatAction" scope="request"
+			parameter="methodName">
+			<forward name="initSuccess"
+				path="./jsp/account/createBeat.jsp" />
+			<forward name="createBeatSuccess"
+				path="/createBeatAction.do?methodName=init" />
+			<forward name="createBeatFailure"
+				path="/createBeatAction.do?methodName=init" />
+			<forward name="searchBeatPage"
+				path="./jsp/account/showBeatList.jsp" />
+			<forward name="showListJsp"
+				path="/createBeatAction.do?methodName=callViewBeatList" />
+			<forward name="editBeatPage"
+				path="./jsp/account/editBeat.jsp" />
+			<forward name="updationSuccess"
+				path="/createBeatAction.do?methodName=callViewBeatList" />
+			<forward name="updationFaluire"
+				path="/createBeatAction.do?methodName=callViewBeatList" />
+		</action>
+
+		<action path="/initCreateAccount" name="DPCreateAccountForm"
+			type="com.ibm.dp.actions.DPCreateAccountAction" scope="request"
+			parameter="methodName">
+			<forward name="createAccount"
+				path="./jsp/account/createAccount.jsp" />
+			<forward name="openAccount"
+				path="/initCreateAccount.do?methodName=init" />
+			<forward name="updateUserInfo"
+				path="/initCreateAccount.do?methodName=editAccount" />
+			<forward name="showList"
+				path="/initCreateAccount.do?methodName=showList" />
+			<forward name="showListJsp"
+				path="./jsp/account/searchAccount.jsp" />			
+			<forward name="backPage" path="/initCreateAccount.do" />
+			<forward name="UsedLoginId"
+				path="/initCreateAccount.do?methodName=init" />
+			<forward name="editAccountDetails"
+				path="./jsp/account/editAccount.jsp" />
+			<forward name="viewAccountDetails"
+				path="./jsp/account/viewAccount.jsp" />
+			<forward name="nonGsdUserIdPassword"
+				path="/initCreateAccount.do?methodName=init" />
+			<forward name="showSearchAccountJsp"
+				path="./jsp/account/searchAccount.jsp" />
+			<forward name="searchAccount"
+				path="/initCreateAccount.do?methodName=callSearchAccount" />
+			<forward name="error"
+				path="/initCreateAccount.do?methodName=init" />
+			<forward name="parentaccountlist"
+				path="./jsp/account/searchParentAccount.jsp" />
+			<forward name="finddistributor"
+				path="./jsp/account/searchDistributor.jsp" />
+			<forward name="listAccountExport"
+				path="./jsp/account/listAccountExport.jsp" />
+			<forward name="listAggregateExport"
+				path="./jsp/account/listAggregateExport.jsp" />
+			<forward name="AggregateList"
+				path="./jsp/account/AggregateView.jsp" />
+			<forward name="billablelist"
+				path="./jsp/account/searchBillableAccount.jsp" />
+		</action>
+		<!--  	<action path="/CreateAccount" name="DPCreateAccountForm"
+			type="com.ibm.dp.actions.DPCreateAccountAction" scope="request"
+			parameter="methodName" validate="true" input="/initCreateAccount.do?methodName=init">
+			
+			</action>	-->
+
+		<!-- Action Mapping For create DP Product by vivek  -->
+		<action path="/initDPCreateProductAction"
+			attribute="DPCreateProductFormBean" name="DPCreateProductFormBean"
+			type="com.ibm.virtualization.recharge.actions.DPCreateProductAction"
+			parameter="methodName" scope="request">
+			<forward name="success"
+				path="./jsp/DPproduct/CreateProductDP.jsp">
+			</forward>
+			<forward name="successfully in DPMasterServiceImpl"
+				path="/initDPCreateProductAction.do?methodName=init">
+			</forward>
+			<forward name="failure"
+				path="/jsp/DPproduct/CreateProductDP.jsp">
+			</forward>
+		</action>
+		<action path="/DPCreateProductAction"
+			attribute="DPCreateProductFormBean" name="DPCreateProductFormBean"
+			type="com.ibm.virtualization.recharge.actions.DPCreateProductAction"
+			parameter="methodName" validate="true" scope="request"
+			input="/initDPCreateProductAction.do?methodName=init">
+
+			<forward name="success"
+				path="/jsp/DPproduct/CreateProductDP.jsp">
+			</forward>
+			<forward name="successfully in DPMasterServiceImpl"
+				path="/initDPCreateProductAction.do?methodName=init">
+			</forward>
+			<forward name="failure"
+				path="/jsp/DPproduct/CreateProductDP.jsp">
+			</forward>
+		</action>
+
+		<action path="/DPViewProductAction"
+			attribute="DPViewProductFormBean" name="DPViewProductFormBean"
+			type="com.ibm.virtualization.recharge.actions.DPViewProductAction"
+			parameter="methodName" validate="false" scope="request">
+
+			<forward name="success"
+				path="/jsp/DPproduct/DPViewProduct.jsp">
+			</forward>
+			<forward name="successfully in DPMasterServiceImpl"
+				path="/DPViewProductAction.do?methodName=select">
+			</forward>
+			<forward name="failure"
+				path="/jsp/DPproduct/DPViewProduct.jsp">
+			</forward>
+			<forward name="success1"
+				path="/jsp/DPproduct/dpProductReportExcel.jsp">
+			</forward>
+		</action>
+		<action path="/DPEditProductAction"
+			attribute="DPViewProductFormBean" name="DPViewProductFormBean"
+			type="com.ibm.virtualization.recharge.actions.DPEditProductAction"
+			parameter="methodName" validate="false" scope="request">
+			<forward name="ProductDetails"
+				path="/jsp/DPproduct/DPEditProduct.jsp">
+			</forward>
+			<forward name="success"
+				path="/DPViewProductAction.do?methodName=select">
+			</forward>
+			<forward name="failure"
+				path="/jsp/DPproduct/DPEditProduct.jsp">
+			</forward>
+		</action>
+
+		<action path="/initMinReorderAction"
+			attribute="MinReorderFormBean" name="MinReorderFormBean"
+			type="com.ibm.virtualization.recharge.actions.MinReorderAction"
+			parameter="methodName" validate="false" scope="request">
+
+			<forward name="success" path="/jsp/hbo/MinReorder.jsp">
+			</forward>
+			<!--  <forward name="success1" path="/DPEditProductAction.do?methodName=Updatedata"> 
+				</forward> -->
+			<forward name="failure"
+				path="jsp/errors/error404Page.jsp">
+			</forward>
+		</action>
+		<action path="/MinReorderAction" attribute="MinReorderFormBean"
+			name="MinReorderFormBean"
+			type="com.ibm.virtualization.recharge.actions.MinReorderAction"
+			parameter="methodName" validate="false" scope="session">
+
+			<forward name="success" path="/jsp/hbo/MinReorder.jsp">
+			</forward>
+			<!--  <forward name="success1" path="/DPEditProductAction.do?methodName=Updatedata"> 
+				</forward> -->
+			<forward name="success"
+				path="/MinReorderAction.do?methodName=getValues">
+			</forward>
+			<forward name="failure"
+				path="jsp/errors/error404Page.jsp">
+			</forward>
+		</action>
+
+		<action path="/MinReorderAction" attribute="MinReorderFormBean"
+			name="MinReorderFormBean"
+			type="com.ibm.virtualization.recharge.actions.MinReorderAction"
+			parameter="methodName" validate="false" scope="session">
+
+
+			<forward name="success1" path="/jsp/hbo/MinReorder.jsp">
+			</forward>
+			<forward name="failure"
+				path="jsp/errors/error404Page.jsp">
+			</forward>
+		</action>
+
+
+
+		<action path="/DPViewWarrantyAction"
+			attribute="DPEditWarrantyFormBean" name="DPEditWarrantyForm"
+			type="com.ibm.virtualization.recharge.actions.DPViewWarrantyAction"
+			parameter="methodName" validate="false" scope="request">
+
+			<forward name="Success"
+				path="/jsp/warranty management/WarrantyManagement.jsp">
+			</forward>
+			<forward name="editWarrantyDetails"
+				path="/jsp/warranty management/WarrantyManagement.jsp">
+			</forward>
+			<forward name="error" path="jsp/errors/error404Page.jsp">
+			</forward>
+		</action>
+
+		<action path="/DPEditWarrantyAction"
+			attribute="DPEditWarrantyFormBean" name="DPEditWarrantyForm"
+			type="com.ibm.virtualization.recharge.actions.DPEditWarrantyAction"
+			parameter="methodName" validate="false" scope="request">
+			<forward name="editWarrantyDetails"
+				path="/jsp/warranty management/WarrantyManagement.jsp">
+			</forward>
+			<forward name="editWarrantyDetails"
+				path="/DPViewWarrantyAction.do?methodName=UpdateWarrantydata">
+			</forward>
+			<forward name="success"
+				path="/jsp/warranty management/WarrantyManagement.jsp">
+			</forward>
+			<forward name="failure"
+				path="jsp/errors/error404Page.jsp">
+			</forward>
+		</action>
+		<action path="/initUploadDistStock" name="HBOFileUploadForm"
+			type="com.ibm.hbo.actions.DistUploadStock" parameter="methodName"
+			validate="false" scope="request">
+			<forward name="success" path="uploadDistStock.page" />
+			<forward name="failure" path="jsp/errors/error404Page.jsp" />
+		</action>
+
+		<action path="/uploadDistStockAction" name="HBOFileUploadForm"
+			type="com.ibm.hbo.actions.DistUploadStock" parameter="methodName"
+			validate="false" scope="request">
+			<forward name="success"
+				path="/initUploadDistStock.do?methodName=fileUpload" />
+			<forward name="failure" path="jsp/errors/error404Page.jsp" />
+		</action>
+		<action path="/LocationData" name="LocationDataBean"
+			type="com.ibm.dp.actions.LocationDataAction" parameter="methodName"
+			validate="false" scope="request">
+			<forward name="initViewLoc" path="viewLocationData.page" />
+			<forward name="EditLocation" path="editLocationData.page" />
+			<forward name="Success"
+				path="/LocationData.do?methodName=initView" />
+			<forward name="failure" path="jsp/errors/error404Page.jsp" />
+		</action>
+		<action path="/downloadFile" name="HBOFileUploadForm"
+			type="com.ibm.dp.actions.DownloadAction" validate="false"
+			scope="request">
+			<forward name="initViewLoc" path="viewLocationData.page" />
+		</action>
+		<!-- bulk movement -->
+		<action path="/registrationOfAll" name="RegistrationOfAllBean"
+			type="com.ibm.virtualization.ussdactivationweb.actions.RegistrationOfAllAction"
+			validate="false" parameter="methodName" scope="request">
+			<forward name="INIT" path="bulkMovement.page" />
+			<forward name="SUCCESS" path="Success.jsp" />
+			<forward name="FAILURE" path="RegistrationOfAll.jsp" />
+			<forward name="viewProfile" path="ViewEditProfiles.jsp" />
+			<forward name="Profile" path="EditProfiles.jsp" />
+			<forward name="ERROR" path="Error.jsp"></forward>
+			<forward name="registeredNumber"
+				path="RegisteredNumber.jsp">
+			</forward>
+			<forward name="singleUpload"
+				path="SingleUploadMapping.jsp">
+			</forward>
+			<forward name="bulkUpload" path="BulkUploadMapping.jsp"></forward>
+			<forward name="initBusinessUser"
+				path="BusinessUserMovement.page">
+			</forward>
+		</action>
+
+		<!-- DP Reports -->
+		<action path="/initReportAction" name="DPReportForm"
+			type="com.ibm.dp.actions.DPReportAction" parameter="methodName"
+			validate="false" scope="request">
+			<forward name="initsuccess" path="dpReports.page" />
+			<forward name="success1"
+				path="/jsp/report/dpReportDump.jsp" />
+		</action>
+		<action path="/reportAction" name="DPReportForm"
+			type="com.ibm.dp.actions.DPReportAction" parameter="methodName"
+			validate="false" scope="request">
+			<forward name="initsuccess" path="dpReports.page" />
+			<forward name="success1"
+				path="/jsp/report/dpReportDumpNew.jsp" />
+			<forward name="success2"
+				path="/jsp/report/dpReportTertiaryNew.jsp" />
+			<forward name="success3"
+				path="/jsp/report/dpReportStock.jsp" />
+			<forward name="success4"
+				path="/jsp/report/dpReportPurchase.jsp" />
+			<forward name="success5"
+				path="/jsp/report/dpReportAgeingNew.jsp" />
+			<forward name="success6"
+				path="/jsp/report/dpReportNoOfRetailers.jsp" />
+			<forward name="success7"
+				path="/jsp/report/dpReportSalesSummaryNew.jsp" />
+			<forward name="successExcel1"
+				path="/jsp/report/dpReportDumpExcel.jsp" />
+			<forward name="successExcel"
+				path="jsp/report/dpReportsExcel.jsp" />
+		</action>
+		<action path="/reportActionExcel" name="DPReportForm"
+			type="com.ibm.dp.actions.DPReportAction" parameter="methodName"
+			validate="false" scope="request">
+			<forward name="successExcel1"
+				path="/jsp/report/dpReportDumpExcel.jsp" />
+			<forward name="successExcel2"
+				path="/jsp/report/dpReportTertiaryExcel.jsp" />
+			<forward name="success3"
+				path="/jsp/report/dpReportStockExcel.jsp" />
+			<forward name="success4"
+				path="/jsp/report/dpReportPurchaseExcel.jsp" />
+			<forward name="successExcel5"
+				path="/jsp/report/dpReportAgeingExcel.jsp" />
+			<forward name="success6"
+				path="/jsp/report/dpReportNoOfRetailersExcel.jsp" />
+			<forward name="successExcel7"
+				path="/jsp/report/dpReportSalesExcel.jsp" />
+			<forward name="successExcel"
+				path="jsp/report/dpReportsExcel.jsp" />
+		</action>
+		<action path="/viewSerialNoList" name="AssignDistStockForm"
+			type="com.ibm.hbo.actions.AssignADStockAction" parameter="methodName"
+			validate="false" scope="session">
+			<forward name="success" path="viewSerialNoList.page" />
+		</action>
+		<!-- Added by Naveen for adding validation of 70 in return to wharehouse scree -->
+		<action path="/viewSerialNoListforWH" name="AssignDistStockForm"
+			type="com.ibm.hbo.actions.AssignADStockAction" parameter="methodName"
+			validate="false" scope="session">
+			<forward name="success" path="viewSerialNoListWH.page" />
+		</action>
+
+		<!-- Add by harbans inventory status report -->
+		<action path="/initInventoryStatusReport"
+			name="DPInventoryStatusFormBean"
+			type="com.ibm.dp.actions.DPProductStatusReportAction"
+			parameter="methodName" validate="false" scope="request">
+			<forward name="initsuccess"
+				path="/jsp/report/DPStockInventoryStatus.jsp" />
+			<forward name="successExcel"
+				path="jsp/report/dpInventoryReportsExcel.jsp" />
+		</action>
+
+
+
+
+		<!-- Add by harbans inventory status report -->
+		<action path="/initExceptionReport" name="DPExceptionReportBean"
+			type="com.ibm.dp.actions.DPExceptionConsumedReport"
+			parameter="methodName" validate="false" scope="request">
+			<forward name="initsuccess"
+				path="/jsp/report/DPExceptionConsumptionReport.jsp" />
+			<forward name="successExcel"
+				path="jsp/report/DPExceptionConsumptionReportExcel.jsp" />
+		</action>
+
+
+
+		<!-- Add by harbans on report enhancement form consumption report -->
+		<action path="/initConsumptionReport"
+			name="DPReverseLogisticReportFormBean"
+			type="com.ibm.dp.actions.DPSCMConsumptionReport"
+			parameter="methodName" validate="false" scope="request">
+			<forward name="initsuccess"
+				path="/jsp/report/DPSCMConsumptionReport.jsp" />
+			<forward name="successExcelConsumption"
+				path="/jsp/report/DPSCMConsumptionReportExcel.jsp" />
+		</action>
+		<!-- End -->
+
+
+		<action path="/GenericReportsAction"
+			name="GenericReportsFormBean"
+			type="com.ibm.reports.actions.GenericReportsAction"
+			parameter="methodName" validate="false" scope="request">
+			<forward name="initsuccess" path="GenericReports.page" />
+			<forward name="initExcel"
+				path="/jsp/report/GenericReportsOutput.jsp" />
+			<forward name="initExcel_reco"
+				path="/jsp/misReport/recoDetailReportExcel.jsp" />
+			<forward name="reportsDownPage"
+				path="reports.down" />	
+				
+		</action>
+
+		<!-- Add by harbans inventory status report  -->
+		<action path="/initOpenStockDepleteReport"
+			name="DPOpenStockDepleteReportBean"
+			type="com.ibm.dp.actions.DPOpenStockDepleteReport"
+			parameter="methodName" validate="false" scope="request">
+			<forward name="initsuccess"
+				path="/jsp/report/DPOpenStockDepleteReport.jsp" />
+			<forward name="successExcel"
+				path="jsp/report/DPOpenStockDepleteReportExcel.jsp" />
+		</action>
+
+		<!-- Add by Nidhi -->
+		<action path="/initInterSSDStockTransferReport"
+			name="DPInterSSDStockTransferReportFormBean"
+			type="com.ibm.dp.actions.DPInterSSDStockTransferAction"
+			parameter="methodName" validate="false" scope="request">
+			<forward name="initsuccess"
+				path="InterSSDStockTransfer.page" />
+			<forward name="successExcel"
+				path="jsp/report/InterSSDStockTransferExcel.jsp" />
+
+		</action>
+
+		<action path="/CollectionDetailReport"
+			name="CollectionReportBean"
+			type="com.ibm.dp.actions.CollectionDetailReport"
+			parameter="methodName" validate="false" scope="request">
+			<forward name="initsuccess"
+				path="CollectionDetailsReport.page" />
+			<forward name="successExcel"
+				path="/jsp/reverse/CollectionDetailsReportExcel.jsp" />
+		</action>
+
+		<action path="/NonSerializedConsumptionReport"
+			name="NonSerializedConsumptionReportBean"
+			type="com.ibm.dp.actions.NonSerializedConsumptionReport"
+			parameter="methodName" validate="false" scope="request">
+			<forward name="initsuccess"
+				path="NonSerializedConsumptionReport.page" />
+			<forward name="successExcel"
+				path="/jsp/misReport/NonSerializedConsumptionReportExcel.jsp" />
+		</action>
+
+
+
+		<!--  code added by saumya for reverse logistic report -->
+
+		<action path="/reverseLogisticReport"
+			name="DPReverseLogisticReportFormBean"
+			type="com.ibm.dp.actions.DPReverseLogisticReportAction"
+			parameter="methodName" validate="false" scope="request">
+			<forward name="initsuccess"
+				path="/jsp/report/DPReverseLogisticReport.jsp" />
+			<forward name="successExcel"
+				path="jsp/report/DPReverseLogisticReportExcel.jsp" />
+		</action>
+
+		<!-- end of code by saumya -->
+
+		<!--  code added by saumya for detail report -->
+
+		<action path="/detailReport" name="DPDetailReportFormBean"
+			type="com.ibm.dp.actions.DPDetailReportAction" parameter="methodName"
+			validate="false" scope="request">
+			<forward name="initsuccess"
+				path="/jsp/report/DPDetailReport.jsp" />
+			<forward name="successExcel"
+				path="jsp/report/DPDetailReportExcel.jsp" />
+		</action>
+
+		<!-- end of code by saumya -->
+
+		<!-- added by saumya for PO status report -->
+
+		<action path="/POReport" name="DPReverseLogisticReportFormBean"
+			type="com.ibm.dp.actions.DPReverseLogisticReportAction"
+			parameter="methodName" validate="false" scope="request">
+			<forward name="initsuccess"
+				path="/jsp/report/DPPoStatusReport.jsp" />
+			<forward name="successExcel"
+				path="jsp/report/DPPoStatusReportExcel.jsp" />
+
+		</action>
+
+		<!-- code ended by saumya -->
+
+		<!-- added by saumya for in hand qty report -->
+
+		<action path="/inHandQtyReport"
+			name="DPReverseLogisticReportFormBean"
+			type="com.ibm.dp.actions.DPReverseLogisticReportAction"
+			parameter="methodName" validate="false" scope="request">
+			<forward name="initsuccess"
+				path="/jsp/report/DPInHandQty.jsp" />
+			<forward name="successExcelLastPO"
+				path="/jsp/report/DPInHandQtyReport.jsp" />
+		</action>
+
+		<!-- code ended by saumya -->
+
+
+
+		<action path="/distributorStockReport"
+			name="DPStockDetailsReportBean"
+			type="com.ibm.dp.actions.DPDistributorStockDetailReport"
+			parameter="methodName" validate="false" scope="request">
+			<forward name="initsuccess"
+				path="/jsp/report/DPDistributorStockDetailsReport.jsp" />
+			<forward name="successExcel"
+				path="jsp/report/DPDistributorStockDetailsReportExcel.jsp" />
+		</action>
+
+
+		<action path="/initStockDetailReport"
+			name="DPStockDetailsReportBean"
+			type="com.ibm.dp.actions.DPStockDetailReport" parameter="methodName"
+			validate="false" scope="session">
+			<forward name="initsuccess"
+				path="/jsp/report/DPStockCountDetailsReport.jsp" />
+			<forward name="successExcel"
+				path="jsp/report/DPStockDetailsReportsExcel.jsp" />
+		</action>
+
+		<action path="/WrongShipment" name="DPWrongShipmentBean"
+			type="com.ibm.dp.actions.DPWrongShipmentAction"
+			parameter="methodName" validate="false" scope="session">
+			<forward name="initsuccess"
+				path="jsp/hbo/WrongShipmentVerification.jsp" />
+			<forward name="successExcel"
+				path="jsp/hbo/WrongShipmentVerification.jsp" />
+				
+		</action>
+
+		<action path="/DeliveryChallanAccept"
+			name="DPDeliveryChallanAcceptBean"
+			type="com.ibm.dp.actions.DPDeliveryChallanAcceptAction"
+			parameter="methodName" scope="request" validate="false">
+
+			<forward name="init" path="DeliveryChallanAccept.page" />
+			<forward name="initViewSerialAndProduct"
+				path="DeliveryChallanAccept.ViewSerials.page" />
+		</action>
+		
+		<action path="/ErrorPO" 
+			name="ErrorPOBean"
+			type="com.ibm.dp.actions.ErrorPOAction"
+			parameter="methodName" scope="request" validate="false">
+			
+			<forward name="init" path="ErrorPO.page" />
+			<forward name="initViewErrorPODetails" path="ErrorPO.ViewErrorPoDetails.page" />
+		</action>
+					
+		<action path="/StbFlushOut"
+			name="StbFlushOutFormBean"
+			type="com.ibm.dp.actions.StbFlushOutAction"
+			parameter="methodName" scope="request" validate="false">
+
+	<forward name="init" path="StbFlushOut.page" />	
+			<forward name="uploadSuccess" path="StbFlushOut.page" />
+			<forward name="errorFile"
+				path="/jsp/configuration/FlushUploadExcel.jsp" />
+
+			<forward name="init" path="StbFlushOut.page" />         
+
+		</action>
+		
+		<!-- addding by Rohit -->
+		<action path="/stbFlushOutForDist"
+			name="CloseDistributorRecoBean"
+			type="com.ibm.reports.actions.CloseDistributorRecoAction"
+			parameter="methodName" scope="request" validate="false">
+		<forward name="initsuccess"
+				path="closeDistributorReco.page" />	
+				<forward name="detailedReportExcel" path="/jsp/misReport/closeDistributorRecoExportToExcel.jsp" />
+				<forward name="errorFile" path="/jsp/configuration/CloseRecoErrorUploadExcel.jsp" />
+		</action>
+	
+		
+<!-- ENd of addding by RAM -->
+
+		<action path="/missingStockApproval"
+			type="com.ibm.dp.actions.DPMissingStockApprovalAction"
+			name="dpMissingStockApprovalBean" scope="request"
+			parameter="methodName">
+			<forward name="viewMissingPODetails"
+				path="dpMissingStockPODetails.page">
+			</forward>
+			<forward name="submitSuccess"
+				path="./missingStockApproval.do?methodName=init" />
+
+			<forward name="init" path="dpMissingStockApproval.page"></forward>
+		</action>
+
+		<action path="/dpDistributorStockTransfer"
+			type="com.ibm.dp.actions.DPDistributorStockTransferAction"
+			name="DPDistributorStockTransferFormBean" scope="request"
+			parameter="methodName">
+
+			<forward name="init"
+				path="dpDistributorStockTransfer.page">
+			</forward>
+		</action>
+
+
+
+		<!-- Begin Added by Mohammad Aslam -->
+		<action path="/stockDeclaration" name="StockDeclarationBean"
+			type="com.ibm.dp.actions.StockDeclarationAction"
+			parameter="methodName" scope="request">
+			<forward name="initSuccess" path="stockDeclaration.page" />
+		</action>
+		<action path="/distributorDetails" name="StockDeclarationBean"
+			type="com.ibm.dp.actions.StockDeclarationAction"
+			parameter="methodName" scope="request">
+			<forward name="success"
+				path="./stockDeclaration.do?methodName=initStockDec" />
+			<forward name="successExcel"
+				path="./jsp/transaction/StockDeclarationExcel.jsp" />
+		</action>
+
+		<action path="/stockTransfer" name="StockTransferFormBean"
+			type="com.ibm.dp.actions.StockTransferAction" parameter="methodName"
+			scope="request">
+			<forward name="initSuccess" path="stockTransfer.page" />
+		</action>
+		<action path="/getTransferToDistributors"
+			name="StockTransferFormBean"
+			type="com.ibm.dp.actions.StockTransferAction" parameter="methodName"
+			scope="request" validate="false" />
+		<action path="/transferDetails" name="StockTransferFormBean"
+			type="com.ibm.dp.actions.StockTransferAction" parameter="methodName"
+			scope="request">
+			<forward name="success" path="stockTransfer.page" />
+		</action>
+		<action path="/viewStockSerialNoList"
+			name="StockTransferFormBean"
+			type="com.ibm.dp.actions.StockTransferAction" parameter="methodName"
+			validate="false" scope="session">
+			<forward name="success" path="viewStockSerialNoList.page" />
+		</action>
+		<!-- End Added by Mohammad Aslam -->
+
+		<!-- Add by harbans  -->
+		<action path="/initOpeningStockDepletion"
+			name="OpeningStockDepletionFormBean"
+			type="com.ibm.dp.actions.DPOpenStockDepletionAction"
+			parameter="methodName" scope="request">
+			<forward name="success" path="OpeningStock.Depletion.page" />
+		</action>
+		<!-- End -->
+
+		<!-- Add by Naveen -->
+		<action path="/interssdtransfer" name="InterSSDFormBean"
+			type="com.ibm.dp.actions.DPInterSSDTransferAction"
+			parameter="methodName" scope="request">
+			<forward name="success" path="interSSDTransfer.page" />
+			<forward name="successdetails"
+				path="interSSDTransfer.details.page" />
+		</action>
+		<!-- End -->
+
+
+		<!-- Added by Shilpa Khanna -->
+
+		<action path="/dcCreation" name="DpDcCreationBean"
+			type="com.ibm.dp.actions.DPDcCreation" parameter="methodName"
+			scope="request">
+			<forward name="initSuccess" path="dcCreation.page" />
+			<forward name="error" path="./jsp/common/error.jsp" />
+		</action>
+
+		<!-- Added by Shilpa Khanna Ends here -->
+
+
+
+
+
+		<!-- Add by harbans  Revers Collection -->
+		<action path="/ReverseCollection" name="DPReverseCollectionBean"
+			type="com.ibm.dp.actions.DPReverseCollectionAction"
+			parameter="methodName" scope="request">
+			<forward name="initsuccess"
+				path="ReverseCollection.init.page" />
+		</action>
+		<!-- End -->
+
+		<!-- Add by naveen Revers Collection Print DC Details -->
+
+		<action path="/printDCDetails" name="DPReverseCollectionBean"
+			type="com.ibm.dp.actions.DPPrintDCAction" parameter="methodName"
+			scope="session">
+			<forward name="initsuccess" path="dcdetails.PrintDC.page" />
+			<forward name="freshinitsuccess"
+				path="freshDCDetails.PrintDC.page" />
+			<forward name="churnsuccessinit" path="./jsp/reverse/churnPrintDC.jsp" />	
+			<forward name="error" path="./jsp/common/error.jsp" />
+		</action>
+		<!-- End -->
+
+		<!-- Added by DIGVIJAY SINGH THAKUR -->
+
+		<action path="/dcFreshStatus" name="DpDcFreshStatusBean"
+			type="com.ibm.dp.actions.DpDcFreshStatus" parameter="methodName"
+			scope="request">
+			<forward name="initSuccess" path="dcFreshStatus.page" />
+			<forward name="error" path="./jsp/common/error.jsp" />
+			<forward name="initSuccessDcStatus"
+				path="dcsrNoChangeStatus.page" />
+		</action>
+
+		<!-- Added by DIGVIJAY SINGH THAKUR Ends here -->
+
+		<!-- Added by Shilpa Khanna -->
+
+
+		<action path="/dcDamageStatus" name="DpDcDamageStatusBean"
+			type="com.ibm.dp.actions.DpDcDamageStatus" parameter="methodName"
+			scope="request">
+			<forward name="initSuccessDamage"
+				path="dcDamageStatus.page" />
+			<forward name="initSuccessFresh" path="dcDamageStatus.page" />
+
+			<forward name="error" path="./jsp/common/error.jsp" />
+			<forward name="initSuccessDcDamageStatus"
+				path="dcsrNoChangeStatus.page" />
+			<forward name="initSuccessDcFreshStatus"
+				path="dcsrNoFreshStatus.page" />
+			<forward name="initSuccessDcChurnStatus" 
+			    path="dcsrNoChurnStatus.page" />	
+			<forward name="freshinitsuccess"
+				path="freshDCDetails.PrintDC.page" />
+		</action>
+
+		<action path="/dcChangeStatus" name="DpDcDamageStatusBean"
+			type="com.ibm.dp.actions.DpDcDamageStatus" parameter="methodName"
+			scope="request">
+			<forward name="initSuccessDamage"
+				path="dcDamageStatus.page" />
+			<forward name="initSuccessFresh" path="dcChangeStatus.page" />
+			<forward name="initSuccess" path="dcChangeStatus.page" />
+			<forward name="error" path="./jsp/common/error.jsp" />
+		</action>
+
+		<action name="RecoSummaryFormBean" path="/recoSummaryAction"
+			parameter="methodName" scope="request"
+			type="com.ibm.dp.actions.RecoSummaryAction" validate="false">
+			<forward name="initSuccess" path="recoSummary.page" />
+			<forward name="recoSummary"
+				path="/recoSummaryAction.do?methodName=init" />
+			<forward name="failure" path="/errors/error404Page.jsp" />
+		</action>
+		<action path="/recoSummaryPaginationAction"
+			name="RecoSummaryFormBean"
+			type="com.ibm.dp.actions.RecoSummaryPaginationAction"
+			parameter="methodName" validate="false" scope="session">
+			<forward name="success" path="recoSummary.page" />
+			<forward name="successExcel"
+				path="/jsp/reco/report/recoSummaryReportExcel.jsp" />
+		</action>
+
+
+
+
+		<!-- Added by Shilpa Khanna Ends here -->
+
+		<!-- Added by Shilpa Khanna For Hierarchy Transfer -->
+
+		<action path="/dpHierarchyTransfer" name="HierarchyTransferBean"
+			type="com.ibm.dp.actions.HierarchyTransferAction"
+			parameter="methodName" scope="request">
+			<forward name="initSuccess" path="HierarchyTransfer.page" />
+			<forward name="error" path="./jsp/common/error.jsp" />
+		</action>
+
+		<!-- Added by Shilpa Khanna Ends here -->
+
+
+		<!-- Added by ajil -->
+
+		<action path="/dpHierarchyAccept" name="HierarchyAccept"
+			type="com.ibm.dp.actions.DPHierarchyAcceptAction"
+			parameter="methodName" scope="request">
+			<forward name="initSuccess" path="ViewHierarchyAccept.page" />
+			<!-- added by saumya -->
+			<forward name="SuccessView"
+				path="DPHierarchyAcceptView.page" />
+			<!-- ended by saumya -->
+			<forward name="error" path="./jsp/common/error.jsp" />
+		</action>
+		<!-- Added by Shilpa Khanna For Repair STB -->
+
+		<action path="/repairSTB" name="RepairSTBBean"
+			type="com.ibm.dp.actions.RepairSTBAction" parameter="methodName"
+			scope="request">
+			<forward name="initSuccess" path="repairStb.page" />
+			<forward name="error" path="./jsp/common/error.jsp" />
+		</action>
+
+		<!-- Added by Shilpa Khanna Ends here -->
+
+		<!-- Added by Shilpa Khanna For sack Distributor-->
+
+		<action path="/sackDistributor" name="SackDistributorBean"
+			type="com.ibm.dp.actions.SackDistributorAction"
+			parameter="methodName" scope="request">
+			<forward name="initSuccess" path="sackDistributor.page" />
+			<forward name="error" path="./jsp/common/error.jsp" />
+		</action>
+
+		<!-- Added by Shilpa Khanna Ends here -->
+
+
+		<!--  code added by Shilpa for Stock Summary report -->
+
+		<action path="/stockSummaryReport" name="StockSummaryReportBean"
+			type="com.ibm.dp.actions.StockSummaryReportAction"
+			parameter="methodName" validate="false" scope="request">
+			<forward name="initsuccess"
+				path="/jsp/report/DpStockSummaryReport.jsp" />
+			<forward name="successExcel"
+				path="jsp/report/DpStockSummaryReportExcel.jsp" />
+
+		</action>
+
+		<!-- end of code by Shilpa -->
+
+		<!--  code added by Shilpa for Consumption Posting Detail report -->
+
+		<action path="/consumPostDetReport"
+			name="ConsumptionPostingDetailReportBeans"
+			type="com.ibm.dp.actions.ConsumptionPostingDetailReportAction"
+			parameter="methodName" validate="false" scope="request">
+			<forward name="initsuccess"
+				path="/jsp/report/ConsumptionPostingDetailReport.jsp" />
+			<forward name="successExcel"
+				path="jsp/report/ConsumptionPostingDetailReportExcel.jsp" />
+
+		</action>
+
+		<!-- end of code by Shilpa -->
+
+		<!--  code added by Shilpa for Inter SSD Stock trnsfr report -->
+
+		<action path="/interSSDStockTrnfrReport"
+			name="InterSSDStockTrnfrReportBean"
+			type="com.ibm.dp.actions.InterSSDStockTrnfrReportAction"
+			parameter="methodName" validate="false" scope="request">
+			<forward name="initsuccess"
+				path="/jsp/report/InterSSDStockTrnfrReport.jsp" />
+			<forward name="successExcel"
+				path="jsp/report/InterSSDStockTrnfrReportExcel.jsp" />
+
+		</action>
+
+		<!-- end of code by Shilpa -->
+
+		<!--  addedd by naveen for c2sbulkupload -->
+
+		<action path="/c2sbulkupload" name="C2SBulkUploadBean"
+			type="com.ibm.dp.actions.C2SBulkUploadAction" parameter="methodName"
+			scope="request">
+			<forward name="init" path="c2sbulkupload.page" />
+			<forward name="error" path="./jsp/common/error.jsp" />
+			<forward name="uploadSuccess" path="c2sbulkupload.page" />
+		</action>
+
+		<!-- naveen changes ends here -->
+
+
+
+
+		<!-- naveen changes ends here -->
+
+
+		<!-- Add by Naveen  -->
+		<action path="/viewhierarchy" name="DPViewHierarchyFormBean"
+			type="com.ibm.dp.actions.DPViewHierarchyAction"
+			parameter="methodName" scope="request">
+			<forward name="initsuccess"
+				path="/jsp/report/dpviewhierarchy.jsp" />
+			<forward name="successExcel"
+				path="/jsp/report/dpviewhierarchyExcel.jsp" />
+			<forward name="successExcelHierarchy"
+				path="/jsp/report/dpviewhierarchyAllExcel.jsp" />
+
+		</action>
+		<action path="/lastPO" name="DPReverseLogisticReportFormBean"
+			type="com.ibm.dp.actions.DPReverseLogisticReportAction"
+			parameter="methodName" validate="false" scope="request">
+			<forward name="initsuccess"
+				path="/jsp/report/dplastPOReport.jsp" />
+			<forward name="successExcelLastPO"
+				path="/jsp/report/dplastPOReportExcel.jsp" />
+		</action>
+
+		<action path="/PoAcceptanceBulk"
+			name="DPPoAcceptanceBulkFormBean"
+			type="com.ibm.dp.actions.DPPoAcceptanceBulkAction"
+			parameter="methodName" validate="false" scope="request">
+			<forward name="success"
+				path="/jsp/reco/dppoAcceptanceBulk.jsp" />
+			<forward name="successExcelLastPO"
+				path="/jsp/report/dplastPOReportExcel.jsp" />
+			<forward name="errorFile"
+				path="/jsp/reco/dppoAcceptanceBulkExcel.jsp" />
+			<forward name="print_success" path="/DPPrintBulkAcceptanceAction.do?methodName=printBulkAcceptance" />
+		</action>
+
+<action path="/DPPrintBulkAcceptanceAction" name="DPPrintBulkAcceptanceBean"
+			type="com.ibm.dp.actions.DPPrintBulkAcceptanceAction"
+			parameter="methodName" scope="request">
+			<forward name="initsuccess"
+				path="printBulkAcceptance.page" />
+		</action>
+		
+		<action path="/DPPrintReverseCollectionAction" name="DPPrintReverseCollectionBean"
+			type="com.ibm.dp.actions.DPPrintReverseCollectionAction"
+			parameter="methodName" scope="request">
+			<forward name="initsuccess"
+				path="printReverseCollection.page" />
+		</action>
+		<!-- End -->
+
+		<!--  Added by Shilpa for Non Serialized Stock Bulk Upload -->
+
+		<action path="/nsBulkupload" name="NSBulkUploadBean"
+			type="com.ibm.dp.actions.NSBulkUploadAction" parameter="methodName"
+			scope="request">
+			<forward name="init" path="nsBulkupload.page" />
+			<forward name="error" path="./jsp/common/error.jsp" />
+			<forward name="uploadSuccess" path="nsBulkupload.page" />
+			<forward name="errorFile"
+				path="/jsp/reco/NSBulkUploadExcel.jsp" />
+			<forward name="formatFile"
+				path="/jsp/reco/NSBulkUploadFormatEcel.jsp" />
+		</action>
+
+		<!--  addedd by arti for Stock Level  -->
+
+
+		<action path="/dpStockLevelBulkupload"
+			name="DPStockLevelBulkUploadBean"
+			type="com.ibm.dp.actions.DPStockLevelBulkUploadAction"
+			parameter="methodName" scope="request">
+			<forward name="init" path="stlBulkupload.page" />
+			<forward name="error" path="./jsp/common/error.jsp" />
+			<forward name="uploadSuccess" path="stlBulkupload.page" />
+			<forward name="errorFile"
+				path="/jsp/configuration/DPStockLevelBulkUploadExcel.jsp" />
+			<forward name="formatFile"
+				path="/jsp/configuration/DPStockLevelBulkUploadFormatExl.jsp" />
+		</action>
+
+		<!--  addedd by arti for distributor warehouse mapping -->
+		<action path="/whdistmappupload" name="WHdistmappbulkBean"
+			type="com.ibm.dp.actions.WHdistmappbulkAction" parameter="methodName"
+			scope="request">
+			<forward name="init" path="whdistmapp.page" />
+			<forward name="error" path="./jsp/common/error.jsp" />
+			<forward name="uploadSuccess" path="whdistmapp.page" />
+			<forward name="errorFile"
+				path="/jsp/warehouse/WHDistMapBulkUploadExcel.jsp" />
+			<forward name="successExcel"
+				path="jsp/configuration/AllWHDistMapBulkUploadExcel.jsp" />
+		</action>
+
+		<!--  addedd by arti for Security Deposit and Loan  -->
+
+<!-- Addeded by RAM for eligibility uplaod by dthadmin -->
+		 <action path="/UploadDistStockEligibility" name="ViewStockEligibilityBean"
+			type="com.ibm.dp.actions.UploadDistStockEligibilityAction" parameter="methodName"
+			scope="request">
+			<forward name="init" path="uploadEligibility.page" />
+			<forward name="uploadSuccess" path="uploadEligibility.page" />
+		 </action>
+<!-- end of Adding by RAM for eligibility uplaod by dthadmin -->
+
+			<action path="/UploadDistStockEligibility" name="ViewStockEligibilityBean"
+			type="com.ibm.dp.actions.UploadDistStockEligibilityAction" parameter="methodName"
+			scope="request">
+			<forward name="init" path="uploadEligibility.page" />
+			<forward name="uploadSuccess" path="uploadEligibility.page" />
+		 </action>
+
+		<action path="/dpSecurityDepostLoanBulkupload"
+			name="DPDistSecurityDepositLoanBean"
+			type="com.ibm.dp.actions.DPDistSecurityDepositLoanAction"
+			parameter="methodName" scope="request">
+			<forward name="init" path="sdlBulkupload.page" />
+			<forward name="error" path="./jsp/common/error.jsp" />
+			<forward name="uploadSuccess" path="sdlBulkupload.page" />
+			<forward name="errorFile"
+				path="/jsp/configuration/DPDistSecurityDepositLoanExl.jsp" />
+			<forward name="successExcel"
+				path="jsp/misReport/DPDistSecurityDepositLoanFmtExl.jsp" />
+		</action>
+
+		<!--  addedd by arti for Product Security List  -->
+
+
+		<action path="/dpProductSecurityListBulkupload"
+			name="DPProductSecurityListBean"
+			type="com.ibm.dp.actions.DPProductSecurityListAction"
+			parameter="methodName" scope="request">
+			<forward name="init" path="pslBulkupload.page" />
+			<forward name="error" path="./jsp/common/error.jsp" />
+			<forward name="uploadSuccess" path="pslBulkupload.page" />
+			<forward name="errorFile"
+				path="/jsp/configuration/DPProductSecurityListExl.jsp" />
+			<forward name="successExcel"
+				path="jsp/misReport/DPProductSecurityListFmtExl.jsp" />
+		</action>
+		
+		<!--  addedd by Sanjay for Pending List Transfer -->
+		
+		<action path="/dpPendingListTransferBulkupload"
+			name="DPPendingListTransferBulkUploadBean"
+			type="com.ibm.dp.actions.DPPendingListTransferBulkUploadAction"
+			parameter="methodName" scope="request">
+			<forward name="init" path="pltBulkupload.page" />
+			<forward name="error" path="./jsp/common/error.jsp" />
+			<forward name="uploadSuccess" path="pltBulkupload.page" />
+			<forward name="errorFile"
+				path="/jsp/configuration/DPPendingListTransferBulkUploadExl.jsp" />
+			<forward name="formatFile"
+				path="jsp/configuration/DPPendingListTransferFmtExl.jsp" />
+		</action>
+		
+		
+		<action path="/dpInterSSDTransferBulkupload"
+			name="DPInterSSDTransferBulkUploadBean"
+			type="com.ibm.dp.actions.DPInterSSDTransferBulkUploadAction"
+			parameter="methodName" scope="request">
+			<forward name="init" path="issdBulkupload.page" />
+			<forward name="error" path="./jsp/common/error.jsp" />
+			<forward name="uploadSuccess" path="issdBulkupload.page" />
+			<forward name="errorFile"
+				path="/jsp/configuration/DPInterSSDTransferBulkUploadExl.jsp" />
+			<forward name="formatFile"
+				path="jsp/configuration/DPInterSSDTransferFmtExl.jsp" />
+		</action>
+		
+		<!-- end -->
+
+		<action path="/manufacturerDetails"
+				name="ManufacturerDetailsBean"
+				type="com.ibm.dp.actions.ManufacturerDetailsAction"
+				parameter="methodName" scope="request">
+				<forward name="viewManufacturer" path="ViewManufacturer.page"/>
+				<forward name="success" path="ManufacturerDetails.page"/>		
+		</action>
+
+
+
+		<!-- Added by Shilpa Ends here -->
+
+		<!--  Added by Priya for Reco Period Configuration -->
+		<action path="/recoPeriodConf" name="RecoPeriodConfFormBean"
+			type="com.ibm.dp.actions.RecoPeriodConfAction" parameter="methodName"
+			validate="false" scope="request">
+			<forward name="successGracePeriod" path="dpViewGracePeriod.page" />
+			<forward name="successRecoHistory" path="recoPeriodConfiguration.page" />
+			<forward name="success"
+				path="recoPeriodConfiguration.page" />	
+			<forward name="error" path="./jsp/common/error.jsp" />
+			<forward name="errorFile"
+				path="/jsp/reco/recoPeriodConfigurationExcel.jsp" />
+		</action>
+		<action path="/recoPeriodConfPagination"
+			name="RecoPeriodConfFormBean"
+			type="com.ibm.dp.actions.RecoPeriodConfPaginationAction"
+			parameter="methodName" validate="false" scope="session">
+			<forward name="successRecoHistory"
+				path="recoPeriodConfiguration.page" />
+			<forward name="error" path="./jsp/common/error.jsp" />
+		</action>
+		<action path="/recoDetailReport" name="RecoPeriodConfFormBean"
+			type="com.ibm.dp.actions.RecoDetailReportAction"
+			parameter="methodName" validate="false" scope="session">
+			<forward name="success" path="recoDetailReport.page" />
+			<forward name="successExcel" path="/jsp/misReport/recoDetailReportExcel.jsp" />
+			<forward name="error" path="./jsp/common/error.jsp" />
+			<forward name="initsuccess" path="RecoDetailPrint.page" />
+			
+		</action>
+		<action path="/serializedStockAction"
+			name="SerializedStockReportFormBean"
+			type="com.ibm.dp.actions.SerializedStockReportAction"
+			parameter="methodName" validate="false" scope="session">
+			<forward name="success" path="serializedStockReport.page" />
+			<forward name="successExcel"
+				path="/jsp/misReport/serializedStockReportExcel.jsp" />
+			<forward name="error" path="./jsp/common/error.jsp" />
+		</action>
+		
+		<action path="/activationDetailAction"
+			name="ActivationDetailReportFormBean"
+			type="com.ibm.dp.actions.ActivationDetailReportAction"
+			parameter="methodName" validate="false" scope="session">
+			<forward name="success" path="activationDetailReport.page" />
+			<forward name="successExcel"
+				path="/jsp/misReport/activationDetailReportExcel.jsp" />
+			<forward name="error" path="./jsp/common/error.jsp" />
+		</action>
+		
+		<action path="/stbWiseSerializedStockAction"
+			name="STBWiseSerializedStockReportFormBean"
+			type="com.ibm.dp.actions.STBWiseSerializedStockReportAction"
+			parameter="methodName" validate="false" scope="request">
+			<forward name="success"
+				path="STBWiseSerializedStockReport.page" />
+			<forward name="successExcel"
+				path="/jsp/misReport/STBWiseSerializedStockReportExcel.jsp" />
+			<forward name="error" path="./jsp/common/error.jsp" />
+		</action>
+
+
+		<!-- Added by Priya Ends here -->
+
+		<action path="/transferPendingAction"
+			name="TransferPendingSTBBean"
+			type="com.ibm.dp.actions.TransferPendingSTBAction"
+			parameter="methodName" scope="request">
+			<forward name="init" path="transferPendingSTB.page" />
+			<forward name="success" path="transferPendingSTB.page" />
+			<forward name="error" path="./jsp/common/error.jsp" />
+		</action>
+
+		<action path="/nonSerializedActivationAction"
+			name="NonSerializedActivationBean"
+			type="com.ibm.dp.actions.NonSerializedActivationAction"
+			parameter="methodName" scope="request">
+			<forward name="init" path="nonSerializedActivation.page" />
+			<forward name="success" path="nonSerializedActivation.page" />
+			<forward name="error" path="./jsp/common/error.jsp" />
+		</action>
+		
+		<action path="/NegetiveEligibilityReport" name="NegetiveEligibilityReportBean"
+			type="com.ibm.dp.actions.NegetiveEligibilityAction" parameter="methodName"
+			scope="request">
+			<forward name="init" path="negetiveEligibility.page" />
+			<forward name="success" path="negetiveEligibility.page" />
+			<forward name="successExcel"
+				path="/jsp/report/NegetiveEligibilityReportExcel.jsp" />
+			<forward name="error" path="./jsp/common/error.jsp" />
+		</action>
+
+
+		<!-- Added by Nazim Hussain for Drop Down Utility -->
+		<action path="/dropDownUtilityAjaxAction" name="dropDownForm"
+			type="com.ibm.dpmisreports.actions.DropDownUtilityAjaxAction"
+			parameter="methodName" scope="request">
+		</action>
+		<!-- Added by Nazim Hussain for Drop Down Utility ends here -->
+
+		<!--  Added by Shilpa for Inter SSD Transfer by DTH Admin-->
+		<action path="/interSsdTranfrAdmin"
+			name="InterSsdTransferAdminBean"
+			type="com.ibm.dp.actions.InterSsdTransferAdminAction"
+			parameter="methodName" scope="request">
+			<forward name="init" path="interSsdTranfrAdmin.page" />
+			<forward name="success" path="interSsdTranfrAdmin.page" />
+			<forward name="error" path="./jsp/common/error.jsp" />
+		</action>
+
+		<action path="/viewStbList" name="InterSsdTransferAdminBean"
+			type="com.ibm.dp.actions.InterSsdTransferAdminAction"
+			parameter="methodName" validate="false" scope="session">
+			<forward name="success" path="viewStbList.page" />
+		</action>
+
+		<!-- Added by Shilpa Ends here -->
+		<!--  Added by Shilpa for Dist Reco Detail-->
+		<action path="/DistReco" name="DistRecoBean"
+			type="com.ibm.dp.actions.DistRecoAction" parameter="methodName"
+			scope="request">
+			<forward name="init" path="DistReco.page" />
+			<forward name="success" path="DistReco.page" />
+			<forward name="error" path="./jsp/common/error.jsp" />
+			<forward  name="successuploadExl" path="/DistReco.do?methodName=viewRecoProducts"/>
+			<forward name="detailedReportExcel" path="/jsp/misReport/recoPageDetailsReportExcel.jsp" /><!-- added by ram -->
+			<forward name="uploadExlFileWindow" path="/jsp/misReport/recoClosingStockUploadWindow.jsp" /><!-- added by ram -->
+		</action>
+
+		<action path="/printRecoDetails" name="DistRecoBean"
+			type="com.ibm.dp.actions.DistRecoAction" parameter="methodName"
+			scope="session">
+			<forward name="initsuccess" path="printRecoDetail.page" />
+			<forward name="error" path="./jsp/common/error.jsp" />
+		</action>
+		<!-- Added by Shilpa Ends here -->
+		<!-- Added by Shilpa for MIS Report PO Detail on 07-02-2012 -->
+		<action path="/poDetailReport" name="PODetailReportBean"
+			type="com.ibm.dp.actions.PODetailReportAction" parameter="methodName"
+			scope="request">
+			<forward name="initsuccess" path="poDetailReport.page" />
+			<forward name="successExcel"
+				path="jsp/misReport/PODetailReportExcel.jsp" />
+
+
+		</action>
+
+		<!-- Added by Shilpa Ends here -->
+
+		<!-- Added by Shilpa for MIS Report Stock Reco Summary Report on 21-02-2012 -->
+		<action path="/recoSummaryReport" name="StockRecoSummReportBean"
+			type="com.ibm.dp.actions.StockRecoSummReportAction"
+			parameter="methodName" scope="request">
+			<forward name="initsuccess" path="recoSummaryReport.page" />
+			<forward name="successExcel"
+				path="jsp/misReport/StockRecoSummReportExcel.jsp" />
+		</action>
+		<!-- Added by Shilpa Ends here -->
+
+		<!-- Added by Amit Mishra  on 19-04-2012 -->
+
+		<action path="/stbInBulk" name="DPStbInBulkFormBean"
+			type="com.ibm.dp.actions.DPStbInBulkAction" parameter="methodName"
+			validate="false" scope="request">
+			<forward name="success" path="/jsp/reco/dpStbInBulk.jsp" />
+			<forward name="uploadExcel" path="/jsp/reco/dpStbInBulkReportExcel.jsp" />
+			<forward name="errorFileSTB" path="/jsp/reco/dpStbInBulkExcel.jsp" />
+			<!-- Added by sugandha on 22 -August-2013 to fix bug  DP-Phase-3 BFR-52 starts here-->
+			<forward name="errorFileSTBHist" path="/jsp/reco/dpStbHistInBulkExcel.jsp" />
+			<!-- Added by sugandha on 22 -August-2013 to fix bug  DP-Phase-3 BFR-52 ends here -->
+		</action>
+
+		<!-- Added by Amit Mishra Ends here -->
+
+		
+			<!-- Added by Shah_Rabbani for Churn_Reverse_Collection  -->
+			<action path="/ReverseChurnCollection" name="DPReverseChurnCollectionBean"
+				type="com.ibm.dp.actions.DPReverseChurnCollectionAction"  parameter="methodName" scope="session">
+				<forward name="initsuccess"	path="ReverseChurnCollection.init.page" />
+				<forward name="uploadSuccess"   path="ReverseChurnCollection.init.page" />
+				<forward name="errorFileChurn" path="/jsp/reco/dpReverseChurnExcel.jsp" />
+                <forward  name="churnsuccess" path="/ChurnDCGeneration.do?methodName=init" redirect="false"/>
+			</action>
+			
+			<action path="/ChurnDCGeneration" name="ChurnDCGenerationBean"
+				type="com.ibm.dp.actions.ChurnDCGenerationAction"  parameter="methodName" scope="request">
+				<forward name="initsuccess"	path="ChurnDCGeneration.init.page" />
+			</action>
+	
+			
+		<action path="/dcChurnStatus" name="DpDcChurnStatusBean"
+			type="com.ibm.dp.actions.DpDcChurnStatus" parameter="methodName" scope="request" >
+			<forward name="initSuccess" path="dcChurnStatus.page" />
+			<forward name="error" path="./jsp/common/error.jsp" />
+			<forward name="initSuccessDcStatus" path="dcsrNoChangeStatus.page" />
+	   </action>
+	   
+	   
+			<!-- End -->
+			
+		<action path="/circleActivationSummaryReportAction"
+			name="CircleActivationSummaryReportBean"
+			type="com.ibm.dp.actions.CircleActivationSummaryReportAction"
+			parameter="methodName" scope="request">
+			<forward name="initsuccess" path="circleActivationSummaryReport.page" />
+			<forward name="successExcel" path="jsp/misReport/circleActivationSummaryExcel.jsp" />
+		</action>
+		
+		<action path="/dayWiseActivationSummaryReportAction"
+			name="DayWiseActivationSummaryReportBean"
+			type="com.ibm.dp.actions.DayWiseActivationSummaryReportAction"
+			parameter="methodName" scope="request">
+			<forward name="initsuccess" path="dayWisectivationSummaryReport.page" />
+			<forward name="successExcel" path="jsp/misReport/daywiseActivationreportExcel.jsp" />
+		</action>
+		
+		<!-- Added by Varun -->
+		<action path="/rejectedInvoiceAction"
+			name="RejectedInvBean"
+			type="com.ibm.dp.actions.RejectedInvoiceReportAction"
+			parameter="methodName" scope="request">
+			
+			<forward name="success" path="rejectedInvReport.page" />
+		</action>
+		
+		
+		
+
+		<!-- Added by Karan  on 07-05-2012 -->
+		
+		
+		<action path="/ViewStockEligibility"
+			name="ViewStockEligibilityBean"
+			type="com.ibm.dp.actions.ViewStockEligibilityAction"
+			parameter="methodName" validate="false" scope="request">
+			<forward name="success" path="/jsp/stock/ViewStockEligibility.jsp" />
+			<forward name="error" path="/jsp/common/error.jsp" />
+			<forward name="successSMS" path="/jsp/stock/ViewStockEligibilitySMS.jsp" />
+			<!--   Added by sugandha on 20th-August to reslove bug for BFR-39 DP-Phase-3 --> 
+			<forward name="downloadExcel" path="/jsp/stock/ViewStockEligibilityExportToExcel.jsp" />
+			 <!-- Added by sugandha on 20th-August to reslove bug for BFR-39 DP-Phase-3ends here -->
+			<forward name="uploadSuccess" path="/jsp/stock/UploadedStockEligibility.jsp" /> 
+		</action>
+
+
+		
+		<!-- Added by Karan Ends here -->
+
+		<action path="/accountDetailReport"
+			name="AccountDetailReportBean"
+			type="com.ibm.dp.actions.AccountDetailReportAction"
+			parameter="methodName" scope="request">
+			<forward name="initsuccess" path="accountDetailReport.page" />
+			<forward name="successExcel"
+				path="jsp/misReport/accountDetailReportExcel.jsp" />
+		</action>
+		
+	<!-- Added by Rampratap starts here -->
+
+		<action path="/accountManagementActivityReport"
+			name="AccountManagementActivityReportBean"
+			type="com.ibm.dp.actions.AccountManagementActivityReportAction"
+			parameter="methodName" scope="request">
+			<forward name="initsuccess" path="accountManagementActivityReport.page" />
+			<forward name="successExcel"
+				path="jsp/misReport/accountManagementActivityReportExcel.jsp" />
+		</action>
+<!-- Added by Rampratap Ends here -->
+
+<action path="/circleActivationSummaryReportAction"
+			name="CircleActivationSummaryReportBean"
+			type="com.ibm.dp.actions.CircleActivationSummaryReportAction"
+			parameter="methodName" scope="request">
+			<forward name="initsuccess" path="circleActivationSummaryReport.page" />
+			<forward name="successExcel" path="jsp/misReport/circleActivationSummaryExcel.jsp" />
+		</action>
+		
+		
+		<!-- Added by Priya -->
+		
+		<action path="/ChangeUserRole"
+			name="ChangeUserRoleBean"
+			type="com.ibm.dp.actions.ChangeUserRoleAction"
+			parameter="methodName" validate="false" scope="request">
+
+			<forward name="success"
+				path="/jsp/account/changeUserRole.jsp" />
+
+		<forward name="success"
+				path="/jsp/account/changeUserRole.jsp" />
+			<forward name="error" path="/jsp/common/error.jsp" />
+
+
+		</action>
+		
+		<action path="/downloadPdfSign"
+		 type="com.ibm.dp.actions.DownloadSignedPdf"
+		 scope="request"/>
+		 
+		
+		
+		<action path="/initCreateAccountItHelp" name="DPCreateAccountITHelpFormBean"
+			type="com.ibm.dp.actions.DPCreateAccountITHelpAction" scope="request"
+			parameter="methodName">
+			<forward name="createAccountITHelp"
+				path="./jsp/account/createAccountITHelp.jsp" />
+			<forward name="openAccountITHelp"
+				path="/initCreateAccountItHelp.do?methodName=init" />
+			<forward name="updateUserInfo"
+				path="/initCreateAccountItHelp.do?methodName=editAccount" />
+			<forward name="showList"
+				path="/initCreateAccountItHelp.do?methodName=showList" />
+			<forward name="showListJsp"
+				path="./jsp/account/searchAccountITHelp.jsp" />
+			<forward name="backPage" path="/initCreateAccountItHelp.do" />
+			<forward name="UsedLoginId"
+				path="/initCreateAccountItHelp.do?methodName=init" />
+			<forward name="editAccountDetails"
+				path="./jsp/account/editUserAccountITHelp.jsp" />
+			<forward name="editAccountDistributor"
+				path="./jsp/account/editDistributor.jsp" />
+			<forward name="editAccountDistributorError"
+				path="/initCreateAccountItHelp.do?methodName=getAccountInfoEdit" />
+			<forward name="editUserAccountError"
+				path="/initCreateAccountItHelp.do?methodName=getAccountInfoEdit" />
+				
+				
+			
+				
+			<forward name="viewAccountDetails"
+				path="./jsp/account/viewAccount.jsp" />
+			<forward name="nonGsdUserIdPassword"
+				path="/initCreateAccountItHelp.do?methodName=init" />
+			<forward name="showSearchAccountJsp"
+				path="./jsp/account/searchAccountITHelp.jsp" />
+			<forward name="searchAccount"
+				path="/initCreateAccountItHelp.do?methodName=callSearchAccount" />
+			<forward name="error"
+				path="/initCreateAccountItHelp.do?methodName=init" />
+			<forward name="parentaccountlistITHelp"
+				path="./jsp/account/searchParentAccountITHelp.jsp" />
+			<forward name="finddistributor"
+				path="./jsp/account/searchDistributor.jsp" />
+			<forward name="listAccountExportItHelp"
+				path="./jsp/account/listAccountExportItHelp.jsp" />
+			<forward name="listAggregateExport"
+				path="./jsp/account/listAggregateExport.jsp" />
+			<forward name="AggregateList"
+				path="./jsp/account/AggregateView.jsp" />
+			<forward name="billablelist"
+				path="./jsp/account/searchBillableAccount.jsp" />
+			<forward name="createIdHelpUserJsp"
+				path="./jsp/account/createIDHelpUser.jsp" />
+			<forward name="errorIDHelpDesk"
+				path="/initCreateAccountItHelp.do?methodName=callCreateIdHelpUserAccount" />
+			<forward name="openIDHelpAccount"
+				path="/initCreateAccountItHelp.do?methodName=callCreateIdHelpUserAccount" />
+			<forward name="callSearchIdHelpUserAccount"
+				path="./jsp/account/viewEditIDHelpdeskUser.jsp" />
+			<forward name="errorViewIDHelpDesk"
+				path="/initCreateAccountItHelp.do?methodName=callSearchIdHelpUserAccount" />
+			
+		</action>
+
+		<!-- Added by sugandha starts for alert configuration DP Phase 3 here  -->
+		<action path="/dpAlertConfiguration"
+			name="DPAlertConfigurationBean"
+			type="com.ibm.dp.actions.DPAlertConfigurationAction"
+			parameter="methodName" scope="request">
+			<forward name="initSuccess" path="dpAdminAlertconfiguration.page" />
+			<forward name="initSuccessOthers" path="dpOtherUserAlertconfiguration.page" />
+		</action>
+		<!-- Added by Sugandha alert configuration DP Phase 3 ends here  -->
+		
+	<!-- Added by Sugandha Starts for FnF DP Phase 3 here -->
+		<action path="/dpInitiateFnfAction"
+			name="DpInitiateFnfFormBean"
+			type="com.ibm.dp.actions.DpInitiateFnfAction"
+			parameter="methodName" scope="request">
+			<forward name="success" path="dpInitiateFnf.page" />
+			<forward name="successList" path="/dpInitiateFnfAction.do?methodName=initPendingDistributorList" />
+			<forward name="successViewStock" path="dpViewStockFnFDist.page" />
+			<forward name="successViewHierarchyReport" path="/jsp/transaction/initiateFnFViewHierarchyReport.jsp"  />
+			<forward name="ApproveFnFList" path="dpApproveFnF.page"  />
+			<forward name="ConifrmFnFList"  path="dpConfirmFnF.page"  />
+			<forward name="successApproveFnF" path="/dpInitiateFnfAction.do?methodName=initZSMApprovePendingDistributorList"  />
+			<forward name="successConfirmFnF" path="/dpInitiateFnfAction.do?methodName=initFinanceConfirmFnF"  />
+		</action>
+		<!-- Added by Sugandha for FnF DP Phase 3 ends here -->
+		<!-- Added by Sugandha for AV DP Phase 3 starts here -->
+		<action path="/avStockUpload"
+			name="AvStockUploadFormBean"
+			type="com.ibm.dp.actions.AvStockUploadAction"
+			parameter="methodName" scope="request" validate="false">
+			<forward name="init" path="AvStockUpload.page" />	
+			<forward name="uploadSuccess" path="AvStockUpload.page" />
+			<forward name="errorFile" path="/jsp/transaction/avStockUploadExcel.jsp" />
+		</action>
+		<action path="/distavStockUpload"
+			name="AvStockUploadFormBean"
+			type="com.ibm.dp.actions.DistAvStockUploadAction"
+			parameter="methodName" scope="request" validate="false">
+			<forward name="init" path="DistAvStockUpload.page" />	
+			<forward name="uploadSuccess" path="DistAvStockUpload.page" />
+			<forward name="errorFile" path="/jsp/transaction/distAvStockUploadExcel.jsp" />
+
+			<!-- Added by Sugandha for nonserlized to serialized for DP Phase 3 starts here -->
+			<forward name="successconversion" path="SerializedUpload.page" />
+			<forward name="uploadSuccess1" path="SerializedUpload.page" />
+			<!-- <forward name="successExcel" path="/jsp/misReport/DPProductSerializedConversionFmtExl.jsp" />  -->
+			<forward name="errorFile1" path="/jsp/transaction/errorSerialize.jsp" />  
+			<!-- Added by Sugandha for nonserlized to serialized for DP Phase 3 ends here -->
+
+		</action>
+		<!-- Added by Sugandha for AV DP Phase 3 ends here -->
+
+		<!-- Added by Sugandha for Distributor Pincode DP Phase 3 starts here -->
+		<action path="/dpDistPinCodeMapAction"
+			name="DPDistPinCodeMapFormBean"
+			type="com.ibm.dp.actions.DPDistPinCodeMapAction"
+			parameter="methodName" scope="request">
+			<forward name="init" path="dpDistPinCodeMap.page" />
+			<forward name="error" path="./jsp/common/error.jsp" />
+			<forward name="uploadSuccess" path="dpDistPinCodeMap.page" />
+			<forward name="errorFile" path="/jsp/configuration/dpDistPinCodeMapExcel.jsp" />
+			<forward name="successExcel"
+				path="jsp/misReport/DPDistPinCodeMapFormatExcel.jsp" />
+		</action>
+		<!-- Added by Sugandha for Distributor Pincode DP Phase 3 starts here -->
+		
+		<!-- Added by Rampratap on 25-06-13 for hierarchy transfer functionality -->
+		<action path="/TransferHierarchy" name="TransferHierarchyBean" type="com.ibm.dp.actions.TransferHierarchyAction"
+			parameter="methodName" validate="false" scope="request">
+			<forward name="error" path="/jsp/common/error.jsp" />
+			<forward name="success" path="dpTransferHierarchy.page" />
+		</action>
+		<!-- End-->
+		
+		<!-- added by aman for dp-reco on 02/12/14 -->
+		
+		<action path="/debitAmountMstr"
+			name="DebitAmountMstrFormBean"
+			type="com.ibm.dp.actions.DebitAmountMstrAction"
+			parameter="methodName" scope="request">
+			<forward name="initSuccess" path="debitAmountMstr.page" />
+		</action>
+		
+		<action path="/dpCardGrpMstr"
+			name="DPCardGrpMstrFormBean"
+			type="com.ibm.dp.actions.CardGrpMstrAction"
+			parameter="methodName" scope="request">
+			<forward name="initSuccess" path="dpCardGrpMstr.page" />
+		</action>
+		<!-- added by aman ends here -->
+		
+			<action path="/retailerLapuDataAction"
+				name="DPRetailerLapuDataBean"
+				type="com.ibm.dp.actions.DPRetailerLapuDataAction"
+				parameter="methodName" 
+				scope="request">
+			<forward name="initsuccess" path="dpRetailerLapuData.page" />
+			<forward name="successExcel" path="/jsp/report/retailerLapuDataExcel.jsp" />
+			<forward name="uploadSuccess" path="dpRetailerLapuData.page" />
+			<forward name="errorFile" path="/jsp/report/retailerLapuDataErrorExcel.jsp" />
+		</action>
+		
+	<action path="/interSsdTranfrAdmin"
+			name="InterSsdTransferAdminBean"
+			type="com.ibm.dp.actions.InterSsdTransferAdminAction"
+			parameter="methodName" scope="request">
+			<forward name="init" path="interSsdTranfrAdmin.page" />
+			<forward name="success" path="interSsdTranfrAdmin.page" />
+			<forward name="inactiveInit" path="inactivePartnrTranfrAdmin.page"/>
+			<forward name="error" path="./jsp/common/error.jsp" />
+		</action>
+
+
+
+
+ 
+		 <action path="/InvoiceUpload" 
+				type="org.apache.struts.actions.ForwardAction"
+				parameter="dpInvoiceUpload.page" />
+				
+		<action path="/UploadInv"
+				name="DpInvoiceForm"
+				type="com.ibm.dp.actions.DPInvoiceUploadAction"
+				parameter="methodName"
+				scope="request">
+				
+				<forward name="successUpload" path="dpInvoiceUpload.page"/>
+				
+		</action>
+		
+		<action path="/ViewPartnerInvoice"
+				name="InvoiceForm"
+				type="com.ibm.dp.actions.ViewListInvoiceAction"
+				parameter="methodName"
+				scope="request">
+				
+				<forward name="viewInvoiceSuccess" path="dpInvoiceDisp.page"/>
+				<forward name="viewInvoiceSuccessSTB"  path="dpInvoiceSTBDisp.page"/>
+				<forward name="success" path="dpInvoiceDisp.page"/>
+				<forward name="errorInUpdate" path="dpInvoiceDisp.page"/>
+		</action>
+				
+		<action path="/ViewListInvoice"
+				name="InvoiceListForm"
+				type="com.ibm.dp.actions.ViewListInvoiceAction"
+				parameter="methodName">
+				
+				<forward name="listInvoiceSuccess" path="dpInvoiceList.page"/>
+				<forward name="errorListingInv" path="dpInvoiceList.page"/>
+				<forward name="listAllSuccess" path="dpInvoiceList.page"/>
+				
+				
+		</action>
+	
+	
+	<!-- added by jyotsna -->
+		
+		<action path="/ConfigurationMaster" name="ConfigurationMasterBean" 
+		type="com.ibm.dp.actions.ConfigurationMasterAction" parameter="methodName" scope="request" >
+		<forward name="initSuccess" path="configurationMaster.page"/>
+		</action>
+		
+		<action path="/UploadTrailReport" name="UploadTrailReportsBean" 
+		type="com.ibm.reports.actions.UploadTrailReportsAction" parameter="methodName" scope="request" >
+		<forward name="initSuccess" path="uploadTrailReport.page"/>
+		<forward name="initExcel"
+				path="/jsp/report/uploadTrailReportOutput.jsp" />
+		</action>
+		
+	</action-mappings>
+	<!-- Specialized RequestProcessor -->
+	<controller
+		processorClass="com.ibm.virtualization.recharge.actions.VirtualizationRequestProcessor"
+		className="org.apache.struts.config.ControllerConfig" nocache="true" />
+
+
+	<!-- Message Resources -->
+	<message-resources parameter="ApplicationResources" />
+
+	<message-resources key="dp"
+		parameter="com.ibm.dp.resources.DPResources" />
+
+	<message-resources key="view"
+		parameter="com.ibm.virtualization.recharge.resources.VirtualizationResources" />
+	<message-resources key="error"
+		parameter="com.ibm.virtualization.recharge.resources.ErrorResources" />
+	<message-resources key="image"
+		parameter="com.ibm.virtualization.recharge.resources.ImageResources" />
+	<message-resources key="hboView"
+		parameter="com.ibm.hbo.resources.hboResources" />
+	<message-resources key="ftaProperties"
+		parameter="com.ibm.virtualization.ussdactivationweb.resources.FTAResources" />
+	<!-- For GSD Implementation -->
+	<plug-in className="com.ibm.appsecure.plugin.QueryPlugin" />
+	<!-- Validator Configuration -->
+	<plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+		<set-property property="pathnames"
+			value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml" />
+	</plug-in>
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+		<set-property property="definitions-config"
+			value="/WEB-INF/tiles-defs.xml" />
+		<set-property property="moduleAware" value="true" />
+	</plug-in>
+</struts-config>

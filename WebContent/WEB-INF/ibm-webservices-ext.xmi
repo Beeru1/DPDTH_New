@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.etools.webservice.wsext:WsExtension xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.etools.webservice.wsext="http://www.ibm.com/websphere/appserver/schemas/5.0.2/wsext.xmi" xmi:id="WsExtension_1285640147890">
+  <wsDescExt xmi:id="WsDescExt_1290646734984" wsDescNameLink="OpenStockDepleteWebserviceService">
+    <pcBinding xmi:id="PcBinding_1290646734984" pcNameLink="OpenStockDepleteWebservice" scope="Application"/>
+  </wsDescExt>
+  <wsDescExt xmi:id="WsDescExt_1329397842562" wsDescNameLink="STBStatusWebserviceService">
+    <pcBinding xmi:id="PcBinding_1329397842562" pcNameLink="STBStatusWebservice"/>
+  </wsDescExt>
+  <wsDescExt xmi:id="WsDescExt_1340622601437" wsDescNameLink="WarehouseMstFrmBotreeWebServiceService">
+    <pcBinding xmi:id="PcBinding_1340622601437" pcNameLink="WarehouseMstFrmBotreeWebService" scope="Application"/>
+  </wsDescExt>
+  <wsDescExt xmi:id="WsDescExt_1344838462046" wsDescNameLink="POStatusUpdateWebserviceService">
+    <pcBinding xmi:id="PcBinding_1344838462046" pcNameLink="POStatusUpdateWebservice" scope="Application"/>
+  </wsDescExt>
+  <wsDescExt xmi:id="WsDescExt_1358144746328" wsDescNameLink="RetailerInfoWebserviceService">
+    <pcBinding xmi:id="PcBinding_1358144746328" pcNameLink="RetailerInfoWebservice"/>
+  </wsDescExt>
+  <wsDescExt xmi:id="WsDescExt_1367565192656" wsDescNameLink="AVRestrictionWebserviceService">
+    <pcBinding xmi:id="PcBinding_1367565192656" pcNameLink="AVRestrictionWebservice" scope="Application"/>
+  </wsDescExt>
+  <wsDescExt xmi:id="WsDescExt_1444201164075" wsDescNameLink="CanonDPDataWebserviceService">
+    <pcBinding xmi:id="PcBinding_1444201164075" pcNameLink="CanonDPDataWebservice"/>
+  </wsDescExt>
+  <wsDescExt xmi:id="WsDescExt_1450339736491" wsDescNameLink="AuthenticateUserIdService">
+    <pcBinding xmi:id="PcBinding_1450339736491" pcNameLink="AuthenticateUserId"/>
+  </wsDescExt>
+  <wsDescExt xmi:id="WsDescExt_1452669051989" wsDescNameLink="DistributorAVMappingService">
+    <pcBinding xmi:id="PcBinding_1452669051989" pcNameLink="DistributorAVMapping"/>
+  </wsDescExt>
+  <wsDescExt xmi:id="WsDescExt_1475648711669" wsDescNameLink="DistributorSTBMappingService">
+    <pcBinding xmi:id="PcBinding_1475648711669" pcNameLink="DistributorSTBMapping"/>
+  </wsDescExt>
+  <wsDescExt xmi:id="WsDescExt_1478512536663" wsDescNameLink="SignInvoiceWebServiceService">
+    <pcBinding xmi:id="PcBinding_1478512536663" pcNameLink="SignInvoiceWebService"/>
+  </wsDescExt>
+</com.ibm.etools.webservice.wsext:WsExtension>

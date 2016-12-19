@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="storedqueries">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="datasources"/>
+        <xs:element maxOccurs="unbounded" ref="storedquery"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="datasources">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="datasource"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="datasource">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="path"/>
+      </xs:sequence>
+      <xs:attribute name="name" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="path" type="xs:anyURI"/>
+  <xs:element name="storedquery">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="query"/>
+      </xs:sequence>
+      <xs:attribute name="datasource" use="required" type="xs:NCName"/>
+      <xs:attribute name="name" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="query" type="xs:string"/>
+</xs:schema>

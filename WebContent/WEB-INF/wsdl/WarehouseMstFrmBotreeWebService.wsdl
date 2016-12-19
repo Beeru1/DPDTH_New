@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://local.webServices.dp.ibm.com" xmlns:impl="http://local.webServices.dp.ibm.com" xmlns:intf="http://local.webServices.dp.ibm.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsi="http://ws-i.org/profiles/basic/1.1/xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+ <wsdl:types>
+  <schema targetNamespace="http://local.webServices.dp.ibm.com" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <element name="wareHouseDataFrmBotreeResponse">
+    <complexType>
+     <sequence>
+      <element name="wareHouseDataFrmBotreeReturn" nillable="true" type="impl:ArrayOf_xsd_nillable_string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="wareHouseDataFrmBotree">
+    <complexType>
+     <sequence>
+      <element name="whCode" nillable="true" type="xsd:string"/>
+      <element name="whName" nillable="true" type="xsd:string"/>
+      <element name="whAddress1" nillable="true" type="xsd:string"/>
+      <element name="whAddress2" nillable="true" type="xsd:string"/>
+      <element name="whPhone" nillable="true" type="xsd:string"/>
+      <element name="whFax" nillable="true" type="xsd:string"/>
+      <element name="tinNumber" nillable="true" type="xsd:string"/>
+      <element name="whType" type="xsd:int"/>
+      <element name="circleCode" nillable="true" type="xsd:string"/>
+      <element name="employee" nillable="true" type="xsd:string"/>
+      <element name="compCode" nillable="true" type="xsd:string"/>
+      <element name="area" nillable="true" type="xsd:string"/>
+      <element name="subArea" nillable="true" type="xsd:string"/>
+      <element name="srcType" nillable="true" type="xsd:string"/>
+      <element name="defCompCode" nillable="true" type="xsd:string"/>
+      <element name="defArea" nillable="true" type="xsd:string"/>
+      <element name="defSubArea" nillable="true" type="xsd:string"/>
+      <element name="defSrcType" nillable="true" type="xsd:string"/>
+      <element name="chrunCompCode" nillable="true" type="xsd:string"/>
+      <element name="chrunArea" nillable="true" type="xsd:string"/>
+      <element name="chrunSubArea" nillable="true" type="xsd:string"/>
+      <element name="chrunSrcType" nillable="true" type="xsd:string"/>
+      <element name="inTransCompCode" nillable="true" type="xsd:string"/>
+      <element name="inTransArea" nillable="true" type="xsd:string"/>
+      <element name="inTransSubArea" nillable="true" type="xsd:string"/>
+      <element name="inTransSrcType" nillable="true" type="xsd:string"/>
+      <element name="nonRepCompCode" nillable="true" type="xsd:string"/>
+      <element name="nonRepArea" nillable="true" type="xsd:string"/>
+      <element name="nonRepSubArea" nillable="true" type="xsd:string"/>
+      <element name="nonRepSrcType" nillable="true" type="xsd:string"/>
+      <element name="isActive" nillable="true" type="xsd:string"/>
+      <element name="isEdit" nillable="true" type="xsd:string"/>
+      <element name="userid" nillable="true" type="xsd:string"/>
+      <element name="password" nillable="true" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="ArrayOf_xsd_nillable_string">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="string" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="wareHouseDataFrmBotreeResponse">
+     <wsdl:part element="intf:wareHouseDataFrmBotreeResponse" name="parameters"/>
+
+  </wsdl:message>
+
+   <wsdl:message name="wareHouseDataFrmBotreeRequest">
+     <wsdl:part element="intf:wareHouseDataFrmBotree" name="parameters"/>
+
+  </wsdl:message>
+
+   <wsdl:portType name="WarehouseMstFrmBotreeWebService">
+     <wsdl:operation name="wareHouseDataFrmBotree">
+       <wsdl:input message="intf:wareHouseDataFrmBotreeRequest" name="wareHouseDataFrmBotreeRequest"/>
+
+       <wsdl:output message="intf:wareHouseDataFrmBotreeResponse" name="wareHouseDataFrmBotreeResponse"/>
+
+    </wsdl:operation>
+
+  </wsdl:portType>
+
+   <wsdl:binding name="WarehouseMstFrmBotreeWebServiceSoapBinding" type="intf:WarehouseMstFrmBotreeWebService">
+ <wsaw:UsingAddressing wsdl:required="false" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"/>
+
+     <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+     <wsdl:operation name="wareHouseDataFrmBotree">
+       <wsdlsoap:operation soapAction="wareHouseDataFrmBotree"/>
+
+       <wsdl:input name="wareHouseDataFrmBotreeRequest">
+         <wsdlsoap:body use="literal"/>
+
+      </wsdl:input>
+
+       <wsdl:output name="wareHouseDataFrmBotreeResponse">
+         <wsdlsoap:body use="literal"/>
+
+      </wsdl:output>
+
+    </wsdl:operation>
+
+  </wsdl:binding>
+
+   <wsdl:service name="WarehouseMstFrmBotreeWebServiceService">
+     <wsdl:port binding="intf:WarehouseMstFrmBotreeWebServiceSoapBinding" name="WarehouseMstFrmBotreeWebService">
+       <wsdlsoap:address location="http://localhost:9080/DPDTH/services/WarehouseMstFrmBotreeWebService"/>
+
+    </wsdl:port>
+
+  </wsdl:service>
+
+</wsdl:definitions>

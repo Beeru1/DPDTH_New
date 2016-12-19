@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://local.webServices.dp.ibm.com" xmlns:impl="http://local.webServices.dp.ibm.com" xmlns:intf="http://local.webServices.dp.ibm.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsi="http://ws-i.org/profiles/basic/1.1/xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+ <wsdl:types>
+  <schema targetNamespace="http://local.webServices.dp.ibm.com" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <element name="updateStatusResponse">
+    <complexType>
+     <sequence>
+      <element name="updateStatusReturn" nillable="true" type="impl:ArrayOf_xsd_nillable_string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="updateStatus">
+    <complexType>
+     <sequence>
+      <element name="invoice_No" nillable="true" type="xsd:string"/>
+      <element name="dist_olmId" nillable="true" type="xsd:string"/>
+      <element name="userid" nillable="true" type="xsd:string"/>
+      <element name="password" nillable="true" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="ArrayOf_xsd_nillable_string">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="string" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="updateStatusRequest">
+     <wsdl:part element="impl:updateStatus" name="parameters"/>
+
+  </wsdl:message>
+
+   <wsdl:message name="updateStatusResponse">
+     <wsdl:part element="impl:updateStatusResponse" name="parameters"/>
+
+  </wsdl:message>
+
+   <wsdl:portType name="SignInvoiceWebService">
+     <wsdl:operation name="updateStatus">
+       <wsdl:input message="impl:updateStatusRequest" name="updateStatusRequest"/>
+
+       <wsdl:output message="impl:updateStatusResponse" name="updateStatusResponse"/>
+
+    </wsdl:operation>
+
+  </wsdl:portType>
+
+   <wsdl:binding name="SignInvoiceWebServiceSoapBinding" type="impl:SignInvoiceWebService">
+     <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+     <wsdl:operation name="updateStatus">
+       <wsdlsoap:operation soapAction="updateStatus"/>
+
+       <wsdl:input name="updateStatusRequest">
+         <wsdlsoap:body use="literal"/>
+
+      </wsdl:input>
+
+       <wsdl:output name="updateStatusResponse">
+         <wsdlsoap:body use="literal"/>
+
+      </wsdl:output>
+
+    </wsdl:operation>
+
+  </wsdl:binding>
+
+   <wsdl:service name="SignInvoiceWebServiceService">
+     <wsdl:port binding="impl:SignInvoiceWebServiceSoapBinding" name="SignInvoiceWebService">
+       <wsdlsoap:address location="http://localhost:9080/DPDTH/services/SignInvoiceWebService"/>
+
+    </wsdl:port>
+
+  </wsdl:service>
+
+</wsdl:definitions>

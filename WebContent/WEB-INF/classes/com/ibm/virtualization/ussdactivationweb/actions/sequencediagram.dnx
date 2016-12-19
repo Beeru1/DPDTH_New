@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--xtools2_universal_type_manager-->
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.ibm.com/xtools/1.5.0/Notation" xmlns:uml="http://www.eclipse.org/uml2/1.0.0/UML" xmlns:umlnotation="http://www.ibm.com/xtools/1.5.0/Umlnotation">
+  <notation:Diagram xmi:id="_Pn_7IE-yEdycELE3n7lj0Q" type="Sequence" element="_Pn_7KU-yEdycELE3n7lj0Q" name="sequencediagram.dnx">
+    <children xmi:id="_Pn_7IU-yEdycELE3n7lj0Q" element="_Pn_7KU-yEdycELE3n7lj0Q">
+      <children xmi:id="_Pn_7Ik-yEdycELE3n7lj0Q" type="interaction_compartment" element="_Pn_7KU-yEdycELE3n7lj0Q">
+        <styles xmi:type="umlnotation:UMLShapeCompartmentStyle" xmi:id="_Pn_7I0-yEdycELE3n7lj0Q"/>
+      </children>
+      <children xmi:id="_Pn_7JE-yEdycELE3n7lj0Q" type="Name" element="_Pn_7KU-yEdycELE3n7lj0Q"/>
+      <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_Pn_7JU-yEdycELE3n7lj0Q" showStereotype="Label"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Pn_7Jk-yEdycELE3n7lj0Q"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLDiagramStyle" xmi:id="_Pn_7J0-yEdycELE3n7lj0Q"/>
+  </notation:Diagram>
+  <uml:Collaboration xmi:id="_Pn_7KE-yEdycELE3n7lj0Q">
+    <ownedBehavior xmi:type="uml:Interaction" xmi:id="_Pn_7KU-yEdycELE3n7lj0Q" name="Interaction1">
+      <lifeline xmi:id="_Pn_7Kk-yEdycELE3n7lj0Q" represents="_Pn_7K0-yEdycELE3n7lj0Q"/>
+    </ownedBehavior>
+    <ownedAttribute xmi:id="_Pn_7K0-yEdycELE3n7lj0Q" name="self">
+      <type xmi:type="uml:Class" href="vizref:///#jsrctype^vcore.target=uml2.Class^name=VSubscriberMstrAction[jcu^name=VSubscriberMstrAction.java[jpack^name=com.ibm.virtualization.ussdactivationweb.actions[jsrcroot^srcfolder=JavaSource[project^vcore.target=uml2.Model^id=CircleUSSD]]]]"/>
+    </ownedAttribute>
+  </uml:Collaboration>
+</xmi:XMI>

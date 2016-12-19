@@ -1,0 +1,1215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:tns="http://tempuri.org/" targetNamespace="http://tempuri.org/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="dth_circlecreate">
+        <s:complexType>
+          <s:sequence>
+            <s:element maxOccurs="1" minOccurs="0" name="sCircleCode" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sCircleName" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sRegionCode" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sCompanyName" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sAddress1" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sAddress2" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sPhoneNo" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sFaxNo" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sCstNo" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sCstDate" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sSalesTaxNo" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sLstDate" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sServicetaxNo" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sTinNo" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sTinDate" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sTerms1" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sTerms2" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sTerms3" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sTerms4" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sRemarks" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="1" name="bEditMode" type="s:boolean"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sUserName" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sPassWord" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dth_circlecreateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element maxOccurs="1" minOccurs="0" name="dth_circlecreateResult" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dth_regioncreate">
+        <s:complexType>
+          <s:sequence>
+            <s:element maxOccurs="1" minOccurs="0" name="sRgnCode" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sRgnName" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sCountryCode" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="1" name="bEditMode" type="s:boolean"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sUserName" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sPassWord" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dth_regioncreateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element maxOccurs="1" minOccurs="0" name="dth_regioncreateResult" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dth_zonecreate">
+        <s:complexType>
+          <s:sequence>
+            <s:element maxOccurs="1" minOccurs="0" name="sZoneCode" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sZoneName" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sCircleCode" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="1" name="bEditMode" type="s:boolean"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sUserName" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sPassWord" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dth_zonecreateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element maxOccurs="1" minOccurs="0" name="dth_zonecreateResult" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dth_createtown">
+        <s:complexType>
+          <s:sequence>
+            <s:element maxOccurs="1" minOccurs="0" name="sTownCode" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sTownName" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sZoneCode" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="1" name="bEditMode" type="s:boolean"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sUserName" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sPassWord" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dth_createtownResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element maxOccurs="1" minOccurs="0" name="dth_createtownResult" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dth_tsmcreate">
+        <s:complexType>
+          <s:sequence>
+            <s:element maxOccurs="1" minOccurs="0" name="sTsmCode" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sTsmName" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sCircleCode" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="1" name="bEditMode" type="s:boolean"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sUserName" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sPassWord" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dth_tsmcreateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element maxOccurs="1" minOccurs="0" name="dth_tsmcreateResult" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dth_distributor">
+        <s:complexType>
+          <s:sequence>
+            <s:element maxOccurs="1" minOccurs="0" name="sDistributorName" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="SCircleCode" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sTownCode" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sTsmCode" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="1" name="iDistributorType" type="s:int"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sSalesEmpCode" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sCommEmpCode" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sFinancialEmpCode" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sAddress1" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sTelephone" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sOctroiApplicableon" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sContactPerson" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="1" name="iTaxType" type="s:int"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sLSTTINno" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sLstTinDate" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sCSTNo" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sCSTDate" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sAreaName" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="SReportingEmail" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sPanNo" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sServicetaxNo" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sAppointmentDate" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sActivateDate" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sAddress2" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sEmail" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="1" name="lLapuno" type="s:long"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sAccountCode" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="1" name="bEditMode" type="s:boolean"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sUserName" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sPassWord" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dth_distributorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element maxOccurs="1" minOccurs="0" name="dth_distributorResult" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dth_pocancel">
+        <s:complexType>
+          <s:sequence>
+            <s:element maxOccurs="1" minOccurs="0" name="sPORefNo" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sUserName" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sPassWord" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dth_pocancelResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element maxOccurs="1" minOccurs="0" name="dth_pocancelResult" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dth_pocreate">
+        <s:complexType>
+          <s:sequence>
+            <s:element maxOccurs="1" minOccurs="0" name="sPOReqNo" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="distcode" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="1" name="iPOType" type="s:int"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sRemarks" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sPrd" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sQtyAmt" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sInhandQty" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sSerStock" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sNonSerStock" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sUserName" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sPassWord" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dth_pocreateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element maxOccurs="1" minOccurs="0" name="dth_pocreateResult" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dth_product">
+        <s:complexType>
+          <s:sequence>
+            <s:element maxOccurs="1" minOccurs="0" name="sCircleCode" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sProductCode" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sProductName" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sCardGroup" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="1" name="iPackType" type="s:int"/>
+            <s:element maxOccurs="1" minOccurs="0" name="iproductType" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sParentCode" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="1" name="iStatus" type="s:int"/>
+            <s:element maxOccurs="1" minOccurs="1" name="dBasicValue" type="s:double"/>
+            <s:element maxOccurs="1" minOccurs="1" name="dRechargeValue" type="s:double"/>
+            <s:element maxOccurs="1" minOccurs="1" name="dActivation" type="s:double"/>
+            <s:element maxOccurs="1" minOccurs="1" name="dProcessingFee" type="s:double"/>
+            <s:element maxOccurs="1" minOccurs="1" name="dSalesTaxPer" type="s:double"/>
+            <s:element maxOccurs="1" minOccurs="1" name="dServiceTax" type="s:double"/>
+            <s:element maxOccurs="1" minOccurs="1" name="dCessTax" type="s:double"/>
+            <s:element maxOccurs="1" minOccurs="1" name="dVatPer" type="s:double"/>
+            <s:element maxOccurs="1" minOccurs="1" name="dAddVatPer" type="s:double"/>
+            <s:element maxOccurs="1" minOccurs="1" name="dTurnoverTax" type="s:double"/>
+            <s:element maxOccurs="1" minOccurs="1" name="dSHEduCess" type="s:double"/>
+            <s:element maxOccurs="1" minOccurs="1" name="dGoldenNumberCharge" type="s:double"/>
+            <s:element maxOccurs="1" minOccurs="1" name="dCostPrice" type="s:double"/>
+            <s:element maxOccurs="1" minOccurs="1" name="dOctraiPrice" type="s:double"/>
+            <s:element maxOccurs="1" minOccurs="1" name="dSurcharge" type="s:double"/>
+            <s:element maxOccurs="1" minOccurs="1" name="dFreight" type="s:double"/>
+            <s:element maxOccurs="1" minOccurs="1" name="dInsurance" type="s:double"/>
+            <s:element maxOccurs="1" minOccurs="1" name="dTradeDiscount" type="s:double"/>
+            <s:element maxOccurs="1" minOccurs="1" name="dCashDiscount" type="s:double"/>
+            <s:element maxOccurs="1" minOccurs="1" name="dDistMargin" type="s:double"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sOracleitemcode" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="beditMode" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sUserName" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sPassWord" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dth_productResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element maxOccurs="1" minOccurs="0" name="dth_productResult" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dth_shipmentprocess">
+        <s:complexType>
+          <s:sequence>
+            <s:element maxOccurs="1" minOccurs="0" name="sCircleCode" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sDistributorCode" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sProductCode" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sPORefNO" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="1" name="sShipmentType" type="s:int"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sSerialNumber" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sUserName" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sPassWord" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dth_shipmentprocessResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element maxOccurs="1" minOccurs="0" name="dth_shipmentprocessResult" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dth_transferdefectsno">
+        <s:complexType>
+          <s:sequence>
+            <s:element maxOccurs="1" minOccurs="0" name="sDCNumber" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sDistributorCode" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sDistributorDCdate" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sSerialNumbers" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sProductCode" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sCollectiontype" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sDefectiveType" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sCompanyCode" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sArea" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sSubArea" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sSourceType" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sUserName" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="sPassWord" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dth_transferdefectsnoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element maxOccurs="1" minOccurs="0" name="dth_transferdefectsnoResult" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string"/>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="dth_circlecreateSoapIn">
+    <wsdl:part element="tns:dth_circlecreate" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="dth_circlecreateSoapOut">
+    <wsdl:part element="tns:dth_circlecreateResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="dth_regioncreateSoapIn">
+    <wsdl:part element="tns:dth_regioncreate" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="dth_regioncreateSoapOut">
+    <wsdl:part element="tns:dth_regioncreateResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="dth_zonecreateSoapIn">
+    <wsdl:part element="tns:dth_zonecreate" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="dth_zonecreateSoapOut">
+    <wsdl:part element="tns:dth_zonecreateResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="dth_createtownSoapIn">
+    <wsdl:part element="tns:dth_createtown" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="dth_createtownSoapOut">
+    <wsdl:part element="tns:dth_createtownResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="dth_tsmcreateSoapIn">
+    <wsdl:part element="tns:dth_tsmcreate" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="dth_tsmcreateSoapOut">
+    <wsdl:part element="tns:dth_tsmcreateResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="dth_distributorSoapIn">
+    <wsdl:part element="tns:dth_distributor" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="dth_distributorSoapOut">
+    <wsdl:part element="tns:dth_distributorResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="dth_pocancelSoapIn">
+    <wsdl:part element="tns:dth_pocancel" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="dth_pocancelSoapOut">
+    <wsdl:part element="tns:dth_pocancelResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="dth_pocreateSoapIn">
+    <wsdl:part element="tns:dth_pocreate" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="dth_pocreateSoapOut">
+    <wsdl:part element="tns:dth_pocreateResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="dth_productSoapIn">
+    <wsdl:part element="tns:dth_product" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="dth_productSoapOut">
+    <wsdl:part element="tns:dth_productResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="dth_shipmentprocessSoapIn">
+    <wsdl:part element="tns:dth_shipmentprocess" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="dth_shipmentprocessSoapOut">
+    <wsdl:part element="tns:dth_shipmentprocessResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="dth_transferdefectsnoSoapIn">
+    <wsdl:part element="tns:dth_transferdefectsno" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="dth_transferdefectsnoSoapOut">
+    <wsdl:part element="tns:dth_transferdefectsnoResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="dth_circlecreateHttpGetIn">
+    <wsdl:part name="sCircleCode" type="s:string"/>
+    <wsdl:part name="sCircleName" type="s:string"/>
+    <wsdl:part name="sRegionCode" type="s:string"/>
+    <wsdl:part name="sCompanyName" type="s:string"/>
+    <wsdl:part name="sAddress1" type="s:string"/>
+    <wsdl:part name="sAddress2" type="s:string"/>
+    <wsdl:part name="sPhoneNo" type="s:string"/>
+    <wsdl:part name="sFaxNo" type="s:string"/>
+    <wsdl:part name="sCstNo" type="s:string"/>
+    <wsdl:part name="sCstDate" type="s:string"/>
+    <wsdl:part name="sSalesTaxNo" type="s:string"/>
+    <wsdl:part name="sLstDate" type="s:string"/>
+    <wsdl:part name="sServicetaxNo" type="s:string"/>
+    <wsdl:part name="sTinNo" type="s:string"/>
+    <wsdl:part name="sTinDate" type="s:string"/>
+    <wsdl:part name="sTerms1" type="s:string"/>
+    <wsdl:part name="sTerms2" type="s:string"/>
+    <wsdl:part name="sTerms3" type="s:string"/>
+    <wsdl:part name="sTerms4" type="s:string"/>
+    <wsdl:part name="sRemarks" type="s:string"/>
+    <wsdl:part name="bEditMode" type="s:string"/>
+    <wsdl:part name="sUserName" type="s:string"/>
+    <wsdl:part name="sPassWord" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="dth_circlecreateHttpGetOut">
+    <wsdl:part element="tns:string" name="Body"/>
+  </wsdl:message>
+  <wsdl:message name="dth_regioncreateHttpGetIn">
+    <wsdl:part name="sRgnCode" type="s:string"/>
+    <wsdl:part name="sRgnName" type="s:string"/>
+    <wsdl:part name="sCountryCode" type="s:string"/>
+    <wsdl:part name="bEditMode" type="s:string"/>
+    <wsdl:part name="sUserName" type="s:string"/>
+    <wsdl:part name="sPassWord" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="dth_regioncreateHttpGetOut">
+    <wsdl:part element="tns:string" name="Body"/>
+  </wsdl:message>
+  <wsdl:message name="dth_zonecreateHttpGetIn">
+    <wsdl:part name="sZoneCode" type="s:string"/>
+    <wsdl:part name="sZoneName" type="s:string"/>
+    <wsdl:part name="sCircleCode" type="s:string"/>
+    <wsdl:part name="bEditMode" type="s:string"/>
+    <wsdl:part name="sUserName" type="s:string"/>
+    <wsdl:part name="sPassWord" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="dth_zonecreateHttpGetOut">
+    <wsdl:part element="tns:string" name="Body"/>
+  </wsdl:message>
+  <wsdl:message name="dth_createtownHttpGetIn">
+    <wsdl:part name="sTownCode" type="s:string"/>
+    <wsdl:part name="sTownName" type="s:string"/>
+    <wsdl:part name="sZoneCode" type="s:string"/>
+    <wsdl:part name="bEditMode" type="s:string"/>
+    <wsdl:part name="sUserName" type="s:string"/>
+    <wsdl:part name="sPassWord" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="dth_createtownHttpGetOut">
+    <wsdl:part element="tns:string" name="Body"/>
+  </wsdl:message>
+  <wsdl:message name="dth_tsmcreateHttpGetIn">
+    <wsdl:part name="sTsmCode" type="s:string"/>
+    <wsdl:part name="sTsmName" type="s:string"/>
+    <wsdl:part name="sCircleCode" type="s:string"/>
+    <wsdl:part name="bEditMode" type="s:string"/>
+    <wsdl:part name="sUserName" type="s:string"/>
+    <wsdl:part name="sPassWord" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="dth_tsmcreateHttpGetOut">
+    <wsdl:part element="tns:string" name="Body"/>
+  </wsdl:message>
+  <wsdl:message name="dth_distributorHttpGetIn">
+    <wsdl:part name="sDistributorName" type="s:string"/>
+    <wsdl:part name="SCircleCode" type="s:string"/>
+    <wsdl:part name="sTownCode" type="s:string"/>
+    <wsdl:part name="sTsmCode" type="s:string"/>
+    <wsdl:part name="iDistributorType" type="s:string"/>
+    <wsdl:part name="sSalesEmpCode" type="s:string"/>
+    <wsdl:part name="sCommEmpCode" type="s:string"/>
+    <wsdl:part name="sFinancialEmpCode" type="s:string"/>
+    <wsdl:part name="sAddress1" type="s:string"/>
+    <wsdl:part name="sTelephone" type="s:string"/>
+    <wsdl:part name="sOctroiApplicableon" type="s:string"/>
+    <wsdl:part name="sContactPerson" type="s:string"/>
+    <wsdl:part name="iTaxType" type="s:string"/>
+    <wsdl:part name="sLSTTINno" type="s:string"/>
+    <wsdl:part name="sLstTinDate" type="s:string"/>
+    <wsdl:part name="sCSTNo" type="s:string"/>
+    <wsdl:part name="sCSTDate" type="s:string"/>
+    <wsdl:part name="sAreaName" type="s:string"/>
+    <wsdl:part name="SReportingEmail" type="s:string"/>
+    <wsdl:part name="sPanNo" type="s:string"/>
+    <wsdl:part name="sServicetaxNo" type="s:string"/>
+    <wsdl:part name="sAppointmentDate" type="s:string"/>
+    <wsdl:part name="sActivateDate" type="s:string"/>
+    <wsdl:part name="sAddress2" type="s:string"/>
+    <wsdl:part name="sEmail" type="s:string"/>
+    <wsdl:part name="lLapuno" type="s:string"/>
+    <wsdl:part name="sAccountCode" type="s:string"/>
+    <wsdl:part name="bEditMode" type="s:string"/>
+    <wsdl:part name="sUserName" type="s:string"/>
+    <wsdl:part name="sPassWord" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="dth_distributorHttpGetOut">
+    <wsdl:part element="tns:string" name="Body"/>
+  </wsdl:message>
+  <wsdl:message name="dth_pocancelHttpGetIn">
+    <wsdl:part name="sPORefNo" type="s:string"/>
+    <wsdl:part name="sUserName" type="s:string"/>
+    <wsdl:part name="sPassWord" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="dth_pocancelHttpGetOut">
+    <wsdl:part element="tns:string" name="Body"/>
+  </wsdl:message>
+  <wsdl:message name="dth_pocreateHttpGetIn">
+    <wsdl:part name="sPOReqNo" type="s:string"/>
+    <wsdl:part name="distcode" type="s:string"/>
+    <wsdl:part name="iPOType" type="s:string"/>
+    <wsdl:part name="sRemarks" type="s:string"/>
+    <wsdl:part name="sPrd" type="s:string"/>
+    <wsdl:part name="sQtyAmt" type="s:string"/>
+    <wsdl:part name="sInhandQty" type="s:string"/>
+    <wsdl:part name="sSerStock" type="s:string"/>
+    <wsdl:part name="sNonSerStock" type="s:string"/>
+    <wsdl:part name="sUserName" type="s:string"/>
+    <wsdl:part name="sPassWord" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="dth_pocreateHttpGetOut">
+    <wsdl:part element="tns:string" name="Body"/>
+  </wsdl:message>
+  <wsdl:message name="dth_productHttpGetIn">
+    <wsdl:part name="sCircleCode" type="s:string"/>
+    <wsdl:part name="sProductCode" type="s:string"/>
+    <wsdl:part name="sProductName" type="s:string"/>
+    <wsdl:part name="sCardGroup" type="s:string"/>
+    <wsdl:part name="iPackType" type="s:string"/>
+    <wsdl:part name="iproductType" type="s:string"/>
+    <wsdl:part name="sParentCode" type="s:string"/>
+    <wsdl:part name="iStatus" type="s:string"/>
+    <wsdl:part name="dBasicValue" type="s:string"/>
+    <wsdl:part name="dRechargeValue" type="s:string"/>
+    <wsdl:part name="dActivation" type="s:string"/>
+    <wsdl:part name="dProcessingFee" type="s:string"/>
+    <wsdl:part name="dSalesTaxPer" type="s:string"/>
+    <wsdl:part name="dServiceTax" type="s:string"/>
+    <wsdl:part name="dCessTax" type="s:string"/>
+    <wsdl:part name="dVatPer" type="s:string"/>
+    <wsdl:part name="dAddVatPer" type="s:string"/>
+    <wsdl:part name="dTurnoverTax" type="s:string"/>
+    <wsdl:part name="dSHEduCess" type="s:string"/>
+    <wsdl:part name="dGoldenNumberCharge" type="s:string"/>
+    <wsdl:part name="dCostPrice" type="s:string"/>
+    <wsdl:part name="dOctraiPrice" type="s:string"/>
+    <wsdl:part name="dSurcharge" type="s:string"/>
+    <wsdl:part name="dFreight" type="s:string"/>
+    <wsdl:part name="dInsurance" type="s:string"/>
+    <wsdl:part name="dTradeDiscount" type="s:string"/>
+    <wsdl:part name="dCashDiscount" type="s:string"/>
+    <wsdl:part name="dDistMargin" type="s:string"/>
+    <wsdl:part name="sOracleitemcode" type="s:string"/>
+    <wsdl:part name="beditMode" type="s:string"/>
+    <wsdl:part name="sUserName" type="s:string"/>
+    <wsdl:part name="sPassWord" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="dth_productHttpGetOut">
+    <wsdl:part element="tns:string" name="Body"/>
+  </wsdl:message>
+  <wsdl:message name="dth_shipmentprocessHttpGetIn">
+    <wsdl:part name="sCircleCode" type="s:string"/>
+    <wsdl:part name="sDistributorCode" type="s:string"/>
+    <wsdl:part name="sProductCode" type="s:string"/>
+    <wsdl:part name="sPORefNO" type="s:string"/>
+    <wsdl:part name="sShipmentType" type="s:string"/>
+    <wsdl:part name="sSerialNumber" type="s:string"/>
+    <wsdl:part name="sUserName" type="s:string"/>
+    <wsdl:part name="sPassWord" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="dth_shipmentprocessHttpGetOut">
+    <wsdl:part element="tns:string" name="Body"/>
+  </wsdl:message>
+  <wsdl:message name="dth_transferdefectsnoHttpGetIn">
+    <wsdl:part name="sDCNumber" type="s:string"/>
+    <wsdl:part name="sDistributorCode" type="s:string"/>
+    <wsdl:part name="sDistributorDCdate" type="s:string"/>
+    <wsdl:part name="sSerialNumbers" type="s:string"/>
+    <wsdl:part name="sProductCode" type="s:string"/>
+    <wsdl:part name="sCollectiontype" type="s:string"/>
+    <wsdl:part name="sDefectiveType" type="s:string"/>
+    <wsdl:part name="sCompanyCode" type="s:string"/>
+    <wsdl:part name="sArea" type="s:string"/>
+    <wsdl:part name="sSubArea" type="s:string"/>
+    <wsdl:part name="sSourceType" type="s:string"/>
+    <wsdl:part name="sUserName" type="s:string"/>
+    <wsdl:part name="sPassWord" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="dth_transferdefectsnoHttpGetOut">
+    <wsdl:part element="tns:string" name="Body"/>
+  </wsdl:message>
+  <wsdl:message name="dth_circlecreateHttpPostIn">
+    <wsdl:part name="sCircleCode" type="s:string"/>
+    <wsdl:part name="sCircleName" type="s:string"/>
+    <wsdl:part name="sRegionCode" type="s:string"/>
+    <wsdl:part name="sCompanyName" type="s:string"/>
+    <wsdl:part name="sAddress1" type="s:string"/>
+    <wsdl:part name="sAddress2" type="s:string"/>
+    <wsdl:part name="sPhoneNo" type="s:string"/>
+    <wsdl:part name="sFaxNo" type="s:string"/>
+    <wsdl:part name="sCstNo" type="s:string"/>
+    <wsdl:part name="sCstDate" type="s:string"/>
+    <wsdl:part name="sSalesTaxNo" type="s:string"/>
+    <wsdl:part name="sLstDate" type="s:string"/>
+    <wsdl:part name="sServicetaxNo" type="s:string"/>
+    <wsdl:part name="sTinNo" type="s:string"/>
+    <wsdl:part name="sTinDate" type="s:string"/>
+    <wsdl:part name="sTerms1" type="s:string"/>
+    <wsdl:part name="sTerms2" type="s:string"/>
+    <wsdl:part name="sTerms3" type="s:string"/>
+    <wsdl:part name="sTerms4" type="s:string"/>
+    <wsdl:part name="sRemarks" type="s:string"/>
+    <wsdl:part name="bEditMode" type="s:string"/>
+    <wsdl:part name="sUserName" type="s:string"/>
+    <wsdl:part name="sPassWord" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="dth_circlecreateHttpPostOut">
+    <wsdl:part element="tns:string" name="Body"/>
+  </wsdl:message>
+  <wsdl:message name="dth_regioncreateHttpPostIn">
+    <wsdl:part name="sRgnCode" type="s:string"/>
+    <wsdl:part name="sRgnName" type="s:string"/>
+    <wsdl:part name="sCountryCode" type="s:string"/>
+    <wsdl:part name="bEditMode" type="s:string"/>
+    <wsdl:part name="sUserName" type="s:string"/>
+    <wsdl:part name="sPassWord" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="dth_regioncreateHttpPostOut">
+    <wsdl:part element="tns:string" name="Body"/>
+  </wsdl:message>
+  <wsdl:message name="dth_zonecreateHttpPostIn">
+    <wsdl:part name="sZoneCode" type="s:string"/>
+    <wsdl:part name="sZoneName" type="s:string"/>
+    <wsdl:part name="sCircleCode" type="s:string"/>
+    <wsdl:part name="bEditMode" type="s:string"/>
+    <wsdl:part name="sUserName" type="s:string"/>
+    <wsdl:part name="sPassWord" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="dth_zonecreateHttpPostOut">
+    <wsdl:part element="tns:string" name="Body"/>
+  </wsdl:message>
+  <wsdl:message name="dth_createtownHttpPostIn">
+    <wsdl:part name="sTownCode" type="s:string"/>
+    <wsdl:part name="sTownName" type="s:string"/>
+    <wsdl:part name="sZoneCode" type="s:string"/>
+    <wsdl:part name="bEditMode" type="s:string"/>
+    <wsdl:part name="sUserName" type="s:string"/>
+    <wsdl:part name="sPassWord" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="dth_createtownHttpPostOut">
+    <wsdl:part element="tns:string" name="Body"/>
+  </wsdl:message>
+  <wsdl:message name="dth_tsmcreateHttpPostIn">
+    <wsdl:part name="sTsmCode" type="s:string"/>
+    <wsdl:part name="sTsmName" type="s:string"/>
+    <wsdl:part name="sCircleCode" type="s:string"/>
+    <wsdl:part name="bEditMode" type="s:string"/>
+    <wsdl:part name="sUserName" type="s:string"/>
+    <wsdl:part name="sPassWord" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="dth_tsmcreateHttpPostOut">
+    <wsdl:part element="tns:string" name="Body"/>
+  </wsdl:message>
+  <wsdl:message name="dth_distributorHttpPostIn">
+    <wsdl:part name="sDistributorName" type="s:string"/>
+    <wsdl:part name="SCircleCode" type="s:string"/>
+    <wsdl:part name="sTownCode" type="s:string"/>
+    <wsdl:part name="sTsmCode" type="s:string"/>
+    <wsdl:part name="iDistributorType" type="s:string"/>
+    <wsdl:part name="sSalesEmpCode" type="s:string"/>
+    <wsdl:part name="sCommEmpCode" type="s:string"/>
+    <wsdl:part name="sFinancialEmpCode" type="s:string"/>
+    <wsdl:part name="sAddress1" type="s:string"/>
+    <wsdl:part name="sTelephone" type="s:string"/>
+    <wsdl:part name="sOctroiApplicableon" type="s:string"/>
+    <wsdl:part name="sContactPerson" type="s:string"/>
+    <wsdl:part name="iTaxType" type="s:string"/>
+    <wsdl:part name="sLSTTINno" type="s:string"/>
+    <wsdl:part name="sLstTinDate" type="s:string"/>
+    <wsdl:part name="sCSTNo" type="s:string"/>
+    <wsdl:part name="sCSTDate" type="s:string"/>
+    <wsdl:part name="sAreaName" type="s:string"/>
+    <wsdl:part name="SReportingEmail" type="s:string"/>
+    <wsdl:part name="sPanNo" type="s:string"/>
+    <wsdl:part name="sServicetaxNo" type="s:string"/>
+    <wsdl:part name="sAppointmentDate" type="s:string"/>
+    <wsdl:part name="sActivateDate" type="s:string"/>
+    <wsdl:part name="sAddress2" type="s:string"/>
+    <wsdl:part name="sEmail" type="s:string"/>
+    <wsdl:part name="lLapuno" type="s:string"/>
+    <wsdl:part name="sAccountCode" type="s:string"/>
+    <wsdl:part name="bEditMode" type="s:string"/>
+    <wsdl:part name="sUserName" type="s:string"/>
+    <wsdl:part name="sPassWord" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="dth_distributorHttpPostOut">
+    <wsdl:part element="tns:string" name="Body"/>
+  </wsdl:message>
+  <wsdl:message name="dth_pocancelHttpPostIn">
+    <wsdl:part name="sPORefNo" type="s:string"/>
+    <wsdl:part name="sUserName" type="s:string"/>
+    <wsdl:part name="sPassWord" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="dth_pocancelHttpPostOut">
+    <wsdl:part element="tns:string" name="Body"/>
+  </wsdl:message>
+  <wsdl:message name="dth_pocreateHttpPostIn">
+    <wsdl:part name="sPOReqNo" type="s:string"/>
+    <wsdl:part name="distcode" type="s:string"/>
+    <wsdl:part name="iPOType" type="s:string"/>
+    <wsdl:part name="sRemarks" type="s:string"/>
+    <wsdl:part name="sPrd" type="s:string"/>
+    <wsdl:part name="sQtyAmt" type="s:string"/>
+    <wsdl:part name="sInhandQty" type="s:string"/>
+    <wsdl:part name="sSerStock" type="s:string"/>
+    <wsdl:part name="sNonSerStock" type="s:string"/>
+    <wsdl:part name="sUserName" type="s:string"/>
+    <wsdl:part name="sPassWord" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="dth_pocreateHttpPostOut">
+    <wsdl:part element="tns:string" name="Body"/>
+  </wsdl:message>
+  <wsdl:message name="dth_productHttpPostIn">
+    <wsdl:part name="sCircleCode" type="s:string"/>
+    <wsdl:part name="sProductCode" type="s:string"/>
+    <wsdl:part name="sProductName" type="s:string"/>
+    <wsdl:part name="sCardGroup" type="s:string"/>
+    <wsdl:part name="iPackType" type="s:string"/>
+    <wsdl:part name="iproductType" type="s:string"/>
+    <wsdl:part name="sParentCode" type="s:string"/>
+    <wsdl:part name="iStatus" type="s:string"/>
+    <wsdl:part name="dBasicValue" type="s:string"/>
+    <wsdl:part name="dRechargeValue" type="s:string"/>
+    <wsdl:part name="dActivation" type="s:string"/>
+    <wsdl:part name="dProcessingFee" type="s:string"/>
+    <wsdl:part name="dSalesTaxPer" type="s:string"/>
+    <wsdl:part name="dServiceTax" type="s:string"/>
+    <wsdl:part name="dCessTax" type="s:string"/>
+    <wsdl:part name="dVatPer" type="s:string"/>
+    <wsdl:part name="dAddVatPer" type="s:string"/>
+    <wsdl:part name="dTurnoverTax" type="s:string"/>
+    <wsdl:part name="dSHEduCess" type="s:string"/>
+    <wsdl:part name="dGoldenNumberCharge" type="s:string"/>
+    <wsdl:part name="dCostPrice" type="s:string"/>
+    <wsdl:part name="dOctraiPrice" type="s:string"/>
+    <wsdl:part name="dSurcharge" type="s:string"/>
+    <wsdl:part name="dFreight" type="s:string"/>
+    <wsdl:part name="dInsurance" type="s:string"/>
+    <wsdl:part name="dTradeDiscount" type="s:string"/>
+    <wsdl:part name="dCashDiscount" type="s:string"/>
+    <wsdl:part name="dDistMargin" type="s:string"/>
+    <wsdl:part name="sOracleitemcode" type="s:string"/>
+    <wsdl:part name="beditMode" type="s:string"/>
+    <wsdl:part name="sUserName" type="s:string"/>
+    <wsdl:part name="sPassWord" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="dth_productHttpPostOut">
+    <wsdl:part element="tns:string" name="Body"/>
+  </wsdl:message>
+  <wsdl:message name="dth_shipmentprocessHttpPostIn">
+    <wsdl:part name="sCircleCode" type="s:string"/>
+    <wsdl:part name="sDistributorCode" type="s:string"/>
+    <wsdl:part name="sProductCode" type="s:string"/>
+    <wsdl:part name="sPORefNO" type="s:string"/>
+    <wsdl:part name="sShipmentType" type="s:string"/>
+    <wsdl:part name="sSerialNumber" type="s:string"/>
+    <wsdl:part name="sUserName" type="s:string"/>
+    <wsdl:part name="sPassWord" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="dth_shipmentprocessHttpPostOut">
+    <wsdl:part element="tns:string" name="Body"/>
+  </wsdl:message>
+  <wsdl:message name="dth_transferdefectsnoHttpPostIn">
+    <wsdl:part name="sDCNumber" type="s:string"/>
+    <wsdl:part name="sDistributorCode" type="s:string"/>
+    <wsdl:part name="sDistributorDCdate" type="s:string"/>
+    <wsdl:part name="sSerialNumbers" type="s:string"/>
+    <wsdl:part name="sProductCode" type="s:string"/>
+    <wsdl:part name="sCollectiontype" type="s:string"/>
+    <wsdl:part name="sDefectiveType" type="s:string"/>
+    <wsdl:part name="sCompanyCode" type="s:string"/>
+    <wsdl:part name="sArea" type="s:string"/>
+    <wsdl:part name="sSubArea" type="s:string"/>
+    <wsdl:part name="sSourceType" type="s:string"/>
+    <wsdl:part name="sUserName" type="s:string"/>
+    <wsdl:part name="sPassWord" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="dth_transferdefectsnoHttpPostOut">
+    <wsdl:part element="tns:string" name="Body"/>
+  </wsdl:message>
+  <wsdl:portType name="IntegrationSoap">
+    <wsdl:operation name="dth_circlecreate">
+      <wsdl:input message="tns:dth_circlecreateSoapIn"/>
+      <wsdl:output message="tns:dth_circlecreateSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="dth_regioncreate">
+      <wsdl:input message="tns:dth_regioncreateSoapIn"/>
+      <wsdl:output message="tns:dth_regioncreateSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="dth_zonecreate">
+      <wsdl:input message="tns:dth_zonecreateSoapIn"/>
+      <wsdl:output message="tns:dth_zonecreateSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="dth_createtown">
+      <wsdl:input message="tns:dth_createtownSoapIn"/>
+      <wsdl:output message="tns:dth_createtownSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="dth_tsmcreate">
+      <wsdl:input message="tns:dth_tsmcreateSoapIn"/>
+      <wsdl:output message="tns:dth_tsmcreateSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="dth_distributor">
+      <wsdl:input message="tns:dth_distributorSoapIn"/>
+      <wsdl:output message="tns:dth_distributorSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="dth_pocancel">
+      <wsdl:input message="tns:dth_pocancelSoapIn"/>
+      <wsdl:output message="tns:dth_pocancelSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="dth_pocreate">
+      <wsdl:input message="tns:dth_pocreateSoapIn"/>
+      <wsdl:output message="tns:dth_pocreateSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="dth_product">
+      <wsdl:input message="tns:dth_productSoapIn"/>
+      <wsdl:output message="tns:dth_productSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="dth_shipmentprocess">
+      <wsdl:input message="tns:dth_shipmentprocessSoapIn"/>
+      <wsdl:output message="tns:dth_shipmentprocessSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="dth_transferdefectsno">
+      <wsdl:input message="tns:dth_transferdefectsnoSoapIn"/>
+      <wsdl:output message="tns:dth_transferdefectsnoSoapOut"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IntegrationHttpGet">
+    <wsdl:operation name="dth_circlecreate">
+      <wsdl:input message="tns:dth_circlecreateHttpGetIn"/>
+      <wsdl:output message="tns:dth_circlecreateHttpGetOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="dth_regioncreate">
+      <wsdl:input message="tns:dth_regioncreateHttpGetIn"/>
+      <wsdl:output message="tns:dth_regioncreateHttpGetOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="dth_zonecreate">
+      <wsdl:input message="tns:dth_zonecreateHttpGetIn"/>
+      <wsdl:output message="tns:dth_zonecreateHttpGetOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="dth_createtown">
+      <wsdl:input message="tns:dth_createtownHttpGetIn"/>
+      <wsdl:output message="tns:dth_createtownHttpGetOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="dth_tsmcreate">
+      <wsdl:input message="tns:dth_tsmcreateHttpGetIn"/>
+      <wsdl:output message="tns:dth_tsmcreateHttpGetOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="dth_distributor">
+      <wsdl:input message="tns:dth_distributorHttpGetIn"/>
+      <wsdl:output message="tns:dth_distributorHttpGetOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="dth_pocancel">
+      <wsdl:input message="tns:dth_pocancelHttpGetIn"/>
+      <wsdl:output message="tns:dth_pocancelHttpGetOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="dth_pocreate">
+      <wsdl:input message="tns:dth_pocreateHttpGetIn"/>
+      <wsdl:output message="tns:dth_pocreateHttpGetOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="dth_product">
+      <wsdl:input message="tns:dth_productHttpGetIn"/>
+      <wsdl:output message="tns:dth_productHttpGetOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="dth_shipmentprocess">
+      <wsdl:input message="tns:dth_shipmentprocessHttpGetIn"/>
+      <wsdl:output message="tns:dth_shipmentprocessHttpGetOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="dth_transferdefectsno">
+      <wsdl:input message="tns:dth_transferdefectsnoHttpGetIn"/>
+      <wsdl:output message="tns:dth_transferdefectsnoHttpGetOut"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IntegrationHttpPost">
+    <wsdl:operation name="dth_circlecreate">
+      <wsdl:input message="tns:dth_circlecreateHttpPostIn"/>
+      <wsdl:output message="tns:dth_circlecreateHttpPostOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="dth_regioncreate">
+      <wsdl:input message="tns:dth_regioncreateHttpPostIn"/>
+      <wsdl:output message="tns:dth_regioncreateHttpPostOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="dth_zonecreate">
+      <wsdl:input message="tns:dth_zonecreateHttpPostIn"/>
+      <wsdl:output message="tns:dth_zonecreateHttpPostOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="dth_createtown">
+      <wsdl:input message="tns:dth_createtownHttpPostIn"/>
+      <wsdl:output message="tns:dth_createtownHttpPostOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="dth_tsmcreate">
+      <wsdl:input message="tns:dth_tsmcreateHttpPostIn"/>
+      <wsdl:output message="tns:dth_tsmcreateHttpPostOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="dth_distributor">
+      <wsdl:input message="tns:dth_distributorHttpPostIn"/>
+      <wsdl:output message="tns:dth_distributorHttpPostOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="dth_pocancel">
+      <wsdl:input message="tns:dth_pocancelHttpPostIn"/>
+      <wsdl:output message="tns:dth_pocancelHttpPostOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="dth_pocreate">
+      <wsdl:input message="tns:dth_pocreateHttpPostIn"/>
+      <wsdl:output message="tns:dth_pocreateHttpPostOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="dth_product">
+      <wsdl:input message="tns:dth_productHttpPostIn"/>
+      <wsdl:output message="tns:dth_productHttpPostOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="dth_shipmentprocess">
+      <wsdl:input message="tns:dth_shipmentprocessHttpPostIn"/>
+      <wsdl:output message="tns:dth_shipmentprocessHttpPostOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="dth_transferdefectsno">
+      <wsdl:input message="tns:dth_transferdefectsnoHttpPostIn"/>
+      <wsdl:output message="tns:dth_transferdefectsnoHttpPostOut"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="IntegrationSoap" type="tns:IntegrationSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="dth_circlecreate">
+      <soap:operation soapAction="http://tempuri.org/dth_circlecreate" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dth_regioncreate">
+      <soap:operation soapAction="http://tempuri.org/dth_regioncreate" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dth_zonecreate">
+      <soap:operation soapAction="http://tempuri.org/dth_zonecreate" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dth_createtown">
+      <soap:operation soapAction="http://tempuri.org/dth_createtown" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dth_tsmcreate">
+      <soap:operation soapAction="http://tempuri.org/dth_tsmcreate" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dth_distributor">
+      <soap:operation soapAction="http://tempuri.org/dth_distributor" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dth_pocancel">
+      <soap:operation soapAction="http://tempuri.org/dth_pocancel" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dth_pocreate">
+      <soap:operation soapAction="http://tempuri.org/dth_pocreate" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dth_product">
+      <soap:operation soapAction="http://tempuri.org/dth_product" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dth_shipmentprocess">
+      <soap:operation soapAction="http://tempuri.org/dth_shipmentprocess" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dth_transferdefectsno">
+      <soap:operation soapAction="http://tempuri.org/dth_transferdefectsno" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+
+  <wsdl:binding name="IntegrationHttpGet" type="tns:IntegrationHttpGet">
+    <http:binding verb="GET"/>
+    <wsdl:operation name="dth_circlecreate">
+      <http:operation location="/dth_circlecreate"/>
+      <wsdl:input>
+        <http:urlEncoded/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dth_regioncreate">
+      <http:operation location="/dth_regioncreate"/>
+      <wsdl:input>
+        <http:urlEncoded/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dth_zonecreate">
+      <http:operation location="/dth_zonecreate"/>
+      <wsdl:input>
+        <http:urlEncoded/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dth_createtown">
+      <http:operation location="/dth_createtown"/>
+      <wsdl:input>
+        <http:urlEncoded/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dth_tsmcreate">
+      <http:operation location="/dth_tsmcreate"/>
+      <wsdl:input>
+        <http:urlEncoded/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dth_distributor">
+      <http:operation location="/dth_distributor"/>
+      <wsdl:input>
+        <http:urlEncoded/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dth_pocancel">
+      <http:operation location="/dth_pocancel"/>
+      <wsdl:input>
+        <http:urlEncoded/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dth_pocreate">
+      <http:operation location="/dth_pocreate"/>
+      <wsdl:input>
+        <http:urlEncoded/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dth_product">
+      <http:operation location="/dth_product"/>
+      <wsdl:input>
+        <http:urlEncoded/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dth_shipmentprocess">
+      <http:operation location="/dth_shipmentprocess"/>
+      <wsdl:input>
+        <http:urlEncoded/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dth_transferdefectsno">
+      <http:operation location="/dth_transferdefectsno"/>
+      <wsdl:input>
+        <http:urlEncoded/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="IntegrationHttpPost" type="tns:IntegrationHttpPost">
+    <http:binding verb="POST"/>
+    <wsdl:operation name="dth_circlecreate">
+      <http:operation location="/dth_circlecreate"/>
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dth_regioncreate">
+      <http:operation location="/dth_regioncreate"/>
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dth_zonecreate">
+      <http:operation location="/dth_zonecreate"/>
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dth_createtown">
+      <http:operation location="/dth_createtown"/>
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dth_tsmcreate">
+      <http:operation location="/dth_tsmcreate"/>
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dth_distributor">
+      <http:operation location="/dth_distributor"/>
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dth_pocancel">
+      <http:operation location="/dth_pocancel"/>
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dth_pocreate">
+      <http:operation location="/dth_pocreate"/>
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dth_product">
+      <http:operation location="/dth_product"/>
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dth_shipmentprocess">
+      <http:operation location="/dth_shipmentprocess"/>
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dth_transferdefectsno">
+      <http:operation location="/dth_transferdefectsno"/>
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Integration">
+    <wsdl:port binding="tns:IntegrationSoap" name="IntegrationSoap">
+      <soap:address location="http://10.13.20.30/DthIntegration/portalintegration.asmx"/>
+    </wsdl:port>
+    <wsdl:port binding="tns:IntegrationHttpGet" name="IntegrationHttpGet">
+      <http:address location="http://10.13.20.30/DthIntegration/portalintegration.asmx"/>
+    </wsdl:port>
+    <wsdl:port binding="tns:IntegrationHttpPost" name="IntegrationHttpPost">
+      <http:address location="http://10.13.20.30/DthIntegration/portalintegration.asmx"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
